@@ -1,0 +1,1 @@
+# typodgrafiki.pl

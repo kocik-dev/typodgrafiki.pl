@@ -382,29 +382,9 @@ textarea.form-control
 
 #copyright
 {
-	background-color: #212126;
+	background-color: #e5e2dd;
 	padding-top: 30px;
     padding-bottom: 58px;
-}
-
-#copyright p:not(.title)
-{
-	color: #716e6c;
-	font-size: 12px;
-	/*margin-top: 20px;*/
-	margin-bottom: 0;
-}
-
-/*#copyright .link
-{
-	font-weight: 400;
-	font-size: 1rem;
-	line-height: 100%;		
-}*/
-
-#copyright .title 
-{
-	margin: 0;
 }
 
 .navbar-toggle
@@ -629,26 +609,6 @@ body.open-menu
     width: 24px;
     height: 24px;
     transition: .2s all ease;
-}
-
-.social
-{
-	margin-top: 35px;
-    opacity: 0;
-    transform: translate3d(0, 50vh, 0);
-    transition: .2s all ease;
-
-	-webkit-transition-delay: .4s;
-    -moz-transition-delay: .4s;
-    -o-transition-delay: .4s;
-    -ms-transition-delay: .4s;
-    transition-delay: .4s;
-}
-
-.open-menu .menu-over .social
-{
-	transform: translate3d(0px, 0, 0);
-	opacity: 1;
 }
 
 .social a

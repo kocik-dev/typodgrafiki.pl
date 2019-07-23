@@ -32,15 +32,14 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-
-<link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/reset.css">
+<link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/bulma.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/style.css">
+
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&amp;subset=latin-ext" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-
 <script type="text/javascript">
 	function parallaxMenu(){
          var scrolled = $(window).scrollTop();

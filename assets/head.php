@@ -12,8 +12,8 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 <meta name="author" content="Grzegorz Kocik" />
-<meta name="description" content="Grafik freelancer, projektant stron intermetowych oraz UI Design. Jeśli potrzebujesz webdesignera, który stworzy intuicyjną, ładną, oraz używalną stronę intentetową to jestem gotowy do działania." />
-<meta name="keywords"  content="grafik, grafik freenalcer, grafik poznań, designer, web designer, typ od grafiki, typodgrafiki, Ui designer, Grzegorz Kocik, product designer, frontend developer freelancer, frontend freenancer" />
+<meta name="description" content="Grafik freelancer, Front-end Developer, projektant stron intermetowych oraz UI Design. Jeśli potrzebujesz webdesignera, który stworzy intuicyjną, ładną, oraz używalną stronę intentetową to jestem gotowy do działania." />
+<meta name="keywords"  content="grafik, grafik freenalcer, web developer, grafik poznań, designer, web designer, typ od grafiki, typodgrafiki, Ui designer, Grzegorz Kocik, product designer, frontend developer freelancer, frontend freenancer" />
 
 <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -32,7 +32,7 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/bulma.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/reset.css">
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/style.css">
 
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&amp;subset=latin-ext" rel="stylesheet">

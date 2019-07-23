@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6
 	padding-left: 30px;
 }
 
-p 
+p, ul 
 {
 	line-height: 190%;
 	margin-bottom: 20px;
@@ -136,6 +136,11 @@ p
 .text-center
 {
 	text-align: center;
+}
+
+.flex
+{
+	display: flex;
 }
 
 .clearfix:after,
@@ -383,8 +388,14 @@ textarea.form-control
 #copyright
 {
 	background-color: #e5e2dd;
-	padding-top: 30px;
+	padding-top: 170px;
     padding-bottom: 58px;
+    margin-top: -88px;
+}
+
+#copyright h4
+{
+	font-size: 25px;
 }
 
 .navbar-toggle
@@ -416,7 +427,8 @@ textarea.form-control
 }
 
 .navbar-toggle,
-#logo
+#logo,
+#topContactButton
 {
 	position: fixed;
 	z-index: 12;
@@ -428,6 +440,15 @@ textarea.form-control
 {
 	right: auto;
 	left: 0;
+}
+
+#topContactButton
+{
+    top: 33px;
+    right: 40px;	
+    cursor: pointer;
+    outline: none;
+    color: #fff;
 }
 
 .navbar-toggle .icon-bar {
@@ -603,23 +624,26 @@ body.open-menu
 	overflow: hidden;
 }
 
+.social
+{
+	margin: 50px 0;
+}
+
 .social svg 
 {
-	fill: #929298;
-    width: 24px;
-    height: 24px;
+	fill: #262629;
     transition: .2s all ease;
 }
 
 .social a
 {
 	text-decoration: none;
-	padding: 3px;
-}
-
-.social a:hover svg 
-{
-	fill: #fff;
+	    padding: 15px;
+    display: inline-block;
+    border: 2px solid #000;
+    border-image: url(../images/btn.jpg) 25%;
+    border-radius: 50%;
+    margin: 0 12px;
 }
 
 .visible-lg

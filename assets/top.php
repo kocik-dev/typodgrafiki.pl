@@ -8,6 +8,10 @@
 	        <span class="icon-bar"></span>
 	        <small class="txt hidden">MENU</small>
 	</button>
+	<button id="topContactButton" class="btn btn-default pull-right" type="button">
+		Przywitaj się
+		<span></span>
+	</button>
 	<div id="top"></div>
 	<div  id="menuToogle" class="nav-menu menu-over text-center">
 		<nav class="nav-menu">

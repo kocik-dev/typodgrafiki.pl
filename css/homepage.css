@@ -1,0 +1,163 @@
+h1, h2, h3, h4, h5, .title
+{
+	color: #252529;
+}
+
+.container
+{
+	max-width: 1270px;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+
+#section1
+{
+	padding-top: 95px;
+}
+
+.section .title
+{
+	font-size: 44px;
+	margin: 0 0 14px;
+}
+
+.subtitle
+{
+	font-size: 21px;
+	margin: 0 0 52px;
+}
+
+.img-profile
+{
+	border-radius: 50%;
+}
+
+#skils .thumbnail
+{
+	max-width: 380px;
+	box-shadow: 0 10px 20px rgba(0,0,0, .07); 
+	background-color: #fff;
+	margin: -78px 15px 0;
+	padding: 50px 20px 20px;
+}
+
+#skils .thumbnail h2,
+#last-projects h3,
+#start-project h2
+{
+	font-size: 30px;
+}
+
+#last-projects h3
+{
+	margin: 0 0 25px;
+}
+
+#skils .thumbnail h4
+{
+	font-size: 19px;
+	margin-bottom: 20px;
+}
+
+#skils .thumbnail p,
+#skils .thumbnail ul
+{
+	margin-bottom: 28px;
+}
+
+#skils .thumbnail .img-responsive
+{
+	margin: 25px 0 25px;
+}
+
+#about-me h3
+{
+	font-size: 30px;
+	margin-bottom: 35px;
+}
+
+#skils
+{
+	background-color: #f5f3f1;
+	padding-bottom: 65px;
+}
+
+#about-me
+{
+	background-color: #e5e2dd;
+	margin-top: -135px;
+	padding: 185px 0 150px;
+}
+
+#skils .flex,
+#last-projects .flex,
+#start-project .flex
+{
+	justify-content: center;
+}
+
+#start-project
+{
+	margin-top: 50px;
+}
+
+#start-project .thumbnail
+{
+	background-color: #252529;
+	box-shadow: 0 6px 10px rgba(0,0,0, .13);
+	color: #9f9fa5;
+	padding:  65px 0px;
+	position: relative;
+}
+
+#start-project .thumbnail > *
+{
+	width: 33%;
+}
+
+#start-project .thumbnail p
+{
+	margin: 0;
+}
+
+#start-project .thumbnail .btn,
+#start-project .thumbnail h2
+{
+	color: #fff;
+}
+
+#start-project .thumbnail h2
+{
+	padding-top: 11px;
+}
+
+#last-projects
+{
+	padding-top: 85px;
+}
+
+#last-projects .flex
+{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+#last-projects .thumbnail
+{
+	margin: 0 15px 0;
+}
+
+#last-projects p
+{
+	margin-bottom: 40px;
+}
+
+#last-projects .flex
+{
+	margin-bottom: 60px
+}
+
+b
+{
+	font-weight: 600;
+}

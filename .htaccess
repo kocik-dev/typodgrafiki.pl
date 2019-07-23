@@ -1,0 +1,10 @@
+# Redirects for 404 to archiv.example.com
+# only if query "?redirected" is not in url
+RewriteEngine On
+RewriteCond %{QUERY_STRING} !redirected
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) /error404.php [R=301,L,QSA]
+
+# Location of the error document
+ErrorDocument 404 /error404.php

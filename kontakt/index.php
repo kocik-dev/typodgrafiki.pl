@@ -1,7 +1,6 @@
 <?php 
     define('BASE_PATH', '../');
     $menu5_active = 1;
-    include (BASE_PATH.'assets/contact-form/mail.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
@@ -14,41 +13,40 @@
         <?php include (BASE_PATH.'assets/top.php'); ?>
         <div id="contact" class="section text-center container bg-white">
 
-            <?php if(!empty($emailSent)): ?>
-                <h3>Wysłane</h3>
-                <div class="alert alert-success text-center"><?php echo $config->get('messages.success'); ?></div>
-            <?php else: ?>
-                <h3>Napisz</h3>
-                <?php if(!empty($hasError)): ?>
-                    <div class="alert alert-danger text-center"><?php echo $config->get('messages.error'); ?></div>
-                <?php endif; ?>
-                <form action="<?php echo BASE_PATH ?><?php echo $_SERVER['REQUEST_URI']; ?>" enctype="application/x-www-form-urlencoded" id="contact-form" method="POST">
-                  <div class="row">
-                      <div class="col-xs-12 col-md-6">
-                          <input type="text" class="form-control" id="form-name" name="form-name" placeholder="<?php echo $config->get('fields.name'); ?>" required>  
-                      </div>
-                      <div class="col-xs-12 col-md-6">
-                          <input type="email" class="form-control" id="form-email" name="form-email" placeholder="<?php echo $config->get('fields.email'); ?>" required>
-                      </div>
-                  </div>
-                  <textarea class="form-control"  id="form-message" name="form-message" placeholder="<?php echo $config->get('fields.message'); ?>" required></textarea>
-                  <label class="checkbox">
-                      <input type="checkbox" checked="checked" required>
-                      <span class="checkmark"></span>
-                      Zgoda na wszystko zawiązane z RODO, FBI i NASA.
-                  </label>
-                  <button class="btn" type="submit">
-                      <span></span>
-                      <span></span>
-                      <?php echo $config->get('fields.btn-send'); ?>
-                  </button>
-                </form>
-            <?php endif; ?>
+          <form role="form" id="contactForm" class="contact-form" data-toggle="validator" class="shake">
+              <div class="form-group">
+                <div class="controls">
+                  <input type="text" id="name" class="form-control" placeholder="Name" required data-error="Please enter your name">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <input type="email" class="email form-control" id="email" placeholder="Email" required data-error="Please enter your email">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <input type="text" id="msg_subject" class="form-control" placeholder="Subject" required data-error="Please enter your message subject">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <textarea id="message" rows="7" placeholder="Massage" class="form-control" required data-error="Write your message"></textarea>
+                  <div class="help-block with-errors"></div>
+                </div>  
+              </div>
 
-            <script type="text/javascript" src="<?php echo BASE_PATH ?>assets/contact-form/contact-form.js"></script>
-            <script type="text/javascript">
-                new ContactForm('#contact-form');
-            </script>
+              <button type="submit" id="submit" class="btn btn-success"></i> Send Message</button>
+              <div id="msgSubmit" class="h3 text-center hidden"></div> 
+              <div class="clearfix"></div>   
+
+            </form>  
+
+            <script type="text/javascript" src="js/form-validator.min.js"></script>  
+            <script type="text/javascript" src="js/contact-form-script.js"></script>
 
         </div>    
         <?php include (BASE_PATH.'assets/copyright.php'); ?>

@@ -19,3 +19,5 @@ return [
         'btn-send' => 'Wyślij'
     ]
 ];
+
+?>

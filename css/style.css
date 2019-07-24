@@ -391,11 +391,13 @@ textarea.form-control
 	padding-top: 170px;
     padding-bottom: 58px;
     margin-top: -88px;
+    color: #7f7f83;
 }
 
 #copyright h4
 {
 	font-size: 25px;
+	color: #252529;
 }
 
 .navbar-toggle
@@ -631,7 +633,7 @@ body.open-menu
 
 .social svg 
 {
-	fill: #262629;
+	fill: currentColor;
     transition: .2s all ease;
 }
 
@@ -640,10 +642,22 @@ body.open-menu
 	text-decoration: none;
 	    padding: 15px;
     display: inline-block;
-    border: 2px solid #000;
-    border-image: url(../images/btn.jpg) 25%;
+    border: 2px solid #bdb8b0;
+    /*border-image: url(../images/btn.jpg) 25%;*/
     border-radius: 50%;
     margin: 0 12px;
+    height: 58px;
+    width: 58px;
+    transition: .2s all ease;
+    color: #252529;
+}
+
+.social a:hover,
+.social a:focus,
+.social a:active
+{
+	border-color: #252529;
+	/*color: #e2af31;*/
 }
 
 .visible-lg

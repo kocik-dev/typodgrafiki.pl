@@ -8,10 +8,19 @@
 	        <span class="icon-bar"></span>
 	        <small class="txt hidden">MENU</small>
 	</button>
-	<button id="topContactButton" class="btn btn-default pull-right" type="button">
-		Przywitaj się
-		<span></span>
-	</button>
+	<?php
+	if ($homepage == 1) {
+	?>
+		<a href="kontakt" id="topContactButton" class="btn btn-default pull-right">
+			Przywitaj się
+			<span></span>
+		</a>
+	<?php } else { ?>
+		<a href="../kontakt" id="topContactButton" class="btn btn-default pull-right">
+			Przywitaj się
+			<span></span>
+		</a>
+	<?php } ?>
 	<div id="top"></div>
 	<div  id="menuToogle" class="nav-menu menu-over text-center">
 		<nav class="nav-menu">
@@ -21,16 +30,16 @@
 				?>
 
 					<a href="o-mnie"><span>T</span>ypek</a>
-					<a href="portfolio">Portfolio</a>
+					<a href="portfolio">Portf<span>o</span>lio</a>
 					<a href="blog" class="disabled">Blog</a>
-					<a href="#contact">Na<span>p</span>isz</a>
+					<a href="kontakt">Kon<span>t</span>akt</a>
 
 				<?php } else { ?>
 					
 					<a href="../o-mnie"<?php if ($menu2_active == 1) { ?> class="active"<?php } ?>><span>T</span>ypek</a>
-					<a href="../portfolio"<?php if ($menu3_active == 1) { ?> class="active"<?php } ?>>Portfolio</a>
+					<a href="../portfolio"<?php if ($menu3_active == 1) { ?> class="active"<?php } ?>>Portf<span>o</span>lio</a>
 					<a href="../blog" class="disabled"<?php if ($menu4_active == 1) { ?> class="active"<?php } ?>>Blog</a>
-					<a href="../#contact">Na<span>p</span>isz</a>
+					<a<?php if ($menu5_active == 1) { ?> class="active"<?php } else{ ?> href="../kontakt"<?php } ?>>Kon<span>t</span>akt</a>
 
 				<?php } ?>
 			</div>

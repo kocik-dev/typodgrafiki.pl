@@ -26,7 +26,7 @@
                     <img class="img-profile img-responsive" src="images/my_face.jpg">
                 </p>
                 <p>
-                    <img class="img-skills img-respnsive" src="images/img-ui.png">
+                    <img class="img-skills img-responsive" src="images/img-ui.png">
                 </p>
             </div>
         </section>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <p>
-                    <a href="portfolio" class="btn btn-primary">Zobacz więcej na <b>Behance</b><span></span></a>
+                    <a href="https://www.behance.net/grzegorz-kocik" target="_blank" class="btn btn-primary">Zobacz więcej na <b>Behance</b><span></span></a>
                 </p>
             </div>
         </section>

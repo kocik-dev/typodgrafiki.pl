@@ -1,7 +1,8 @@
-<?php 
-  define('BASE_PATH', '');
-  $homepage = 1;
-  $menu1_active = 1;
+<?php   
+    define('BASE_PATH', '');
+    include (BASE_PATH.'assets/reset_var.php');
+    $homepage = 1;
+    $menu1_active = 1;
 ?>
 <!DOCTYPE html>
 <html>

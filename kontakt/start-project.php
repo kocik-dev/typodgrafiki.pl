@@ -1,5 +1,6 @@
 <?php 
     define('BASE_PATH', '../');
+    include (BASE_PATH.'assets/reset_var.php');
     $menu5_active = 1;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
@@ -25,7 +26,7 @@
                     </p>
                 </div>
                 <div class="row form-content">
-                    <div class="col-xs-12 col-md-6 form-group">
+                    <div class="col-xs-12 form-group">
                         <label for="name">Imię i nazwisko</label>
                         <div class="help-block with-errors"></div>
                         <input type="text" id="name" class="form-control" placeholder="Jan Kowalski" required data-error="Wpisz swoje imię">
@@ -39,20 +40,15 @@
 
 
 
-                    <div class="col-xs-12 col-md-6 form-group">
-                        <label for="name">Typ projektu</label>
-                        <div class="help-block with-errors"></div>
-                        SELECT
-                        <input type="text" id="name" class="form-control" placeholder="Jan Kowalski" required data-error="Wpisz swoje imię">
+                    <div class="col-xs-12 col-md-6">
+                        <label for="msg_subject">Typ projektu</label>
+                        <select class="form-control" id="msg_subject">
+                            <option value="Website">Website</option>
+                            <option value="Web Design">Web Design</option>
+                            <option value="App Design">App Design</option>
+                            <option value="Identyfikacja wizualna">Identyfikacja wizualna</option>
+                        </select>
                     </div>
-                    <div class="col-xs-12 col-md-6 form-group">
-                        <label for="email">Budżet</label>
-                        <div class="help-block with-errors"></div>
-                        SELECT
-                        <input type="email" class="email form-control" id="email" placeholder="email@domain.com" required data-error="Wpisz swój email">
-                    </div>
-
-
 
                     <div class="col-xs-12 col-md-12 form-group">
                         <label for="message">Dodatkowe szczegóły</label>

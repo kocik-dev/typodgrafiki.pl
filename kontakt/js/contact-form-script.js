@@ -38,7 +38,7 @@ function formSuccess(){
     // submitMSG(true, "Message Submitted!");
 
     $('#contact .form-content').prepend( "<div class='loading-form'><div class='nb-spinner'></div></div>" );
-        window.location.assign("success.php");
+        window.location.assign("success");
 }
 
 function formError(){

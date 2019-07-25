@@ -474,6 +474,7 @@ label
 #contact .form-group
 {
 	position: relative;
+	margin-bottom: 20px;
 }
 
 #section1
@@ -572,6 +573,7 @@ label
     cursor: pointer;
     outline: none;
     color: #fff;
+    z-index: 11;
 }
 
 #topContactButton.close
@@ -1180,11 +1182,6 @@ body.open-menu
 
 /*phone-upper-boundary*/
 @media (min-width: 600px) {
-
-	label[for='message']
-	{
-		margin-top: 20px;
-	}
 
 	#blog .left-row:before
 	{

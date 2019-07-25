@@ -7,10 +7,10 @@
                 Powinniśmy ustawić się w kolejce do czatu. Kupię kawę.
             </p>
             <p class="text-center">
-                <button class="btn btn-primary">
+                <a href="kontakt/start-project" class="btn btn-primary">
                     Start
                     <span></span>
-                </button>
+                </a>
             </p>
         </div>
     </div>

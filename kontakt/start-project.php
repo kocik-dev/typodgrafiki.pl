@@ -52,7 +52,7 @@
                         <input type="email" class="email form-control" id="email" placeholder="email@domain.com" required data-error="Wpisz swój email">
                     </div>
 
-                    
+
 
                     <div class="col-xs-12 col-md-12 form-group">
                         <label for="message">Dodatkowe szczegóły</label>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" id="submit" class="btn btn-success">Wyślij wiadomość<span></span></button>
+                    <button type="submit" id="submit" class="btn btn-success">Wyślij<span></span></button>
                     <div id="msgSubmit"></div>
                 </div>
             </form>

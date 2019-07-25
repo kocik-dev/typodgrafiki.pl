@@ -34,21 +34,22 @@ function submitForm(){
 }
 
 function formSuccess(){
-    $("#contactForm")[0].reset();
-    submitMSG(true, "Message Submitted!")
+    // $("#contactForm")[0].reset();
+    // submitMSG(true, "Message Submitted!");
+
+    $('#contact .form-content').prepend( "<div class='loading-form'><div class='nb-spinner'></div></div>" );
+        window.location.assign("success.php");
 }
 
 function formError(){
-    $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        $(this).removeClass();
-    });
+
 }
 
 function submitMSG(valid, msg){
     if(valid){
-        var msgClasses = "h3 text-center tada animated text-success";
+        var msgClasses = "show text-center text-success";
     } else {
-        var msgClasses = "h3 text-center text-danger";
+        var msgClasses = "show text-center text-danger";
     }
     $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 }

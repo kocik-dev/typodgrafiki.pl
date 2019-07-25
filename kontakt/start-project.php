@@ -18,10 +18,10 @@
                         <img class="img-profile img-responsive" src="../images/my_face.jpg">
                     </p>
                     <h1 class="title">
-                        Kontakt
+                        Stwórzmy razem coś fajnego
                     </h1>
                     <p class="subtitle">
-                        Dziękuję za poświęcenie mi czasu. Jak mogę Ci dzisiaj pomóc?
+                        Jestem podekscytowany na samą myśl o nowym projekcie.<br />Opowiedz mi o swoim pomyśle.
                     </p>
                 </div>
                 <div class="row form-content">
@@ -29,17 +29,35 @@
                         <label for="name">Imię i nazwisko</label>
                         <div class="help-block with-errors"></div>
                         <input type="text" id="name" class="form-control" placeholder="Jan Kowalski" required data-error="Wpisz swoje imię">
+                        
                     </div>
                     <div class="col-xs-12 col-md-6 form-group">
                         <label for="email">Email</label>
                         <div class="help-block with-errors"></div>
                         <input type="email" class="email form-control" id="email" placeholder="email@domain.com" required data-error="Wpisz swój email">
-                        
                     </div>
-                    <div class="col-xs-12 col-md-12 form-group">
-                        <label for="message">Wiadomość</label>
+
+
+
+                    <div class="col-xs-12 col-md-6 form-group">
+                        <label for="name">Typ projektu</label>
                         <div class="help-block with-errors"></div>
-                        <textarea id="message" rows="7" placeholder="Cześć, piszę do Ciebie..." class="form-control" required data-error="Wpisz treść wiadomości"></textarea>
+                        SELECT
+                        <input type="text" id="name" class="form-control" placeholder="Jan Kowalski" required data-error="Wpisz swoje imię">
+                    </div>
+                    <div class="col-xs-12 col-md-6 form-group">
+                        <label for="email">Budżet</label>
+                        <div class="help-block with-errors"></div>
+                        SELECT
+                        <input type="email" class="email form-control" id="email" placeholder="email@domain.com" required data-error="Wpisz swój email">
+                    </div>
+
+                    
+
+                    <div class="col-xs-12 col-md-12 form-group">
+                        <label for="message">Dodatkowe szczegóły</label>
+                        <div class="help-block with-errors"></div>
+                        <textarea id="message" rows="7" placeholder="Opowiem Ci o swoim pomyśle..." class="form-control" required data-error="Wpisz treść wiadomości"></textarea>
                     </div>
                 </div>
                 <div class="text-center">

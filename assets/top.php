@@ -2,6 +2,7 @@
 	<div id="logo" class="pull-left">
 		<a href="/"><img src="<?php echo BASE_PATH ?>images/logo.png" width="171" height="41" alt="Logo"></a>
 	</div>
+	<?php if ($form_success != 1) { ?>
 	<button id="menuToogleButton" class="navbar-toggle pull-right" type="button" data-toggle="collapse" data-target="#menuToogle" aria-controls="menuToogle" aria-expanded="false" aria-label="Menu navigation">
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
@@ -9,18 +10,28 @@
 	        <small class="txt hidden">MENU</small>
 	</button>
 	<?php
+	}
+
 	if ($homepage == 1) {
 	?>
 		<a href="kontakt" id="topContactButton" class="btn btn-default pull-right">
 			Przywitaj się
 			<span></span>
 		</a>
+
+	<?php } elseif ($menu5_active == 1) { ?>
+
+		<a href="../" id="topContactButton" class="close pull-right"></a>		
+
+	<?php } elseif ($form_success == 1) { ?>
+
 	<?php } else { ?>
 		<a href="../kontakt" id="topContactButton" class="btn btn-default pull-right">
 			Przywitaj się
 			<span></span>
 		</a>
 	<?php } ?>
+
 	<div id="top"></div>
 	<div  id="menuToogle" class="nav-menu menu-over text-center">
 		<nav class="nav-menu">

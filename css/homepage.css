@@ -3,35 +3,6 @@ h1, h2, h3, h4, h5, .title
 	color: #252529;
 }
 
-.container
-{
-	max-width: 1270px;
-	padding: 0 30px;
-	margin: 0 auto;
-}
-
-#section1
-{
-	padding-top: 95px;
-}
-
-.section .title
-{
-	font-size: 44px;
-	margin: 0 0 14px;
-}
-
-.subtitle
-{
-	font-size: 21px;
-	margin: 0 0 52px;
-}
-
-.img-profile
-{
-	border-radius: 50%;
-}
-
 #skils .thumbnail
 {
 	max-width: 380px;
@@ -42,8 +13,7 @@ h1, h2, h3, h4, h5, .title
 }
 
 #skils .thumbnail h2,
-#last-projects h3,
-#start-project h2
+#last-projects h3
 {
 	font-size: 30px;
 }
@@ -90,45 +60,9 @@ h1, h2, h3, h4, h5, .title
 }
 
 #skils .flex,
-#last-projects .flex,
-#start-project .flex
+#last-projects .flex
 {
 	justify-content: center;
-}
-
-#start-project
-{
-	margin-top: 50px;
-}
-
-#start-project .thumbnail
-{
-	background-color: #252529;
-	box-shadow: 0 6px 10px rgba(0,0,0, .13);
-	color: #9f9fa5;
-	padding:  65px 0px;
-	position: relative;
-}
-
-#start-project .thumbnail > *
-{
-	width: 33%;
-}
-
-#start-project .thumbnail p
-{
-	margin: 0;
-}
-
-#start-project .thumbnail .btn,
-#start-project .thumbnail h2
-{
-	color: #fff;
-}
-
-#start-project .thumbnail h2
-{
-	padding-top: 11px;
 }
 
 #last-projects

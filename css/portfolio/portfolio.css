@@ -112,6 +112,11 @@ body
 	{
 		display: block;
 	}
+
+	img.visible-md
+	{
+		display: inline-block !important;
+	}
 }
 
 @media (min-width: 1200px){

@@ -76,17 +76,23 @@
         </section>
         <section id="last-projects" class="section text-center">
             <div class="container">
-                <h3>Przykładowe projekty</h3>
+                <h3>Ostatnie projekty</h3>
                 <p>Przyjrzyj się zrealizowanym przeze mnie projektom.</p>
                 <div class="flex">
                     <div class="thumbnail">
-                        <img class="img-responsive" src="images/last-project/bulkibezbibulki.jpg">
+                        <a href="portfolio/mountain">
+                            <img class="img-responsive" src="images/last-project/mountain-bag.jpg" alt="Projekct - Mountain Bag" title="Mountain Bag" width="385" height="267">
+                        </a>
                     </div>
                     <div class="thumbnail">
-                        <img class="img-responsive" src="images/last-project/bulkibezbibulki.jpg">
+                        <a href="portfolio/bulkibezbibulki">
+                            <img class="img-responsive" src="images/last-project/bulki-bez-bibulki.jpg" alt="Projekct - Bułki bez bibułki" title="Bułki bez bibułki" width="385" height="267">
+                        </a>
                     </div>
                     <div class="thumbnail">
-                        <img class="img-responsive" src="images/last-project/bulkibezbibulki.jpg">
+                        <a href="portfolio/sincere-feelings">
+                            <img class="img-responsive" src="images/last-project/sincere-feelings.jpg" alt="Projekct - Sincere Feelings" title="Sincere Feelings" width="385" height="267">
+                        </a>
                     </div>
                 </div>
                 <p>

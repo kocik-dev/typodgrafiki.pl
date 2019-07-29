@@ -1607,6 +1607,12 @@ body.open-menu
 	    padding-top: 110px;
 	    padding-bottom: 80px;
 	}
+
+	#start-project .thumbnail
+	{
+		text-align: left;
+	}
+
 }
   
 /*desktop-upper-boundary*/

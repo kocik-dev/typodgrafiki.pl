@@ -115,6 +115,11 @@ b
 	{
 		margin-top: -78px;
 	}
+
+	#skils .flex, #last-projects .flex
+	{
+		align-items: stretch;
+	}
 }
 
 @media (min-width: 900px) {

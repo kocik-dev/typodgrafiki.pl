@@ -7,7 +7,6 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
-	        <!-- <small class="txt hidden">MENU</small> -->
 	</button>
 	<?php
 	}

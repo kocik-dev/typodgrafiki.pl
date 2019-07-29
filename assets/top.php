@@ -14,7 +14,7 @@
 
 	if ($homepage == 1) {
 	?>
-		<a href="kontakt" id="topContactButton" class="btn btn-default pull-right">
+		<a href="kontakt" id="topContactButton" class="btn btn-default pull-right hidden-xs">
 			Napisz do mnie
 			<span></span>
 		</a>
@@ -26,7 +26,7 @@
 	<?php } elseif ($form_success == 1) { ?>
 
 	<?php } else { ?>
-		<a href="../kontakt" id="topContactButton" class="btn btn-default pull-right">
+		<a href="../kontakt" id="topContactButton" class="btn btn-default pull-right hidden-xs">
 			Napisz do mnie
 			<span></span>
 		</a>

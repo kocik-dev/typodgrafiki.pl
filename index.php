@@ -18,7 +18,7 @@
         <section id="section1" class="section text-center">
             <div class="container">
                 <h1 class="title">
-                    Designer & Front-end Developer
+                    Designer & <span class="nowrap">Front-end</span> Developer
                 </h1>
                 <p class="subtitle">
                     Projektuję piękne rzeczy, koduję i lubię to co robię.

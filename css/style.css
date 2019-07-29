@@ -171,6 +171,7 @@ p, ul
 .flex
 {
 	display: flex;
+	flex-direction: column;
 }
 
 .clearfix:after,
@@ -479,20 +480,20 @@ label
 
 #section1
 {
-	padding-top: 95px;
+	padding-top: 50px;
 }
 
 .section .title
 {
 	font-size: 44px;
-	margin: 0 0 28px;
+	margin: 0 0 22px;
 	color: #252529;
 }
 
 .subtitle
 {
 	font-size: 21px;
-	margin: 0 0 52px;
+	margin: 0 0 30px;
 	line-height: 150%;
 }
 
@@ -504,8 +505,7 @@ label
 #copyright
 {
 	background-color: #e5e2dd;
-	padding-top: 170px;
-    padding-bottom: 58px;
+	padding-top: 140px;
     margin-top: -88px;
     color: #7f7f83;
 }
@@ -787,7 +787,7 @@ body.open-menu
 
 .social
 {
-	margin: 50px 0;
+	margin: 35px 0;
 }
 
 .social svg 
@@ -804,7 +804,7 @@ body.open-menu
     border: 2px solid #bdb8b0;
     /*border-image: url(../images/btn.jpg) 25%;*/
     border-radius: 50%;
-    margin: 0 12px;
+    margin: 0 4px;
     height: 58px;
     width: 58px;
     transition: .2s all ease;
@@ -1051,7 +1051,7 @@ body.open-menu
 
 #start-project
 {
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
 #start-project .thumbnail
@@ -1059,13 +1059,9 @@ body.open-menu
 	background-color: #252529;
 	box-shadow: 0 6px 10px rgba(0,0,0, .13);
 	color: #9f9fa5;
-	padding:  65px 0px;
+	padding: 35px 20px 40px;
 	position: relative;
-}
-
-#start-project .thumbnail > *
-{
-	width: 33%;
+	text-align: center;
 }
 
 #start-project .thumbnail p
@@ -1079,9 +1075,15 @@ body.open-menu
 	color: #fff;
 }
 
+#start-project .thumbnail .btn
+{
+	margin-top: 20px;
+}
+
 #start-project .thumbnail h2
 {
 	padding-top: 11px;
+	margin-bottom: 18px;
 }
 
 .visible-md
@@ -1182,6 +1184,62 @@ body.open-menu
 
 /*phone-upper-boundary*/
 @media (min-width: 600px) {
+
+	#start-project
+	{
+		margin-top: 35px;
+	}
+
+	.social
+	{
+		margin: 50px 0;
+	}
+
+	.social a
+	{
+	    margin: 0 12px;
+	}
+
+	#copyright
+	{
+		padding-top: 170px;
+		padding-bottom: 58px;
+	}
+
+	#start-project .thumbnail .btn
+	{
+		margin-top: 0;
+	}
+
+	#start-project .thumbnail h2
+	{
+		margin-bottom: 0;
+	}
+
+	#start-project .thumbnail
+	{
+		padding: 65px 0px;
+	}
+
+	#start-project .thumbnail > *
+	{
+		width: 33%;
+	}
+
+	#section1
+	{
+		padding-top: 95px;
+	}
+
+	.section .title
+	{
+		margin-bottom: 28px;
+	}
+
+	.subtitle
+	{
+		margin: 0 0 52px;
+	}
 
 	#blog .left-row:before
 	{

@@ -26,10 +26,11 @@
                 <p>
                     <img class="img-profile img-responsive" src="images/my_face.jpg">
                 </p>
-                <p>
-                    <img class="img-skills img-responsive" src="images/img-ui.png">
-                </p>
             </div>
+            <p>
+                <img class="hidden-xs img-skills img-responsive" src="images/my-skils-ui.png">
+                <img class="visible-xs img-skills img-responsive" src="images/my-skils-ui-xs.png">
+            </p>
         </section>
         <section id="about-me" class="section text-center">
             <div class="container">
@@ -42,7 +43,7 @@
             <div class="flex">
                 <div class="thumbnail">
                     <h2>Designer</h2>
-                    <img class="img-responsive" src="images/img-designer.png">
+                    <img class="img-responsive" src="images/web-designer.png">
                     <p>Cenię prostą strukturę treści, czyste wzorce projektowe i przemyślane interakcje.</p>
                     <h4>Lubię projektować</h4>
                     <p>UI, Web, Apps, Logo, Key Visual</p>
@@ -58,7 +59,7 @@
                 </div>
                 <div class="thumbnail">
                     <h2>Front-end Developer</h2>
-                    <img class="img-responsive" src="images/img-frontend.png">
+                    <img class="img-responsive" src="images/frontend-developer.png">
                     <p>Lubię kodować rzeczy od podstaw i cieszyć się wprowadzaniem pomysłów w życie.</p>
                     <h4>Używane technologie</h4>
                     <p>HTML, CSS, jQuery, Less</p>

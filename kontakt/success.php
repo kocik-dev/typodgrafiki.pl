@@ -10,6 +10,7 @@
         <title>Kontakt - Typ od grafiki</title>
         <meta name="robots" content="noindex">
         <?php include (BASE_PATH.'assets/head.php'); ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/contact.css">
     </head>
     <body class="bg-dark">
     	<?php include (BASE_PATH.'assets/top.php'); ?>

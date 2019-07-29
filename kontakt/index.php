@@ -9,6 +9,7 @@
     <head>
         <title>Kontakt - Typ od grafiki</title>
         <?php include (BASE_PATH.'assets/head.php'); ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/contact.css">
     </head>
     <body>
         <?php include (BASE_PATH.'assets/top.php'); ?>

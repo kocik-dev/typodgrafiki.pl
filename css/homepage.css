@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, .title
 	max-width: 380px;
 	box-shadow: 0 10px 20px rgba(0,0,0, .07); 
 	background-color: #fff;
-	margin: -78px 15px 15px;
+	margin: -78px 25px 30px;
 	padding: 50px 20px 20px;
 }
 
@@ -45,6 +45,11 @@ h1, h2, h3, h4, h5, .title
 	margin: 25px 0 25px;
 }
 
+#section1 .img-skills
+{
+
+}
+
 #about-me h3
 {
 	font-size: 30px;
@@ -54,20 +59,21 @@ h1, h2, h3, h4, h5, .title
 #skils
 {
 	background-color: #f5f3f1;
-	padding-bottom: 35px;
+	padding-bottom: 20px;
 }
 
 #about-me
 {
 	background-color: #e5e2dd;
 	margin-top: -135px;
-	padding: 185px 0 100px;
+	padding: 170px 0 100px;
 }
 
 #skils .flex,
 #last-projects .flex
 {
 	justify-content: center;
+	align-items: center;
 }
 
 #last-projects
@@ -104,16 +110,24 @@ b
 	color: inherit;
 }
 
-/*phone-upper-boundary*/
 @media (min-width: 600px) {
+	#skils .thumbnail:nth-child(2)
+	{
+		margin-top: -78px;
+	}
+}
+
+@media (min-width: 900px) {
 	#about-me
 	{
-		padding: 185px 0 150px;
+		padding: 170px 0 150px;
 	}
 
 	#skils .thumbnail
 	{
 		margin-bottom: 0;
+		margin-left: 15px;
+		margin-right: 15px;
 	}
 
 	#skils .thumbnail:nth-child(2)

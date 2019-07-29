@@ -9,6 +9,7 @@
     <head>
         <title>Kontakt - Typ od grafiki</title>
         <?php include (BASE_PATH.'assets/head.php'); ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/contact.css">
     </head>
     <body>
         <?php include (BASE_PATH.'assets/top.php'); ?>
@@ -22,7 +23,7 @@
                         Stwórzmy razem coś fajnego
                     </h1>
                     <p class="subtitle">
-                        Jestem podekscytowany na samą myśl o nowym projekcie.<br />Opowiedz mi o swoim pomyśle.
+                        Jestem podekscytowany na samą myśl o nowym projekcie.<br class="hidden-xs" /> Opowiedz mi o swoim pomyśle.
                     </p>
                 </div>
                 <div class="row form-content">
@@ -40,7 +41,7 @@
 
 
 
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-xs-12 col-md-6 form-select">
                         <label for="msg_subject">Typ projektu</label>
                         <select class="form-control" id="msg_subject">
                             <option value="Website">Website</option>

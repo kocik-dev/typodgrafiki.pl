@@ -40,14 +40,14 @@
 				if ($homepage == 1) {
 				?>
 
-					<a href="o-mnie">O <span>T</span>ypie</a>
+					<a href="o-mnie">O <span>M</span>nie</a>
 					<a href="portfolio">Portf<span>o</span>lio</a>
 					<a href="blog" class="disabled">Blog</a>
 					<a href="kontakt">Kon<span>t</span>akt</a>
 
 				<?php } else { ?>
 					
-					<a href="../o-mnie"<?php if ($menu2_active == 1) { ?> class="active"<?php } ?>>O <span>T</span>ypie</a>
+					<a href="../o-mnie"<?php if ($menu2_active == 1) { ?> class="active"<?php } ?>>O <span>M</span>nie</a>
 					<a href="../portfolio"<?php if ($menu3_active == 1) { ?> class="active"<?php } ?>>Portf<span>o</span>lio</a>
 					<a href="../blog" class="disabled"<?php if ($menu4_active == 1) { ?> class="active"<?php } ?>>Blog</a>
 					<a<?php if ($menu5_active == 1) { ?> class="active"<?php } else{ ?> href="../kontakt"<?php } ?>>Kon<span>t</span>akt</a>

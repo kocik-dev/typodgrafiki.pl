@@ -472,7 +472,8 @@ label
 	padding-top: 130px;
 }
 
-#contact .form-group
+#contact .form-group,
+#contact .form-select
 {
 	position: relative;
 	margin-bottom: 20px;
@@ -560,16 +561,10 @@ label
 	top: 0;
 }
 
-#logo
+#topContactButton 
 {
-	right: auto;
-	left: 0;
-}
-
-#topContactButton
-{
-    top: 33px;
-    right: 40px;	
+    top: 4px;
+    right: 5px;	
     cursor: pointer;
     outline: none;
     color: #fff;
@@ -610,6 +605,12 @@ label
 #topContactButton.close:hover:before
 {
 	background-color: #fff;
+}
+
+#logo
+{
+	right: auto;
+	left: 0;
 }
 
 .navbar-toggle .icon-bar {
@@ -870,7 +871,6 @@ body.open-menu
 .portfolio h1
 {
 	margin: 0;
-	color: #d6cfc4;
 	font-weight: 600;
 	font-size: 44px;
 	padding: 30px 0;
@@ -1078,6 +1078,7 @@ body.open-menu
 #start-project .thumbnail .btn
 {
 	margin-top: 20px;
+	width: 80%;
 }
 
 #start-project .thumbnail h2
@@ -1185,60 +1186,20 @@ body.open-menu
 /*phone-upper-boundary*/
 @media (min-width: 600px) {
 
-	#start-project
+	#topContactButton 
 	{
-		margin-top: 35px;
+	    top: 33px;
+	    right: 40px;
 	}
 
-	.social
+	.portfolio h1
 	{
-		margin: 50px 0;
+		color: #d6cfc4;
 	}
 
-	.social a
+	.flex
 	{
-	    margin: 0 12px;
-	}
-
-	#copyright
-	{
-		padding-top: 170px;
-		padding-bottom: 58px;
-	}
-
-	#start-project .thumbnail .btn
-	{
-		margin-top: 0;
-	}
-
-	#start-project .thumbnail h2
-	{
-		margin-bottom: 0;
-	}
-
-	#start-project .thumbnail
-	{
-		padding: 65px 0px;
-	}
-
-	#start-project .thumbnail > *
-	{
-		width: 33%;
-	}
-
-	#section1
-	{
-		padding-top: 95px;
-	}
-
-	.section .title
-	{
-		margin-bottom: 28px;
-	}
-
-	.subtitle
-	{
-		margin: 0 0 52px;
+		flex-direction: row;
 	}
 
 	#blog .left-row:before
@@ -1356,6 +1317,16 @@ body.open-menu
 		padding: 35px 30px;
 		max-width: 820px;
 	}
+
+	#start-project .thumbnail .btn
+	{
+		width: auto;
+	}
+
+	#start-project .thumbnail p
+	{
+		padding: 0 20px;
+	}
 }
   
 /*tablet-portrait-upper-boundary*/
@@ -1463,6 +1434,69 @@ body.open-menu
 		padding-right: 60px;
 		padding-left: 30px;
 	}
+
+	#start-project
+	{
+		margin-top: 35px;
+	}
+
+	.social
+	{
+		margin: 50px 0;
+	}
+
+	.social a
+	{
+	    margin: 0 12px;
+	}
+
+	#copyright
+	{
+		padding-top: 170px;
+		padding-bottom: 58px;
+	}
+
+	#start-project .thumbnail h2
+	{
+		margin-bottom: 0;
+	}
+
+	#start-project .thumbnail
+	{
+		padding: 65px 0px;
+	}
+
+	#start-project .thumbnail > *
+	{
+		width: 33%;
+	}
+
+	#section1
+	{
+		padding-top: 95px;
+	}
+
+	.section .title
+	{
+		margin-bottom: 28px;
+	}
+
+	.subtitle
+	{
+		margin: 0 0 52px;
+	}
+
+	#start-project .thumbnail .btn
+	{
+		margin-top: 0;
+		width: auto;
+	}
+
+	#start-project .thumbnail p
+	{
+		padding: 0;
+	}
+
 	    
 }
   

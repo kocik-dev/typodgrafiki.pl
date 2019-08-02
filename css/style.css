@@ -570,7 +570,6 @@ label
     outline: none;
     color: #fff;
     z-index: 11;
-    display: none;
 }
 
 #topContactButton.close
@@ -1574,8 +1573,6 @@ body.open-menu
 	body:not(.bg-dark) #logo a 
 	{
 		display: inline-block;
-		border-right: 2px solid rgba(214, 207, 196, 0.15);
-		padding-right: 37px;
 	}
 
 	.navbar-toggle .txt
@@ -1625,7 +1622,7 @@ body.open-menu
 		height: 34px;
 		line-height: 34px;
 		top: 13px;
-    	right: 63px;
+    	right: 23px;
 	}
 
 	#topContactButton:not(.close):before 

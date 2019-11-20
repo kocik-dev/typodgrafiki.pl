@@ -82,17 +82,17 @@
                 <div class="flex">
                     <div class="thumbnail">
                         <a href="portfolio/mountain">
-                            <img class="img-responsive" src="images/last-project/mountain-bag.jpg" alt="Projekct - Mountain Bag" title="Mountain Bag" width="385" height="267">
+                            <img class="img-responsive" src="images/last-project/mountain-bag.jpg" alt="Projekt - Mountain Bag" title="Mountain Bag" width="385" height="267">
                         </a>
                     </div>
                     <div class="thumbnail">
                         <a href="portfolio/bulkibezbibulki">
-                            <img class="img-responsive" src="images/last-project/bulki-bez-bibulki.jpg" alt="Projekct - Bułki bez bibułki" title="Bułki bez bibułki" width="385" height="267">
+                            <img class="img-responsive" src="images/last-project/bulki-bez-bibulki.jpg" alt="Projekt - Bułki bez bibułki" title="Bułki bez bibułki" width="385" height="267">
                         </a>
                     </div>
                     <div class="thumbnail">
                         <a href="portfolio/sincere-feelings">
-                            <img class="img-responsive" src="images/last-project/sincere-feelings.jpg" alt="Projekct - Sincere Feelings" title="Sincere Feelings" width="385" height="267">
+                            <img class="img-responsive" src="images/last-project/sincere-feelings.jpg" alt="Projekt - Sincere Feelings" title="Sincere Feelings" width="385" height="267">
                         </a>
                     </div>
                 </div>

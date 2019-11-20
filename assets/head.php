@@ -40,11 +40,6 @@ front-end developer, kodowanie stron internetowych, html, css, strona internetow
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 <script type="text/javascript">
-	function parallaxMenu(){
-         var scrolled = $(window).scrollTop();
-         $('#top').css('background-position', 'center '+ (scrolled*(-1))+'px');
-    };
-
 	jQuery(function($) {
 	    $('#back-to-top').on('click', function (e) {
 	        e.preventDefault();

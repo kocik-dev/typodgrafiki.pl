@@ -7,13 +7,13 @@
   gtag('config', 'UA-141388303-1');
 </script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 <meta name="author" content="Grzegorz Kocik" />
-<meta name="description" content="Grafik freelancer, Front-end Developer, projektant stron intermetowych. Potrzebujesz webdesignera, który stworzy intuicyjną, ładną, oraz używalną stronę intentetową? Zapraszam do kontaktu." />
+<meta name="description" content="Grafik freelancer, UI Designer, Front-end Developer, projektant stron intermetowych. Potrzebujesz webdesignera, który stworzy intuicyjną, ładną, oraz używalną stronę intentetową? Zapraszam do kontaktu." />
 <meta name="keywords"  content="
-front-end developer, kodowanie stron internetowych, html, css, strona internetowa, psd to html, grafik, web developer, web designer, typodgrafiki, Grzegorz Kocik, frontend developer, freelancer" />
+front-end developer, ui designer, kodowanie stron internetowych, html, css, strona internetowa, psd to html, grafik, web developer, web designer, typodgrafiki, Grzegorz Kocik, frontend developer, freelancer, ui, ux designer, ux" />
 <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">

@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, .title
 #skils .thumbnail
 {
 	max-width: 380px;
-	box-shadow: 0 10px 20px rgba(0,0,0, .07); 
+	box-shadow: 0 10px 20px rgba(0,0,0, .07);
 	background-color: #fff;
 	margin: -78px 25px 30px;
 	padding: 50px 20px 20px;
@@ -45,10 +45,10 @@ h1, h2, h3, h4, h5, .title
 	margin: 25px 0 25px;
 }
 
-#section1 .img-skills
+/* #section1 .img-skills
 {
 
-}
+} */
 
 #about-me h3
 {
@@ -91,11 +91,70 @@ h1, h2, h3, h4, h5, .title
 #last-projects .thumbnail
 {
 	margin: 0 15px 25px;
+	position: relative;
+	overflow: hidden;
+}
+
+#last-projects .caption
+{
+	position: absolute;
+	top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #252529cf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	color: #fff;
+	flex-direction: column;
+	opacity: 0;
+	transition: opacity 0.2s ease;
 }
 
 #last-projects p
 {
 	margin-bottom: 25px;
+}
+
+#last-projects .caption h4
+{
+	font-weight: 600;
+	margin-bottom: 25px;
+    font-size: 16px;
+	position: relative;
+	top: -5px;
+	transition: all 0.2s ease;
+}
+
+#last-projects .caption .btn
+{
+	top: 5px;
+}
+
+#last-projects .caption h4,
+#last-projects .caption .btn
+{
+	color: inherit;
+	opacity: 0;
+}
+
+#last-projects .thumbnail:hover .caption
+{
+	opacity: 1;
+}
+
+#last-projects .thumbnail:hover .caption h4,
+#last-projects .thumbnail:hover .caption .btn
+{
+	top: 0;
+	opacity: 1;
+}
+
+#last-projects .thumbnail:hover > img
+{
+	filter: blur(2px);
+    -webkit-filter: blur(2px);
 }
 
 b

@@ -4,21 +4,21 @@ $errorMSG = "";
 
 // NAME
 if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
+    $errorMSG = "Imię jest wymagane ";
 } else {
     $name = $_POST["name"];
 }
 
 // EMAIL
 if (empty($_POST["email"])) {
-    $errorMSG .= "Email is required ";
+    $errorMSG .= "Email jest wymagany ";
 } else {
     $email = $_POST["email"];
 }
 
 // MSG SUBJECT
 if (empty($_POST["msg_subject"])) {
-    $errorMSG .= "Subject is required ";
+    $errorMSG .= "Tytuł jest wymagany ";
 } else {
     $msg_subject = $_POST["msg_subject"];
 }
@@ -26,13 +26,13 @@ if (empty($_POST["msg_subject"])) {
 
 // MESSAGE
 if (empty($_POST["message"])) {
-    $errorMSG .= "Message is required ";
+    $errorMSG .= "Wiadomość jest wymagana ";
 } else {
     $message = $_POST["message"];
 }
 
 
-$EmailTo = "grzegorz.kocik@icloud.com";
+$EmailTo = "typodgrafiki@gmail.com";
 $Subject = "Typodgrafiki.pl [Nowa wiadomosc]";
 
 // prepare email body text
@@ -58,7 +58,7 @@ if ($success && $errorMSG == ""){
    echo "success";
 }else{
     if($errorMSG == ""){
-        echo "Something went wrong :(";
+        echo "Coś poszło nie tak :(";
     } else {
         echo $errorMSG;
     }

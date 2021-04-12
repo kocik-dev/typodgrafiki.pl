@@ -576,6 +576,7 @@ label
     outline: none;
     color: #fff;
     z-index: 11;
+	display: none;
 }
 
 #topContactButton.close
@@ -1541,6 +1542,12 @@ body.open-menu
 	#topContactButton
 	{
 		display: block;
+	}
+
+	.navbar-toggle
+	{
+		right: auto;
+		left: 155px;
 	}
 
 

@@ -4,10 +4,11 @@
     $menu5_active = 1;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="pl-PL">
 
 <head>
     <title>Kontakt - Typ od grafiki</title>
+    <link rel="canonical" href="http://typodgrafiki.pl/kontakt/" />
     <?php include (BASE_PATH.'assets/head.php'); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/contact.css">
 </head>

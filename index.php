@@ -5,17 +5,19 @@
     $menu1_active = 1;
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pl-PL">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Typ od grafiki - Grafik freelancer / Front-end Developer</title>
+    <title>Typ od grafiki - UI Designer / Frontend Developer</title>
     <?php include (BASE_PATH.'assets/head.php'); ?>
     <link rel="stylesheet" type="text/css" href="css/homepage.css">
 </head>
 
 <body class="bg-white">
+    <div id="animationLoad"></div>
+    <script type="text/javascript" src="js/onload.js"></script>
     <?php include (BASE_PATH.'assets/top.php'); ?>
     <section id="section1" class="section text-center">
         <div class="container">
@@ -37,7 +39,7 @@
             <picture>
                 <source type="image/webp" srcset="images/ui-designer-skils.webp">
                 <source type="image/png" srcset="images/ui-designer-skils.png">
-                <img  src="images/ui-designer-skils.png" width="1037" height="395" alt="Typodgrafiki - UI Designer & Front-end Developera" title="Typodgrafiki - UI & Front-end Developera">
+                <img class="hidden-xs img-skills img-responsive" src="images/ui-designer-skils.png" width="1037" height="395" alt="Typodgrafiki - UI Designer & Front-end Developera" title="Typodgrafiki - UI & Front-end Developera">
             </picture>
             <picture>
                 <source type="image/webp" srcset="images/ui-designer-skils-xs.webp">

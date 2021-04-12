@@ -47,14 +47,14 @@
 
 					<a href="o-mnie"><span>T</span>ypek</a>
 					<a href="portfolio">Portfolio</a>
-					<a href="blog" class="disabled">Blog</a>
+					<a href="blog" rel="nofollow" class="disabled">Blog</a>
 					<a href="kontakt">Na<span>p</span>isz</a>
 
 				<?php } else { ?>
 
 					<a href="../o-mnie"<?php if ($menu2_active == 1) { ?> class="active"<?php } ?>><span>T</span>ypek</a>
 					<a href="../portfolio"<?php if ($menu3_active == 1) { ?> class="active"<?php } ?>>Portfolio</a>
-					<a href="../blog" class="disabled"<?php if ($menu4_active == 1) { ?> class="active"<?php } ?>>Blog</a>
+					<a href="../blog" rel="nofollow" class="disabled"<?php if ($menu4_active == 1) { ?> class="active"<?php } ?>>Blog</a>
 					<a href="../kontakt">Na<span>p</span>isz</a>
 
 				<?php } ?>

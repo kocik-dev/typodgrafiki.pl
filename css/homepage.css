@@ -1,3 +1,65 @@
+@keyframes progress1 {
+	0% {
+		width: 0%;
+	}
+	99% {
+		width: 100%;
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes progressBefore {
+	0% {
+		bottom: 50%;
+	}
+	99% {
+		bottom: 100%;
+		display: block;
+	}
+	100% {
+		bottom: 100%;
+		display: none;
+	}
+}
+
+@keyframes progressAfter {
+	0% {
+		top: 50%;
+	}
+	99% {
+		top: 100%;
+		display: block;
+	}
+	100% {
+		top: 100%;
+		display: none;
+	}
+}
+
+@keyframes onLoad {
+	0% {
+		display: block;
+		top: 0;
+	}
+	100% {
+		display: none;
+		top:  100%;
+		z-index: -999;
+	}
+}
+
+@keyframes onLoadOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 h1, h2, h3, h4, h5, .title
 {
 	color: #252529;
@@ -151,6 +213,7 @@ h1, h2, h3, h4, h5, .title
 	opacity: 1;
 }
 
+#last-projects .thumbnail:hover picture img,
 #last-projects .thumbnail:hover > img
 {
 	filter: blur(2px);
@@ -168,6 +231,78 @@ b
 	white-space: nowrap;
 	color: inherit;
 }
+
+#animationLoad
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+	animation: onLoad 0.1s linear;
+	animation-delay: 1.3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+#animationLoad:before,
+#animationLoad:after
+{
+	content: '';
+	display: block;
+	position: absolute;
+	background-color: #252529;
+    left: 0;
+    right: 0;
+}
+
+#animationLoad:before
+{
+    top: 0;
+    bottom: 50%;
+	animation: progressBefore 0.3s infinite;
+	animation-delay: 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+#animationLoad:after
+{
+	top: 50%;
+    bottom: 0;
+	animation: progressAfter 0.3s infinite;
+	animation-delay: 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+#animationLoad span
+{
+	position: fixed;
+	top: 50%;
+	margin-top: -2px;
+	display: block;
+	height: 3px;
+	background: rgb(245,207,108);
+	background: linear-gradient(90deg, rgba(245,207,108,1) 0%, rgba(134,93,30,1) 100%);
+	width: 0;
+	animation: progress1 1s infinite;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+#logo,
+#menuToogleButton,
+#topContactButton
+{
+	opacity: 0;
+	animation: onLoadOpacity .5s infinite;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-delay: 1.5s;
+}
+
 
 @media (min-width: 600px) {
 	#skils .thumbnail:nth-child(2)

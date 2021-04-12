@@ -12,8 +12,7 @@
 
 <meta name="author" content="Grzegorz Kocik" />
 <meta name="description" content="Grafik freelancer, UI Designer, Front-end Developer, projektant stron intermetowych. Potrzebujesz webdesignera, który stworzy intuicyjną, ładną, oraz używalną stronę intentetową? Zapraszam do kontaktu." />
-<meta name="keywords"  content="
-front-end developer, ui designer, kodowanie stron internetowych, html, css, strona internetowa, psd to html, grafik, web developer, web designer, typodgrafiki, Grzegorz Kocik, frontend developer, freelancer, ui, ux designer, ux" />
+<meta name="keywords"  content="front-end developer, ui designer, kodowanie stron internetowych, html, css, strona internetowa, psd to html, grafik, web developer, web designer, typodgrafiki, Grzegorz Kocik, frontend developer, freelancer, ui, ux designer, ux" />
 <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
@@ -34,28 +33,20 @@ front-end developer, ui designer, kodowanie stron internetowych, html, css, stro
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/reset.css">
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>css/style.css">
 
-<link href="https://fonts.googleapis.com/css?family=Poppins:400,600&amp;subset=latin-ext" rel="stylesheet">
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-<script type="text/javascript">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+<script>
 	jQuery(function($) {
-	    $('#back-to-top').on('click', function (e) {
-	        e.preventDefault();
-	        $('html,body').animate({
-	            scrollTop: 0
-	        }, 700);
-	    });
-
 		$( "#menuToogleButton, #menuToogleButton2" ).click(function() {
 		  	$('#menuToogleButton').toggleClass('open');
 		  	$('body').toggleClass('open-menu');
 		});
-
-		$( "#menuToogle .nav-menu a[href='#contact']" ).click(function() {
-		  	$('#menuToogleButton').toggleClass('open');
-		  	$('body').toggleClass('open-menu');
+		$(document).keydown(function(e){
+			if (event.keyCode === 27){
+				$('#menuToogleButton').removeClass('open');
+		  		$('body').removeClass('open-menu');
+			}
 		});
 	});
 </script>

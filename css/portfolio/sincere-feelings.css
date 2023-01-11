@@ -3,22 +3,22 @@
 	background-color: transparent;
 }
 
-body 
+body
 {
 	padding-top: 0;
 }*/
 
-#portfolio-show 
+#portfolio-show
 {
 	color: #96918c;
 }
 
-.bg-dark 
+.bg-dark
 {
 	background-color: #141110;
 }
 
-.container 
+.container
 {
 	padding-left: 20px;
 	padding-right: 20px;
@@ -91,7 +91,7 @@ body
 	font-size: 20px;
 }
 
-.typography p 
+.typography p
 {
 	line-height: 160%;
 }
@@ -117,7 +117,7 @@ body
 	font-weight: 300;
 }
 
-.logo 
+.logo
 {
 	padding-top: 60px;
 	padding-bottom: 50px;
@@ -225,13 +225,13 @@ body
 		float: left;
 	}
 
-	.container 
+	.container
 	{
 		padding-left: 30px;
 		padding-right: 30px;
 	}
 
-	.logo 
+	.logo
 	{
 		padding-top: 160px;
 		padding-bottom: 100px;
@@ -256,13 +256,13 @@ body
 		padding-right: 8%;
 	}
 
-	.marks 
+	.marks
 	{
 		padding-top: 110px;
 		padding-bottom: 130px;
 	}
 
-	.marks h2 
+	.marks h2
 	{
 		margin-bottom: 105px;
 	}
@@ -278,7 +278,7 @@ body
 		padding: 0 10%;
 	}
 
-	.marks .relative 
+	.marks .relative
 	{
 		margin-bottom: 20px;
 	}

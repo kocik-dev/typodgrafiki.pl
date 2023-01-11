@@ -1,5 +1,6 @@
-<?php 
+<?php   
     define('BASE_PATH', '../');
+    include (BASE_PATH.'assets/reset_var.php');
     $menu4_active = 1;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"

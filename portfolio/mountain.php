@@ -1,9 +1,10 @@
-<?php 
-    define('BASE_PATH', '../')
+<?php
+    define('BASE_PATH', '../');
+    include (BASE_PATH.'assets/reset_var.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="pl-PL">
     <head>
         <title>Typ od grafiki - Portfolio (Mountain Bag)</title>
         <?php include (BASE_PATH.'assets/head.php'); ?>
@@ -30,8 +31,8 @@
         <?php include (BASE_PATH.'assets/top-portfolio.php'); ?>
         <div id="portfolio-show" class="clearfix bg-white portfolio text-center">
             <div class="bg-dark">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_00.jpg" width="1900" height="916" alt="Mountain">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_00_xs.jpg" width="900" height="434" alt="Mountain">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_00.jpg" width="1900" height="916" alt="Typodgrafiki - Projekt sklepu Mountain" title="Typodgrafiki - Projekt sklepu Mountain">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_00_xs.jpg" width="900" height="434" alt="Typodgrafiki - Projekt sklepu Mountain" title="Typodgrafiki - Projekt sklepu Mountain">
                 <div class="description">
                     <div class="container text-center">
                         <h1>Mountain Bag</h1>
@@ -40,35 +41,35 @@
                 </div>
 
 
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_01.jpg" width="1900" height="834" alt="Mountain1">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_02.jpg" width="1900" height="808" alt="Mountain2">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_03.jpg" width="1900" height="876" alt="Mountain3">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_04.jpg" width="1900" height="1015" alt="Mountain4">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_05.jpg" width="1900" height="593" alt="Mountain5">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_06.jpg" width="1900" height="603" alt="Mountain6">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_07.jpg" width="1900" height="926" alt="Mountain7">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_08.jpg" width="1900" height="806" alt="Mountain8">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_09.jpg" width="1900" height="932" alt="Mountain9">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_10.jpg" width="1900" height="712" alt="Mountain10">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_11.jpg" width="1900" height="977" alt="Mountain11">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_12.jpg" width="1900" height="805" alt="Mountain12">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_13.jpg" width="1900" height="936" alt="Mountain13">
-                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_14.jpg" width="1900" height="330" alt="Mountain14">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_01.jpg" width="1900" height="834" alt="Typodgrafiki - Projekt sklepu Mountain 1" title="Typodgrafiki - Projekt sklepu Mountain 1">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_02.jpg" width="1900" height="808" alt="Typodgrafiki - Projekt sklepu Mountain 2" title="Typodgrafiki - Projekt sklepu Mountain 2">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_03.jpg" width="1900" height="876" alt="Typodgrafiki - Projekt sklepu Mountain 3" title="Typodgrafiki - Projekt sklepu Mountain 3">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_04.jpg" width="1900" height="1015" alt="Typodgrafiki - Projekt sklepu Mountain 4" title="Typodgrafiki - Projekt sklepu Mountain 4">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_05.jpg" width="1900" height="593" alt="Typodgrafiki - Projekt sklepu Mountain 5" title="Typodgrafiki - Projekt sklepu Mountain 5">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_06.jpg" width="1900" height="603" alt="Typodgrafiki - Projekt sklepu Mountain 6" title="Typodgrafiki - Projekt sklepu Mountain 6">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_07.jpg" width="1900" height="926" alt="Typodgrafiki - Projekt sklepu Mountain 7" title="Typodgrafiki - Projekt sklepu Mountain 7">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_08.jpg" width="1900" height="806" alt="Typodgrafiki - Projekt sklepu Mountain 8" title="Typodgrafiki - Projekt sklepu Mountain 8">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_09.jpg" width="1900" height="932" alt="Typodgrafiki - Projekt sklepu Mountain 9" title="Typodgrafiki - Projekt sklepu Mountain 9">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_10.jpg" width="1900" height="712" alt="Typodgrafiki - Projekt sklepu Mountain 10" title="Typodgrafiki - Projekt sklepu Mountain 10">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_11.jpg" width="1900" height="977" alt="Typodgrafiki - Projekt sklepu Mountain 11" title="Typodgrafiki - Projekt sklepu Mountain 11">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_12.jpg" width="1900" height="805" alt="Typodgrafiki - Projekt sklepu Mountain 12" title="Typodgrafiki - Projekt sklepu Mountain 12">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_13.jpg" width="1900" height="936" alt="Typodgrafiki - Projekt sklepu Mountain 13" title="Typodgrafiki - Projekt sklepu Mountain 13">
+                <img class="img-responsive visible-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mountain_14.jpg" width="1900" height="330" alt="Typodgrafiki - Projekt sklepu Mountain 14" title="Typodgrafiki - Projekt sklepu Mountain 14">
 
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_01_xs.jpg" width="900" height="442" alt="Mountain1">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_02_xs.jpg" width="900" height="383" alt="Mountain2">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_03_xs.jpg" width="900" height="415" alt="Mountain3">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_04_xs.jpg" width="900" height="481" alt="Mountain4">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_05_xs.jpg" width="900" height="281" alt="Mountain5">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_06_xs.jpg" width="900" height="286" alt="Mountain6">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_07_xs.jpg" width="900" height="439" alt="Mountain7">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_08_xs.jpg" width="900" height="382" alt="Mountain8">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_09_xs.jpg" width="900" height="441" alt="Mountain9">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_10_xs.jpg" width="900" height="337" alt="Mountain10">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_11_xs.jpg" width="900" height="463" alt="Mountain11">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_12_xs.jpg" width="900" height="381" alt="Mountain12">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_13_xs.jpg" width="900" height="443" alt="Mountain13">
-                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_14_xs.jpg" width="900" height="156" alt="Mountain14">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_01_xs.jpg" width="900" height="442" alt="Typodgrafiki - Projekt sklepu Mountain 1" title="Typodgrafiki - Projekt sklepu Mountain 1">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_02_xs.jpg" width="900" height="383" alt="Typodgrafiki - Projekt sklepu Mountain 2" title="Typodgrafiki - Projekt sklepu Mountain 2">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_03_xs.jpg" width="900" height="415" alt="Typodgrafiki - Projekt sklepu Mountain 3" title="Typodgrafiki - Projekt sklepu Mountain 3">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_04_xs.jpg" width="900" height="481" alt="Typodgrafiki - Projekt sklepu Mountain 4" title="Typodgrafiki - Projekt sklepu Mountain 4">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_05_xs.jpg" width="900" height="281" alt="Typodgrafiki - Projekt sklepu Mountain 5" title="Typodgrafiki - Projekt sklepu Mountain 5">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_06_xs.jpg" width="900" height="286" alt="Typodgrafiki - Projekt sklepu Mountain 6" title="Typodgrafiki - Projekt sklepu Mountain 6">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_07_xs.jpg" width="900" height="439" alt="Typodgrafiki - Projekt sklepu Mountain 7" title="Typodgrafiki - Projekt sklepu Mountain 7">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_08_xs.jpg" width="900" height="382" alt="Typodgrafiki - Projekt sklepu Mountain 8" title="Typodgrafiki - Projekt sklepu Mountain 8">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_09_xs.jpg" width="900" height="441" alt="Typodgrafiki - Projekt sklepu Mountain 9" title="Typodgrafiki - Projekt sklepu Mountain 9">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_10_xs.jpg" width="900" height="337" alt="Typodgrafiki - Projekt sklepu Mountain 10" title="Typodgrafiki - Projekt sklepu Mountain 10">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_11_xs.jpg" width="900" height="463" alt="Typodgrafiki - Projekt sklepu Mountain 11" title="Typodgrafiki - Projekt sklepu Mountain 11">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_12_xs.jpg" width="900" height="381" alt="Typodgrafiki - Projekt sklepu Mountain 12" title="Typodgrafiki - Projekt sklepu Mountain 12">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_13_xs.jpg" width="900" height="443" alt="Typodgrafiki - Projekt sklepu Mountain 13" title="Typodgrafiki - Projekt sklepu Mountain 13">
+                <img class="img-responsive hidden-md" src="<?php echo BASE_PATH ?>images/portfolio/mountain/mobile/mountain_14_xs.jpg" width="900" height="156" alt="Typodgrafiki - Projekt sklepu Mountain 14" title="Typodgrafiki - Projekt sklepu Mountain 14">
 
             </div>
             <div class="back-section">

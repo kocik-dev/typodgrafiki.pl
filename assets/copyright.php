@@ -1,8 +1,5 @@
-<div id="copyright" class="text-center clearfix">
-    <p class="title">
-        The end <span>:<span>(</span></span>
-<!--         <br />
-        <a id="back-to-top" href="#" class="link">Do góry</a> -->
-    </p>
-    <p>&#x24B8; 2018 typodgrafiki.pl - Grafik freelancer. Nie kopiuj, nie bądź kseroboyem.</p>    
-</div>
+<footer id="copyright" class="clearfix text-center">
+	<h4>Living, learning, & leveling up one day at a time.</h4>
+	<?php include ('social.php'); ?>
+    <h5>&#x24B8; 2021 typodgrafiki.pl - Grzegorz Kocik - Grafik freelancer, UI Designer, Front-end developer.</h5>
+</footer>

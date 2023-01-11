@@ -1,266 +1,361 @@
-body 
-{
-	background-color: #2a2a2f;
-	color: #d6cfc4;
-	padding-top: 0;
+@keyframes progress1 {
+	0% {
+		width: 0%;
+	}
+	99% {
+		width: 100%;
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 
-h1, h2, h3, h4, h5, h6
-{
-	color: #fff;
+@keyframes progressBefore {
+	0% {
+		bottom: 50%;
+	}
+	99% {
+		bottom: 100%;
+		display: block;
+	}
+	100% {
+		bottom: 100%;
+		display: none;
+	}
 }
 
-#section1
-{
-	background-image: url(../images/mobile/bg1.jpg);
-	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: cover;
-	height: 100vh;
+@keyframes progressAfter {
+	0% {
+		top: 50%;
+	}
+	99% {
+		top: 100%;
+		display: block;
+	}
+	100% {
+		top: 100%;
+		display: none;
+	}
 }
 
-#top 
-{
-	box-shadow: 0 5px 20px rgba(0,0,0, .3);
-	background-color: #3c3c41;
-	background-image: url(../images/mobile/bg1-blur.jpg?v1.1);
-	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: cover;
+@keyframes onLoad {
+	0% {
+		display: block;
+		top: 0;
+	}
+	100% {
+		display: none;
+		top:  100%;
+		z-index: -999;
+	}
 }
 
-#section1 h1
-{
-	font-size: 24px;
-	/*margin-bottom: 28px;*/
-	margin-bottom: 13px;
+@keyframes onLoadOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
-#section1 h2
+h1, h2, h3, h4, h5, .title
 {
-	font-style: italic;
-	font-weight: 400;	
+	color: #252529;
+}
+
+#skils .thumbnail
+{
+	max-width: 380px;
+	box-shadow: 0 10px 20px rgba(0,0,0, .07);
+	background-color: #fff;
+	margin: -78px 25px 30px;
+	padding: 50px 20px 20px;
+}
+
+#skils .thumbnail:nth-child(2)
+{
+	margin-top: 0;
+}
+
+#skils .thumbnail h2,
+#last-projects h3
+{
+	font-size: 30px;
+}
+
+#last-projects h3
+{
+	margin: 0 0 25px;
+}
+
+#skils .thumbnail h4
+{
+	font-size: 19px;
+	margin-bottom: 20px;
+}
+
+#skils .thumbnail p,
+#skils .thumbnail ul
+{
 	margin-bottom: 28px;
 }
 
-#section1 p
+#skils .thumbnail .img-responsive
 {
-	margin-bottom: 16%;
+	margin: 25px 0 25px;
 }
 
-.section
+/* #section1 .img-skills
 {
-	padding: 0 30px;
+
+} */
+
+#about-me h3
+{
+	font-size: 30px;
+	margin-bottom: 35px;
 }
 
-.section .flex
+#skils
 {
-	display: flex;
-	align-items: center;
+	background-color: #f5f3f1;
+	padding-bottom: 20px;
+}
+
+#about-me
+{
+	background-color: #e5e2dd;
+	margin-top: -135px;
+	padding: 170px 0 100px;
+}
+
+#skils .flex,
+#last-projects .flex
+{
 	justify-content: center;
-	height: inherit;
+	align-items: center;
 }
 
-.section .flex .xs-flex-end
+#last-projects
 {
-	align-self: flex-end;	
+	padding-top: 55px;
 }
 
-#contact 
+#last-projects .flex
 {
-	padding-top: 120px;
-	padding-bottom: 150px;
-}
-
-#contact h3
-{
-	font-size: 44px;
-	color: #d6cfc4;
+	margin-left: -15px;
+	margin-right: -15px;
 	margin-bottom: 20px;
-	position: relative;
 }
 
-#contact h3:after
+#last-projects .thumbnail
+{
+	margin: 0 15px 25px;
+	position: relative;
+	overflow: hidden;
+}
+
+#last-projects .caption
+{
+	position: absolute;
+	top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #252529cf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	color: #fff;
+	flex-direction: column;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+#last-projects p
+{
+	margin-bottom: 25px;
+}
+
+#last-projects .caption h4
+{
+	font-weight: 600;
+	margin-bottom: 25px;
+    font-size: 16px;
+	position: relative;
+	top: -5px;
+	transition: all 0.2s ease;
+}
+
+#last-projects .caption .btn
+{
+	top: 5px;
+}
+
+#last-projects .caption h4,
+#last-projects .caption .btn
+{
+	color: inherit;
+	opacity: 0;
+}
+
+#last-projects .thumbnail:hover .caption
+{
+	opacity: 1;
+}
+
+#last-projects .thumbnail:hover .caption h4,
+#last-projects .thumbnail:hover .caption .btn
+{
+	top: 0;
+	opacity: 1;
+}
+
+#last-projects .thumbnail:hover picture img,
+#last-projects .thumbnail:hover > img
+{
+	filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+b
+{
+	font-weight: 600;
+}
+
+.nowrap,
+.title .nowrap
+{
+	white-space: nowrap;
+	color: inherit;
+}
+
+#animationLoad
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+	animation: onLoad 0.1s linear;
+	animation-delay: 1.3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+#animationLoad:before,
+#animationLoad:after
 {
 	content: '';
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	background-color: #2a2a2f;
 	display: block;
-	height: 22px;
-	opacity: .59;
+	position: absolute;
+	background-color: #252529;
+    left: 0;
+    right: 0;
 }
 
-#contact .btn 
+#animationLoad:before
 {
-	width: 100%;
+    top: 0;
+    bottom: 50%;
+	animation: progressBefore 0.3s infinite;
+	animation-delay: 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }
 
-/*phone-only*/
-@media (max-width: 599px) {
-	.section
-	{
-		text-align: center;
-	}
+#animationLoad:after
+{
+	top: 50%;
+    bottom: 0;
+	animation: progressAfter 0.3s infinite;
+	animation-delay: 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }
 
-/*phone-upper-boundary*/
+#animationLoad span
+{
+	position: fixed;
+	top: 50%;
+	margin-top: -2px;
+	display: block;
+	height: 3px;
+	background: rgb(245,207,108);
+	background: linear-gradient(90deg, rgba(245,207,108,1) 0%, rgba(134,93,30,1) 100%);
+	width: 0;
+	animation: progress1 1s infinite;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+#logo,
+#menuToogleButton,
+#topContactButton
+{
+	opacity: 0;
+	animation: onLoadOpacity .5s infinite;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-delay: 1.5s;
+}
+
+
 @media (min-width: 600px) {
-	#section1
+	#skils .thumbnail:nth-child(2)
 	{
-		background-image: url(../images/mobile/bg2.jpg);
-		padding-top: 4%;
+		margin-top: -78px;
 	}
 
-	#top 
+	#skils .flex, #last-projects .flex
 	{
-		background-image: url(../images/mobile/bg2-blur.jpg);
+		align-items: stretch;
+	}
+}
+
+@media (min-width: 900px) {
+	#about-me
+	{
+		padding: 170px 0 150px;
 	}
 
-	.section .flex .sm-flex-center
+	#skils .thumbnail
 	{
-		align-self: center;	
-		width: 50%;
+		margin-bottom: 0;
+		margin-left: 15px;
+		margin-right: 15px;
 	}
 
-	.section .flex
+	#skils .thumbnail:nth-child(2)
 	{
-		justify-content: flex-end;	
+		margin-top: -78px;
 	}
 
-	#section1 p
+	#skils
+	{
+		padding-bottom: 65px;
+	}
+
+	#last-projects
+	{
+		padding-top: 85px;
+	}
+
+	#last-projects .thumbnail
 	{
 		margin-bottom: 0;
 	}
 
-
-/*	#section1 h1
+	#last-projects .flex
 	{
-		margin-bottom: 18px;
-	}*/
-
-	#contact
-	{
-		padding-top: 60px;
-		padding-bottom: 90px;
+		margin-bottom: 60px;
 	}
 
-	.checkbox
+	#last-projects p
 	{
-		margin-top: 11px;
-	}
-
-	.checkbox .checkmark
-	{
-		top: -6px;
-	}
-
-	#contact
-	{	
-		width: 70%;
-		margin-left: auto;
-		margin-right: auto;
+		margin-bottom: 40px;
 	}
 }
-  
-/*tablet-portrait-upper-boundary*/
-@media (min-width: 900px) {
-	#section1
-	{
-		background-image: url(../images/mobile/bg3.jpg);
-		padding-top: 1%;
-	}
-
-	#top 
-	{
-		background-image: url(../images/mobile/bg3-blur.jpg);
-	}
-
-	.section .flex
-	{
-		justify-content: flex-start;	
-	}
-
-	.section .flex .sm-flex-center
-	{
-		width: 35%;
-	}
-}
-  
-/*tablet-landscape-upper-boundary*/
-@media (min-width: 1200px) {
-
-	
-
-	.section .flex .sm-flex-center
-	{
-		width: 29%;
-	}
-
-	.navbar-toggle
-	{
-		top: 34px;
-		left: 270px;
-	}
-
-	.container
-	{
-		max-width: 800px;
-	}
-
-	#contact
-	{
-		text-align: left;
-		padding-top: 140px;
-    	padding-bottom: 220px;
-	}
-
-	#contact h3
-	{
-		font-size: 64px;
-		margin: 0 0 -14px; 
-	}
-
-	#contact h3:after
-	{
-		height: 32px;
-	}
-
-	#form-message
-	{
-		margin-bottom: 10px;
-	}
-
-	#contact .btn
-	{
-		width: auto;
-	}
-
-	#section1 .visible-lg
-	{
-		margin-top: 30px;
-	}
-
-	#section1 p .btn
-	{
-		margin-left: 13px;
-	}
-
-	#section1 h1
-	{
-		margin-bottom: 26px;
-	}
-
-	#section1 h2
-	{
-		margin-bottom: 30px;
-	}
-
-
-
-}
-  
-/*desktop-upper-boundary*/
-@media (min-width: 1800px) { }

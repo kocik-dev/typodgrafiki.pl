@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /kontakt/success
+Disallow: /cv.pdf
+
+Sitemap: http://typodgrafiki.pl/sitemap.xml

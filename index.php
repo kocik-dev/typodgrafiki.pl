@@ -82,11 +82,10 @@
                 <h4>Narzędzia projektowe</h4>
                 <ul>
                     <li>Kartka i ołówek</li>
+                    <li>Figma</li>
                     <li>Photoshop</li>
                     <li>Illustrator</li>
-                    <li>Indesign</li>
-                    <li>Balsamiq Mockups</li>
-                    <li>Invision</li>
+                    <li>ImageOptim</li>
                 </ul>
             </div>
             <div class="thumbnail">
@@ -98,16 +97,16 @@
                 </picture>
                 <p>Lubię kodować rzeczy od podstaw i cieszyć się wprowadzaniem pomysłów w życie.</p>
                 <h4>Używane technologie</h4>
-                <p>HTML, CSS, jQuery, Less</p>
+                <p>JavaScript DOM, jQuery, Git, Bootstrap, SASS/LESS</p>
                 <h4>Narzędzia developerskie</h4>
                 <ul>
-                    <li>Sublime Text</li>
-                    <li>Bootstrap</li>
-                    <li>Bulma</li>
+                    <li>Visual Studio Code</li>
+                    <li>Chrome DevTools</li>
+                    <li>Docker</li>
                     <li>Codepen</li>
                     <li>Github</li>
+                    <li>SmartSVN</li>
                 </ul>
-
             </div>
         </div>
     </section>

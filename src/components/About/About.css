@@ -1,0 +1,25 @@
+#about .caption 
+{
+    max-width: 760px;
+}
+
+#about .vertical-top
+{
+    gap: 0 50px;
+}
+
+#about ul 
+{
+    margin: 0;
+    padding: 0 0 0 14px;
+    list-style: none;
+    line-height: 160%;
+    border-left: 1px solid #ffffff24;
+}
+
+#about h3 
+{
+    margin: 0 0 15px;
+    font-size: 1rem;
+    letter-spacing: 0;
+}

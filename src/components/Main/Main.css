@@ -1,0 +1,40 @@
+#main 
+{
+    display: flex;    
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+}
+
+.face
+{
+    border-radius: 50%;
+}
+
+.subtitle
+{
+    margin: 0 0 20px;
+    font-weight: 300;
+    color: var(--text);
+}
+
+.subtitle .space 
+{
+    opacity: .16;
+    display: inline-block;
+    width: 1px;
+    background-color: #fff;
+    height: 20px;
+    margin: 0 14px;
+}
+
+.caption
+{
+    align-items: flex-start;
+    gap: 0 25px;
+}
+
+.caption img 
+{
+    margin-top: 10px;
+}

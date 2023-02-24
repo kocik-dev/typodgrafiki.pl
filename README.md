@@ -1,4 +1,4 @@
-# Grzegorz Kocik - Portfolio
+# Grzegorz Kocik &#8226; Portfolio
 ## _Front-end developer | UI Designer_
 
 ### Wprowadzenie
@@ -10,7 +10,7 @@ Projekt jest moją stroną osobistą w formie portfolio. Zamieściłem tam infor
 - React
 
 ### Użyte biblioteki
-- [Tailwind CSS]
+- [Normalize]
 
 #### Spis treści
 - O mnie
@@ -24,4 +24,4 @@ Projekt jest moją stroną osobistą w formie portfolio. Zamieściłem tam infor
 
 
 [dribble]: <https://dribbble.com/>
-[Tailwind CSS]: <https://tailwindcss.com/>
+[Normalize]: <https://github.com/necolas/normalize.css/>

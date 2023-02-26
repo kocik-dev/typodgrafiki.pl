@@ -6,15 +6,17 @@ const linkScroll = (el) => {
     el.preventDefault();
     const windowHeight = window.innerHeight * .23;
     const elementId = el.target.getAttribute("href");
-    const section = document.querySelector(elementId);
-    const sectionContact =
-    
+    const section = document.querySelector(elementId);    
     
     window.scroll({
-        top: elementId == '#contact' ? section.offsetTop : section.offsetTop - windowHeight,
+        top: elementId === '#contact' ? section.offsetTop : section.offsetTop - windowHeight,
         behavior: 'smooth'
     });    
 } 
+
+const openCv = () => {
+    console.log('opencv');
+}
 
 const Header = () => {
     return (
@@ -26,7 +28,7 @@ const Header = () => {
                         <a href="#about" onClick={linkScroll}>o mnie</a>
                     </li>
                     <li>
-                        <a href="/cv">cv.pdf</a>
+                        <span onClick={openCv}>cv.pdf</span>
                     </li>
                     <li>
                         <a href="#portfolio" onClick={linkScroll}>sprawdź mnie</a>

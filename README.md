@@ -5,7 +5,8 @@
 Projekt jest moją stroną osobistą w formie portfolio. Zamieściłem tam informacje o sobie, moje przykładowe prace oraz prezentacje moich umiejętności.
 
 ### Technologie
-- HTML/CSS
+- HTML
+- CSS
 - JavaScript
 - React
 

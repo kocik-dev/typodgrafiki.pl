@@ -4,8 +4,8 @@
     padding-top: 10px;
     position: fixed;
     top: 0;
-    left: 4%;
-    right: 4%;
+    left: 3%;
+    right: 3%;
 }
 
 .top a
@@ -28,22 +28,49 @@
     gap: 0 10px;
 }
 
+.menu li 
+{
+    position: relative;
+}
+
 .menu a 
 {
     padding: 10px 20px;
     display: block;
 }
 
-.menu a,
-button
+.menu li:before 
+{
+    content: '';
+    display: block;
+    height: 0px;
+    position: absolute;
+    background-color: #454b5a;
+    top: -10px;
+    left: 20px;
+    right: 20px;
+    border-radius: 0 0 5px 5px;
+    transition: height .15s ease;
+}
+
+.menu li:is(:hover, :focus, :active):before 
+{
+    height: 3px;
+}
+
+.menu a
 {
     position: relative;
     top: 0;
 }
 
+.menu a:is(:hover, :focus, :active)
+{
+    top: 2px;
+}
+
 .menu a:is(:hover, :focus, :active),
-button:is(:hover, :focus, :active)
+header button:is(:hover, :focus, :active)
 {
     opacity: .5;
-    top: 2px;
 }

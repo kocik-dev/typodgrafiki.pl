@@ -1,10 +1,10 @@
 import './About.css';
 
-function About() {
+const About = () => {
     return (
-        <section id="about" className="flex horizontal-center">
-            <div className=" flex">
-                <div className="caption">
+        <section id="about" className="flex horizontal-center margin-section">
+
+                <div className="caption small-width">
                     <h2 className="title-small">O mnie</h2>
                     <p><strong>Frontend developer</strong> o zapleczu graficznym z doświadczeniem w tworzeniu warstwy graficznej ecommerce. Szukam możliwości rozwoju przy projektach wykorzystujących nowe technologie (React)</p>
                     <div className="flex vertical-top">
@@ -28,7 +28,7 @@ function About() {
                         </div>
                     </div>
                 </div>
-            </div>
+
         </section>
     );
 }

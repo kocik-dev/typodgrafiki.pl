@@ -1,0 +1,25 @@
+.wide-width
+{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);   
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.wide-width > div
+{
+    background-color: #0a0c0e;
+    border-radius: 20px;
+    min-height: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .wide-width
+    {
+        grid-template-columns: repeat(4, 1fr);
+    }    
+}

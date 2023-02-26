@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Header from './components/Header/Header';
+import { Header } from './components/Header/Header';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
@@ -10,12 +10,14 @@ import Contact from './components/Contact/Contact';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Header />
-    <Main />
-    <About />
-    <Portfolio />
-    <Contact />
-    <Footer />
-  </React.StrictMode>
+    <div className="bg-gradient">
+        <React.StrictMode>
+            <Header />
+            <Main />
+            <About />
+            <Portfolio />
+            <Contact />
+            <Footer />
+        </React.StrictMode>
+    </div>
 );

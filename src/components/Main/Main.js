@@ -1,7 +1,8 @@
 import faceBig from '../../assets/face.png';
+import { linkScroll } from '../Header/Header';
 import './Main.css';
 
-function Main() {
+const Main = () => {
     return (
         <div id="main" className="window-height">
             <div className="caption flex">
@@ -9,7 +10,7 @@ function Main() {
                 <div>
                     <h1 className="title">Grzegorz Kocik</h1>
                     <h2 className="flex subtitle">Front-end Developer <span className="space"></span> UI Designer</h2>
-                    <a href="#about" className="btn btn-default">Poznaj mnie</a>
+                    <a href="#about" className="btn btn-default" onClick={linkScroll}>Poznaj mnie</a>
                 </div>
             </div>
         </div>

@@ -15,11 +15,50 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px;
+    color: #fff;
+}
+
+.wide-width .name
+{
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.wide-width small 
+{
+    display: block;
+    opacity: .7;
+    font-size: .9rem;
+    line-height: 1.1;
+    font-weight: 300;
+}
+
+.wide-width .box-html 
+{
+    background-color: #c39b4e;
+    color: #171a1f;
+}
+
+.wide-width .box-js
+{
+    background-color: #171a1f;
+}
+
+.wide-width .box-react 
+{
+    background-color: #2a3140;
+}
+
+.wide-width .box-github
+{
+    background-color: #62537e;
 }
 
 @media (min-width: 768px) {
     .wide-width
     {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }    
 }

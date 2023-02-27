@@ -1,5 +1,6 @@
 import logo from '../../assets/logo.svg';
 import darkIcon from '../../assets/dark-mode-icon.svg';
+import { openCv} from '../Cv/Cv';
 import './Header.css';
 
 const linkScroll = (el) => {
@@ -12,10 +13,6 @@ const linkScroll = (el) => {
         top: elementId === '#contact' ? section.offsetTop : section.offsetTop - windowHeight,
         behavior: 'smooth'
     });    
-} 
-
-const openCv = () => {
-    console.log('opencv');
 }
 
 const Header = () => {

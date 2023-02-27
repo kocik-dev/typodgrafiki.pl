@@ -6,7 +6,7 @@ const About = () => {
 
                 <div className="caption small-width">
                     <h2 className="title-small">O mnie</h2>
-                    <p><strong>Frontend developer</strong> o zapleczu graficznym z doświadczeniem w tworzeniu warstwy graficznej ecommerce. Szukam możliwości rozwoju przy projektach wykorzystujących nowe technologie (React)</p>
+                    <p><strong>Front-end developer</strong> o zapleczu graficznym z doświadczeniem w tworzeniu warstwy graficznej ecommerce. Szukam możliwości rozwoju przy projektach wykorzystujących nowe technologie (React)</p>
                     <div className="flex vertical-top">
                         <div>
                             <h3>Czuję się dobrze w:</h3>

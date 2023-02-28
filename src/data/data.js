@@ -16,60 +16,52 @@ const data = {
     ],
     experience: {
         name: 'Doświadczenie zawodowe',
-        sote: {
-            date: '04.2012 - now',
-            position: 'Frontend Developer / Web designer',
-            company: 'SOTE / Poznań',
-            tasks: {
-                1: 'Tworzenie projektów graficznych ecommerce zgodnej z dobrymi praktykami UX/UI,',
-                2: 'Tworzenie warstwy frontend aplikacji w oparciu o silnik oprogramowania  SOTESHOP (bazując na projekcie graficznym),',
-                3: 'Wykonywanie modyfikacji graficznych / frontend w sklepach klientów,',
-                4: 'Uwzględnianie wymogów SEO,',
-                5: 'Rozbudowa i ulepszanie oprogramowania SOTESHOP,',
-                6: 'Projektowanie elementów graficznych,',
-                7: 'Debugowanie i naprawa błędów na stronach klientów,',
-                8: 'Technologie: Czysty HTML5/CSS3, JavaScript DOM, jQuery, Bootstrap, LESS'
-            }
-        },
-        axi: {
-            date: '10.2013 - 03.2014',
-            position: 'Junior Frontend Developer',
-            company: 'AXI / Poznań',
-            tasks: {
-                1: 'Tworzenie warstwy frontend aplikacji w oparciu o silnik oprogramowania  AXI (bazując na projekcie graficznym),',
-                2: 'Debugowanie i naprawa błędów w istniejących stronach,',
-                3: 'Rozbudowa skton klientów,',
-                4: 'Technologie: HTML5, CSS3, jQuery,'
-            }
-        }
+        works: [
+            [
+                {
+                    date: '04.2012 - now',
+                    position: 'Frontend Developer / Web designer',
+                    company: 'SOTE / Poznań',
+                    tasks: [
+                        'Tworzenie projektów graficznych ecommerce zgodnej z dobrymi praktykami UX/UI,',
+                        'Tworzenie warstwy frontend aplikacji w oparciu o silnik oprogramowania  SOTESHOP (bazując na projekcie graficznym),',
+                        'Wykonywanie modyfikacji graficznych / frontend w sklepach klientów,',
+                        'Uwzględnianie wymogów SEO,',
+                        'Rozbudowa i ulepszanie oprogramowania SOTESHOP,',
+                        'Projektowanie elementów graficznych,',
+                        'Debugowanie i naprawa błędów na stronach klientów,',
+                        'Technologie: Czysty HTML5/CSS3, JavaScript DOM, jQuery, Bootstrap, LESS'
+                    ]
+                },
+            ] , [
+                {
+                    date: '10.2013 - 03.2014',
+                    position: 'Junior Frontend Developer',
+                    company: 'AXI / Poznań',
+                    tasks: [
+                        'Tworzenie warstwy frontend aplikacji w oparciu o silnik oprogramowania  AXI (bazując na projekcie graficznym),',
+                        'Debugowanie i naprawa błędów w istniejących stronach,',
+                        'Rozbudowa skton klientów,',
+                        'Technologie: HTML5, CSS3, jQuery,'
+                    ]
+                }      
+            ]
+        ] 
     },
-    side: {
-        1: {
-            data: '04.2015',
-            name: 'Konkurs'
-        },
-        2: {
-            data: '---',
-            name: 'projekt własny js - opisac ze uzywam tu aby rozwinac sie poza praca bo tam nie ma'
-        },
-        3: {
-            data: '---',
-            name: 'jakies uniwersalne style na github albo system design'
-        }
-    },
-    languages: {
-        1: {
-            'polish': 'ojczysty',
-            'english': 'podstawowy'
-        }
-    },
+    side: [
+        ['04.2015', 'Konkurs'],
+        ['---', 'projekt własny js - opisac ze uzywam tu aby rozwinac sie poza praca bo tam nie ma'],
+        ['---', 'jakies uniwersalne style na github albo system design']
+    ],
+    languages: [
+        ['polish', 'ojczysty'],
+        ['english', 'podstawowy']
+    ],
     education: {
-        1: {
-            date: '09.2014 - 09.2017',
-            field: 'Grafika - studia zaoczne,',
-            name: 'Collegium da Vinci',
-            spec: 'Specjalizacja: Grafika wydawnicza'
-        }
+        date: '09.2014 - 09.2017',
+        field: 'Grafika - studia zaoczne,',
+        name: 'Collegium da Vinci',
+        spec: 'Specjalizacja: Grafika wydawnicza'
     },
     interests: 'bieganie, trekking górski'
 }

@@ -43,7 +43,7 @@ body
     line-height: 1.6;
 }
 
-.bg-gradient
+#root
 {
     background: linear-gradient(-65deg, #0a0c0e, #252932, #0a0c0e);
 	background-size: 300% 300%;
@@ -194,4 +194,49 @@ button
 {
     width: 100%;
     justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .col-sm-50 
+    {
+        width: 50%;
+    }    
+}
+
+
+/* light mode */
+
+body.light-mode
+{
+    background-color: #fff;   
+    color: #252932; 
+}
+
+body.light-mode #root
+{
+    background: rgb(255,255,255);
+    background: linear-gradient(132deg, rgba(255,255,255,1) 0%, rgba(232,235,241,1) 50%, rgba(255,255,255,1) 78%);
+}
+
+body.light-mode .title, 
+body.light-mode h1, 
+body.light-mode h2, 
+body.light-mode h3, 
+body.light-mode h4, 
+body.light-mode h5, 
+body.light-mode h6, 
+body.light-mode strong
+{
+    color: inherit;
+}
+
+body.light-mode .btn-default
+{
+    border-color: #252932;
+}
+
+body.light-mode .btn-default:is(:hover, :focus, :active)
+{
+    border-color: #252932;
+    background-color: #252932;
 }

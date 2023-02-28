@@ -13,6 +13,11 @@
     text-decoration: none;    
 }
 
+.logo 
+{
+    cursor: pointer;
+}
+
 .menu ul
 {
     list-style: none;
@@ -96,4 +101,10 @@ header button:hover:before
     right: -10px;
     height: 65px;
     width: 65px;
+}
+
+body.light-mode header button:before
+{
+    background-color: #cdd2dc;
+    mix-blend-mode: darken;
 }

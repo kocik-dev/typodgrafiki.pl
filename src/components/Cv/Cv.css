@@ -35,6 +35,17 @@
     100% { transform: rotate(360deg); }
 }
 
+.shadow
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1a1d24;
+    opacity: .9;
+}
+
 .modal 
 {
     position: fixed;
@@ -52,7 +63,6 @@
 
 .modal ul 
 {
-    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -97,16 +107,122 @@
 
 .modal .content 
 {
-    padding: 3%;
+    padding: 3% 5%;
+    max-height: 100%;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll; 
+    counter-reset: section;
 }
 
-.shadow
+.modal .content strong 
 {
+    color: inherit;
+}
+
+.modal .content::-webkit-scrollbar 
+{
+    display: none;
+}
+
+.modal .content a:is(:hover, :focus, :active),
+.modal .content .text-muted
+{
+    opacity: .5;    
+}
+
+.modal .content .flex
+{
+    align-items: flex-start;
+    gap: 0 30px;
+}
+
+.modal .content section
+{
+    padding-bottom: 40px;
+}
+
+.modal .content h2
+{
+    margin: 0px 0 13px;
+    font-size: 40px;
+    font-weight: 300;    
+}
+
+.modal .content h2 small 
+{
+    font-size: .5em;
+}
+
+.modal .content h2 + section
+{
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.modal .content h2 + section ul 
+{
+    border-right: 1px solid #ddd;
+    padding-right: 30px;
+    list-style: none;
+}
+
+.modal .content h2 + section li
+{
+    white-space: nowrap;    
+}
+
+.modal .content h3
+{
+    font-size: 20px;
+    margin: 0 0 15px;
+}
+
+.modal .content h3:before {
+    counter-increment: section;
+    content: counter(section) ". ";
+}
+
+.modal .content table td 
+{
+    vertical-align: top;
+}
+
+.modal .content table td:nth-child(1)
+{
+    padding-right: 15px;   
+}
+
+.modal .content table,
+.modal .content section > div:not(.col-sm-50)
+{
+    margin-left: 20px;
+}
+
+.modal .works ul
+{
+    margin-left: 16px;    
+}
+
+.modal .works + .works
+{
+    margin-top: 25px;
+}
+
+.close 
+{
+    width: 30px;
+    height: 30px;
+    background-color: red;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #1a1d24;
-    opacity: .9;
+    top: 15px;
+    right: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.close:is(:hover, :focus, :active)
+{
+    background-color: blue;
 }

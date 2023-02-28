@@ -44,6 +44,7 @@
     bottom: 0;
     background-color: #1a1d24;
     opacity: .9;
+    transition: opacity .2s ease;
 }
 
 .modal 
@@ -59,6 +60,7 @@
     animation-name: showModal;
     animation-duration: 1s;
     color: #252932;
+    overflow: hidden;
 }
 
 .modal ul 
@@ -103,6 +105,12 @@
     height: 97dvh;
     animation-name: showModalFull;   
     animation-duration: 1s;
+}
+
+.modal.detach
+{
+    transition: height .2s ease;
+    height: 0;
 }
 
 .modal .content 
@@ -192,6 +200,7 @@
 .modal .content table td:nth-child(1)
 {
     padding-right: 15px;   
+    white-space: nowrap;
 }
 
 .modal .content table,
@@ -212,9 +221,10 @@
 
 .close 
 {
-    width: 30px;
-    height: 30px;
-    background-color: red;
+    width: 31px;
+    height: 31px;
+    padding: 0;
+    border: 1px solid #1a1d24;
     position: absolute;
     top: 15px;
     right: 15px;
@@ -222,7 +232,33 @@
     cursor: pointer;
 }
 
+.close:before,
+.close:after
+{
+    content: '';
+    display: block;
+    height: 1px;
+    width: 16px;
+    background-color: #1a1d24;
+    position: absolute;
+    top: 14px;
+    left: 7px;
+    transition: all .2s ease;
+    transform: rotate(45deg);
+}
+
+.close:after 
+{
+    transform: rotate(-45deg);
+}
+
 .close:is(:hover, :focus, :active)
 {
-    background-color: blue;
+    background-color: #1e222a;
+}
+
+.close:is(:hover, :focus, :active):before,
+.close:is(:hover, :focus, :active):after 
+{
+    background-color: #fff;
 }

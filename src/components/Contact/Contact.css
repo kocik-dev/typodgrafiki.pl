@@ -3,11 +3,18 @@
 {
     border-radius: 0;
     border: none;
-    background-color: #000;
+    background-color: #ffffff0f;
     font-size: 1rem;
     width: 100%;
     padding: 15px 18px;
-    border-radius: 10px;
+    color: #fff;
+    font-family: inherit;
+}
+
+#contact input:focus,
+#contact textarea:focus
+{
+
 }
 
 .form 
@@ -25,7 +32,8 @@
     margin-bottom: 5px;
 }
 
-.form .messege 
+.form .messege,
+.form .submit 
 {
     grid-column: 1 / span 2;
 }

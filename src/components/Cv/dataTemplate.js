@@ -10,18 +10,15 @@ const list = (el) => {
 
 const listExperience = (el) => {
     let output = '';
-    let i = 0;
-    
+      
     el.forEach(element => {
         let j = 0;
-
         output += `
-        <div class="works">
+            <div class="works">
             <div class="date">${element[0].date}</div>
             <div class="title-work"><strong>${element[0].position}</strong></div>
             <div class="company">${element[0].company}</div>
             <ul>`;        
-        
             
         let listLength = element[0].tasks.length;
         element[0].tasks.forEach(task => {
@@ -32,7 +29,6 @@ const listExperience = (el) => {
             }
         });
         
-        i++;
     });
     
     output += `</ul>`;

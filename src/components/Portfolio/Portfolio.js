@@ -12,16 +12,16 @@ const Portfolio = () => {
                     <h2 className="title-small">Przykładowe projekty</h2>
                 </div>
                 <div className="flex wide-width">
-                    <div className="box-html">
-                        <div>
+                    <a href="/html" className="box box-html" target="_blank">
+                        <span >
                             <img src={iconHtml} alt="html i css" width="86" height="50" />
-                            <div className="name">
+                            <span className="name">
                                 <small>Semantyka i stylowanie</small>
                                 w HTML/CSS
-                            </div>
-                        </div>
-                    </div>
-                    <div className="box-js">
+                            </span>
+                        </span>
+                    </a>
+                    <div className="box box-js">
                         <div>
                             <img src={iconJs} alt="javascript" width="50" height="50" />
                             <div className="name">
@@ -30,7 +30,7 @@ const Portfolio = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="box-react">
+                    <div className="box box-react">
                         <div>
                             <img src={iconReact} alt="react" width="50" height="50" />
                             <div className="name">
@@ -39,7 +39,7 @@ const Portfolio = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="box-github">
+                    <div className="box box-github">
                         <div>
                             <img src={iconGithub} alt="github" width="50" height="50" />
                             <div className="name">

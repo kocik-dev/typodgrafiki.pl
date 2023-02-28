@@ -9,15 +9,17 @@ const Contact = () => {
                 <form className="form grid">
                     <div>
                         <label>Imię i nazwisko</label>
-                        <input type="text" name="form-name" placeholder="Imię i nazwisko"/>
+                        <input type="text" name="form-name" placeholder="Jan Kowalski" />
                     </div>
                     <div>
                         <label>Email</label>
-                        <input type="email" name="form-email" placeholder="Email" />
+                        <input type="email" name="form-email" placeholder="jan@example.com" />
                     </div>
                     <div className="messege">
                         <label>Wiadomość</label>
                         <textarea className="form-message"></textarea>
+                    </div>
+                    <div className="submit text-right">
                         <button type="submit" className="btn btn-default">Wyślij</button>
                     </div>
                 </form>

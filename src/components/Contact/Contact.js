@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import EmailsjData from './EmailsjData';
 import './Contact.css';
 import './Loader.css';
-  
+
 const Contact = () => {
     
     const form = useRef();
@@ -22,16 +22,16 @@ const Contact = () => {
         loaderEl.classList.add('show');
         
         
-        setTimeout(() => {
-            formSended({text: 'OK'}, loaderEl);
-        }, "3000");
+        // setTimeout(() => {
+        //     formSended({text: 'OK'}, loaderEl);
+        // }, "3000");
         
       
       emailjs.sendForm(EmailsjData.service, EmailsjData.template, form.current, EmailsjData.publicKey)
-        .then((result, loaderEl) => {
-            formSended(result);
-        }, (error, loaderEl) => {
-            formSended(error);
+        .then((result) => {
+            formSended(result, loaderEl);
+        }, (error) => {
+            formSended(error, loaderEl);
         });
     };
     
@@ -42,7 +42,7 @@ const Contact = () => {
         const formSuccessP = document.createElement('p');
         const formSuccessButton = document.createElement('a');
         
-        // loader.classList.remove('show');
+        loader.classList.remove('show');
         
         formSuccessButton.classList.add('btn', 'btn-default');
         formSuccessButton.setAttribute('id', 'buttonCloseForm');
@@ -61,7 +61,7 @@ const Contact = () => {
         
         setTimeout(() => {
             formEl.classList.remove('sending');
-            // loader.remove();
+            loader.remove();
             if (res.text === 'OK') {   
                 formEl.reset();
             }

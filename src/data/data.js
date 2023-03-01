@@ -54,8 +54,8 @@ const data = {
         ['---', 'jakies uniwersalne style na github albo system design']
     ],
     languages: [
-        ['polish', 'ojczysty'],
-        ['english', 'podstawowy']
+        ['polski', 'ojczysty'],
+        ['angielski', 'A2']
     ],
     education: {
         date: '09.2014 - 09.2017',

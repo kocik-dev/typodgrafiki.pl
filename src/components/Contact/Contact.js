@@ -22,9 +22,9 @@ const Contact = () => {
         loaderEl.classList.add('show');
         
         
-        // setTimeout(() => {
-        //     formSended({text: 'OK'}, loaderEl);
-        // }, "3000");
+        setTimeout(() => {
+            formSended({text: 'OK'}, loaderEl);
+        }, "3000");
         
       
       emailjs.sendForm(EmailsjData.service, EmailsjData.template, form.current, EmailsjData.publicKey)
@@ -88,11 +88,11 @@ const Contact = () => {
                     <p className="col-100 form-row">Dziękuję za poświęcenie mi czasu. Jak mogę Ci dzisiaj pomóc?</p>
                     <div className="form-row">
                         <label>Imię i nazwisko</label>
-                        <input type="text" name="form-name" placeholder="Jan Kowalski" required />
+                        <input type="text" name="from_name" placeholder="Jan Kowalski" required />
                     </div>
                     <div className="form-row">
                         <label>Email</label>
-                        <input type="email" name="form-email" placeholder="jan@example.com" required />
+                        <input type="email" name="from_email" placeholder="jan@example.com" required />
                     </div>
                     <div className="messege form-row">
                         <label>Wiadomość</label>

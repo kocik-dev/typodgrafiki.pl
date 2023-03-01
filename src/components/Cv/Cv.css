@@ -61,6 +61,7 @@
     animation-duration: 1s;
     color: #252932;
     overflow: hidden;
+    max-width: 1010px;
 }
 
 .modal ul 

@@ -1,3 +1,4 @@
+import React from 'react';
 import iconHtml from '../../assets/tech/html.svg';
 import iconJs from '../../assets/tech/js.svg';
 import iconReact from '../../assets/tech/react.svg';

@@ -1,3 +1,4 @@
+import React from 'react';
 import faceBig from '../../assets/face.png';
 import { linkScroll } from '../Header/Header';
 import './Main.css';

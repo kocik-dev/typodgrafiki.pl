@@ -37,3 +37,25 @@
 {
     grid-column: 1 / span 2;
 }
+
+.form.sending > div:not(.form-success)
+{
+    filter: blur(3px);
+    opacity: .1;
+}
+
+.form .form-success
+{
+    position: absolute;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+}

@@ -5,7 +5,7 @@ import './Main.css';
 
 const Main = () => {
     return (
-        <div id="main" className="window-height">
+        <div id="main" className="window-height margin-section">
             <div className="caption flex">
                 <img src={faceBig} className="face" alt="Grzegorz Kocik" aria-hidden width="81" height="81" />    
                 <div>

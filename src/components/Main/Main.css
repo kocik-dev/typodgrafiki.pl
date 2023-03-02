@@ -1,7 +1,8 @@
 #main 
 {
     display: flex;    
-    height: inherit;
+    /* height: inherit; */
+    height: 100dvh;
     align-items: center;
     justify-content: center;
 }
@@ -16,20 +17,17 @@
     margin: 0 0 20px;
     font-weight: 300;
     color: var(--text);
+    flex-direction: column;
 }
 
 .subtitle .space 
 {
-    opacity: .16;
-    display: inline-block;
-    width: 1px;
-    background-color: #fff;
-    height: 20px;
-    margin: 0 14px;
+    display: block;
 }
 
 .caption
 {
+    flex-direction: column;
     align-items: flex-start;
     gap: 0 25px;
 }
@@ -37,4 +35,40 @@
 .caption img 
 {
     margin-top: 10px;
+}
+
+#main .caption 
+{
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+        
+    #main .caption 
+    {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    #main .caption img 
+    {
+        margin-top: 17px;
+    }
+    
+    .subtitle
+    {
+        flex-direction: row;
+    }
+    
+    .subtitle .space 
+    {
+        display: none;
+        opacity: .16;
+        display: inline-block;
+        width: 1px;
+        background-color: #fff;
+        height: 20px;
+        margin: 0 14px;
+    }
 }

@@ -12,6 +12,11 @@
     border-left: 1px solid #ffffff24;
 }
 
+.light-mode #about ul
+{
+    border-color: #25293257;
+}
+
 #about h3 
 {
     margin: 0 0 15px;

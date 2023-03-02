@@ -1,20 +1,15 @@
 .footer 
 {
-    position: fixed;
-    left: 3%;
-    right: 3%;
-    bottom: 0;
+    padding-left: 3%;
+    padding-right: 3%;
     padding: 10px 0 15px;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .social
 {   
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
+    
 }
 
 .social svg 
@@ -41,4 +36,15 @@
     padding: 10px 0;
     font-size: 0.9rem;
     text-align: right;
+}
+
+@media (min-width: 768px) {
+    .social
+    {
+        position: fixed;
+        bottom: 30px;
+        left: 3%;
+        display: flex;
+        flex-direction: column;
+    }
 }

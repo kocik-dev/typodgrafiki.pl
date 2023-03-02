@@ -1,9 +1,9 @@
 .top 
 {
-    justify-content: space-between;
+    /* justify-content: center; */
     padding-top: 10px;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 15px;
     left: 3%;
     right: 3%;
 }
@@ -16,6 +16,14 @@
 .logo 
 {
     cursor: pointer;
+    position: relative;
+    left: 0;
+    transition: all .15s ease;
+}
+
+.logo:is(:hover, :focus, :active)
+{
+    left: 3px;
 }
 
 .menu ul
@@ -31,6 +39,29 @@
 .menu
 {
     gap: 0 10px;
+    visibility: hidden;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    transition: all .3s ease;
+    justify-content: center;
+}
+
+.menu, .menu ul 
+{
+    flex-direction: column;
+}
+
+.menu.show 
+{
+    visibility: visible;
+    opacity: 1;
+    background-color: rgb(26 29 36 / 95%);
+    z-index: 1;
 }
 
 .menu li 
@@ -40,32 +71,20 @@
 
 .menu a,
 .menu span,
-header button
+.dark-mode
 {
     padding: 10px 20px;
     display: block;
     position: relative;
     top: 0;
     cursor: pointer;
+    font-size: 20px;
 }
 
-.menu li:before 
+.dark-mode img
 {
-    content: '';
-    display: block;
-    height: 0px;
-    position: absolute;
-    background-color: #454b5a;
-    top: -10px;
-    left: 20px;
-    right: 20px;
-    border-radius: 0 0 5px 5px;
-    transition: height .15s ease;
-}
-
-.menu li:is(:hover, :focus, :active):before 
-{
-    height: 3px;
+    width: 24px;
+    height: 24px;    
 }
 
 .menu a:is(:hover, :focus, :active),
@@ -80,7 +99,7 @@ header button
     opacity: .5;
 }
 
-header button:before
+.dark-mode:before
 {
     content: '';
     display: block;
@@ -95,7 +114,7 @@ header button:before
     transition: all .2s ease;
 }
 
-header button:hover:before
+.dark-mode:hover:before
 {
     top: -24px;
     right: -10px;
@@ -103,8 +122,158 @@ header button:hover:before
     width: 65px;
 }
 
-body.light-mode header button:before
+.light-mode header button:before
 {
     background-color: #cdd2dc;
     mix-blend-mode: darken;
+}
+
+#btn-menu-mobile
+{
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    padding: 6px 10px;
+    margin: 0;
+    border: 1px solid #fff;
+    overflow: hidden;
+    height: 42px;
+    width: 42px;
+    z-index: 2;
+}
+
+#btn-menu-mobile span
+{
+    height: 1px;
+    margin: 6px 0;
+    display: block;    
+    width: 20px;
+    background-color: #fff;
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    transition: all .3s ease;
+}
+
+#btn-menu-mobile > span:nth-child(1)
+{
+    top: 7px;
+}
+
+#btn-menu-mobile > span:nth-child(2)
+{
+    top: 13px;
+}
+
+#btn-menu-mobile > span:nth-child(3)
+{
+    top: 19px;
+}
+
+#btn-menu-mobile.open 
+{
+    border-color: transparent;
+}
+
+#btn-menu-mobile.open > span:nth-child(1),
+#btn-menu-mobile.open > span:nth-child(3)
+{
+    left: 8px;
+    width: 25px;
+    top: 13px;   
+}
+
+#btn-menu-mobile.open > span:nth-child(1)
+{
+    transform: rotate(45deg);
+}
+
+#btn-menu-mobile.open > span:nth-child(2)
+{
+    left: 100%;
+}
+
+#btn-menu-mobile.open > span:nth-child(3)
+{
+    transform: rotate(-45deg);
+}
+
+.light-mode #btn-menu-mobile:not(.open)
+{
+    border-color: #252932;
+}
+
+.light-mode #btn-menu-mobile:not(.open) span
+{
+    background-color: #252932;
+}
+
+@media (min-width: 768px) {
+    .top
+    {
+        position: fixed;
+        justify-content: space-between;
+        top: 0;
+    }
+    
+    .menu
+    {
+        visibility: visible;
+        position: static;
+        opacity: 1;
+    }
+    
+    .menu, .menu ul
+    {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .menu a, .menu span, .dark-mode
+    {
+        font-size: 1rem;
+    }
+    
+    .menu li:before 
+    {
+        content: '';
+        display: block;
+        height: 0px;
+        position: absolute;
+        background-color: #454b5a;
+        top: -10px;
+        left: 20px;
+        right: 20px;
+        border-radius: 0 0 5px 5px;
+        transition: height .15s ease;
+    }
+
+    .menu li:is(:hover, :focus, :active):before 
+    {
+        height: 3px;
+    }
+    
+    .dark-mode img
+    {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    
+    .logo
+    {
+        margin-left: 18px;
+    }
+    
+    .menu.show
+    {
+        color: #fff;
+    }
+    
+    .light-mode .dark-mode
+    {
+        color: #fff;
+    }
 }

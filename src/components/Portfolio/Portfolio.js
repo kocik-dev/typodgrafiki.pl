@@ -12,7 +12,7 @@ const Portfolio = () => {
                 <div className="caption small-width">
                     <h2 className="title-small">Przykładowe projekty</h2>
                 </div>
-                <div className="flex wide-width">
+                <div className="grid wide-width">
                     <a href="/html" className="box box-html" target="_blank">
                         <span >
                             <img src={iconHtml} alt="html i css" width="86" height="50" />

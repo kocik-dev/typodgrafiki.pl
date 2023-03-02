@@ -13,26 +13,19 @@ const Contact = () => {
         
         const formEl = document.querySelector('.form');
         const loaderEl = document.createElement('div');
-        formEl.classList.add('sending');
         
         loaderEl.classList.add('lds-roller');
+        formEl.classList.add('sending');
         formEl.append(loaderEl);
         loaderEl.innerHTML = '<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>';
-        
         loaderEl.classList.add('show');
-        
-        
-        // setTimeout(() => {
-        //     formSended({text: 'OK'}, loaderEl);
-        // }, "3000");
-        
       
-      emailjs.sendForm(EmailsjData.service, EmailsjData.template, form.current, EmailsjData.publicKey)
-        .then((result) => {
-            formSended(result, loaderEl);
-        }, (error) => {
-            formSended(error, loaderEl);
-        });
+        emailjs.sendForm(EmailsjData.service, EmailsjData.template, form.current, EmailsjData.publicKey)
+            .then((result) => {
+                formSended(result, loaderEl);
+            }, (error) => {
+                formSended(error, loaderEl);
+            });
     };
     
     const formSended = (res, loader) => {
@@ -48,11 +41,11 @@ const Contact = () => {
         formSuccessButton.setAttribute('id', 'buttonCloseForm');
         
         if (res.text === 'OK') {
-            formSuccessP.append('Dziękuję za kontakt. Odpowiem tak szybko jak to możliwe.');
-            formSuccessButton.append('Zamknij');
+            formSuccessP.textContent = 'Dziękuję za kontakt. Odpowiem tak szybko jak to możliwe.';
+            formSuccessButton.textContent = 'Zamknij';
         }else{
-            formSuccessP.append('Nie udało się wysłać formularza. Spróbuj jeszcze raz.');
-            formSuccessButton.append('Spróbuj ponownie');
+            formSuccessP.textContent ='Nie udało się wysłać formularza. Spróbuj jeszcze raz.';
+            formSuccessButton.textContent = 'Spróbuj ponownie';
         }
         
         formSuccess.classList.add('form-success');
@@ -73,15 +66,15 @@ const Contact = () => {
         
     }
     
-    const closeformSuccess = (el) => {
-        el.style.opacity = 0;
+    const closeformSuccess = (e) => {
+        e.style.opacity = 0;
         setTimeout(() => {
-            el.remove();
+            e.remove();
         }, "1000");
     }
     
     return (
-        <section id="contact" className="window-height flex horizontal-center">
+        <section id="contact" className="window-height flex horizontal-center margin-section">
             <div className="caption small-width">
                 <h2 className="title-small">Kontakt</h2>
                 <form ref={form} onSubmit={sendEmail} className="form grid relative">

@@ -13,8 +13,8 @@ const Portfolio = () => {
                     <h2 className="title-small">Przykładowe projekty</h2>
                 </div>
                 <div className="grid wide-width">
-                    <a href="/html" className="box box-html" target="_blank">
-                        <span >
+                    <a href="http://html.typodgrafiki.pl/" className="box box-html" target="_blank" rel="noopener noreferrer">
+                        <span>
                             <img src={iconHtml} alt="html i css" width="86" height="50" />
                             <span className="name">
                                 <small>Semantyka i stylowanie</small>
@@ -22,33 +22,33 @@ const Portfolio = () => {
                             </span>
                         </span>
                     </a>
-                    <div className="box box-js">
-                        <div>
+                    <a href="http://js.typodgrafiki.pl/" className="box box-js" target="_blank" rel="noopener noreferrer">
+                        <span>
                             <img src={iconJs} alt="javascript" width="50" height="50" />
-                            <div className="name">
+                            <span className="name">
                                 <small>Manipulacja DOM i nie tylko</small>
                                 w JavaScript
-                            </div>
-                        </div>
-                    </div>
-                    <div className="box box-react">
-                        <div>
+                            </span>
+                        </span>
+                    </a>
+                    <a href="http://react.typodgrafiki.pl/" className="box box-react" target="_blank" rel="noopener noreferrer">
+                        <span>
                             <img src={iconReact} alt="react" width="50" height="50" />
-                            <div className="name">
+                            <span className="name">
                                 <small>Projekt</small>
                                 w React
-                            </div>
-                        </div>
-                    </div>
-                    <div className="box box-github">
-                        <div>
+                            </span>
+                        </span>
+                    </a>
+                    <a href="https://github.com/typodgrafiki" className="box box-github" target="_blank" rel="noopener noreferrer">
+                        <span>
                             <img src={iconGithub} alt="github" width="50" height="50" />
-                            <div className="name">
+                            <span className="name">
                                 <small>Moje projekty</small>
                                 na Github
-                            </div>
-                        </div> 
-                    </div>
+                            </span>
+                        </span> 
+                    </a>
                 </div>
             </div>
         </section>

@@ -43,7 +43,7 @@
 
 .wide-width .box-html:hover
 {
-    background-color: #fef2da;
+    background-color: #ffe3ac;
 }
 
 .wide-width .box-js
@@ -51,14 +51,29 @@
     background-color: #171a1f;
 }
 
+.wide-width .box-js:hover
+{
+    background-color: #272d37;
+}
+
 .wide-width .box-react 
 {
     background-color: #2a3140;
 }
 
+.wide-width .box-react:hover
+{
+    background-color: #384155;
+}
+
 .wide-width .box-github
 {
     background-color: #62537e;
+}
+
+.wide-width .box-github:hover 
+{
+    background-color: #4f4366;
 }
 
 @media (min-width: 768px) {

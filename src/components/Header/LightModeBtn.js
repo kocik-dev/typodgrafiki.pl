@@ -2,7 +2,7 @@ import React from 'react';
 import darkIcon from '../../assets/dark-mode-icon.svg';
 import lightIcon from '../../assets/light-mode-icon.svg';
 
-const LightMode = ({ lightMode, changeModeFn }) => {
+const LightModeBtn = ({ lightMode, changeModeFn }) => {
     
     return (
         <button className="dark-mode flex" onClick={changeModeFn}>
@@ -11,4 +11,4 @@ const LightMode = ({ lightMode, changeModeFn }) => {
     )    
 }
 
-export default LightMode 
+export default LightModeBtn

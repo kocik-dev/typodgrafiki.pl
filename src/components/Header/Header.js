@@ -1,5 +1,6 @@
 import React from 'react';
-import LightMode from './LightMode';
+import PropTypes from 'prop-types';
+import LightModeBtn from './LightModeBtn';
 import logo from '../../assets/logo.svg';
 import logoWhite from '../../assets/logo-light.svg';
 import {openCv} from '../Cv/Cv';
@@ -58,11 +59,19 @@ const Header = ({ lightMode, changeModeFn }) => {
                         <a href="#contact" onClick={linkScroll}>kontakt</a>
                     </li>
                 </ul>
-                <LightMode lightMode={lightMode} changeModeFn={changeModeFn} />
+                <LightModeBtn lightMode={lightMode} changeModeFn={changeModeFn} />
             </nav>
         </header>
     );    
+}
 
+Header.propTypes = {
+    lightMode: PropTypes.number,
+    changeModeFn: PropTypes.func
+}
+
+Header.defaultProps = {
+    lightMode: 0
 }
 
 export { Header, linkScroll };

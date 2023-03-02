@@ -66,4 +66,4 @@ const data = {
     interests: 'bieganie, trekking górski'
 }
 
-export { data }
+export default data

@@ -1,24 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
 
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+@import url('./animations.css');
 
 :root 
 {
     --text: #c5c7cd;    
 }
 
-*
+*, *::after, *::before
 {
     box-sizing: border-box;
 }
@@ -26,7 +15,6 @@
 html 
 {
     font-size: 93%;
-    /* scroll-behavior: smooth; */
 }
 
 body 

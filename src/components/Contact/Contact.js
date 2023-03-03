@@ -26,12 +26,17 @@ const Contact = () => {
             }, (error) => {
                 formSended(error, loaderEl);
             });
+        
+        // setTimeout(() => {
+        //     formSended({text: 'OK'}, loaderEl);
+        // }, "2000")
     };
     
     const formSended = (res, loader) => {
         
         const formEl = document.querySelector('.form');
         const formSuccess = document.createElement('div');
+        const formSuccessName = document.createElement('h4');
         const formSuccessP = document.createElement('p');
         const formSuccessButton = document.createElement('a');
         
@@ -41,15 +46,17 @@ const Contact = () => {
         formSuccessButton.setAttribute('id', 'buttonCloseForm');
         
         if (res.text === 'OK') {
-            formSuccessP.textContent = 'Dziękuję za kontakt. Odpowiem tak szybko jak to możliwe.';
+            formSuccessName.textContent = 'Dziękuję za kontakt';
+            formSuccessP.textContent = 'Odpowiem tak szybko jak to możliwe.';
             formSuccessButton.textContent = 'Zamknij';
         }else{
-            formSuccessP.textContent ='Nie udało się wysłać formularza. Spróbuj jeszcze raz.';
+            formSuccessName.textContent = 'Nie udało się wysłać formularza';
+            formSuccessP.textContent ='Spróbuj jeszcze raz.';
             formSuccessButton.textContent = 'Spróbuj ponownie';
         }
         
         formSuccess.classList.add('form-success');
-        formSuccess.append(formSuccessP, formSuccessButton);
+        formSuccess.append(formSuccessName, formSuccessP, formSuccessButton);
         formEl.appendChild(formSuccess);
         
         setTimeout(() => {
@@ -75,7 +82,7 @@ const Contact = () => {
     
     return (
         <section id="contact" className="window-height flex horizontal-center margin-section">
-            <div className="caption small-width">
+            <div className="caption small-width caption-border">
                 <h2 className="title-small">Kontakt</h2>
                 <form ref={form} onSubmit={sendEmail} className="form grid relative">
                     <p className="col-100 form-row">Dziękuję za poświęcenie mi czasu. Jak mogę Ci dzisiaj pomóc?</p>

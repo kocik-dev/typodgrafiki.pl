@@ -1,13 +1,21 @@
 import React from 'react';
-import faceBig from '../../assets/face.png';
+import Face from './Face/Face';
 import { linkScroll } from '../Header/Header';
 import './Main.css';
+import face from '../../assets/face/face.png';
+import faceW from '../../assets/face/face.webp';
 
 const Main = () => {
     return (
         <div id="main" className="window-height margin-section">
             <div className="caption flex">
-                <img src={faceBig} className="face" alt="Grzegorz Kocik" aria-hidden width="81" height="81" />    
+                <Face 
+                    src={faceW}
+                    alt="Grzegorz Kocik"
+                    fallbackSrc={face}
+                    height="116"
+                    width="116"
+                />
                 <div>
                     <h1 className="title">Grzegorz Kocik</h1>
                     <h2 className="flex subtitle">Front-end Developer <span className="space"></span> UI Designer</h2>

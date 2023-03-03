@@ -1,14 +1,15 @@
 import React from 'react';
+import { linkScroll } from '../Header/Header';
 import './About.css';
 
 const About = () => {
     return (
         <section id="about" className="flex horizontal-center margin-section">
 
-                <div className="caption small-width">
+                <div className="caption small-width caption-border">
                     <h2 className="title-small">O mnie</h2>
                     <p><strong>Front-end developer</strong> o zapleczu graficznym z doświadczeniem w tworzeniu warstwy graficznej ecommerce. Szukam możliwości rozwoju przy projektach wykorzystujących nowe technologie (React)</p>
-                    <div className="flex vertical-top">
+                    <div className="grid vertical-top">
                         <div>
                             <h3>Czuję się dobrze w:</h3>
                             <ul>   
@@ -28,6 +29,7 @@ const About = () => {
                             </ul>
                         </div>
                     </div>
+                    <a className="btn btn-yellow" href="#portfolio" onClick={linkScroll}>Zobacz projekty</a>
                 </div>
 
         </section>

@@ -9,13 +9,38 @@
 
 .face
 {
-    border-radius: 50%;
+    height: 116px;
+    width: 116px;
+    position: relative;
+    isolation: isolate;
+    top: 5px;
 }
+
+.face:before 
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    display: block;
+    border-radius: 50%;
+    z-index: -1;
+    right: -4px;
+    bottom: -3px;
+    background: rgb(68,56,242);
+    background: linear-gradient(150deg, rgba(68,56,242,1) 0%, rgba(131,66,253,1) 100%);
+}
+
+.face img 
+{
+    border-radius: 50%;
+    background-color: #F19529;
+}
+
 
 .subtitle
 {
     margin: 0 0 20px;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--text);
     flex-direction: column;
 }
@@ -32,11 +57,6 @@
     gap: 0 25px;
 }
 
-.caption img 
-{
-    margin-top: 10px;
-}
-
 #main .caption 
 {
     text-align: center;
@@ -49,11 +69,6 @@
         flex-direction: row;
         text-align: left;
         align-items: flex-start;
-    }
-    
-    #main .caption img 
-    {
-        margin-top: 17px;
     }
     
     .subtitle

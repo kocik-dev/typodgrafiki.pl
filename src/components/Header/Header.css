@@ -1,11 +1,10 @@
 .top 
 {
-    /* justify-content: center; */
-    padding-top: 10px;
     position: absolute;
     top: 15px;
     left: 3%;
     right: 3%;
+    
 }
 
 .top a
@@ -49,6 +48,7 @@
     background-color: transparent;
     transition: all .3s ease;
     justify-content: center;
+    color: #fff;
 }
 
 .menu, .menu ul 
@@ -73,30 +73,18 @@
 .menu span,
 .dark-mode
 {
-    padding: 10px 20px;
+    padding: 17px 20px;
     display: block;
     position: relative;
-    top: 0;
     cursor: pointer;
     font-size: 20px;
+    transition: all .2s ease;
 }
 
 .dark-mode img
 {
     width: 24px;
     height: 24px;    
-}
-
-.menu a:is(:hover, :focus, :active),
-.menu span:is(:hover, :focus, :active)
-{
-    top: 2px;
-}
-
-.menu a:is(:hover, :focus, :active),
-.menu span:is(:hover, :focus, :active)
-{
-    opacity: .5;
 }
 
 .dark-mode:before
@@ -116,10 +104,10 @@
 
 .dark-mode:hover:before
 {
-    top: -24px;
-    right: -10px;
-    height: 65px;
-    width: 65px;
+    top: -17px;
+    right: -16px;
+    height: 75px;
+    width: 75px;
 }
 
 .light-mode header button:before
@@ -213,7 +201,7 @@
     {
         position: fixed;
         justify-content: space-between;
-        top: 0;
+        top: 10px;
     }
     
     .menu
@@ -238,19 +226,26 @@
     {
         content: '';
         display: block;
-        height: 0px;
         position: absolute;
-        background-color: #454b5a;
-        top: -10px;
+        background-color: #551fa5;
+        bottom: 22px;
+        height: 5px;
         left: 20px;
-        right: 20px;
-        border-radius: 0 0 5px 5px;
-        transition: height .15s ease;
+        width: calc(100% - 40px);
+        transition: all .2s ease;
+        margin: 0;
+        
     }
 
     .menu li:is(:hover, :focus, :active):before 
     {
-        height: 3px;
+        background-color: #F19529;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        left: 50%;
+        margin-left: -20px;
+        bottom: 8px;
     }
     
     .dark-mode img

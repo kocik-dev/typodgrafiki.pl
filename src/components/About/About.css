@@ -1,25 +1,109 @@
 #about .vertical-top
 {
-    gap: 0 50px;
+    gap: 0;
+    margin-bottom: 30px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#about .vertical-top > div 
+{
+    padding: 30px 35px 35px;
+    border-radius: 20px;
+    background: rgb(133 136 155 / 10%);
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    
 }
 
 #about ul 
 {
     margin: 0;
-    padding: 0 0 0 14px;
+    padding: 0;
     list-style: none;
     line-height: 160%;
-    border-left: 1px solid #ffffff24;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.light-mode #about ul
-{
-    border-color: #25293257;
-}
-
-#about h3 
+#about h3
 {
     margin: 0 0 15px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing: 0;
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+}
+
+#about h3:before
+{
+    content: '';
+    display: block;
+    background-color: #f19529;
+    height: 2px;
+    position: absolute;
+    inset: auto 0 5px 0;   
+    z-index: -1;
+}
+
+#about ul li 
+{
+    border-radius: 10px;
+    padding: 4px 13px;
+    color: #fff;
+    background: #20222db0;
+}
+
+.caption-border
+{
+    background: #20222d;
+    padding: 4vw 5vw;
+    border-radius: 20px;
+    position: relative;
+}
+
+#about .caption:before
+{
+    content: '';
+    display: block;
+    position: absolute;
+    inset: -1px;
+    background: rgb(37,39,52);
+    background: linear-gradient(180deg, rgb(41 42 55) 0%, rgb(18 20 29) 100%);
+    z-index: -1;
+    border-radius: 20px;
+}
+
+@media (min-width: 768px) {
+    #about .vertical-top > div:nth-child(1)
+    {
+        margin-left: -10vw;
+        background: #2d303f;
+        /* background: linear-gradient(150deg, rgb(24 49 114) 0%, rgb(45 36 78) 100%); */
+    }
+    
+    #about .vertical-top > div:nth-child(2)
+    {
+        margin-right: -9vw;
+        margin-left: -3vw;
+        position: relative;
+        top: 75px;
+        background: #3c3e51;
+        /* background: linear-gradient(150deg, rgb(29 28 58) 0%, rgb(63 47 93) 100%); */
+    }
+    
+    #about .caption::after
+    {
+        content: '';
+        display: block;
+        width: 30vw;
+        height: 30vw;
+        position: absolute;
+        background: #541fa6;
+        border-radius: 50%;
+        top: -4vw;
+        right: -3vw;
+        z-index: -1;
+    }
 }

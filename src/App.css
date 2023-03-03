@@ -34,6 +34,8 @@ body
 .bg-gradient
 {
     padding: 0 7%;
+    background-color: var(--dark);
+    transition: background-color .3s ease;
 }
 
 code 
@@ -90,6 +92,11 @@ button
 {
     font-size: 30px;
     margin: 0 0 10px;
+}
+
+.nowrap 
+{
+    white-space: nowrap;
 }
 
 .btn
@@ -151,6 +158,7 @@ button
     color: #fff;
     position: relative;
     padding: 10px 20px;
+    isolation: isolate;
 }
 
 .link-border:before 
@@ -239,43 +247,6 @@ button
 {
     width: 100%;
     justify-content: center;
-}
-
-/* light mode */
-
-.light-mode
-{
-    background-color: #fff;   
-    color: #252932; 
-}
-
-#root .light-mode 
-{
-    background: rgb(255,255,255);
-    background: linear-gradient(132deg, rgba(255,255,255,1) 0%, rgba(232,235,241,1) 50%, rgba(255,255,255,1) 78%);
-}
-
-.light-mode .title, 
-.light-mode h1, 
-.light-mode h2, 
-.light-mode h3, 
-.light-mode h4, 
-.light-mode h5, 
-.light-mode h6, 
-.light-mode strong
-{
-    color: inherit;
-}
-
-.light-mode .btn-default
-{
-    border-color: #252932;
-}
-
-.light-mode .btn-default:is(:hover, :focus, :active)
-{
-    border-color: #252932;
-    background-color: #252932;
 }
 
 @media (min-width: 768px) {

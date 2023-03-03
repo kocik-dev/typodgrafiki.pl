@@ -8,11 +8,7 @@
     background-color: var(--dark);
     opacity: .9;
     transition: opacity .2s ease;
-}
-
-.light-mode .shadow 
-{
-    background-color: #cdcfd5;
+    z-index: 1;
 }
 
 .modal 
@@ -30,7 +26,7 @@
     color: #252932;
     overflow: hidden;
     max-width: 1010px;
-    z-index: 4;
+    z-index: 5;
 }
 
 .modal ul 

@@ -4,7 +4,7 @@
     top: 15px;
     left: 3%;
     right: 3%;
-    
+    z-index: 1;
 }
 
 .top a
@@ -61,7 +61,7 @@
     visibility: visible;
     opacity: 1;
     background-color: rgb(26 29 36 / 95%);
-    z-index: 1;
+    z-index: 2;
 }
 
 .menu li 
@@ -110,12 +110,6 @@
     width: 75px;
 }
 
-.light-mode header button:before
-{
-    background-color: #cdd2dc;
-    mix-blend-mode: darken;
-}
-
 #btn-menu-mobile
 {
     position: fixed;
@@ -123,17 +117,18 @@
     top: 15px;
     padding: 6px 10px;
     margin: 0;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     overflow: hidden;
-    height: 42px;
-    width: 42px;
-    z-index: 2;
+    height: 43px;
+    width: 44px;
+    border-radius: 10px;
+    z-index: 3;
 }
 
 #btn-menu-mobile span
 {
-    height: 1px;
-    margin: 6px 0;
+    height: 2px;
+    margin: 5px 0;
     display: block;    
     width: 20px;
     background-color: #fff;
@@ -184,16 +179,6 @@
 #btn-menu-mobile.open > span:nth-child(3)
 {
     transform: rotate(-45deg);
-}
-
-.light-mode #btn-menu-mobile:not(.open)
-{
-    border-color: #252932;
-}
-
-.light-mode #btn-menu-mobile:not(.open) span
-{
-    background-color: #252932;
 }
 
 @media (min-width: 768px) {
@@ -260,14 +245,10 @@
     .logo
     {
         margin-left: 18px;
+        margin-top: 12px;
     }
     
     .menu.show
-    {
-        color: #fff;
-    }
-    
-    .light-mode .dark-mode
     {
         color: #fff;
     }

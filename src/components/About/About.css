@@ -1,8 +1,8 @@
 #about .vertical-top
 {
-    gap: 0;
-    margin-bottom: 30px;
-    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 18px;
+    grid-template-columns: 1fr;
 }
 
 #about .vertical-top > div 
@@ -58,7 +58,7 @@
 .caption-border
 {
     background: #20222d;
-    padding: 4vw 5vw;
+    padding: 4vw 5vw 7vw;
     border-radius: 20px;
     position: relative;
 }
@@ -105,5 +105,17 @@
         top: -4vw;
         right: -3vw;
         z-index: -1;
+    }
+    
+    #about .vertical-top
+    {
+        gap: 0;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 30px;
+    }
+    
+    .caption-border
+    {
+        padding-bottom: 4vw;
     }
 }

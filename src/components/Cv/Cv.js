@@ -3,6 +3,7 @@ import './Cv.css';
 
 const openCv = () => {
     
+    const rootEl = document.querySelector('#root');
     const cvElement = document.createElement("div");
     const closeEl = document.createElement("button");
     const fadeContent = document.createElement("div");
@@ -10,8 +11,8 @@ const openCv = () => {
     fadeContent.classList.add('shadow');
     closeEl.setAttribute('id', 'close-modal');
     closeEl.classList.add('close', 'btn');
-    document.body.appendChild(fadeContent);
-    document.body.appendChild(cvElement);
+    rootEl.appendChild(fadeContent);
+    rootEl.appendChild(cvElement);
     document.body.style.overflow = 'hidden';
     
     setTimeout(function () {

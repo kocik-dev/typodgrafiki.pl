@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Portfolio from './components/Portfolio/Portfolio';
 import Contact from './components/Contact/Contact';
 import './App.css';
+import './darkMode.css';
 
 class App extends React.Component {
     

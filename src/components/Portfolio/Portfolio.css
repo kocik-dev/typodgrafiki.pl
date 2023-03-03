@@ -78,8 +78,6 @@
 
 .wide-width .box-html 
 {
-    grid-row: span 2;
-    grid-column: span 2;
     background: rgb(68,56,242);
     background: linear-gradient(150deg, rgba(68,56,242,1) 0%, rgba(131,66,253,1) 100%);
 }
@@ -97,7 +95,6 @@
 
 .wide-width .box-js
 {
-    grid-column: span 2;
     background: rgb(245,62,34);
     background: linear-gradient(139deg, rgba(245,62,34,1) 0%, rgba(253,196,103,1) 100%);
 }
@@ -150,4 +147,15 @@
     {
         grid-template-columns: repeat(4, 1fr);   
     }    
+    
+    .wide-width .box-html 
+    {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+    
+    .wide-width .box-js
+    {
+        grid-column: span 2;
+    }
 }

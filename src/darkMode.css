@@ -1,0 +1,147 @@
+
+.light-mode
+{
+    background-color: #fff;   
+    color: #252932; 
+}
+
+.light-mode .title, 
+.light-mode h1, 
+.light-mode h2, 
+.light-mode h3, 
+.light-mode h4, 
+.light-mode h5, 
+.light-mode h6, 
+.light-mode strong
+{
+    color: inherit;
+}
+
+.light-mode .btn-default
+{
+    border-color: #252932;
+}
+
+.light-mode .btn-default:is(:hover, :focus, :active)
+{
+    border-color: #252932;
+    background-color: #252932;
+}
+
+.light-mode .btn-yellow:is(:hover)
+{
+    background-color: var(--dark);
+    color: #fff;
+}
+
+.light-mode .link-border
+{
+    color: inherit;
+}
+
+.light-mode .menu
+{
+    color: inherit
+}
+
+.light-mode .menu li:not(:hover):before ,
+.light-mode .link-border:not(:hover):before
+{
+    background-color: #b8a1db;
+}
+
+.light-mode .subtitle .space
+{
+    background-color: var(--dark);
+}
+
+.light-mode .face:before
+{
+    display: none;
+}
+
+.light-mode .caption-border
+{
+    background-color: #e6e7f1;
+}
+
+/* about */
+.light-mode #about ul li 
+{
+    background-color: #b2b5c5b0;
+    color: var(--dark);
+}
+
+/* contact */
+.light-mode .form label
+{
+    color: inherit;
+}
+
+
+.light-mode .form input, 
+.light-mode .form textarea
+{
+    background-color: #fff;
+    color: inherit;
+}
+
+.light-mode .form input:focus, 
+.light-mode .form textarea:focus
+{
+    outline-color: #1a1d24;    
+}
+
+/* cv */
+.light-mode + .shadow 
+{
+    background-color: #cdcfd5;
+}
+
+/* header */
+.light-mode header button:before
+{
+    background-color: #cdd2dc;
+    mix-blend-mode: darken;
+}
+
+.light-mode #btn-menu-mobile:not(.open)
+{
+    border-color: var(--dark);
+}
+
+.light-mode #btn-menu-mobile span
+{
+    background-color: var(--dark);
+}
+
+@media (min-width: 768px) {
+    .light-mode #about .vertical-top > div
+    {
+        box-shadow: 5px 8px 0 #3c3e51;    
+        background-color: #d0d1dd;
+    }    
+    
+    .light-mode #about .vertical-top > div:nth-child(1) li
+    {
+        background-color: #fff;
+    }
+    
+    .light-mode #about .vertical-top > div:nth-child(2)
+    {
+        background-color: #fdfdfd;
+    }
+}
+
+@media (max-width: 767px) {
+    
+    .light-mode .dark-mode
+    {
+        color: #fff;
+    }
+    
+    .light-mode .menu.show 
+    {
+        background-color: #b4b8c1f2;
+    }
+}

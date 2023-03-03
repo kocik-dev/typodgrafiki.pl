@@ -24,7 +24,7 @@ const About = () => {
                         <div>
                             <h3>Ciąglę się uczę:</h3>
                             <ul>   
-                                <li>JavaScript (object-oriented)</li>
+                                <li>JavaScript <span className="nowrap">(object-oriented)</span></li>
                                 <li>React</li>
                             </ul>
                         </div>

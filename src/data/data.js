@@ -5,14 +5,13 @@ const data = {
         email: 'grzegorz.kocik.pn@gmail.com',
         phone: '+48 516 804 511',
         linedin: 'https://www.linkedin.com/in/grzegorz-kocik/',
-        www: 'http://typodgrafiki.pl'
+        www: 'https://typodgrafiki.pl'
     },
     aboutMe: 'Frontend developer o zapleczu graficznym z doświadczeniem w tworzeniu warstwy graficznej ecommerce. Szukam możliwości rozwoju przy projektach wykorzystujących nowe technologie (React)',
     techSkils: [
-        ['Front-end', 'HTML5, CSS3, Bootstrap, SCSS/LESS, JavaScript, jQuery, React'],
-        ['Code tools', 'VSC, Terminal'],
-        ['Design Tools', 'Figma, Photoshop, Illustrator'],
-        ['Others', 'SVN, Github, Jira']
+        ['Technologie', 'HTML5, CSS3, Bootstrap, SCSS/LESS, JavaScript, jQuery, React'],
+        ['Narzędzia', 'VSC, Terminal, Figma, Photoshop'],
+        ['Inne', 'SVN, Github, Jira']
     ],
     experience: {
         name: 'Doświadczenie zawodowe',
@@ -42,7 +41,7 @@ const data = {
                         'Tworzenie warstwy frontend aplikacji w oparciu o silnik oprogramowania  AXI (bazując na projekcie graficznym),',
                         'Debugowanie i naprawa błędów w istniejących stronach,',
                         'Rozbudowa skton klientów,',
-                        'Technologie: HTML5, CSS3, jQuery,'
+                        'Technologie: HTML5, CSS3, jQuery'
                     ]
                 }      
             ]
@@ -51,7 +50,9 @@ const data = {
     side: [
         ['04.2015', 'Konkurs'],
         ['---', 'projekt własny js - opisac ze uzywam tu aby rozwinac sie poza praca bo tam nie ma'],
-        ['---', 'jakies uniwersalne style na github albo system design']
+        ['---', 'jakies uniwersalne style na github albo system design'],
+        ['---', 'jakies cssove style'],
+        ['---', 'aplikacja lista zadan']
     ],
     languages: [
         ['polski', 'ojczysty'],

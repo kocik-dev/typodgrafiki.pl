@@ -113,7 +113,6 @@ button
 {
     color: #fff;
     background: rgb(68,56,242);
-    /* background: linear-gradient(150deg, rgba(68,56,242,1) 0%, rgba(131,66,253,1) 100%); */
     background: linear-gradient(137deg, rgba(68,56,242,1) 0%, rgba(131,66,253,1) 50%, rgba(58,17,135,1) 100%);
     background-position: 0;
     background-size: 200%;
@@ -253,10 +252,6 @@ button
     
     .bg-gradient
     {
-        /* background: rgb(22,25,36);
-        background: linear-gradient(132deg, rgba(22,25,36,1) 15%, rgba(35,39,55,1) 50%, rgba(22,25,36,1) 85%);
-        background-size: 300% 300%;
-        animation: gradient 20s ease infinite; */
         padding: 0 3%;
     }
     

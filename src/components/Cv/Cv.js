@@ -48,10 +48,6 @@ const openCv = () => {
             closeCv(cvElement, fadeContent);
         }
     });
-    
-    printBtn.addEventListener('click', (e) => {
-        
-    })
 }
 
 const closeCv = (modal, shadow) => {

@@ -36,9 +36,7 @@ const listExperience = (el) => {
     return output;
 }
 
-
 const dataTemplate = `
-    <div class="content">
         <h2>${data.name} <small>(${data.experienceYears})</small></h2>
         <section class="flex">
             <ul>
@@ -92,7 +90,6 @@ const dataTemplate = `
                 <table><tr><td>${data.interests}</td></tr></table>
             </div>
         </section>
-    </div>
 `;
 
 export { dataTemplate }

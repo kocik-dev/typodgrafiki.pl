@@ -8,10 +8,12 @@ import Contact from './components/Contact/Contact';
 import './App.css';
 import './darkMode.css';
 
+const cookieLightMode = ('; '+document.cookie).split(`; tog_lm=`).pop().split(';')[0];
+
 class App extends React.Component {
     
     state = {
-        lightMode: document.cookie === '' ? 0 : 1
+        lightMode: !cookieLightMode ? 0 : 1
     }
     
     changeModeFn() {

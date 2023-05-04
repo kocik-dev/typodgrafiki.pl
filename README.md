@@ -1,27 +1,27 @@
 # Grzegorz Kocik &#8226; Portfolio
 ## _Front-end developer | UI Designer_
 
-### Wprowadzenie
-Projekt jest moją stroną osobistą w formie portfolio. Zamieściłem tam informacje o sobie, moje przykładowe prace oraz prezentacje moich umiejętności. Strona postawiona jest na React oraz celowo nie korzystam ze zbędnych zewnętrznych bibliotek aby pokazać mój kod. Jedyne zewnętrzne pakiety to [Normalize] do resetu CSS oraz [Emailjs] wy wysyłki email z formularza kontaktowego.
+### Introduction
+The project is my personal portfolio website. I have included information about myself, my sample works, and demonstrations of my skills on the website. The site is built using React, and deliberately avoids the use of unnecessary external libraries to showcase my code. The only external packages used are [Normalize] for CSS reset, and [Emailjs] for sending emails from the contact form.
 
-### Technologie
+### Technologies
 - HTML
 - CSS
 - JavaScript
 - React
 
-### Użyte biblioteki
+### Used Libraries
 - [Normalize]
 - [Emailjs]
 
-#### Spis treści
-- O mnie
+#### table of contents
+- About Me
 - CV
-- Sprawdź mnie
-- Kontakt
+- Check me out
+- Contact
 
 
-#### Źródła
+#### Sources
 - [dribble]
 
 

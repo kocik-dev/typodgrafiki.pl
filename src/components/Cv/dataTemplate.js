@@ -59,19 +59,11 @@ const dataTemplate = `
         </section>
         <section class="flex">
             <div class="col-sm-50">
-                <h3>Projekty poboczne</h3>
-                <table>
-                    ${list(data.side)}
-                </table>
-            </div>
-            <div class="col-sm-50">
                 <h3>Języki</h3>
                 <table>
                     ${list(data.languages)}
                 </table>
             </div>
-        </section>
-        <section class="flex">
             <div class="col-sm-50">
                 <h3>Edukacja</h3>
                 <table>
@@ -85,6 +77,9 @@ const dataTemplate = `
                     </tr>    
                 </table>
             </div>
+        </section>
+        <section class="flex">
+            
             <div class="col-sm-50">
                 <h3>Zainteresowania</h3>
                 <table><tr><td>${data.interests}</td></tr></table>

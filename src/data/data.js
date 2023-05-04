@@ -47,13 +47,6 @@ const data = {
             ]
         ] 
     },
-    side: [
-        ['04.2015', 'Konkurs'],
-        ['---', 'projekt własny js - opisac ze uzywam tu aby rozwinac sie poza praca bo tam nie ma'],
-        ['---', 'jakies uniwersalne style na github albo system design'],
-        ['---', 'jakies cssove style'],
-        ['---', 'aplikacja lista zadan']
-    ],
     languages: [
         ['polski', 'ojczysty'],
         ['angielski', 'A2']

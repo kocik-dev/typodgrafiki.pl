@@ -1,0 +1,46 @@
+{
+  "short_name": "Grzegorz Kocik &#8226; Portfolio",
+  "name": "Grzegorz Kocik, Portfolio &#8226; Front-end developer, UI Designer",
+  "icons": [
+    {
+      "src": "icons/favicon-light.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png",      
+      "color_scheme": "light"
+    },
+    {
+      "src": "icons/favicon-dark.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png",
+      "color_scheme": "dark"
+    },
+    {
+      "src": "icons/logo192-light.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "color_scheme": "light"
+    },
+    {
+      "src": "icons/logo192-dark.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "color_scheme": "dark"
+    },
+    {
+      "src": "icons/logo512-light.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "color_scheme": "light"
+    },
+    {
+      "src": "icons/logo512-dark.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "color_scheme": "dark"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#191A1C"
+}

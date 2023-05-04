@@ -1,0 +1,255 @@
+.top 
+{
+    position: absolute;
+    top: 15px;
+    left: 3%;
+    right: 3%;
+    z-index: 1;
+}
+
+.top a
+{
+    text-decoration: none;    
+}
+
+.logo 
+{
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    transition: all .15s ease;
+}
+
+.logo:is(:hover, :focus, :active)
+{
+    left: 3px;
+}
+
+.menu ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    font-weight: 500;
+    gap: inherit;
+}
+
+.menu
+{
+    gap: 0 10px;
+    visibility: hidden;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    transition: all .3s ease;
+    justify-content: center;
+    color: #fff;
+}
+
+.menu, .menu ul 
+{
+    flex-direction: column;
+}
+
+.menu.show 
+{
+    visibility: visible;
+    opacity: 1;
+    background-color: rgb(26 29 36 / 95%);
+    z-index: 2;
+}
+
+.menu li 
+{
+    position: relative;
+}
+
+.menu a,
+.menu span,
+.dark-mode
+{
+    padding: 17px 20px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .2s ease;
+}
+
+.dark-mode img
+{
+    width: 24px;
+    height: 24px;    
+}
+
+.dark-mode:before
+{
+    content: '';
+    display: block;
+    background: #fff;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transition: all .2s ease;
+}
+
+.dark-mode:hover:before
+{
+    top: -17px;
+    right: -16px;
+    height: 75px;
+    width: 75px;
+}
+
+#btn-menu-mobile
+{
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    padding: 6px 10px;
+    margin: 0;
+    border: 2px solid #fff;
+    overflow: hidden;
+    height: 43px;
+    width: 44px;
+    border-radius: 10px;
+    z-index: 3;
+}
+
+#btn-menu-mobile span
+{
+    height: 2px;
+    margin: 5px 0;
+    display: block;    
+    width: 20px;
+    background-color: #fff;
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    transition: all .3s ease;
+}
+
+#btn-menu-mobile > span:nth-child(1)
+{
+    top: 7px;
+}
+
+#btn-menu-mobile > span:nth-child(2)
+{
+    top: 13px;
+}
+
+#btn-menu-mobile > span:nth-child(3)
+{
+    top: 19px;
+}
+
+#btn-menu-mobile.open 
+{
+    border-color: transparent;
+}
+
+#btn-menu-mobile.open > span:nth-child(1),
+#btn-menu-mobile.open > span:nth-child(3)
+{
+    left: 8px;
+    width: 25px;
+    top: 13px;   
+}
+
+#btn-menu-mobile.open > span:nth-child(1)
+{
+    transform: rotate(45deg);
+}
+
+#btn-menu-mobile.open > span:nth-child(2)
+{
+    left: 100%;
+}
+
+#btn-menu-mobile.open > span:nth-child(3)
+{
+    transform: rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+    .top
+    {
+        position: fixed;
+        justify-content: space-between;
+        top: 10px;
+    }
+    
+    .menu
+    {
+        visibility: visible;
+        position: static;
+        opacity: 1;
+    }
+    
+    .menu, .menu ul
+    {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .menu a, .menu span, .dark-mode
+    {
+        font-size: 1rem;
+    }
+    
+    .menu li:before 
+    {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: #551fa5;
+        bottom: 22px;
+        height: 5px;
+        left: 20px;
+        width: calc(100% - 40px);
+        transition: all .2s ease;
+        margin: 0;
+        
+    }
+
+    .menu li:is(:hover, :focus, :active):before 
+    {
+        background-color: #F19529;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        left: 50%;
+        margin-left: -20px;
+        bottom: 8px;
+    }
+    
+    .dark-mode img
+    {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    
+    .logo
+    {
+        margin-left: 18px;
+        margin-top: 12px;
+    }
+    
+    .menu.show
+    {
+        color: #fff;
+    }
+}

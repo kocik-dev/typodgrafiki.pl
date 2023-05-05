@@ -78,8 +78,6 @@ const dataTemplate = `
                     </tr>    
                 </table>
             </div>
-        </section>
-        <section class="flex">
             <div class="col-sm-50">
                 <h3>Zainteresowania</h3>
                 <table><tr><td>${data.interests}</td></tr></table>

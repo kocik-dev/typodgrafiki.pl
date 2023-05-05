@@ -5,6 +5,7 @@ const data = {
         email: 'grzegorz.kocik.pn@gmail.com',
         phone: '+48 516 804 511',
         linedin: 'https://www.linkedin.com/in/grzegorz-kocik/',
+        github: 'https://github.com/typodgrafiki',
         www: 'https://typodgrafiki.pl'
     },
     aboutMe: 'Frontend developer o zapleczu graficznym z doświadczeniem w tworzeniu warstwy graficznej ecommerce. Szukam możliwości rozwoju przy projektach wykorzystujących nowe technologie (React)',
@@ -47,13 +48,6 @@ const data = {
             ]
         ] 
     },
-    side: [
-        ['04.2015', 'Konkurs'],
-        ['---', 'projekt własny js - opisac ze uzywam tu aby rozwinac sie poza praca bo tam nie ma'],
-        ['---', 'jakies uniwersalne style na github albo system design'],
-        ['---', 'jakies cssove style'],
-        ['---', 'aplikacja lista zadan']
-    ],
     languages: [
         ['polski', 'ojczysty'],
         ['angielski', 'A2']
@@ -64,7 +58,7 @@ const data = {
         name: 'Collegium da Vinci',
         spec: 'Specjalizacja: Grafika wydawnicza'
     },
-    interests: 'bieganie, trekking górski'
+    interests: 'podróże, trekking górski, działka moje hobby'
 }
 
 export default data

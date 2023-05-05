@@ -20,7 +20,7 @@ const openCv = () => {
     const printBtn = document.createElement('a');
     printBtn.setAttribute('id', 'printBtn');
     printBtn.setAttribute('target', '_blank');
-    printBtn.setAttribute('href', 'https://typodgrafiki.pl/cv.pdf');
+    printBtn.setAttribute('href', 'https://typodgrafiki.pl/cv_pl.pdf');
     printBtn.setAttribute('rel', 'nofollow noreferer noopener')
     printBtn.style.opacity = 1;
     printBtn.classList.add('btn', 'btn-default');

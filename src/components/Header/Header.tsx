@@ -1,5 +1,5 @@
 import React from "react"
-import LightModeBtn from "./LightModeBtn.tsx"
+import LightModeBtn from "./LightModeBtn"
 import logo from "../../assets/logo.svg"
 import logoWhite from "../../assets/logo-light.svg"
 import { openCv } from "../Cv/Cv.ts"

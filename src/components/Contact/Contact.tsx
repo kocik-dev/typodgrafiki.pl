@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import emailjs from "@emailjs/browser"
-import EmailsjData from "./EmailsjData.tsx"
+import EmailsjData from "./EmailsjData"
 import "./Contact.css"
 import "./Loader.css"
 

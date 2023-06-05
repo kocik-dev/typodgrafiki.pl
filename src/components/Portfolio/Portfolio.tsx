@@ -1,10 +1,11 @@
 import React from "react"
-import PortfolioItem from "./PortfolioItem/PortfolioItem.tsx"
-import { linkScroll } from "../Header/Header.tsx"
+import PortfolioItem from "./PortfolioItem/PortfolioItem"
+import { linkScroll } from "../Header/Header"
 import iconHtml from "../../assets/tech/html.svg"
 import iconJs from "../../assets/tech/js.svg"
 import iconReact from "../../assets/tech/react.svg"
 import iconGithub from "../../assets/tech/github.svg"
+
 import "./Portfolio.css"
 
 interface ProjectItem {

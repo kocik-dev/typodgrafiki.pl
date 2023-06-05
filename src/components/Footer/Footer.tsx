@@ -1,5 +1,5 @@
 import React from "react"
-import SocialLink from "./SocialLink/SocialLink.tsx"
+import SocialLink from "./SocialLink/SocialLink"
 import "./Footer.css"
 
 interface ISocialData {

@@ -1,6 +1,6 @@
 import React from "react"
-import Face from "./Face/Face.tsx"
-import { linkScroll } from "../Header/Header.tsx"
+import Face from "./Face/Face"
+import { linkScroll } from "../Header/Header"
 import "./Main.css"
 import face from "../../assets/face/face.png"
 import faceW from "../../assets/face/face.webp"

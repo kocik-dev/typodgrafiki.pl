@@ -1,4 +1,4 @@
-import data from "../../data/data.ts"
+import data from "../../data/data"
 
 const list = (el: [string, string][]) => {
     let output = ""

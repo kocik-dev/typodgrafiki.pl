@@ -1,4 +1,4 @@
-import { dataTemplate } from "./dataTemplate.ts"
+import { dataTemplate } from "./dataTemplate"
 import "./Cv.css"
 
 const openCv = (): void => {

@@ -1,5 +1,5 @@
 import React from "react"
-import { linkScroll } from "../Header/Header.tsx"
+import { linkScroll } from "../Header/Header"
 import "./About.css"
 
 const About: React.FC = () => {

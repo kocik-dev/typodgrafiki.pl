@@ -2,7 +2,7 @@ import React from "react"
 import LightModeBtn from "./LightModeBtn"
 import logo from "../../assets/logo.svg"
 import logoWhite from "../../assets/logo-light.svg"
-import { openCv } from "../Cv/Cv.ts"
+import { openCv } from "../Cv/Cv"
 import "./Header.css"
 
 interface HeaderProps {
@@ -10,19 +10,21 @@ interface HeaderProps {
     changeModeFn?: () => void
 }
 
-const linkScroll = (el: MouseEvent<HTMLAnchorElement>): void => {
+const linkScroll = (el: any): void => {
     el.preventDefault()
     const windowHeight = window.innerHeight * 0.23
     const elementId = el.target.getAttribute("href")
     const section = document.querySelector<HTMLElement>(elementId)
 
-    window.scroll({
-        top:
-            elementId === "#contact"
-                ? section.offsetTop
-                : section.offsetTop - windowHeight,
-        behavior: "smooth",
-    })
+    if (section) {
+        window.scroll({
+            top:
+                elementId === "#contact"
+                    ? section.offsetTop
+                    : section.offsetTop - windowHeight,
+            behavior: "smooth",
+        })
+    }
 }
 
 const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn }) => {
@@ -33,18 +35,19 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn }) => {
         })
     }
 
-    const showMenu = (menuButton: MouseEvent<HTMLButtonElement>): void => {
+    const showMenu = (menuButton: any): void => {
         const menuEl = document.querySelector<HTMLElement>(".menu")
         const menuLink = document.querySelectorAll<HTMLElement>(
             ".menu li a, .menu li span, .dark-mode"
         )
-        menuEl.classList.toggle("show")
-        menuButton.target.classList.toggle("open")
+
+        menuEl != null && menuEl.classList.toggle("show")
+        menuButton != null && menuButton.target.classList.toggle("open")
 
         menuLink.forEach((element) => {
             element.addEventListener("click", function () {
-                menuEl.classList.remove("show")
-                menuButton.target.classList.remove("open")
+                menuEl != null && menuEl.classList.remove("show")
+                menuButton != null && menuButton.target.classList.remove("open")
             })
         })
     }

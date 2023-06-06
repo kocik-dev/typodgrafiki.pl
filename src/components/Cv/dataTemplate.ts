@@ -1,3 +1,6 @@
+
+
+
 import data from "../../data/data"
 
 const list = (el: [string, string][]) => {
@@ -38,60 +41,54 @@ const listExperience = (
 }
 
 const dataTemplate = `
-  <h2>${data.name} <small>(${data.experienceYears})</small></h2>
-  <section class="flex">
-    <ul>
-      <li><a href="mailto:${data.contact.email}">${
-    data.contact.email
-}</a> <span class="text-muted">(preferowany)</span></li>
-      <li>${data.contact.phone}</li>
-      <li><a href="${data.contact.linedin}" target="_blank">${
-    data.contact.linedin
-}</a></li>
-      <li><a href="${data.contact.github}" target="_blank">${
-    data.contact.github
-}</a></li>
-      <li><a href="${data.contact.www}" target="_blank">${
-    data.contact.www
-}</a></li>
-    </ul>
-    <div>${data.aboutMe}</div>
-  </section>
-  <section>
-    <h3>Tech skils</h3>
-    <table>
-      ${list(data.techSkils)}
-    </table>
-  </section>
-  <section>
-    <h3>${data.experience.name}</h3>
-    ${listExperience(data.experience.works)}
-  </section>
-  <section class="flex">
-    <div class="col-sm-50">
-      <h3>Języki</h3>
-      <table>
-        ${list(data.languages)}
-      </table>
-    </div>
-    <div class="col-sm-50">
-      <h3>Edukacja</h3>
-      <table>
-        <tr>
-          <td>${data.education.date}</td>
-          <td>
-            <strong>${data.education.field}</strong><br />
-            ${data.education.name}<br />
-            ${data.education.spec}
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="col-sm-50">
-      <h3>Zainteresowania</h3>
-      <table><tr><td>${data.interests}</td></tr></table>
-    </div>
-  </section>
+    <h2>${data.name} <small>(${data.experienceYears})</small></h2>
+    <section class="flex">
+        <ul>
+            <li><a href="mailto:${data.contact.email}">${data.contact.email}</a> <span class="text-muted">(preferowany)</span></li>
+            <li>${data.contact.phone}</li>
+            <li><a href="${data.contact.linedin}" target="_blank">${data.contact.linedin}</a></li>
+            <li><a href="${data.contact.www}" target="_blank">${data.contact.www}</a></li>
+        </ul>
+        <div>${data.aboutMe}</div>
+    </section>
+    <section>
+        <h3>Tech skils</h3>
+        <table>
+            ${list(data.techSkils)}
+        </table>
+    </section>
+    <section>
+        <h3>${data.experience.name}</h3>
+        ${listExperience(data.experience.works)}
+    </section>
+    <section class="flex">
+        <div class="col-sm-50">
+            <h3>Języki</h3>
+            <table>
+                ${list(data.languages)}
+            </table>
+        </div>
+        <div class="col-sm-50">
+            <h3>Edukacja</h3>
+            <table>
+                <tr>
+                    <td>${data.education.date}</td>
+                    <td>
+                        <strong>${data.education.field}</strong><br />
+                        ${data.education.name}<br />
+                        ${data.education.spec}
+                    </td>
+                </tr>    
+            </table>
+        </div>
+    </section>
+    <section class="flex">
+        
+        <div class="col-sm-50">
+            <h3>Zainteresowania</h3>
+            <table><tr><td>${data.interests}</td></tr></table>
+        </div>
+    </section>
 `
 
 export { dataTemplate }

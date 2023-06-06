@@ -5,6 +5,8 @@ interface FaceProps extends HTMLAttributes<HTMLPictureElement> {
     alt: string
     fallbackSrc: string
     mediaType?: string
+    height?: number
+    width?: number
 }
 
 const Face: React.FC<FaceProps> = ({

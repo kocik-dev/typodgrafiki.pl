@@ -1,20 +1,21 @@
 import React, { MouseEventHandler } from "react"
-import PropTypes, { InferProps } from "prop-types"
 import darkIcon from "../../assets/dark-mode-icon.svg"
 import lightIcon from "../../assets/light-mode-icon.svg"
 
 interface LightModeBtnProps {
     lightMode: boolean
-    changeModeFn: () => void
+    changeModeFn?: () => void
 }
 
 const LightModeBtn: React.FC<LightModeBtnProps> = ({
     lightMode,
     changeModeFn,
-}: InferProps<typeof LightModeBtn.propTypes>) => {
+}) => {
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
         e.preventDefault()
-        changeModeFn()
+        if (changeModeFn) {
+            changeModeFn()
+        }
     }
 
     return (
@@ -30,15 +31,6 @@ const LightModeBtn: React.FC<LightModeBtnProps> = ({
             />
         </button>
     )
-}
-
-LightModeBtn.propTypes = {
-    lightMode: PropTypes.bool,
-    changeModeFn: PropTypes.func,
-}
-
-LightModeBtn.defaultProps = {
-    lightMode: false,
 }
 
 export default LightModeBtn

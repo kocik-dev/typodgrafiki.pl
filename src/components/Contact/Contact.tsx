@@ -1,48 +1,49 @@
-import React, { useRef } from "react"
+import React, { useRef, FormEvent } from "react"
 import emailjs from "@emailjs/browser"
 import EmailsjData from "./EmailsjData"
 import "./Contact.css"
 import "./Loader.css"
 
 const Contact: React.FC = () => {
-    const form = useRef<HTMLFormElement>(null)
+    const form = useRef(null)
 
-    const sendEmail = (e) => {
+    const sendEmail = (e: FormEvent) => {
         e.preventDefault()
 
-        const formEl = document.querySelector(".form") as HTMLElement
+        const formEl = document.querySelector(".form")
         const loaderEl = document.createElement("div")
 
         loaderEl.classList.add("lds-roller")
-        formEl.classList.add("sending")
-        formEl.append(loaderEl)
+        if (formEl !== null) {
+            formEl.classList.add("sending")
+            formEl.append(loaderEl)    
+        }
+        
         loaderEl.innerHTML =
             "<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>"
         loaderEl.classList.add("show")
 
-        emailjs
-            .sendForm(
-                EmailsjData.service,
-                EmailsjData.template,
-                form.current,
-                EmailsjData.publicKey
-            )
-            .then(
-                (result) => {
-                    formSended(result, loaderEl)
-                },
-                (error) => {
-                    formSended(error, loaderEl)
-                }
-            )
-
-        // setTimeout(() => {
-        //     formSended({text: 'OK'}, loaderEl);
-        // }, "2000")
+        if (form.current !== null) {
+            emailjs
+                .sendForm(
+                    EmailsjData.service,
+                    EmailsjData.template,
+                    form.current,
+                    EmailsjData.publicKey
+                )
+                .then((result: any) => {
+                        formSended(result, loaderEl)
+                    },
+                    (error) => {
+                        formSended(error, loaderEl)
+                    }
+                )
+        }
     }
 
-    const formSended = (res, loader: HTMLElement) => {
-        const formEl = document.querySelector(".form") as HTMLElement
+    const formSended = (res: any, loader: HTMLElement) => {
+        
+        const formEl = document.querySelector(".form") as HTMLFormElement
         const formSuccess = document.createElement("div")
         const formSuccessName = document.createElement("h4")
         const formSuccessP = document.createElement("p")
@@ -52,8 +53,10 @@ const Contact: React.FC = () => {
 
         formSuccessButton.classList.add("btn", "btn-default")
         formSuccessButton.setAttribute("id", "buttonCloseForm")
-
-        if (res.text === "OK") {
+        
+        console.log(res)
+        
+        if (res.status === 200) {
             formSuccessName.textContent = "Dziękuję za kontakt"
             formSuccessP.textContent = "Odpowiem tak szybko jak to możliwe."
             formSuccessButton.textContent = "Zamknij"
@@ -70,10 +73,10 @@ const Contact: React.FC = () => {
         setTimeout(() => {
             formEl.classList.remove("sending")
             loader.remove()
-            if (res.text === "OK") {
+            if (res.status === 200) {
                 formEl.reset()
             }
-        }, "1000")
+        }, 1000)
 
         formSuccessButton.addEventListener("click", function () {
             closeformSuccess(formSuccess)
@@ -81,10 +84,10 @@ const Contact: React.FC = () => {
     }
 
     const closeformSuccess = (e: HTMLElement) => {
-        e.style.opacity = 0
+        e.style.opacity = '0'
         setTimeout(() => {
-            e.remove()
-        }, "1000")
+            e.remove();
+        }, 1000);
     }
 
     return (

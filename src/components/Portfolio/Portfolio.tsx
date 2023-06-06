@@ -1,10 +1,6 @@
 import React from "react"
 import PortfolioItem from "./PortfolioItem/PortfolioItem"
 import { linkScroll } from "../Header/Header"
-import iconHtml from "../../assets/tech/html.svg"
-import iconJs from "../../assets/tech/js.svg"
-import iconReact from "../../assets/tech/react.svg"
-import iconGithub from "../../assets/tech/github.svg"
 
 import "./Portfolio.css"
 
@@ -22,28 +18,28 @@ const projectsItem: ProjectItem[] = [
         classList: "box box-html",
         name: "HTML / CSS",
         subName: "Semantyka i stylowanie",
-        icon: iconHtml,
+        icon: "../../assets/tech/html.svg",
     },
     {
         link: "http://js.typodgrafiki.pl/",
         classList: "box box-js",
         name: "JavaScript",
         subName: "Dynamiczne elementy",
-        icon: iconJs,
+        icon: "../../assets/tech/js.svg",
     },
     {
         link: "http://react.typodgrafiki.pl/",
         classList: "box box-react",
         name: "React",
         subName: "Projekt",
-        icon: iconReact,
+        icon: "../../assets/tech/react.svg",
     },
     {
         link: "https://github.com/typodgrafiki",
         classList: "box box-github",
         name: "Github",
         subName: "Moje konto",
-        icon: iconGithub,
+        icon: "../../assets/tech/github.svg",
     },
 ]
 

@@ -2,7 +2,7 @@ import React from "react"
 import LightModeBtn from "./LightModeBtn"
 import logo from "../../assets/logo.svg"
 import logoWhite from "../../assets/logo-light.svg"
-import { openCv } from "../Cv/Cv"
+import { OpenCv } from "../Cv/Cv"
 import "./Header.css"
 
 interface HeaderProps {
@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn }) => {
                         </a>
                     </li>
                     <li>
-                        <span onClick={openCv}>cv.pdf</span>
+                        <span onClick={OpenCv}>cv.pdf</span>
                     </li>
                     <li>
                         <a

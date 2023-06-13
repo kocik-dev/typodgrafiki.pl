@@ -1,6 +1,3 @@
-
-
-
 import data from "../../data/data"
 
 const list = (el: [string, string][]) => {
@@ -44,10 +41,16 @@ const dataTemplate = `
     <h2>${data.name} <small>(${data.experienceYears})</small></h2>
     <section class="flex">
         <ul>
-            <li><a href="mailto:${data.contact.email}">${data.contact.email}</a> <span class="text-muted">(preferowany)</span></li>
+            <li><a href="mailto:${data.contact.email}">${
+    data.contact.email
+}</a> <span class="text-muted">(preferowany)</span></li>
             <li>${data.contact.phone}</li>
-            <li><a href="${data.contact.linedin}" target="_blank">${data.contact.linedin}</a></li>
-            <li><a href="${data.contact.www}" target="_blank">${data.contact.www}</a></li>
+            <li><a href="${data.contact.linedin}" target="_blank">${
+    data.contact.linedin
+}</a></li>
+            <li><a href="${data.contact.www}" target="_blank">${
+    data.contact.www
+}</a></li>
         </ul>
         <div>${data.aboutMe}</div>
     </section>

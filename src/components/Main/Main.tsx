@@ -1,8 +1,6 @@
-import React from "react"
-import Face from "./Face/Face"
+import Image from "next/image"
 import { linkScroll } from "../Header/Header"
 import "./Main.css"
-import face from "../../assets/face/face.png"
 import faceW from "../../assets/face/face.webp"
 
 const Main: React.FC = () => {
@@ -12,13 +10,14 @@ const Main: React.FC = () => {
             className="window-height margin-section"
         >
             <div className="caption flex">
-                <Face
-                    src={faceW}
-                    alt="Grzegorz Kocik"
-                    fallbackSrc={face}
-                    height={116}
-                    width={116}
-                />
+                <div className="face">
+                    <Image
+                        src={faceW}
+                        alt="Grzegorz Kocik"
+                        height={116}
+                        width={116}
+                    />
+                </div>
                 <div>
                     <h1 className="title">Grzegorz Kocik</h1>
                     <h2 className="flex subtitle">

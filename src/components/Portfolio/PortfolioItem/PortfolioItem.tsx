@@ -1,4 +1,4 @@
-import React from "react"
+import Image from "next/image"
 
 interface PortfolioItemProps {
     link: string
@@ -26,7 +26,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
                 <small>{subName}</small>
                 <span className="name-line">
                     {name}
-                    <img
+                    <Image
                         src={icon}
                         alt={name}
                         width={classList.includes("html") ? "86" : "50"}

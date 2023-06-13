@@ -16,9 +16,9 @@ const Contact: React.FC = () => {
         loaderEl.classList.add("lds-roller")
         if (formEl !== null) {
             formEl.classList.add("sending")
-            formEl.append(loaderEl)    
+            formEl.append(loaderEl)
         }
-        
+
         loaderEl.innerHTML =
             "<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>"
         loaderEl.classList.add("show")
@@ -31,7 +31,8 @@ const Contact: React.FC = () => {
                     form.current,
                     EmailsjData.publicKey
                 )
-                .then((result: any) => {
+                .then(
+                    (result: any) => {
                         formSended(result, loaderEl)
                     },
                     (error) => {
@@ -42,7 +43,6 @@ const Contact: React.FC = () => {
     }
 
     const formSended = (res: any, loader: HTMLElement) => {
-        
         const formEl = document.querySelector(".form") as HTMLFormElement
         const formSuccess = document.createElement("div")
         const formSuccessName = document.createElement("h4")
@@ -53,9 +53,7 @@ const Contact: React.FC = () => {
 
         formSuccessButton.classList.add("btn", "btn-default")
         formSuccessButton.setAttribute("id", "buttonCloseForm")
-        
-        console.log(res)
-        
+
         if (res.status === 200) {
             formSuccessName.textContent = "Dziękuję za kontakt"
             formSuccessP.textContent = "Odpowiem tak szybko jak to możliwe."
@@ -84,10 +82,10 @@ const Contact: React.FC = () => {
     }
 
     const closeformSuccess = (e: HTMLElement) => {
-        e.style.opacity = '0'
+        e.style.opacity = "0"
         setTimeout(() => {
-            e.remove();
-        }, 1000);
+            e.remove()
+        }, 1000)
     }
 
     return (

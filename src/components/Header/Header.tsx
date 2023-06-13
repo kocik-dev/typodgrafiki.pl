@@ -1,13 +1,13 @@
-import React from "react"
+import Image from "next/image"
 import LightModeBtn from "./LightModeBtn"
 import logo from "../../assets/logo.svg"
 import logoWhite from "../../assets/logo-light.svg"
-import { OpenCv } from "../Cv/Cv"
 import "./Header.css"
 
 interface HeaderProps {
     lightMode: boolean
     changeModeFn?: () => void
+    openCv?: () => void
 }
 
 const linkScroll = (el: any): void => {
@@ -27,7 +27,7 @@ const linkScroll = (el: any): void => {
     }
 }
 
-const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn }) => {
+const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn, openCv }) => {
     const scrollTop = (): void => {
         window.scroll({
             top: 0,
@@ -54,11 +54,13 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn }) => {
 
     return (
         <header className="top flex">
-            <img
+            <Image
                 src={lightMode ? logoWhite : logo}
                 className="logo"
                 alt="logo"
                 onClick={scrollTop}
+                width={159}
+                height={23}
             />
             <button
                 id="btn-menu-mobile"
@@ -80,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn }) => {
                         </a>
                     </li>
                     <li>
-                        <span onClick={OpenCv}>cv.pdf</span>
+                        <span onClick={openCv}>cv.pdf</span>
                     </li>
                     <li>
                         <a

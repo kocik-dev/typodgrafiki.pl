@@ -1,4 +1,4 @@
-import React from "react"
+import Image from "next/image"
 import PortfolioItem from "./PortfolioItem/PortfolioItem"
 import { linkScroll } from "../Header/Header"
 import imageHtml from "../../assets/tech/html.svg"
@@ -22,28 +22,28 @@ const projectsItem: ProjectItem[] = [
         classList: "box box-html",
         name: "HTML / CSS",
         subName: "Semantyka i stylowanie",
-        icon: imageHtml
+        icon: imageHtml,
     },
     {
         link: "http://js.typodgrafiki.pl/",
         classList: "box box-js",
         name: "JavaScript",
         subName: "Dynamiczne elementy",
-        icon: imageJs
+        icon: imageJs,
     },
     {
         link: "http://react.typodgrafiki.pl/",
         classList: "box box-react",
         name: "React",
         subName: "Projekt",
-        icon: imageReact
+        icon: imageReact,
     },
     {
         link: "https://github.com/typodgrafiki",
         classList: "box box-github",
         name: "Github",
         subName: "Moje konto",
-        icon: imageGithub
+        icon: imageGithub,
     },
 ]
 

@@ -52,6 +52,7 @@
     height: 36px;
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
+    animation-delay: 1s;
     transition: opacity .7s ease;
     position: absolute;
     top: 50%;

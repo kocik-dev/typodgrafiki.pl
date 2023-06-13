@@ -5,9 +5,48 @@ interface CvProps {
     openCv: () => void
 }
 
+interface Contact {
+    email: string
+    phone: string
+    linedin: string
+    github: string
+    www: string
+}
+
+interface ExperienceWork {
+    date: string
+    position: string
+    company: string
+    tasks: string[]
+}
+
+interface Experience {
+    name: string
+    works: ExperienceWork[][]
+}
+
+interface Education {
+    date: string
+    field: string
+    name: string
+    spec: string
+}
+
+interface CvData {
+    name: string
+    experienceYears: string
+    contact: Contact
+    aboutMe: string
+    techSkils: [string, string][]
+    experience: Experience
+    languages: [string, string][]
+    education: Education
+    interests: string
+}
+
 const OpenCv: React.FC<CvProps> = ({ openCv }) => {
-    const [data, setData] = useState(null)
-    const [isLoading, setIsLoading] = useState(true)
+    const [data, setData] = useState<CvData | null>(null)
+    const [isLoading, setIsLoading] = useState<boolean>(true)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,7 +56,7 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                 )
                 const data = await response.json()
 
-                await new Promise((resolve) => setTimeout(resolve, 2000))
+                await new Promise((resolve) => setTimeout(resolve, 1500))
 
                 setIsLoading(false)
 
@@ -30,12 +69,24 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
         }
 
         fetchData()
+
+        const handleKeyEsc = (event: KeyboardEvent) => {
+            if (event.key === "Escape" || event.code === "Escape") {
+                openCv()
+            }
+        }
+
+        document.addEventListener("keydown", handleKeyEsc)
+
+        return () => {
+            document.removeEventListener("keydown", handleKeyEsc)
+        }
     }, [])
 
     return (
         <>
             <div className="shadow"></div>
-            <div className={isLoading ? "modal" : "modal show"}>
+            <div className={isLoading ? "modal loading" : "modal show"}>
                 <div className="content">
                     {data && (
                         <>
@@ -58,6 +109,7 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                                         <a
                                             href="{data.contact.linedin}"
                                             target="_blank"
+                                            rel="nofollow noreferer noopener"
                                         >
                                             {data.contact.linedin}
                                         </a>
@@ -66,6 +118,7 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                                         <a
                                             href="{data.contact.www}"
                                             target="_blank"
+                                            rel="nofollow noreferer noopener"
                                         >
                                             {data.contact.www}
                                         </a>
@@ -75,32 +128,57 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                             </section>
                             <section>
                                 <h3>Tech skils</h3>
-                                {/* <table>{list(data.techSkils)}</table> */}
+                                <table>
+                                    <tbody>
+                                        {data.techSkils.map((el, index) => (
+                                            <ListElement
+                                                data={el}
+                                                key={index}
+                                            />
+                                        ))}
+                                    </tbody>
+                                </table>
                             </section>
                             <section>
                                 <h3>{data.experience.name}</h3>
-                                {/* {listExperience(data.experience.works)} */}
+                                {data.experience.works.map((el, index) => (
+                                    <WorkElement
+                                        data={el}
+                                        key={index}
+                                    />
+                                ))}
                             </section>
                             <section className="flex">
                                 <div className="col-sm-50">
                                     <h3>Języki</h3>
-                                    {/* <table>{list(data.languages)}</table> */}
+                                    <table>
+                                        <tbody>
+                                            {data.languages.map((el, index) => (
+                                                <ListElement
+                                                    data={el}
+                                                    key={index}
+                                                />
+                                            ))}
+                                        </tbody>
+                                    </table>
                                 </div>
                                 <div className="col-sm-50">
                                     <h3>Edukacja</h3>
                                     <table>
-                                        <tr>
-                                            <td>{data.education.date}</td>
-                                            <td>
-                                                <strong>
-                                                    {data.education.field}
-                                                </strong>
-                                                <br />
-                                                {data.education.name}
-                                                <br />
-                                                {data.education.spec}
-                                            </td>
-                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>{data.education.date}</td>
+                                                <td>
+                                                    <strong>
+                                                        {data.education.field}
+                                                    </strong>
+                                                    <br />
+                                                    {data.education.name}
+                                                    <br />
+                                                    {data.education.spec}
+                                                </td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </div>
                             </section>
@@ -108,12 +186,24 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                                 <div className="col-sm-50">
                                     <h3>Zainteresowania</h3>
                                     <table>
-                                        <tr>
-                                            <td>{data.interests}</td>
-                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>{data.interests}</td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </div>
                             </section>
+                            <a
+                                id="printBtn"
+                                target="_blank"
+                                href="https://typodgrafiki.pl/cv_pl.pdf"
+                                rel="nofollow noreferer noopener"
+                                className="btn btn-default"
+                                style={{ opacity: 1 }}
+                            >
+                                Drukuj
+                            </a>
                         </>
                     )}
                 </div>
@@ -122,6 +212,7 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                         id="close-modal"
                         className="close btn"
                         onClick={openCv}
+                        aria-label="Zamknij"
                     ></button>
                 )}
             </div>
@@ -129,61 +220,34 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
     )
 }
 
-// import React, { useState } from "react"
+const ListElement: React.FC<{ data: [string, string] }> = ({ data }) => {
+    return (
+        <>
+            <tr>
+                <td>{data[0]}:</td>
+                <td>{data[1]}</td>
+            </tr>
+        </>
+    )
+}
 
-// import "./Cv.css"
-
-// const OpenCv = () => {
-// const rootEl = document.querySelector("#root") as HTMLElement
-// const cvElement = document.createElement("div")
-// const cvElementContent = document.createElement("div")
-// const closeEl = document.createElement("button")
-// const fadeContent = document.createElement("div")
-// cvElement.classList.add("modal")
-// cvElementContent.classList.add("content")
-// fadeContent.classList.add("shadow")
-// closeEl.setAttribute("id", "close-modal")
-// closeEl.classList.add("close", "btn")
-// rootEl.appendChild(fadeContent)
-// rootEl.appendChild(cvElement)
-// document.body.style.overflow = "hidden"
-// const printBtn = document.createElement("a")
-// printBtn.setAttribute("id", "printBtn")
-// printBtn.setAttribute("target", "_blank")
-// printBtn.setAttribute("href", "https://typodgrafiki.pl/cv_pl.pdf")
-// printBtn.setAttribute("rel", "nofollow noreferer noopener")
-// printBtn.style.opacity = "1"
-// printBtn.classList.add("btn", "btn-default")
-// printBtn.textContent = "Drukuj"
-// setTimeout(() => {
-//     cvElement.classList.add("loading")
-//     setTimeout(() => {
-//         cvElement.classList.add("show")
-//         cvElement.classList.remove("loading")
-//         setTimeout(() => {
-//             cvElementContent.innerHTML = dataTemplate
-//             cvElement.append(cvElementContent, closeEl)
-//             cvElementContent.append(printBtn)
-//         }, 1200)
-//     }, 750)
-// }, 750)
-// const closeCv = (): void => {
-//     cvElement.classList.add("detach")
-//     document.body.style.overflow = ""
-//     setTimeout(() => {
-//         fadeContent.style.opacity = "0"
-//         setTimeout(() => {
-//             cvElement.remove()
-//             fadeContent.remove()
-//         }, 200)
-//     }, 200)
-// }
-// closeEl.addEventListener("click", closeCv)
-// document.addEventListener("keydown", (e) => {
-//     if (e.key === "Escape") {
-//         closeCv()
-//     }
-// })
-// }
+const WorkElement: React.FC<{ data: ExperienceWork[] }> = ({ data }) => {
+    return (
+        <>
+            <div className="works">
+                <div className="date">{data[0].date}</div>
+                <div className="title-work">
+                    <strong>{data[0].position}</strong>
+                </div>
+                <div className="company">{data[0].company}</div>
+                <ul>
+                    {data[0].tasks.map((el, index) => (
+                        <li key={index}>{el}</li>
+                    ))}
+                </ul>
+            </div>
+        </>
+    )
+}
 
 export { OpenCv }

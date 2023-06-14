@@ -47,6 +47,7 @@ interface CvData {
 const OpenCv: React.FC<CvProps> = ({ openCv }) => {
     const [data, setData] = useState<CvData | null>(null)
     const [isLoading, setIsLoading] = useState<boolean>(true)
+    const [loadSuccess, setLoadSuccess] = useState<boolean>(true)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -63,8 +64,14 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                 await new Promise((resolve) => setTimeout(resolve, 1500))
                 setData(data)
             } catch (error) {
-                console.error("Błąd podczas pobierania danych:", error)
+                // console.error("Błąd podczas pobierania danych:", error)
+                
+                setLoadSuccess(false)
+
+                await new Promise((resolve) => setTimeout(resolve, 1500))
+
                 setIsLoading(false)
+                
             }
         }
 
@@ -86,9 +93,9 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
     return (
         <>
             <div className="shadow"></div>
-            <div className={isLoading ? "modal loading" : "modal show"}>
+            <div className={`modal ${isLoading ? "loading" : "show"} ${!loadSuccess && !isLoading ? "loadFail" : ""}`}>
                 <div className="content">
-                    {data && (
+                    {data ? (
                         <>
                             <h2>
                                 {data.name}{" "}
@@ -205,6 +212,8 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                                 Drukuj
                             </a>
                         </>
+                    ) : (
+                        <p className="textFalse">Nie udało się pliku</p>
                     )}
                 </div>
                 {data && (

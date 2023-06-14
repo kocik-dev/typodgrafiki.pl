@@ -74,6 +74,28 @@
     animation-duration: 1s;
 }
 
+.modal.loadFail 
+{
+    max-height: 100px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+
+.modal .textFalse
+{
+    opacity: 0;
+    margin: 0;
+    transition: opacity .4s ease-in;
+    
+}
+
+.modal.show .textFalse
+{
+    opacity: 1;
+}
+
 .modal.detach
 {
     transition: height .2s ease;

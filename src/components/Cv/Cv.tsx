@@ -217,7 +217,13 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                             </a>
                         </>
                     ) : (
-                        <p className="textFalse">Nie udało się wgrać pliku.</p>
+                        !loadSuccess && (
+                            <>
+                                <p className="textFalse">
+                                    Nie udało się wgrać pliku.
+                                </p>
+                            </>
+                        )
                     )}
                 </div>
                 {data && (

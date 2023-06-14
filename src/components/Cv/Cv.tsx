@@ -93,7 +93,11 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
     return (
         <>
             <div className="shadow"></div>
-            <div className={`modal ${isLoading ? "loading" : "show"} ${!loadSuccess && !isLoading ? "loadFail" : ""}`}>
+            <div
+                className={`modal ${isLoading ? "loading" : "show"} ${
+                    !loadSuccess && !isLoading ? "loadFail" : ""
+                }`}
+            >
                 <div className="content">
                     {data ? (
                         <>
@@ -213,7 +217,7 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                             </a>
                         </>
                     ) : (
-                        <p className="textFalse">Nie udało się pliku</p>
+                        <p className="textFalse">Nie udało się wgrać pliku.</p>
                     )}
                 </div>
                 {data && (

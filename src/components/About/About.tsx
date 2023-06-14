@@ -11,10 +11,11 @@ const About: React.FC = () => {
             <div className="caption small-width caption-border">
                 <h2 className="title-small">O mnie</h2>
                 <p>
-                    <strong>Front-end developer</strong> o zapleczu graficznym z
-                    doświadczeniem w tworzeniu warstwy graficznej ecommerce.
-                    Szukam możliwości rozwoju przy projektach wykorzystujących
-                    nowe technologie (React)
+                    <strong>Front-end developer</strong> o zapleczu graficznym,
+                    a moje główne obszary ekspertyzy to tworzenie warstwy
+                    graficznej w kontekście e-commerce. Z pasją podchodzę do
+                    projektów, które wykorzystują nowoczesne technologie,
+                    szczególnie w obszarze React.
                 </p>
                 <div className="grid vertical-top">
                     <div>
@@ -29,13 +30,22 @@ const About: React.FC = () => {
                         </ul>
                     </div>
                     <div>
-                        <h3>Ciągle się uczę:</h3>
+                        <h3>Skupiam się na pogłębianiu wiedzy w:</h3>
                         <ul>
                             <li>JavaScript</li>
                             <li>React</li>
+                            <li>Typescript</li>
+                            <li>Next</li>
                         </ul>
                     </div>
                 </div>
+                <p>
+                    Jestem otwarty na nowe wyzwania i projekty, które pozwolą mi
+                    rozwijać się jako front-end developer. Moją pasją jest
+                    tworzenie estetycznych, responsywnych i przyjaznych dla
+                    użytkownika stron internetowych, które dostarczają wartość
+                    dla klientów.
+                </p>
                 <a
                     className="btn btn-yellow"
                     href="#portfolio"

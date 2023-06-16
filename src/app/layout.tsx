@@ -1,12 +1,6 @@
-import Head from "next/head"
 import "../styles/App.css"
 import "../styles/darkMode.css"
 import { Poppins } from "next/font/google"
-
-const poppins = Poppins({
-    subsets: ["latin-ext"],
-    weight: ["400", "500", "600"],
-})
 
 export const metadata = {
     title: "Grzegorz Kocik - Front-end Developer Portfolio",
@@ -32,7 +26,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pl">
-            <body className={poppins.className}>{children}</body>
+            <body>{children}</body>
         </html>
     )
 }

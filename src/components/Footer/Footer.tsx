@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="copyright text-center">
                 &#169; 2023 typodgrafiki.pl &#8226; Grzegorz Kocik &#8226;
-                Front-end developer | UI Designer
+                Front-end developer | Web Designer
             </div>
         </footer>
     )

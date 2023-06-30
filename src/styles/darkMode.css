@@ -116,7 +116,8 @@
 }
 
 @media (min-width: 768px) {
-    .light-mode #about .vertical-top > div
+    .light-mode #about .vertical-top > div,
+    .light-mode #about .vertical-top>div:first-child
     {
         box-shadow: 5px 8px 0 #3c3e51;    
         background-color: #d0d1dd;

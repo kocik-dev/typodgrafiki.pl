@@ -7,11 +7,6 @@
     flex-direction: column;
 }
 
-.social
-{   
-    
-}
-
 .social svg 
 {
     fill: currentColor;
@@ -37,10 +32,15 @@
 {
     padding: 10px 0;
     font-size: 0.9rem;
-    text-align: right;
 }
 
 @media (min-width: 768px) {
+    
+    .footer
+    {
+        flex-direction: row;
+    }
+    
     .social
     {
         position: fixed;

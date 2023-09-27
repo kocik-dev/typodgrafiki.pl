@@ -32,6 +32,13 @@ interface Education {
     spec: string
 }
 
+interface Projects {
+    date: string
+    field: string
+    desc: string
+    link: string
+}
+
 interface CvData {
     name: string
     experienceYears: string
@@ -39,6 +46,7 @@ interface CvData {
     aboutMe: string
     techSkils: [string, string][]
     experience: Experience
+    projects: Projects[]
     languages: [string, string][]
     education: Education
     interests: string
@@ -65,13 +73,12 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                 setData(data)
             } catch (error) {
                 // console.error("Błąd podczas pobierania danych:", error)
-                
+
                 setLoadSuccess(false)
 
                 await new Promise((resolve) => setTimeout(resolve, 1500))
 
                 setIsLoading(false)
-                
             }
         }
 
@@ -158,6 +165,30 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                                         key={index}
                                     />
                                 ))}
+                            </section>
+                            <section>
+                                <h3>Własne projekty</h3>
+                                <table>
+                                    <tbody>
+                                        {data.projects?.map((el, index) => (
+                                            <tr>
+                                                <td>{el.date}</td>
+                                                <td>
+                                                    <strong>{el.field}</strong>
+                                                    <br />
+                                                    {el.desc}
+                                                    <br />
+                                                    <a
+                                                        href={el.link}
+                                                        target="_blank"
+                                                    >
+                                                        {el.link}
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
                             </section>
                             <section className="flex">
                                 <div className="col-sm-50">

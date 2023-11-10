@@ -1,14 +1,12 @@
-#main 
-{
-    display: flex;    
+#main {
+    display: flex;
     /* height: inherit; */
     height: 100dvh;
     align-items: center;
     justify-content: center;
 }
 
-.face
-{
+.face {
     height: 116px;
     width: 116px;
     position: relative;
@@ -16,9 +14,8 @@
     top: 5px;
 }
 
-.face:before 
-{
-    content: '';
+.face:before {
+    content: "";
     position: absolute;
     inset: 0;
     display: block;
@@ -26,61 +23,86 @@
     z-index: -1;
     right: -4px;
     bottom: -3px;
-    background: rgb(68,56,242);
-    background: linear-gradient(150deg, rgba(68,56,242,1) 0%, rgba(131,66,253,1) 100%);
+    background: rgb(68, 56, 242);
+    background: linear-gradient(
+        150deg,
+        rgba(68, 56, 242, 1) 0%,
+        rgba(131, 66, 253, 1) 100%
+    );
 }
 
-.face img 
-{
+.face img {
     border-radius: 50%;
-    background-color: #F19529;
+    background-color: #f19529;
 }
 
+.face + div {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 25px;
+    animation: slide1 1s forwards cubic-bezier(1, 0, 0, 1) 0.5s;
+}
 
-.subtitle
-{
+@keyframes slide1 {
+    from {
+        max-width: 0;
+    }
+    to {
+        max-width: 100%;
+    }
+}
+
+.subtitle {
     margin: 0 0 20px;
     font-weight: 400;
     color: var(--text);
     flex-direction: column;
 }
 
-.subtitle .space 
-{
+.subtitle .space {
     display: block;
 }
 
-.caption
-{
+.caption {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0 25px;
+    gap: 0;
 }
 
-#main .caption 
-{
+#main .caption {
     text-align: center;
     align-items: center;
 }
 
+.btn-main {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards ease-out 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @media (min-width: 768px) {
-        
-    #main .caption 
-    {
+    #main .caption {
         flex-direction: row;
         text-align: left;
         align-items: flex-start;
     }
-    
-    .subtitle
-    {
+
+    .subtitle {
         flex-direction: row;
     }
-    
-    .subtitle .space 
-    {
+
+    .subtitle .space {
         display: none;
-        opacity: .16;
+        opacity: 0.16;
         display: inline-block;
         width: 1px;
         background-color: #fff;

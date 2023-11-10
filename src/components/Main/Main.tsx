@@ -26,7 +26,7 @@ const Main: React.FC = () => {
                     </h2>
                     <a
                         href="#about"
-                        className="btn btn-default"
+                        className="btn btn-default btn-main"
                         onClick={linkScroll}
                     >
                         Poznaj mnie

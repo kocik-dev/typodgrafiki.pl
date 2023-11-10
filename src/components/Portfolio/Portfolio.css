@@ -6,6 +6,11 @@
     max-width: 1280px;
 }
 
+.wide-width > .grid 
+{
+    gap: inherit;
+}
+
 #portfolio .wide-width {
     margin-bottom: 25px;
 }
@@ -59,7 +64,9 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin: 3px 0 20px 0;
+    margin: 5px 0 20px 0;
+    align-items: center;
+    line-height: 100%;
 }
 
 .wide-width .box:has(.description) .name-line {
@@ -178,7 +185,24 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .wide-width .box-unesco {
+    .wide-width .box-unesco,
+    .wide-width .box-react,
+    .wide-width .box-js,
+    .wide-width .box-github {
         grid-column: span 2;
+    }
+}
+
+@media (min-width: 991px) {
+    .wide-width .box-github {
+        grid-column: span 1;
+    }
+}
+
+@media (min-width: 1100px) {
+    .wide-width .box-react,
+    .wide-width .box-js
+    {
+        grid-column: span 1;
     }
 }

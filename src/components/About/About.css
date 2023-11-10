@@ -1,22 +1,18 @@
-#about .vertical-top
-{
+#about .vertical-top {
     gap: 15px;
     margin-bottom: 18px;
     grid-template-columns: 1fr;
 }
 
-#about .vertical-top > div 
-{
+#about .vertical-top > div {
     padding: 30px 35px 35px;
     border-radius: 20px;
     background: rgb(133 136 155 / 10%);
-    backdrop-filter: blur( 5px );
-    -webkit-backdrop-filter: blur( 5px );
-    
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-#about ul 
-{
+#about ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -26,8 +22,7 @@
     gap: 10px;
 }
 
-#about h3
-{
+#about h3 {
     margin: 0 0 15px;
     font-size: 1.1rem;
     letter-spacing: 0;
@@ -36,67 +31,65 @@
     isolation: isolate;
 }
 
-#about h3:before
-{
-    content: '';
+#about h3:before {
+    content: "";
     display: block;
     background-color: #f19529;
     height: 2px;
     position: absolute;
-    inset: auto 0 -1px 0;   
+    inset: auto 0 -1px 0;
     z-index: -1;
     border-radius: 2px;
 }
 
-#about ul li 
-{
+#about ul li {
     border-radius: 10px;
     padding: 4px 13px;
     color: #fff;
     background: #20222db0;
 }
 
-.caption-border
-{
+.caption-border {
     background: #20222d;
     padding: 4vw 5vw 7vw;
     border-radius: 20px;
     position: relative;
 }
 
-#about .caption:before
-{
-    content: '';
+#about .caption:before {
+    content: "";
     display: block;
     position: absolute;
     inset: -1px;
-    background: rgb(37,39,52);
+    background: rgb(37, 39, 52);
     background: linear-gradient(180deg, rgb(41 42 55) 0%, rgb(18 20 29) 100%);
     z-index: -1;
     border-radius: 20px;
 }
 
 @media (min-width: 768px) {
-    #about .vertical-top > div:nth-child(1)
-    {
+    #about .vertical-top > div:nth-child(1) {
         margin-left: -10vw;
         background: #2d303f;
+        position: relative;
         /* background: linear-gradient(150deg, rgb(24 49 114) 0%, rgb(45 36 78) 100%); */
+        animation: moveAround 8s ease-in-out infinite,
+            moveAround2 6s ease-in-out infinite;
     }
-    
-    #about .vertical-top > div:nth-child(2)
-    {
+
+    #about .vertical-top > div:nth-child(2) {
         margin-right: -9vw;
         margin-left: -3vw;
         position: relative;
         top: 75px;
         background: #3c3e51;
         /* background: linear-gradient(150deg, rgb(29 28 58) 0%, rgb(63 47 93) 100%); */
+        animation: moveAround 8s ease-in-out infinite,
+            moveAround2 6s ease-in-out infinite;
     }
-    
-    #about .caption::after
-    {
-        content: '';
+
+    #about .caption::after {
+        content: "";
         display: block;
         width: 30vw;
         height: 30vw;
@@ -107,16 +100,34 @@
         right: -3vw;
         z-index: -1;
     }
-    
-    #about .vertical-top
-    {
+
+    #about .vertical-top {
         gap: 0;
         grid-template-columns: 1fr 1fr;
         margin-bottom: 52px;
     }
-    
-    .caption-border
-    {
+
+    .caption-border {
         padding-bottom: 4vw;
+    }
+
+    @keyframes moveAround {
+        0%,
+        100% {
+            transform: translateY(-5px);
+        }
+        50% {
+            transform: translateY(5px);
+        }
+    }
+
+    @keyframes moveAround2 {
+        0%,
+        100% {
+            left: -2px;
+        }
+        50% {
+            left: 3px;
+        }
     }
 }

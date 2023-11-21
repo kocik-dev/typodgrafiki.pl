@@ -208,6 +208,16 @@
     margin-top: 25px;
 }
 
+.modal .works .tech 
+{
+    margin-top: 7px;
+}
+
+.modal .works strong
+{
+    font-weight: 700;
+}
+
 .modal .close 
 {
     width: 31px;

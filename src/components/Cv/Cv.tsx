@@ -35,8 +35,10 @@ interface Education {
 interface Projects {
     date: string
     field: string
-    desc: string
+    desc: string[]
     link: string
+    tech: string
+    info: string
 }
 
 interface CvData {
@@ -168,27 +170,27 @@ const OpenCv: React.FC<CvProps> = ({ openCv }) => {
                             </section>
                             <section>
                                 <h3>Własne projekty</h3>
-                                <table>
-                                    <tbody>
-                                        {data.projects?.map((el, index) => (
-                                            <tr>
-                                                <td>{el.date}</td>
-                                                <td>
-                                                    <strong>{el.field}</strong>
-                                                    <br />
-                                                    {el.desc}
-                                                    <br />
-                                                    <a
-                                                        href={el.link}
-                                                        target="_blank"
-                                                    >
-                                                        {el.link}
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                                {data.projects?.map((el, index) => (
+                                    <div className="works">
+                                        <div>{el.date}</div>
+                                        <strong>{el.field}</strong>
+                                        <ul>
+                                            {el.desc.map((el, index) => (
+                                                <li key={index}>{el}</li>
+                                            ))}
+                                        </ul>
+                                        <div className="tech">
+                                            <b>Technologie:</b> {el.tech}
+                                        </div>
+                                        <div>{el.info}</div>
+                                        <a
+                                            href={el.link}
+                                            target="_blank"
+                                        >
+                                            {el.link}
+                                        </a>
+                                    </div>
+                                ))}
                             </section>
                             <section className="flex">
                                 <div className="col-sm-50">

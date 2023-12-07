@@ -34,6 +34,7 @@ const projectsItem1: ProjectItem[] = [
         githubLink: "https://github.com/typodgrafiki/portfolio-html",
     },
     {
+        link: "https://tripist.pl",
         classList: "box box-trip",
         name: "Tripist",
         subName: "Aplikacja Travel Plannel",

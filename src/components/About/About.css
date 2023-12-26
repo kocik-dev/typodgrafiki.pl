@@ -67,6 +67,19 @@
     border-radius: 20px;
 }
 
+#about .primary {
+    background-color: rgb(56, 47, 172);
+    color: #fff;
+    padding: 0 3px;
+    border-radius: 2px;
+}
+
+#about .primary-dark {
+    
+    background-color: #f19528;
+    color: var(--dark);
+}
+
 @media (min-width: 768px) {
     #about .vertical-top > div:nth-child(1) {
         margin-left: -10vw;

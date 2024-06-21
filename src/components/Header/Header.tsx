@@ -65,6 +65,7 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn, openCv }) => {
             <button
                 id="btn-menu-mobile"
                 className="visible-xs"
+                aria-label="Menu"
                 onClick={showMenu}
             >
                 <span></span>
@@ -81,9 +82,9 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn, openCv }) => {
                             o mnie
                         </a>
                     </li>
-                    <li>
+                    {/* <li>
                         <span onClick={openCv}>cv.pdf</span>
-                    </li>
+                    </li> */}
                     <li>
                         <a
                             href="#portfolio"

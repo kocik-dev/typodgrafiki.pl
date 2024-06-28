@@ -23,7 +23,7 @@ export interface ProjectItem {
 
 const projectsItem1: ProjectItem[] = [
     {
-        link: "http://html.typodgrafiki.pl/",
+        // link: "http://html.typodgrafiki.pl/",
         classList: "box box-html",
         name: "HTML / CSS",
         subName: "Semantyka i stylowanie",
@@ -48,7 +48,7 @@ const projectsItem1: ProjectItem[] = [
 
 const projectsItem2: ProjectItem[] = [
     {
-        link: "http://react.typodgrafiki.pl/",
+        // link: "http://react.typodgrafiki.pl/",
         classList: "box box-react",
         name: "React",
         subName: "Projekt",
@@ -56,7 +56,7 @@ const projectsItem2: ProjectItem[] = [
         githubLink: "https://github.com/typodgrafiki/portfolio-react",
     },
     {
-        link: "http://js.typodgrafiki.pl/",
+        // link: "http://js.typodgrafiki.pl/",
         classList: "box box-js",
         name: "JS",
         subName: "Dynamiczne elementy",
@@ -64,7 +64,8 @@ const projectsItem2: ProjectItem[] = [
         githubLink: "https://github.com/typodgrafiki/portfolio-js",
     },
     {
-        link: "http://findunesco.com/",
+        // link: "http://findunesco.com/",
+        link: "https://find-unesco.vercel.app/",
         classList: "box box-unesco",
         name: "Find UNESCO",
         subName: "Projekt wyszukujący miejsca UNESCO w Europie",

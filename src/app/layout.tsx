@@ -17,6 +17,9 @@ export const metadata = {
         "freelancer",
     ],
     author: "Grzegorz Kocik",
+    other: {
+        "google-site-verification": "JZJXXgpbNeCVSOYNu_rH92o3MmlTiQqEJQhTe3F1JJI"
+    }
 }
 
 export default function RootLayout({

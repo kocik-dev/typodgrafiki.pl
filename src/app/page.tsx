@@ -16,14 +16,13 @@ const Home: React.FC = () => {
 
     return (
         <div className={lightMode ? "light-mode bg-gradient" : "bg-gradient"}>
-            <Header
-                lightMode={lightMode}
-                changeModeFn={toggleLightMode}
-            />
-            <Main />
-            <About />
-            <Portfolio />
-            <Contact />
+            <div className="content">
+                <Header lightMode={lightMode} changeModeFn={toggleLightMode} />
+                <Main />
+                <About />
+                <Portfolio />
+                <Contact />
+            </div>
             <Footer />
         </div>
     )

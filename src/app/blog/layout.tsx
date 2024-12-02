@@ -17,11 +17,10 @@ export default function BlogLayout({
 
     return (
         <div className="bg-gradient">
-            <Header
-                lightMode={lightMode}
-                changeModeFn={toggleLightMode}
-            />
-            <div>{children}</div>
+            <div className="content">
+                <Header lightMode={lightMode} changeModeFn={toggleLightMode} />
+                {children}
+            </div>
             <Footer />
         </div>
     )

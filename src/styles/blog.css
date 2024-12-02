@@ -1,3 +1,70 @@
 .container {
     padding-top: 100px;
 }
+
+.blog-container {
+    --grid_column: 1;
+    display: grid;
+    grid-template-columns: repeat(var(--grid_column), 1fr);
+    gap: 14px;
+    grid-auto-flow: dense;
+}
+
+.blog-container a {
+    text-decoration: none;
+    line-height: 120%;
+}
+
+.blog-container .title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 5px;
+    display: block;
+}
+
+.blog-container img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: 65px;
+    }
+
+    .blog-container {
+        --grid_column: 2;
+    }
+}
+
+@media (min-width: 991px) {
+    .blog-container {
+        --grid_column: 3;
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog-container {
+        --grid_column: 4;
+    }
+}
+
+.blog1--add-to-cart {
+    background: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0px auto 30px;
+}
+
+.blog1--add-to-cart:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

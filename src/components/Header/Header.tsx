@@ -3,6 +3,7 @@ import LightModeBtn from "./LightModeBtn"
 import logo from "../../assets/logo.svg"
 import logoWhite from "../../assets/logo-light.svg"
 import "./Header.css"
+import Link from "next/link"
 
 interface HeaderProps {
     lightMode: boolean
@@ -75,31 +76,19 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn, openCv }) => {
             <nav className="menu flex">
                 <ul className="flex">
                     <li>
-                        <a
-                            href="#about"
-                            onClick={linkScroll}
-                        >
-                            o mnie
-                        </a>
+                        <a href="/#about">o mnie</a>
                     </li>
                     {/* <li>
                         <span onClick={openCv}>cv.pdf</span>
                     </li> */}
                     <li>
-                        <a
-                            href="#portfolio"
-                            onClick={linkScroll}
-                        >
-                            sprawdź mnie
-                        </a>
+                        <Link href="/blog">blog</Link>
                     </li>
                     <li>
-                        <a
-                            href="#contact"
-                            onClick={linkScroll}
-                        >
-                            kontakt
-                        </a>
+                        <a href="/#portfolio">sprawdź mnie</a>
+                    </li>
+                    <li>
+                        <a href="/#contact">kontakt</a>
                     </li>
                 </ul>
                 <LightModeBtn

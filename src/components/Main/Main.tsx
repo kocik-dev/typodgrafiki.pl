@@ -21,8 +21,9 @@ const Main: React.FC = () => {
                 <div>
                     <h1 className="title">Grzegorz Kocik</h1>
                     <h2 className="flex subtitle">
-                        Front-end Developer <span className="space"></span> Web
-                        Designer
+                        Front-end Developer
+                        {/* <span className="space"></span> Web
+                        Designer */}
                     </h2>
                     <a
                         href="#about"

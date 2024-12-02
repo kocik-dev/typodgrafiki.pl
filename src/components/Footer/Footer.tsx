@@ -9,16 +9,16 @@ interface ISocialData {
 
 const socialLinksData: ISocialData[] = [
     {
-        link: "https://www.linkedin.com/in/grzegorz-kocik/",
-        name: "linkedin",
+        link: "https://www.x.com/kocik_dev/",
+        name: "x",
     },
     {
-        link: "https://www.behance.net/grzegorz-kocik",
-        name: "behance",
-    },
-    {
-        link: "https://www.instagram.com/typodgrafiki/",
+        link: "https://www.instagram.com/kocik.dev/",
         name: "instagram",
+    },
+    {
+        link: "https://www.linkedin.com/in/kocik-dev/",
+        name: "linkedin",
     },
 ]
 

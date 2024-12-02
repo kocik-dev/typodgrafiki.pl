@@ -1,6 +1,6 @@
 {
     "name": "typodgrafiki",
-    "version": "3.1.6",
+    "version": "3.2.0",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -20,6 +20,7 @@
         "typescript": "5.1.3"
     },
     "devDependencies": {
+        "@types/react-syntax-highlighter": "^15.5.13",
         "eslint": "8.42.0",
         "eslint-config-next": "13.4.5"
     }

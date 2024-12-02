@@ -1,3 +1,8 @@
+h1 {
+    font-size: 40px;
+    line-height: 110%;
+}
+
 .container {
     padding-top: 100px;
 }

@@ -18,8 +18,9 @@ export const metadata = {
     ],
     author: "Grzegorz Kocik",
     other: {
-        "google-site-verification": "JZJXXgpbNeCVSOYNu_rH92o3MmlTiQqEJQhTe3F1JJI"
-    }
+        "google-site-verification":
+            "JZJXXgpbNeCVSOYNu_rH92o3MmlTiQqEJQhTe3F1JJI",
+    },
 }
 
 export default function RootLayout({

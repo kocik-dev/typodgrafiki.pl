@@ -37,14 +37,20 @@
 }
 
 .subtitle {
-    margin: 0 0 20px;
-    font-weight: 400;
+    margin: 0 0 17px;
+    font-weight: 300;
     color: var(--text);
     flex-direction: column;
 }
 
 .subtitle .space {
     display: block;
+}
+
+.subtitle .next-line {
+    color: #6f7586;
+    display: block;
+    font-size: 1.2rem;
 }
 
 .caption {
@@ -73,8 +79,7 @@
     }
 }
 
-@media (min-width: 768px) {    
-    
+@media (min-width: 768px) {
     .face + div {
         max-width: 0;
         white-space: nowrap;
@@ -91,7 +96,7 @@
             max-width: 100%;
         }
     }
-    
+
     #main .caption {
         flex-direction: row;
         text-align: left;
@@ -100,7 +105,9 @@
     }
 
     .subtitle {
-        flex-direction: row;
+        /* flex-direction: row; */
+        align-items: flex-start;
+        line-height: 120%;
     }
 
     .subtitle .space {

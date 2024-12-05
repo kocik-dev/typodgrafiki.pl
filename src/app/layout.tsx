@@ -1,3 +1,4 @@
+import Cursor from "@/components/Cursor"
 import "../styles/App.css"
 import "../styles/darkMode.css"
 import { Poppins } from "next/font/google"
@@ -30,7 +31,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pl">
-            <body>{children}</body>
+            <body>
+                {children}
+                <Cursor />
+            </body>
         </html>
     )
 }

@@ -12,6 +12,10 @@
     box-sizing: border-box;
 }
 
+* {
+    cursor: none !important;
+}
+
 html {
     font-size: 93%;
     scroll-behavior: smooth;
@@ -28,6 +32,27 @@ body {
     font-size: 1rem;
     letter-spacing: -0.01em;
     line-height: 1.6;
+}
+
+.cursorSmall {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: -3px;
+    left: -3px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    mix-blend-mode: difference;
+}
+
+.cursorCanvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    mix-blend-mode: difference;
 }
 
 .bg-gradient {

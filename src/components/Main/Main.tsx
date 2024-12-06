@@ -6,7 +6,10 @@ import { fascinate } from "../../components/Fonts"
 
 const Main: React.FC = () => {
     return (
-        <div id="main" className="window-height margin-section">
+        <div
+            id="main"
+            className="window-height margin-section"
+        >
             <div className="caption flex">
                 <div className="face">
                     <Image
@@ -18,15 +21,10 @@ const Main: React.FC = () => {
                 </div>
                 <div>
                     <h1 className={`title ${fascinate.className}`}>
-                        Grzegorz Kocik
+                        Front-end Developer
                     </h1>
                     <h2 className="flex subtitle">
-                        Front-end Developer
-                        <span className="next-line">
-                            specjalizujący się w e-commerce
-                        </span>
-                        {/* <span className="space"></span> Web
-                        Designer */}
+                        specjalizujący się w e-commerce
                     </h2>
                     <a
                         href="#about"

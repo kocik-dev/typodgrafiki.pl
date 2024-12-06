@@ -4,6 +4,7 @@ import logo from "../../assets/logo.svg"
 import logoWhite from "../../assets/logo-light.svg"
 import "./Header.css"
 import Link from "next/link"
+import Logo from "./Logo"
 
 interface HeaderProps {
     lightMode: boolean
@@ -55,14 +56,7 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn, openCv }) => {
 
     return (
         <header className="top flex">
-            <Image
-                src={lightMode ? logoWhite : logo}
-                className="logo"
-                alt="logo"
-                onClick={scrollTop}
-                width={159}
-                height={23}
-            />
+            <Logo />
             <button
                 id="btn-menu-mobile"
                 className="visible-xs"

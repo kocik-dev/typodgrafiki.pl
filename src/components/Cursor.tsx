@@ -99,7 +99,7 @@ const Cursor = () => {
     useEffect(() => {
         // Obsługa zdarzeń `mouseenter` i `mouseleave` dla interaktywnych elementów
         const handleMouseEnter = () => {
-            targetRadius.current = 30 // Docelowy promień, gdy nad interaktywnym elementem
+            targetRadius.current = 50 // Docelowy promień, gdy nad interaktywnym elementem
         }
         const handleMouseLeave = () => {
             targetRadius.current = promien // Powrót do domyślnego promienia
@@ -122,10 +122,16 @@ const Cursor = () => {
     return (
         <>
             {/* Mały kursor */}
-            <div ref={cursorRef} className="cursorSmall"></div>
+            <div
+                ref={cursorRef}
+                className="cursorSmall"
+            ></div>
 
             {/* Canvas do efektów */}
-            <canvas ref={canvasRef} className="cursorCanvas" />
+            <canvas
+                ref={canvasRef}
+                className="cursorCanvas"
+            />
         </>
     )
 }

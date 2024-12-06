@@ -1,6 +1,8 @@
+import Cursor from "@/components/Cursor"
 import "../styles/App.css"
 import "../styles/darkMode.css"
-import { Poppins } from "next/font/google"
+import { poppins } from "../components/Fonts"
+import Background from "@/components/Background"
 
 export const metadata = {
     title: "Grzegorz Kocik - Front-end Developer Portfolio",
@@ -29,8 +31,15 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="pl">
-            <body>{children}</body>
+        <html
+            lang="pl"
+            className={poppins.className}
+        >
+            <body>
+                <Background />
+                {children}
+                <Cursor />
+            </body>
         </html>
     )
 }

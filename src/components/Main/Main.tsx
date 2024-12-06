@@ -2,6 +2,7 @@ import Image from "next/image"
 import { linkScroll } from "../Header/Header"
 import "./Main.css"
 import faceW from "../../assets/face/face.webp"
+import { fascinate } from "../../components/Fonts"
 
 const Main: React.FC = () => {
     return (
@@ -19,11 +20,11 @@ const Main: React.FC = () => {
                     />
                 </div>
                 <div>
-                    <h1 className="title">Grzegorz Kocik</h1>
-                    <h2 className="flex subtitle">
+                    <h1 className={`title ${fascinate.className}`}>
                         Front-end Developer
-                        {/* <span className="space"></span> Web
-                        Designer */}
+                    </h1>
+                    <h2 className="flex subtitle">
+                        specjalizujący się w e-commerce
                     </h2>
                     <a
                         href="#about"

@@ -1,11 +1,14 @@
+import { NextIntlClientProvider } from "next-intl"
+import { getLocale, getMessages } from "next-intl/server"
+import { ReactNode } from "react"
+
 import Cursor from "@/components/Cursor"
-import "../styles/App.css"
-import "../styles/darkMode.css"
-import { poppins } from "../components/Fonts"
-import Background from "@/components/Background"
+import "@/styles/App.css"
+import "@/styles/darkMode.css"
+import { poppins } from "@/components/Fonts"
 
 export const metadata = {
-    title: "Grzegorz Kocik - Front-end Developer Portfolio",
+    title: "Grzegorz Kocik - Front-end Developer",
     description:
         "Cześć. Jestem Grzegorz Front-end developer o zapleczu graficznym z doświadczeniem w tworzeniu warstwy graficznej ecommerce. Szukam możliwości rozwoju przy projektach wykorzystujących nowe technologie (React)",
     keywords: [
@@ -25,19 +28,22 @@ export const metadata = {
     },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: {
-    children: React.ReactNode
+    children: ReactNode
 }) {
+    const locale = await getLocale()
+
+    // Providing all messages to the client
+    // side is the easiest way to get started
+    const messages = await getMessages()
     return (
-        <html
-            lang="pl"
-            className={poppins.className}
-        >
+        <html lang={locale} className={poppins.className}>
             <body>
-                <Background />
-                {children}
+                <NextIntlClientProvider messages={messages}>
+                    {children}
+                </NextIntlClientProvider>
                 <Cursor />
             </body>
         </html>

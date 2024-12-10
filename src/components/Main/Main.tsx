@@ -1,15 +1,11 @@
 import Image from "next/image"
-import { linkScroll } from "../Header/Header"
 import "./Main.css"
 import faceW from "../../assets/face/face.webp"
 import { fascinate } from "../../components/Fonts"
 
-const Main: React.FC = () => {
+const Main = () => {
     return (
-        <div
-            id="main"
-            className="window-height margin-section"
-        >
+        <div id="main" className="window-height margin-section">
             <div className="caption flex">
                 <div className="face">
                     <Image
@@ -29,7 +25,7 @@ const Main: React.FC = () => {
                     <a
                         href="#about"
                         className="btn btn-default btn-main"
-                        onClick={linkScroll}
+                        // onClick={linkScroll}
                     >
                         Poznaj mnie
                     </a>

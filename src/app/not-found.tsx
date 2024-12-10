@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Head from "next/head"
-import "../styles/App.css"
-import "../styles/error404.css"
+import "@/styles/App.css"
+import "@/styles/error404.css"
 
 export default function Custom404() {
     return (
@@ -15,10 +15,7 @@ export default function Custom404() {
                 <div>
                     <h1>Opps!</h1>
                     <p>Strona nie została znaleziona.</p>
-                    <Link
-                        href="/"
-                        className="btn btn-default"
-                    >
+                    <Link href="/" className="btn btn-default">
                         Wróć do strony głównej
                     </Link>
                 </div>

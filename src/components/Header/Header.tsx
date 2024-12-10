@@ -1,42 +1,10 @@
-import Image from "next/image"
-import LightModeBtn from "./LightModeBtn"
-import logo from "../../assets/logo.svg"
-import logoWhite from "../../assets/logo-light.svg"
+"use client"
+
 import "./Header.css"
 import Link from "next/link"
 import Logo from "./Logo"
 
-interface HeaderProps {
-    lightMode: boolean
-    changeModeFn?: () => void
-    openCv?: () => void
-}
-
-const linkScroll = (el: any): void => {
-    el.preventDefault()
-    const windowHeight = window.innerHeight * 0.23
-    const elementId = el.target.getAttribute("href")
-    const section = document.querySelector<HTMLElement>(elementId)
-
-    if (section) {
-        window.scroll({
-            top:
-                elementId === "#contact"
-                    ? section.offsetTop
-                    : section.offsetTop - windowHeight,
-            behavior: "smooth",
-        })
-    }
-}
-
-const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn, openCv }) => {
-    const scrollTop = (): void => {
-        window.scroll({
-            top: 0,
-            behavior: "smooth",
-        })
-    }
-
+const Header = () => {
     const showMenu = (menuButton: any): void => {
         const menuEl = document.querySelector<HTMLElement>(".menu")
         const menuLink = document.querySelectorAll<HTMLElement>(
@@ -72,9 +40,6 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn, openCv }) => {
                     <li>
                         <a href="/#about">o mnie</a>
                     </li>
-                    {/* <li>
-                        <span onClick={openCv}>cv.pdf</span>
-                    </li> */}
                     <li>
                         <Link href="/blog">blog</Link>
                     </li>
@@ -85,13 +50,9 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn, openCv }) => {
                         <a href="/#contact">kontakt</a>
                     </li>
                 </ul>
-                <LightModeBtn
-                    lightMode={lightMode}
-                    changeModeFn={changeModeFn}
-                />
             </nav>
         </header>
     )
 }
 
-export { Header, linkScroll }
+export { Header }

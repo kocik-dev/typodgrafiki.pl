@@ -1,7 +1,4 @@
-import Image from "next/image"
 import LightModeBtn from "./LightModeBtn"
-import logo from "../../assets/logo.svg"
-import logoWhite from "../../assets/logo-light.svg"
 import "./Header.css"
 import Link from "next/link"
 import Logo from "./Logo"
@@ -9,7 +6,6 @@ import Logo from "./Logo"
 interface HeaderProps {
     lightMode: boolean
     changeModeFn?: () => void
-    openCv?: () => void
 }
 
 const linkScroll = (el: any): void => {
@@ -29,14 +25,7 @@ const linkScroll = (el: any): void => {
     }
 }
 
-const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn, openCv }) => {
-    const scrollTop = (): void => {
-        window.scroll({
-            top: 0,
-            behavior: "smooth",
-        })
-    }
-
+const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn }) => {
     const showMenu = (menuButton: any): void => {
         const menuEl = document.querySelector<HTMLElement>(".menu")
         const menuLink = document.querySelectorAll<HTMLElement>(
@@ -72,9 +61,6 @@ const Header: React.FC<HeaderProps> = ({ lightMode, changeModeFn, openCv }) => {
                     <li>
                         <a href="/#about">o mnie</a>
                     </li>
-                    {/* <li>
-                        <span onClick={openCv}>cv.pdf</span>
-                    </li> */}
                     <li>
                         <Link href="/blog">blog</Link>
                     </li>

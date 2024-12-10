@@ -1,13 +1,13 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef } from "react"
 
 const Cursor = () => {
     const promien = 20
     const cursorRef = useRef<HTMLDivElement>(null)
     const canvasRef = useRef<HTMLCanvasElement>(null)
-    const mousePos = useRef({ x: 100, y: 100 })
-    const lastPos = useRef({ x: 100, y: 100 })
+    const mousePos = useRef({ x: -100, y: -100 })
+    const lastPos = useRef({ x: -100, y: -100 })
     const radiusRef = useRef(promien) // Aktualny promień kursora
     const targetRadius = useRef(promien) // Docelowy promień kursora
 
@@ -122,16 +122,10 @@ const Cursor = () => {
     return (
         <>
             {/* Mały kursor */}
-            <div
-                ref={cursorRef}
-                className="cursorSmall"
-            ></div>
+            <div ref={cursorRef} className="cursorSmall"></div>
 
             {/* Canvas do efektów */}
-            <canvas
-                ref={canvasRef}
-                className="cursorCanvas"
-            />
+            <canvas ref={canvasRef} className="cursorCanvas" />
         </>
     )
 }

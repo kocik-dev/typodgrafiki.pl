@@ -6,10 +6,7 @@ import { fascinate } from "../../components/Fonts"
 
 const Main: React.FC = () => {
     return (
-        <div
-            id="main"
-            className="window-height margin-section"
-        >
+        <div id="main" className="window-height margin-section">
             <div className="caption flex">
                 <div className="face">
                     <Image

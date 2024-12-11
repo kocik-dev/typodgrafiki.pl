@@ -135,29 +135,6 @@
     #main .menu li a:not(.btn) {
         font-size: 1rem;
     }
-
-    #main .menu li:not(.wallet):before {
-        content: "";
-        display: block;
-        position: absolute;
-        background-color: #551fa5;
-        bottom: 22px;
-        height: 5px;
-        left: 20px;
-        width: calc(100% - 40px);
-        transition: all 0.2s ease;
-        margin: 0;
-    }
-
-    #main .menu li:not(.wallet):is(:hover, :focus, :active):before {
-        background-color: #f19529;
-        border-radius: 50%;
-        height: 40px;
-        width: 40px;
-        left: 50%;
-        margin-left: -20px;
-        bottom: 8px;
-    }
 }
 
 @media (max-width: 767px) {

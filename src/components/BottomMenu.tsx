@@ -6,7 +6,11 @@ import { motion, useScroll, useTransform } from "motion/react"
 import Menu from "./Header/Menu"
 import logo from "@/assets/logo-small.svg"
 
-export default function BottomMenu() {
+export default function BottomMenu({
+    children,
+}: {
+    children: React.ReactNode
+}) {
     const { scrollY } = useScroll()
     const bottom = useTransform(scrollY, [100, 200], [-50, 40], {
         clamp: true,
@@ -18,7 +22,7 @@ export default function BottomMenu() {
                 <a href="#top" className="logo-small">
                     <Image src={logo} alt="logo" width={20} height={25} />
                 </a>
-                <Menu />
+                {children}
             </motion.div>
         </div>
     )

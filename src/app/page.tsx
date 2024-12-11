@@ -4,6 +4,7 @@ import Footer from "@/components/Footer/Footer"
 import About from "@/components/About/About"
 import Portfolio from "@/components/Portfolio/Portfolio"
 import BottomMenu from "@/components/BottomMenu"
+import Menu from "@/components/Header/Menu"
 
 const Home = () => {
     return (
@@ -13,7 +14,9 @@ const Home = () => {
                 <About />
                 <Portfolio />
                 <Footer />
-                <BottomMenu />
+                <BottomMenu>
+                    <Menu />
+                </BottomMenu>
             </div>
         </>
     )

@@ -1,0 +1,24 @@
+{
+    "menu": {
+        "about": "O mnie",
+        "portfolio": "Projekty",
+        "contact": "Kontakt",
+        "wallet": "Połącz portfel"
+    },
+    "main": {
+        "h2": "Tworzę innowacyjne i wydajne interfejsy użytkownika dla branży e-commerce. Poznaj moje projekty i dowiedz się, jak mogę pomóc Twojemu biznesowi.",
+        "seoText": "frontend development, e-commerce, animations, web design, user interface (UI), responsive design, performance optimization, JavaScript frameworks, CSS animations, HTML5, accessibility, mobile-first design, microinteractions, conversion rate optimization (CRO), headless e-commerce, API integrations, React, Shopify, design systems, motion design, scalability, cross-browser compatibility, web3, NFTs, Ethereum, DeFi, Web3.js, NFT marketplaces,"
+    },
+    "about": {
+        "title": "O mnie",
+        "subtitle": "Mid Frontend Developer",
+        "text1": "Cześć, jestem Grzegorz Kocik – front-end developerem z pasją do tworzenia nowoczesnych, estetycznych i funkcjonalnych interfejsów. Moim celem jest dostarczanie przemyślanych rozwiązań, które łączą wizualną atrakcyjność z doskonałym doświadczeniem użytkownika.",
+        "text2": "Oprócz pracy komercyjnej rozwijam się w obszarze web3, eksplorując nowe możliwości i technologie, które zmieniają sposób, w jaki funkcjonuje internet. Uwielbiam wyzwania, które pozwalają łączyć kreatywność z precyzją techniczną, tworząc projekty, które wyróżniają się na tle innych.",
+        "text3": "Stale poszukuję inspiracji i przestrzeni do eksperymentowania z nowymi podejściami, wierząc, że dbałość o szczegóły czyni różnicę.",
+        "stack": "Technologie, których używam"
+    },
+    "projects": {
+        "title": "Projekty",
+        "button": "Zapytaj o szczegóły"
+    }
+}

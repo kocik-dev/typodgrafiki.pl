@@ -1,9 +1,5 @@
 .top {
-    position: absolute;
-    top: 15px;
-    left: 3%;
-    right: 3%;
-    z-index: 1;
+    margin-top: 20px;
 }
 
 .top a {
@@ -17,10 +13,6 @@
     transition: all 0.15s ease;
 }
 
-.logo:is(:hover, :focus, :active) {
-    left: 3px;
-}
-
 .menu ul {
     list-style: none;
     margin: 0;
@@ -30,7 +22,7 @@
     gap: inherit;
 }
 
-.menu {
+#main .menu {
     gap: 0 10px;
     visibility: hidden;
     position: fixed;
@@ -50,52 +42,17 @@
     flex-direction: column;
 }
 
-.menu.show {
-    visibility: visible;
-    opacity: 1;
-    background-color: rgb(26 29 36 / 95%);
-    z-index: 2;
-}
-
 .menu li {
     position: relative;
 }
 
-.menu a,
-.menu span,
-.dark-mode {
+#main .menu li a:not(.btn) {
     padding: 17px 20px;
     display: block;
     position: relative;
     cursor: pointer;
     font-size: 20px;
     transition: all 0.2s ease;
-}
-
-.dark-mode img {
-    width: 24px;
-    height: 24px;
-}
-
-.dark-mode:before {
-    content: "";
-    display: block;
-    background: #fff;
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    border-radius: 50%;
-    mix-blend-mode: difference;
-    transition: all 0.2s ease;
-}
-
-.dark-mode:hover:before {
-    top: -17px;
-    right: -16px;
-    height: 75px;
-    width: 75px;
 }
 
 #btn-menu-mobile {
@@ -161,12 +118,10 @@
 
 @media (min-width: 768px) {
     .top {
-        position: fixed;
         justify-content: space-between;
-        top: 10px;
     }
 
-    .menu {
+    #main .menu {
         visibility: visible;
         position: static;
         opacity: 1;
@@ -178,13 +133,11 @@
         justify-content: flex-end;
     }
 
-    .menu a,
-    .menu span,
-    .dark-mode {
+    #main .menu li a:not(.btn) {
         font-size: 1rem;
     }
 
-    .menu li:before {
+    #main .menu li:not(.wallet):before {
         content: "";
         display: block;
         position: absolute;
@@ -197,7 +150,7 @@
         margin: 0;
     }
 
-    .menu li:is(:hover, :focus, :active):before {
+    #main .menu li:not(.wallet):is(:hover, :focus, :active):before {
         background-color: #f19529;
         border-radius: 50%;
         height: 40px;
@@ -205,11 +158,6 @@
         left: 50%;
         margin-left: -20px;
         bottom: 8px;
-    }
-
-    .dark-mode img {
-        width: 18px;
-        height: 18px;
     }
 }
 

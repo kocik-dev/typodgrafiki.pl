@@ -1,11 +1,10 @@
+import { ReactNode } from "react"
 import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
-import { ReactNode } from "react"
-
 import Cursor from "@/components/Cursor"
-import "@/styles/App.css"
-import "@/styles/darkMode.css"
 import { poppins } from "@/components/Fonts"
+import "@/styles/App.css"
+import "@/styles/menu.css"
 
 export const metadata = {
     title: "Grzegorz Kocik - Front-end Developer",
@@ -34,12 +33,12 @@ export default async function RootLayout({
     children: ReactNode
 }) {
     const locale = await getLocale()
-
-    // Providing all messages to the client
-    // side is the easiest way to get started
     const messages = await getMessages()
     return (
-        <html lang={locale} className={poppins.className}>
+        <html
+            lang={locale}
+            className={poppins.className}
+        >
             <body>
                 <NextIntlClientProvider messages={messages}>
                     {children}

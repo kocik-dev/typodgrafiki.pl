@@ -1,7 +1,8 @@
 @import url("./animations.css");
 
 :root {
-    --text: #c5c7cd;
+    /* --text: #c5c7cd; */
+    --text: #525359;
     --dark: #161924;
 }
 
@@ -9,10 +10,6 @@
 *::after,
 *::before {
     box-sizing: border-box;
-}
-
-* {
-    cursor: none !important;
 }
 
 html {
@@ -25,23 +22,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--text);
-    background-color: var(--dark);
+    background-color: #fff;
     font-size: 1rem;
     letter-spacing: -0.01em;
     line-height: 1.6;
-}
-
-.cursorSmall {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    top: -3px;
-    left: -3px;
-    background-color: white;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 1000;
-    mix-blend-mode: difference;
 }
 
 .cursorCanvas {
@@ -52,16 +36,8 @@ body {
     mix-blend-mode: difference;
 }
 
-.bg-gradient {
+.container {
     padding: 0 7%;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.bg-gradient > .content {
-    flex-grow: 1;
 }
 
 code {
@@ -85,7 +61,6 @@ h4,
 h5,
 h6,
 strong {
-    color: #fff;
     font-weight: 500;
 }
 
@@ -95,7 +70,6 @@ p {
 
 .flex {
     display: flex;
-    align-items: center;
 }
 
 button {
@@ -108,16 +82,6 @@ button {
     line-height: 1.6;
 }
 
-.background-noise {
-    position: fixed;
-    inset: 0;
-    background-image: url("/images/noise.gif");
-    background-repeat: repeat;
-    background-size: 200px;
-    mix-blend-mode: hard-light;
-    opacity: 0.05;
-}
-
 .title {
     color: #fff;
     font-size: 34px;
@@ -126,9 +90,19 @@ button {
 }
 
 .title-small {
-    font-size: 30px;
+    font-size: 80px;
     margin: 0 0 10px;
     line-height: 120%;
+    color: var(--dark);
+}
+
+.title-smaller {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    margin: 0;
 }
 
 .nowrap {
@@ -258,52 +232,25 @@ button {
     width: 100%;
 }
 
-.small-width {
-    width: 100%;
-    max-width: 760px;
-}
-
-.margin-section {
-    margin-bottom: 80px;
-}
-
-.margin-section > .flex {
-    width: 100%;
-    justify-content: center;
-}
-
-.gap-5 {
-    gap: 5px;
+.bg-white {
+    background-color: #fff;
+    box-shadow: 0 0 50px rgb(23 25 36 / 20%);
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    z-index: 1;
 }
 
 @media (min-width: 768px) {
-    .bg-gradient {
+    .container {
         padding: 0 3%;
-    }
-
-    #main,
-    #contact {
-        margin-bottom: 0;
     }
 
     .title {
         font-size: 61px;
     }
 
-    .window-height {
-        min-height: 100dvh;
-    }
-
-    .margin-section {
-        margin-bottom: 40vh;
-    }
-
     .visible-xs {
         display: none !important;
-    }
-
-    .col-sm-50 {
-        width: 50%;
     }
 
     .title {

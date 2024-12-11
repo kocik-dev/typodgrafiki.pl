@@ -1,0 +1,42 @@
+#bottom-menu {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#bottom-menu .element {
+    display: flex;
+    background-color: rgb(19 20 23 / 6%);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    position: relative;
+    bottom: 40px;
+}
+
+#bottom-menu .wallet {
+    display: none;
+}
+
+#bottom-menu ul {
+    padding: 0 15px 0 8px;
+    margin: 15px 0;
+    display: flex;
+    list-style: none;
+    color: var(--dark);
+    border-left: 1px solid rgb(0 0 0 / 20%);
+}
+
+#bottom-menu ul li {
+    display: flex;
+    align-items: center;
+}
+
+#bottom-menu ul a {
+    text-decoration: none;
+    padding: 0px 10px;
+}
+
+#bottom-menu .logo-small {
+    padding: 18px 23px 12px 27px;
+}

@@ -2,9 +2,11 @@ import React from "react"
 import { useTranslations } from "next-intl"
 import { fascinate } from "@/components/Fonts"
 import "./About.css"
-import SlideLeft from "@/Animations/SlideLeft"
-import SlideTop from "@/Animations/SlideTop"
-import Scroll from "@/Animations/ScrollTop"
+import SlideLeft from "@/animations/SlideLeft"
+import SlideTop from "@/animations/SlideTop"
+import Scroll from "@/animations/ScrollTop"
+import { icons } from "@/assets/stack/_images"
+import Image from "next/image"
 
 const About = () => {
     const t = useTranslations("about")
@@ -34,7 +36,18 @@ const About = () => {
                     </SlideTop>
                     <SlideTop>
                         <h4 className="title-smaller">{t("stack")}</h4>
-                        IMAGES
+                        {icons.map((icon, index) => (
+                            <div>
+                                <Image
+                                    src={icon.src}
+                                    alt={icon.alt}
+                                    width={50}
+                                    height={50}
+                                    key={icon.alt + index}
+                                />
+                                {/* {icon.alt} */}
+                            </div>
+                        ))}
                     </SlideTop>
                 </div>
             </div>

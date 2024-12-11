@@ -119,7 +119,7 @@ const socialLinksData: ISocialData[] = [
 
 const Footer: React.FC = () => {
     return (
-        <footer className="container">
+        <footer id="contact" className="container">
             <div className="footer">
                 <div className="footer-content">
                     <div className="contact">

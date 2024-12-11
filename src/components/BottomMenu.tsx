@@ -3,7 +3,6 @@
 import React from "react"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "motion/react"
-import Menu from "./Header/Menu"
 import logo from "@/assets/logo-small.svg"
 
 export default function BottomMenu({

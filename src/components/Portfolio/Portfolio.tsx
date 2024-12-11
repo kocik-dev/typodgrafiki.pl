@@ -1,16 +1,17 @@
 import { useTranslations } from "next-intl"
 import { fascinate } from "@/components/Fonts"
 import PortfolioItem from "./PortfolioItem"
-import imageGithub from "../../assets/tech/github.svg"
-import imageUnesco from "../../assets/tech/unesco.svg"
-import imageTrip from "../../assets/tech/trip.svg"
-import imageOute from "../../assets/tech/oute.svg"
-import imageAudioMix from "../../assets/tech/audio-mix.svg"
-import imagePuupil from "../../assets/tech/puupil.svg"
-import imageBesthunters from "../../assets/tech/besthunters.svg"
-import imagePremiumSound from "../../assets/tech/premium-sound.svg"
+import imageGithub from "@/assets/projects/github.svg"
+import imageUnesco from "@/assets/projects/unesco.svg"
+import imageTrip from "@/assets/projects/trip.svg"
+import imageOute from "@/assets/projects/oute.svg"
+import imageAudioMix from "@/assets/projects/audio-mix.svg"
+import imagePuupil from "@/assets/projects/puupil.svg"
+import imageBesthunters from "@/assets/projects/besthunters.svg"
+import imagePremiumSound from "@/assets/projects/premium-sound.svg"
 
 import "./Portfolio.css"
+import SlideLeft from "@/animations/SlideLeft"
 
 export interface ProjectItem {
     name: string
@@ -70,10 +71,11 @@ const Projects = () => {
 
     return (
         <section id="projects" className="container">
-            <h2 className={`title-small ${fascinate.className}`}>
-                {t("title")}
-            </h2>
-
+            <SlideLeft>
+                <h2 className={`title-small ${fascinate.className}`}>
+                    {t("title")}
+                </h2>
+            </SlideLeft>
             <ul className="project-list">
                 {projectItems.map((item, index) => (
                     <PortfolioItem

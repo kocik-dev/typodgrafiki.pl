@@ -1,11 +1,12 @@
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { ProjectItem } from "./Portfolio"
+import SlideLeft from "@/animations/SlideLeft"
 
 const PortfolioItem = ({ name, scope, image, githubLink }: ProjectItem) => {
     const t = useTranslations("projects")
     return (
-        <div className="project-item flex">
+        <SlideLeft className="project-item flex">
             <span className="name">{name}</span>
             <span className="scope">{scope}</span>
             <Image src={image} alt={name} />
@@ -13,7 +14,7 @@ const PortfolioItem = ({ name, scope, image, githubLink }: ProjectItem) => {
                 <Lock />
                 {t("button")}
             </a>
-        </div>
+        </SlideLeft>
     )
 }
 

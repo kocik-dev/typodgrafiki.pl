@@ -1,11 +1,15 @@
-// components/AnimatedWrapper.client.js
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion" // Upewnij się, że używasz właściwej biblioteki
+import { motion } from "motion/react"
 import React from "react"
-import { slideLeftInitial, slideLeftInView } from "./motion"
 
-const SlideTop = ({ children, className }: { children: React.ReactNode }) => {
+const SlideTop = ({
+    children,
+    className,
+}: {
+    children: React.ReactNode
+    className?: string
+}) => {
     return (
         <motion.div
             className={className}

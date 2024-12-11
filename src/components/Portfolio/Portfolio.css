@@ -6,6 +6,7 @@
         rgba(235, 236, 240, 1) 100%
     );
     padding-top: 50px;
+    overflow: hidden;
 }
 
 #projects .project-list {
@@ -39,4 +40,9 @@
     font-size: 25px;
     font-weight: 200;
     flex-grow: 1;
+}
+
+#projects .project-item .btn-transparent {
+    color: var(--dark);
+    white-space: nowrap;
 }

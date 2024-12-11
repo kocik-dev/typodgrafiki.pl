@@ -69,15 +69,12 @@ const Projects = () => {
     const t = useTranslations("projects")
 
     return (
-        <section
-            id="projects"
-            className="container"
-        >
+        <section id="projects" className="container">
             <h2 className={`title-small ${fascinate.className}`}>
                 {t("title")}
             </h2>
 
-            <ul>
+            <ul className="project-list">
                 {projectItems.map((item, index) => (
                     <PortfolioItem
                         name={item.name}

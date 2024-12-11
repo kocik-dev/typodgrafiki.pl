@@ -6,16 +6,10 @@ const PortfolioItem = ({ name, scope, image, githubLink }: ProjectItem) => {
     const t = useTranslations("projects")
     return (
         <div className="project-item flex">
-            <div>
-                <span className="name">{name}</span>
-                <span>{scope}</span>
-                <Image
-                    src={image}
-                    alt={name}
-                />
-                <a>{githubLink}</a>
-            </div>
-            <a className="btn btn-white">
+            <span className="name">{name}</span>
+            <span className="scope">{scope}</span>
+            <Image src={image} alt={name} />
+            <a className="btn btn-transparent">
                 <Lock />
                 {t("button")}
             </a>
@@ -28,8 +22,8 @@ export default PortfolioItem
 const Lock = () => {
     return (
         <svg
-            width="22"
-            height="22"
+            width="18"
+            height="18"
             viewBox="0 0 22 22"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

@@ -25,7 +25,7 @@ body {
     background-color: #fff;
     font-size: 1rem;
     letter-spacing: -0.01em;
-    line-height: 1.6;
+    line-height: 1.1;
 }
 
 .cursorCanvas {
@@ -85,7 +85,8 @@ button {
 .title {
     color: #fff;
     font-size: 34px;
-    line-height: 100%;
+    font-size: clamp(2rem, 7vw, 110px);
+    line-height: 90%;
     margin: 0 0 10px;
 }
 
@@ -110,12 +111,18 @@ button {
 }
 
 .btn {
-    display: inline-block;
+    /* display: inline-block; */
+    display: flex;
+    align-items: center;
     padding: 13px 22px;
     border-radius: 10px;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.2s ease;
+}
+
+.btn svg {
+    margin-right: 7px;
 }
 
 .btn-default {
@@ -142,6 +149,11 @@ button {
     color: #161924;
     font-weight: 500;
     border-radius: 10px;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: 1px solid currentColor;
 }
 
 .btn-white:is(:hover, :focus, :active),
@@ -243,10 +255,6 @@ button {
 @media (min-width: 768px) {
     .container {
         padding: 0 3%;
-    }
-
-    .title {
-        font-size: 61px;
     }
 
     .visible-xs {

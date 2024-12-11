@@ -10,6 +10,8 @@
     height: inherit;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 #main .main-section {
@@ -92,11 +94,6 @@
         gap: 10%;
         align-items: space-between;
     } */
-
-    #main .title {
-        font-size: 110px;
-        line-height: 90%;
-    }
 
     .subtitle {
         /* flex-direction: row; */

@@ -1,8 +1,42 @@
 #projects {
-    background-color: #ebecf0;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(235, 236, 240, 1) 100%
+    );
+    padding-top: 50px;
+}
+
+#projects .project-list {
+    margin: 0 0 70px;
+    padding: 0;
+    list-style: none;
 }
 
 #projects .project-item {
-    justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--dark);
+    padding: 20px 0;
+}
+
+#projects .project-item:last-child {
+    border-bottom: none;
+}
+
+#projects .project-item .info {
+    margin: 0;
+}
+
+#projects .project-item .name {
+    font-size: 34px;
+    color: var(--dark);
+    font-weight: 200;
+}
+
+#projects .project-item .scope {
+    font-size: 25px;
+    font-weight: 200;
+    flex-grow: 1;
 }

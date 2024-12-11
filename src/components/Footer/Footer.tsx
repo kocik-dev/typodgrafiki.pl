@@ -1,6 +1,8 @@
 import React from "react"
-import SocialLink from "./SocialLink/SocialLink"
+import SocialLink from "./SocialLink"
 import "./Footer.css"
+import Image from "next/image"
+import Logo from "../Header/Logo"
 
 interface ISocialData {
     link: string
@@ -24,22 +26,35 @@ const socialLinksData: ISocialData[] = [
 
 const Footer: React.FC = () => {
     return (
-        <footer className="footer flex">
-            {/* <div className="relative">
-                <div className="social">
-                    {socialLinksData.map((item) => (
-                        <SocialLink
-                            link={item.link}
-                            name={item.name}
-                            key={item.name}
-                        />
-                    ))}
+        <footer className="container">
+            <div className="footer">
+                <div className="footer-content">
+                    <div className="contact">
+                        <h2>Contact with me</h2>
+                        <div className="buttons">
+                            {socialLinksData.map((item) => (
+                                <a
+                                    href={item.link}
+                                    className="btn btn-default"
+                                >
+                                    {item.name}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className="footer-info">
+                    <div className="dark">
+                        <Logo />
+                    </div>
+                    <div className="light">
+                        <p>
+                            Made with <strong>Nextjs</strong> in Poznan, Poland.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div className="copyright text-center">
-                &#169; 2023 typodgrafiki.pl &#8226; Grzegorz Kocik &#8226;
-                Front-end developer | Web Designer
-            </div> */}
+            <p>&#169; 2024 Grzegorz Kocik. All rights reserved.</p>
         </footer>
     )
 }

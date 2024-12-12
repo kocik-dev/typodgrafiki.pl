@@ -11,7 +11,10 @@ import Image from "next/image"
 const About = () => {
     const t = useTranslations("about")
     return (
-        <section id="about" className="container">
+        <section
+            id="about"
+            className="container"
+        >
             <Scroll />
             <div className="info flex">
                 <div>
@@ -24,7 +27,7 @@ const About = () => {
                         <h3 className="title-smaller">{t("subtitle")}</h3>
                     </SlideLeft>
                 </div>
-                <div>
+                <div className="right">
                     <SlideTop>
                         <p className="text">{t("text1")}</p>
                     </SlideTop>
@@ -34,20 +37,17 @@ const About = () => {
                     <SlideTop>
                         <p className="text">{t("text3")}</p>
                     </SlideTop>
-                    <SlideTop>
+                    <SlideTop className="tech-row">
                         <h4 className="title-smaller">{t("stack")}</h4>
-                        {icons.map((icon, index) => (
-                            <div>
-                                <Image
-                                    src={icon.src}
-                                    alt={icon.alt}
-                                    width={50}
-                                    height={50}
+                        <div className="icons flex">
+                            {icons.map((icon, index) => (
+                                <Icon
+                                    icon={icon}
+                                    index={index}
                                     key={icon.alt + index}
                                 />
-                                {/* {icon.alt} */}
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </SlideTop>
                 </div>
             </div>
@@ -56,3 +56,18 @@ const About = () => {
 }
 
 export default About
+
+const Icon = ({ icon, index }) => {
+    return (
+        <div className="icon relative">
+            <Image
+                src={icon.src}
+                alt={icon.alt}
+                width={26}
+                height={26}
+                key={icon.alt + index}
+            />
+            <span className="tooltip">{icon.alt}</span>
+        </div>
+    )
+}

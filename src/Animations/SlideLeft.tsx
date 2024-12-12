@@ -13,8 +13,8 @@ const SlideLeft = ({
     return (
         <motion.div
             className={className}
-            initial={slideLeftInitial}
-            whileInView={slideLeftInView}
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
         >
             {children}
         </motion.div>
@@ -22,12 +22,3 @@ const SlideLeft = ({
 }
 
 export default SlideLeft
-
-const slideLeftInitial = {
-    transform: "translateX(60px)",
-    opacity: 0,
-}
-const slideLeftInView = {
-    transform: "translateX(0px)",
-    opacity: 1,
-}

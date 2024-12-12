@@ -40,7 +40,8 @@
 import { useTranslations } from "next-intl"
 
 export default function About() {
-    const t = useTranslations("About")
+    // const t = useTranslations("About")
 
-    return <p>{t("description")}</p>
+    return null
+    // return <p>{t("description")}</p>
 }

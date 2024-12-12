@@ -12,6 +12,7 @@ import imagePremiumSound from "@/assets/projects/premium-sound.svg"
 
 import "./Portfolio.css"
 import SlideLeft from "@/animations/SlideLeft"
+import SlideTop from "@/animations/SlideTop"
 
 export interface ProjectItem {
     name: string
@@ -70,12 +71,44 @@ const Projects = () => {
     const t = useTranslations("projects")
 
     return (
-        <section id="projects" className="container">
-            <SlideLeft>
-                <h2 className={`title-small ${fascinate.className}`}>
-                    {t("title")}
-                </h2>
-            </SlideLeft>
+        <section
+            id="projects"
+            className="container"
+        >
+            <div className="head flex">
+                <SlideLeft>
+                    <h2 className={`title-small ${fascinate.className}`}>
+                        {t("title")}
+                    </h2>
+                </SlideLeft>
+                <div className="columns flex">
+                    <SlideTop>
+                        <h3 className="title-smaller">Discipline</h3>
+                        <ul className="list">
+                            <li>UI design</li>
+                            <li>Code development</li>
+                        </ul>
+                    </SlideTop>
+                    <SlideTop delay={500}>
+                        <h3 className="title-smaller">Tools</h3>
+                        <ul className="list">
+                            <li>React</li>
+                            <li>Next.js</li>
+                            <li>React Native</li>
+                            <li>Postgresql</li>
+                        </ul>
+                    </SlideTop>
+                    <SlideTop delay={1000}>
+                        <h3 className="title-smaller">Industry</h3>
+                        <ul className="list tags flex">
+                            <li className="btn btn-white">tech</li>
+                            <li className="btn btn-white">ecommenrce</li>
+                            <li className="btn btn-white">sass</li>
+                            <li className="btn btn-white">web3</li>
+                        </ul>
+                    </SlideTop>
+                </div>
+            </div>
             <ul className="project-list">
                 {projectItems.map((item, index) => (
                     <PortfolioItem

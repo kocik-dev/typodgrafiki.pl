@@ -1,6 +1,7 @@
 import Link from "next/link"
 import React from "react"
 import { useTranslations } from "next-intl"
+import ConnectWallet from "./ConnectWallet"
 
 export default function Menu() {
     const t = useTranslations("menu")
@@ -20,12 +21,7 @@ export default function Menu() {
                 <a href="/#contact">{t("contact")}</a>
             </li>
             <li className="wallet">
-                <a
-                    href="#"
-                    className="btn btn-default"
-                >
-                    {t("wallet")}
-                </a>
+                <ConnectWallet />
             </li>
         </ul>
     )

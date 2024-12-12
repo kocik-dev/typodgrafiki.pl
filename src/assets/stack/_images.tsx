@@ -13,8 +13,18 @@ import tailwind from "./tailwind.svg"
 import typescript from "./typescript.svg"
 import versionControl from "./version-control.svg"
 import vsc from "./visual-studio-code.svg"
+import css3 from "./css3.svg"
+import html5 from "./html5.svg"
 
 const icons = [
+    {
+        src: html5,
+        alt: "HTML5",
+    },
+    {
+        src: css3,
+        alt: "CSS3",
+    },
     {
         src: javascript,
         alt: "JavaScript",

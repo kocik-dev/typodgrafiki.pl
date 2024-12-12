@@ -28,6 +28,7 @@
     color: #c5c7cd;
     flex-direction: column;
     font-weight: 100;
+    max-width: 625px;
 }
 
 #main .caption {
@@ -42,6 +43,17 @@
     left: 0;
     right: 0;
     margin: 0;
+    transform: translateY(100%);
+    animation: slideTop 1.4s forwards cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+@keyframes slideTop {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 #main .text-animated span {
@@ -71,32 +83,7 @@
 }
 
 @media (min-width: 768px) {
-    /* .face + div {
-        max-width: 0;
-        white-space: nowrap;
-        margin-left: 25px;
-        overflow: hidden;
-        animation: slide1 1s forwards cubic-bezier(1, 0, 0, 1) 0.5s;
-    }
-
-    @keyframes slide1 {
-        from {
-            max-width: 0;
-        }
-        to {
-            max-width: 100%;
-        }
-    } */
-
-    /* #main .caption {
-        flex-direction: row;
-        text-align: left;
-        gap: 10%;
-        align-items: space-between;
-    } */
-
     .subtitle {
-        /* flex-direction: row; */
         align-items: flex-start;
         line-height: 120%;
         font-size: 43px;

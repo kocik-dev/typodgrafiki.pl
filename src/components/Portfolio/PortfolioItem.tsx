@@ -1,20 +1,23 @@
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { ProjectItem } from "./Portfolio"
-import SlideLeft from "@/animations/SlideLeft"
+import SlideTop from "@/animations/SlideTop"
 
 const PortfolioItem = ({ name, scope, image, githubLink }: ProjectItem) => {
     const t = useTranslations("projects")
     return (
-        <SlideLeft className="project-item flex">
+        <SlideTop className="project-item flex">
             <span className="name">{name}</span>
             <span className="scope">{scope}</span>
-            <Image src={image} alt={name} />
+            <Image
+                src={image}
+                alt={name}
+            />
             <a className="btn btn-transparent">
                 <Lock />
                 {t("button")}
             </a>
-        </SlideLeft>
+        </SlideTop>
     )
 }
 

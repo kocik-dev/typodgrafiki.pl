@@ -10,7 +10,7 @@
 }
 
 #projects .project-list {
-    margin: 0 0 70px;
+    margin: 40px 0 70px;
     padding: 0;
     list-style: none;
 }
@@ -45,4 +45,47 @@
 #projects .project-item .btn-transparent {
     color: var(--dark);
     white-space: nowrap;
+}
+
+#projects .project-item .btn-transparent:is(:hover, :focus) {
+    color: #fff;
+}
+
+#projects .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#projects .list li {
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+
+#projects .title-smaller {
+    margin-bottom: 15px;
+}
+
+#projects .tags {
+    gap: 10px;
+}
+
+#projects .tags li {
+    pointer-events: none;
+    margin: 0;
+}
+
+#projects .tags li:before {
+    content: "#";
+    font-size: 0.85rem;
+    margin-right: 1px;
+}
+
+#projects .columns {
+    gap: 20%;
+    margin-top: 30px;
+}
+
+#projects .head {
+    gap: 5%;
 }

@@ -9,8 +9,12 @@ const Scroll = () => {
     const top = useTransform(scrollY, [0, 200, 280], [-70, -50, 0], {
         clamp: true,
     })
+
     return (
-        <motion.div className="scroll" style={{ top: top }}>
+        <motion.div
+            className="scroll"
+            style={{ top: top }}
+        >
             <a href="#about">
                 <svg
                     width="8"

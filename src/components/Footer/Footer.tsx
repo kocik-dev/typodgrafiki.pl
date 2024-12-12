@@ -119,7 +119,10 @@ const socialLinksData: ISocialData[] = [
 
 const Footer: React.FC = () => {
     return (
-        <footer id="contact" className="container">
+        <footer
+            id="contact"
+            className="container"
+        >
             <div className="footer">
                 <div className="footer-content">
                     <div className="contact">
@@ -133,6 +136,7 @@ const Footer: React.FC = () => {
                                             ? "btn-default"
                                             : "btn-transparent"
                                     }`}
+                                    key={item.name}
                                 >
                                     {item.icon}
                                     {item.name}

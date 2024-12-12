@@ -119,7 +119,7 @@ const Cursor = () => {
     return (
         <>
             {/* Canvas do efektów */}
-            <canvas ref={canvasRef} className="cursorCanvas" />
+            <canvas ref={canvasRef} className="cursorCanvas hidden-xs" />
         </>
     )
 }

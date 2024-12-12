@@ -16,18 +16,20 @@
 
 #main .main-section {
     flex-grow: 1;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     padding-bottom: 60px;
-    gap: 10%;
+    gap: 1%;
 }
 
 #main .subtitle {
     margin: 0 0 20px;
-    font-weight: 300;
     color: #c5c7cd;
     flex-direction: column;
-    font-weight: 100;
+    /* font-weight: 300;
+    line-height: 93%;
+    font-size: 25px; */
 }
 
 #main .caption {
@@ -71,36 +73,14 @@
 }
 
 @media (min-width: 768px) {
-    /* .face + div {
-        max-width: 0;
-        white-space: nowrap;
-        margin-left: 25px;
-        overflow: hidden;
-        animation: slide1 1s forwards cubic-bezier(1, 0, 0, 1) 0.5s;
+    #main .main-section {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10%;
     }
 
-    @keyframes slide1 {
-        from {
-            max-width: 0;
-        }
-        to {
-            max-width: 100%;
-        }
-    } */
-
-    /* #main .caption {
-        flex-direction: row;
-        text-align: left;
-        gap: 10%;
-        align-items: space-between;
-    } */
-
-    .subtitle {
-        /* flex-direction: row; */
+    #main .subtitle {
         align-items: flex-start;
-        line-height: 120%;
-        font-size: 43px;
-        font-weight: 100;
-        line-height: 93%;
     }
 }

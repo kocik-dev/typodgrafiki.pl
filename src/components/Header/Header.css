@@ -175,6 +175,7 @@
 .menu-web3 .btn:hover + .tooltip {
     opacity: 1;
     visibility: visible;
+    top: calc(100% + 15px);
 }
 
 @media (min-width: 768px) {

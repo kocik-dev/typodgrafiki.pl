@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl"
 import { ProjectItem } from "./Portfolio"
 import SlideTop from "@/animations/SlideTop"
 
-const PortfolioItem = ({ name, scope, image, githubLink }: ProjectItem) => {
+const PortfolioItem = ({ name, scope, image }: ProjectItem) => {
     const t = useTranslations("projects")
     return (
         <SlideTop className="project-item flex-sm">
@@ -25,8 +25,6 @@ const PortfolioItem = ({ name, scope, image, githubLink }: ProjectItem) => {
         </SlideTop>
     )
 }
-
-export default PortfolioItem
 
 const Lock = () => {
     return (
@@ -50,3 +48,5 @@ const Lock = () => {
         </svg>
     )
 }
+
+export default PortfolioItem

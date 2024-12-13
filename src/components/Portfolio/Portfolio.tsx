@@ -26,44 +26,36 @@ const projectItems: ProjectItem[] = [
         name: "Oute",
         scope: "Brand, UI/UX, Website, Mobile Application, Fullstack developer",
         image: imageOute,
-        // githubLink: "https://github.com/typodgrafiki/portfolio-html",
     },
     {
         name: "Tripist",
         scope: "Brand, UI/UX, Website, Fullstack developer",
         image: imageTrip,
-        // githubLink: "https://github.com/typodgrafiki/portfolio-html",
     },
     {
         name: "Find Unesco",
         scope: "Brand, UI/UX, Website, Fullstack developer",
         image: imageUnesco,
-        // githubLink: "https://github.com/typodgrafiki/portfolio-html",
     },
-
     {
         name: "Audio Mix",
         scope: "UI, Online shop Template, Frontend developer",
         image: imageAudioMix,
-        // githubLink: "https://github.com/typodgrafiki/portfolio-html",
     },
     {
         name: "Puupil",
         scope: "UI, Online shop Template, Frontend developer",
         image: imagePuupil,
-        // githubLink: "https://github.com/typodgrafiki/portfolio-html",
     },
     {
         name: "Besthunters",
         scope: "UI, Online shop Template, Frontend developer",
         image: imageBesthunters,
-        // githubLink: "https://github.com/typodgrafiki/portfolio-html",
     },
     {
         name: "Premium Sound",
         scope: "UI, Online shop Template, Frontend developer",
         image: imagePremiumSound,
-        // githubLink: "https://github.com/typodgrafiki/portfolio-html",
     },
 ]
 

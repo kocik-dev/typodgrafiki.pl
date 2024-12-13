@@ -35,6 +35,10 @@
 #bottom-menu ul a {
     text-decoration: none;
     padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 100%;
 }
 
 #bottom-menu .logo-small {

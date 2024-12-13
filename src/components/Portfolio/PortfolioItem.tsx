@@ -15,7 +15,7 @@ const PortfolioItem = ({ name, scope, image, githubLink }: ProjectItem) => {
                 className="hidden-xs"
             />
             <div className="flex justify-start">
-                <a className="btn btn-transparent">
+                <a className="btn btn-transparent btn-bubble-bottom">
                     <span>
                         <Lock />
                         {t("button")}

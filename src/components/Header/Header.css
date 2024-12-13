@@ -48,6 +48,7 @@
 #main .menu li:not(.wallet) {
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 #main .menu li:not(.wallet) a {
@@ -60,6 +61,10 @@
     transition: all 0.2s ease;
 }
 
+#main .menu li:not(.wallet):hover a {
+    color: var(--dark);
+}
+
 #main .menu li:not(.wallet):after,
 #main .menu li:not(.wallet):before {
     content: "";
@@ -67,10 +72,10 @@
     /* width: 70%; */
     width: 0;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 20%;
     aspect-ratio: 1 / 1;
-    background-color: red;
+    transform: translateY(-50%);
+    background-color: #fff;
     position: absolute;
     transition: all 0.6s ease;
     border-radius: 50%;
@@ -78,19 +83,18 @@
 
 #main .menu li:not(.wallet):before {
     left: auto;
-    right: 50%;
+    right: 20%;
+    transition-delay: 0.1s;
 }
 
 #main .menu li:not(.wallet):hover:after {
     width: 100%;
-    left: 0;
-    transform: translate(-20%, -50%);
+    left: -10%;
 }
 
 #main .menu li:not(.wallet):hover:before {
     width: 100%;
-    right: 0;
-    transform: translate(20%, -50%);
+    right: -10%;
 }
 
 #btn-menu-mobile {

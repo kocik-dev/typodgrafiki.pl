@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react"
 
 const Cursor = () => {
     const promien = 20
-    const promienHover = 3
+    const promienHover = 0
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const mousePos = useRef({ x: 100, y: 100 })
     const lastPos = useRef({ x: 100, y: 100 })
@@ -119,7 +119,10 @@ const Cursor = () => {
     return (
         <>
             {/* Canvas do efektów */}
-            <canvas ref={canvasRef} className="cursorCanvas hidden-xs" />
+            <canvas
+                ref={canvasRef}
+                className="cursorCanvas hidden-xs"
+            />
         </>
     )
 }

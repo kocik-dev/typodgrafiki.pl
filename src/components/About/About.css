@@ -36,6 +36,15 @@
     animation: slideArrow 3s infinite ease;
 }
 
+.scroll a:hover {
+    color: var(--dark);
+}
+
+.scroll a:before,
+.scroll a:after {
+    background-color: #fff;
+}
+
 @keyframes slideArrow {
     0% {
         transform: translateY(0);

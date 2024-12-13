@@ -103,7 +103,7 @@ const Footer = () => {
                             {socialLinksData.map((item) => (
                                 <Link
                                     href={item.link}
-                                    className="btn btn-transparent"
+                                    className="btn btn-transparent btn-bubble-bottom"
                                     key={item.name}
                                     target="_blank"
                                 >

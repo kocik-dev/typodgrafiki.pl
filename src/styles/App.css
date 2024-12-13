@@ -168,39 +168,36 @@ button {
     border-radius: 10px;
 }
 
-/* .btn-transparent {
+.btn-transparent {
     background-color: transparent;
-    border: 1px solid currentColor;
-} */
+    border: 1px solid var(--dark);
+}
 
-.btn-white:is(:hover, :focus, :active)
-/* , .btn-transparent:is(:hover, :focus, :active)  */ {
+.btn-white:is(:hover, :focus, :active) {
     background-color: #161924;
     color: #fff;
 }
 
-/* TODO Hover effect na buttonach - start */
-.btn-transparent {
-    background-color: transparent;
-    border: 1px solid var(--dark);
+.btn-bubble-bottom {
     position: relative;
     overflow: hidden;
 }
 
-.btn-transparent > span {
+.btn-bubble-bottom > span {
     display: inherit;
     justify-content: inherit;
     align-items: inherit;
     position: relative;
     z-index: 1;
+    gap: inherit;
 }
 
-.btn-transparent:is(:hover) {
+.btn-bubble-bottom:is(:hover) {
     color: #fff;
 }
 
-.btn-transparent:before,
-.btn-transparent:after {
+.btn-bubble-bottom:before,
+.btn-bubble-bottom:after {
     content: "";
     display: block;
     width: 100%;
@@ -214,18 +211,17 @@ button {
     transition: all 0.4s ease-out;
 }
 
-.btn-transparent:after {
+.btn-bubble-bottom:after {
     width: 80%;
     left: 40%;
     transition: all 0.5s ease-out;
     transition-delay: 0.08s;
 }
 
-.btn-transparent:hover:before,
-.btn-transparent:hover:after {
-    top: -100%;
+.btn-bubble-bottom:hover:before,
+.btn-bubble-bottom:hover:after {
+    top: -70%;
 }
-/* TODO end */
 
 .btn-yellow {
     background-color: #f19529;

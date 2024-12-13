@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
                 <div className="footer-info">
-                    <div className="dark">
+                    <div className="dark hidden-xs">
                         <Logo />
                     </div>
                     <div className="light">

@@ -55,10 +55,21 @@
 .footer .footer-info .light:after {
     background-color: #fff;
     border-radius: 0 30px 0 0;
+    width: 31px;
+    height: 31px;
 }
 
 .footer .btn-transparent {
     border: 1px solid #fff;
+}
+
+.footer .btn-transparent:is(:hover) {
+    color: var(--dark);
+}
+
+.footer .btn-transparent:after,
+.footer .btn-transparent:before {
+    background-color: #fff;
 }
 
 .footer .buttons {
@@ -75,7 +86,7 @@
 
     .footer .footer-content {
         border-radius: 0 30px 30px 30px;
-        padding: 37px 5% 5%;
+        padding: 37px 50px 37px;
         flex-grow: 1;
     }
 

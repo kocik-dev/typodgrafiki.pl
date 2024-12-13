@@ -10,7 +10,7 @@
 }
 
 #projects .project-list {
-    margin: 40px 0 70px;
+    margin: 20px 0 70px;
     padding: 0;
     list-style: none;
 }
@@ -19,7 +19,7 @@
     align-items: center;
     gap: 20px;
     border-bottom: 1px solid var(--dark);
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 #projects .project-item:last-child {
@@ -34,12 +34,14 @@
     font-size: 34px;
     color: var(--dark);
     font-weight: 200;
+    margin: 0;
 }
 
 #projects .project-item .scope {
     font-size: 25px;
     font-weight: 200;
     flex-grow: 1;
+    margin: 0;
 }
 
 #projects .project-item .btn-transparent {
@@ -68,6 +70,7 @@
 
 #projects .tags {
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 #projects .tags li {
@@ -82,10 +85,37 @@
 }
 
 #projects .columns {
-    gap: 20%;
+    gap: 30px 20%;
     margin-top: 30px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+#projects .columns > div:nth-child(3) {
+    flex-grow: 1;
 }
 
 #projects .head {
     gap: 5%;
+}
+
+@media (min-width: 768px) {
+    #projects .project-item {
+        padding: 20px 0;
+    }
+
+    #projects .project-list {
+        margin-top: 40px;
+    }
+
+    #projects .columns {
+        flex-wrap: nowrap;
+        column-gap: 10%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #projects .columns {
+        column-gap: 90px;
+    }
 }

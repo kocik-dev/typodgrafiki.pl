@@ -27,9 +27,6 @@
     margin: 0 0 20px;
     color: #c5c7cd;
     flex-direction: column;
-    /* font-weight: 300;
-    line-height: 93%;
-    font-size: 25px; */
 }
 
 #main .caption {
@@ -93,5 +90,6 @@
 
     #main .subtitle {
         align-items: flex-start;
+        max-width: 625px;
     }
 }

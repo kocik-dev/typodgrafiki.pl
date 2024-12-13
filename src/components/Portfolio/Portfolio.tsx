@@ -75,7 +75,7 @@ const Projects = () => {
             id="projects"
             className="container"
         >
-            <div className="head flex">
+            <div className="head flex-md">
                 <SlideLeft>
                     <h2 className={`title-small ${fascinate.className}`}>
                         {t("title")}
@@ -99,7 +99,7 @@ const Projects = () => {
                         </ul>
                     </SlideTop>
                     <SlideTop delay={1000}>
-                        <h3 className="title-smaller">Industry</h3>
+                        <h3 className="title-smaller hidden-xs">Industry</h3>
                         <ul className="list tags flex">
                             <li className="btn btn-white">tech</li>
                             <li className="btn btn-white">ecommenrce</li>

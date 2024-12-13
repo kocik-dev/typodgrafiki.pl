@@ -3,7 +3,8 @@
         "about": "O mnie",
         "portfolio": "Projekty",
         "contact": "Kontakt",
-        "wallet": "Połącz portfel"
+        "btnConnectWeb3": "Połącz portfel WEB3",
+        "btnWeb3Connected": "Portfel połączony"
     },
     "main": {
         "h2": "Tworzę innowacyjne i wydajne interfejsy użytkownika dla branży e-commerce. Poznaj moje projekty i dowiedz się, jak mogę pomóc Twojemu biznesowi.",

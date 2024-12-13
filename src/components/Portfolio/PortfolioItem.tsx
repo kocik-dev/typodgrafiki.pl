@@ -6,17 +6,22 @@ import SlideTop from "@/animations/SlideTop"
 const PortfolioItem = ({ name, scope, image, githubLink }: ProjectItem) => {
     const t = useTranslations("projects")
     return (
-        <SlideTop className="project-item flex">
-            <span className="name">{name}</span>
-            <span className="scope">{scope}</span>
+        <SlideTop className="project-item flex-sm">
+            <p className="name">{name}</p>
+            <p className="scope">{scope}</p>
             <Image
                 src={image}
                 alt={name}
+                className="hidden-xs"
             />
-            <a className="btn btn-transparent">
-                <Lock />
-                {t("button")}
-            </a>
+            <div className="flex justify-start">
+                <a className="btn btn-transparent">
+                    <span>
+                        <Lock />
+                        {t("button")}
+                    </span>
+                </a>
+            </div>
         </SlideTop>
     )
 }

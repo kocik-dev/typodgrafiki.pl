@@ -1,7 +1,11 @@
 :root {
-    /* --text: #c5c7cd; */
     --text: #525359;
     --dark: #161924;
+}
+
+::selection {
+    background-color: #ffc077;
+    color: #000000;
 }
 
 *,
@@ -78,6 +82,7 @@ button {
     color: inherit;
     font-size: 1rem;
     line-height: 1.6;
+    font-family: inherit;
 }
 
 .title {
@@ -127,6 +132,12 @@ button {
     transition: all 0.2s ease;
 }
 
+.btn:disabled {
+    /* pointer-events: none; */
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .btn svg {
     margin-right: 7px;
 }
@@ -144,7 +155,7 @@ button {
     background-size: 200%;
 }
 
-.btn-default:is(:hover, :focus, :active) {
+.btn-default:not(:disabled):is(:hover, :focus, :active) {
     background-color: #454b5a;
     background-position: 100%;
     color: #fff;
@@ -157,16 +168,64 @@ button {
     border-radius: 10px;
 }
 
-.btn-transparent {
+/* .btn-transparent {
     background-color: transparent;
     border: 1px solid currentColor;
-}
+} */
 
-.btn-white:is(:hover, :focus, :active),
-.btn-transparent:is(:hover, :focus, :active) {
+.btn-white:is(:hover, :focus, :active)
+/* , .btn-transparent:is(:hover, :focus, :active)  */ {
     background-color: #161924;
     color: #fff;
 }
+
+/* TODO Hover effect na buttonach - start */
+.btn-transparent {
+    background-color: transparent;
+    border: 1px solid var(--dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-transparent > span {
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-transparent:is(:hover) {
+    color: #fff;
+}
+
+.btn-transparent:before,
+.btn-transparent:after {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: var(--dark);
+    border-radius: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 100%;
+    left: -30%;
+    transition: all 0.4s ease-out;
+}
+
+.btn-transparent:after {
+    width: 80%;
+    left: 40%;
+    transition: all 0.5s ease-out;
+    transition-delay: 0.08s;
+}
+
+.btn-transparent:hover:before,
+.btn-transparent:hover:after {
+    top: -100%;
+}
+/* TODO end */
 
 .btn-yellow {
     background-color: #f19529;
@@ -263,6 +322,10 @@ button {
         padding: 0 3%;
     }
 
+    .flex-sm {
+        display: flex;
+    }
+
     .visible-xs {
         display: none !important;
     }
@@ -276,7 +339,6 @@ button {
 
     .subtitle {
         line-height: 95%;
-        /* font-size: 43px; */
         font-size: clamp(2rem, 3.2vw, 43px);
         font-weight: 100;
         transform: translateX(200px);
@@ -294,6 +356,12 @@ button {
             transform: translateX(0);
             opacity: 1;
         }
+    }
+}
+
+@media (min-width: 991px) {
+    .flex-md {
+        display: flex;
     }
 }
 

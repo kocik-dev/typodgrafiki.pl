@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useTranslations } from "next-intl"
 import { ethers } from "ethers"
 
@@ -13,11 +13,12 @@ declare global {
 export default function ConnectWallet() {
     const t = useTranslations("menu")
 
+    const [isWalletInstalled, setIsWalletInstalled] = useState(false)
     const [walletAddress, setWalletAddress] = useState<null | string>(null)
     const [errorMessage, setErrorMessage] = useState<null | string>(null)
 
     const connectWallet = async () => {
-        if (typeof window.ethereum !== "undefined") {
+        if (isWalletInstalled) {
             try {
                 // Poproś użytkownika o połączenie portfela
                 const provider = new ethers.BrowserProvider(window.ethereum)
@@ -25,6 +26,9 @@ export default function ConnectWallet() {
                 const account = accounts[0]
                 setWalletAddress(account)
                 setErrorMessage(null)
+
+                //TODO: Pokaż modal i zaproponuj mint
+                //TODO: Poprawic dzialanie ogolnie
             } catch (error) {
                 console.error("Error connecting wallet:", error)
                 setErrorMessage("Failed to connect wallet.")
@@ -36,16 +40,27 @@ export default function ConnectWallet() {
         }
     }
 
+    useEffect(() => {
+        if (typeof window.ethereum !== "undefined") {
+            setIsWalletInstalled(true)
+        }
+    }, [])
+
     return (
-        <>
+        <div className="menu-web3 relative">
             <button
-                className="btn btn-default"
+                className="btn btn-default relative"
+                disabled={!isWalletInstalled}
                 onClick={connectWallet}
             >
-                {/* {t("wallet")} */}
-                {walletAddress ? "Wallet Connected" : "Connect Wallet"}
+                {walletAddress ? t("btnWeb3Connected") : t("btnConnectWeb3")}
             </button>
-            {walletAddress && (
+            {!isWalletInstalled ? (
+                <div className="tooltip">
+                    Zainstaluj portfel WEB3 aby połączyć.
+                </div>
+            ) : null}
+            {/* {walletAddress && (
                 <p style={{ marginTop: "10px" }}>
                     {formatWalletAddress(walletAddress)}
                 </p>
@@ -54,8 +69,8 @@ export default function ConnectWallet() {
                 <p style={{ color: "red", marginTop: "10px" }}>
                     {errorMessage}
                 </p>
-            )}
-        </>
+            )} */}
+        </div>
     )
 }
 

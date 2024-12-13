@@ -3,7 +3,8 @@
         "about": "About",
         "portfolio": "Work",
         "contact": "Contact",
-        "wallet": "Connect wallet"
+        "btnConnectWeb3": "Connect WEB3 wallet",
+        "btnWeb3Connected": "Wallet Connected"
     },
     "main": {
         "h2": "I create innovative and efficient user interfaces for the e-commerce industry. Explore my projects and learn how I can help your business.",

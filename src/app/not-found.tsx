@@ -16,7 +16,7 @@ export default function Custom404() {
                     <h1>Opps!</h1>
                     <p>Strona nie została znaleziona.</p>
                     <Link href="/" className="btn btn-default">
-                        Wróć do strony głównej
+                        Back to the home page
                     </Link>
                 </div>
             </div>

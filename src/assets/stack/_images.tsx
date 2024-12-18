@@ -15,8 +15,9 @@ import versionControl from "./version-control.svg"
 import vsc from "./visual-studio-code.svg"
 import css3 from "./css3.svg"
 import html5 from "./html5.svg"
+import { TypeIcons } from "@/types/types"
 
-const icons = [
+const icons: TypeIcons = [
     {
         src: html5,
         alt: "HTML5",

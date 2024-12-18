@@ -7,14 +7,12 @@ import SlideTop from "@/animations/SlideTop"
 import Scroll from "@/animations/ScrollTop"
 import { icons } from "@/assets/stack/_images"
 import Image from "next/image"
+import { TypeIcon } from "@/types/types"
 
 const About = () => {
     const t = useTranslations("about")
     return (
-        <section
-            id="about"
-            className="container"
-        >
+        <section id="about" className="container">
             <Scroll />
             <div className="info flex">
                 <div>
@@ -57,7 +55,7 @@ const About = () => {
 
 export default About
 
-const Icon = ({ icon, index }) => {
+const Icon = ({ icon, index }: { icon: TypeIcon; index: number }) => {
     return (
         <div className="icon relative">
             <Image

@@ -1,61 +1,66 @@
 import { useTranslations } from "next-intl"
 import { fascinate } from "@/components/Fonts"
 import PortfolioItem from "./PortfolioItem"
-import imageGithub from "@/assets/projects/github.svg"
-import imageUnesco from "@/assets/projects/unesco.svg"
-import imageTrip from "@/assets/projects/trip.svg"
-import imageOute from "@/assets/projects/oute.svg"
-import imageAudioMix from "@/assets/projects/audio-mix.svg"
-import imagePuupil from "@/assets/projects/puupil.svg"
-import imageBesthunters from "@/assets/projects/besthunters.svg"
-import imagePremiumSound from "@/assets/projects/premium-sound.svg"
+import { outeImages } from "@/assets/projects/oute/images"
+import { tripistImages } from "@/assets/projects/tripist/images"
+import { StaticImageData } from "next/image"
 
 import "./Portfolio.css"
 import SlideLeft from "@/animations/SlideLeft"
 import SlideTop from "@/animations/SlideTop"
+import { audiomixImages } from "@/assets/projects/audio-mix/images"
+import { findUnescoImages } from "@/assets/projects/find-unesco/images"
+import { puupilImages } from "@/assets/projects/puupil/images"
+import { cinemaTechImages } from "@/assets/projects/cinema-tech/images"
+import { paulBunyanImages } from "@/assets/projects/paulbunyan/images"
+import { premiumSoundImages } from "@/assets/projects/premium-sound/images"
 
 export interface ProjectItem {
     name: string
     scope: string
-    image: string
-    githubLink?: string
+    images: StaticImageData[]
 }
 
 const projectItems: ProjectItem[] = [
     {
         name: "Oute",
         scope: "Brand, UI/UX, Website, Mobile Application, Fullstack developer",
-        image: imageOute,
+        images: outeImages,
     },
     {
         name: "Tripist",
         scope: "Brand, UI/UX, Website, Fullstack developer",
-        image: imageTrip,
+        images: tripistImages,
     },
     {
         name: "Find Unesco",
         scope: "Brand, UI/UX, Website, Fullstack developer",
-        image: imageUnesco,
+        images: findUnescoImages,
     },
     {
         name: "Audio Mix",
         scope: "UI, Online shop Template, Frontend developer",
-        image: imageAudioMix,
+        images: audiomixImages,
     },
     {
         name: "Puupil",
         scope: "UI, Online shop Template, Frontend developer",
-        image: imagePuupil,
+        images: puupilImages,
     },
     {
-        name: "Besthunters",
+        name: "Cinema Tech",
         scope: "UI, Online shop Template, Frontend developer",
-        image: imageBesthunters,
+        images: cinemaTechImages,
+    },
+    {
+        name: "PaulBunyan",
+        scope: "UI, Online shop Template, Frontend developer",
+        images: paulBunyanImages,
     },
     {
         name: "Premium Sound",
         scope: "UI, Online shop Template, Frontend developer",
-        image: imagePremiumSound,
+        images: premiumSoundImages,
     },
 ]
 
@@ -63,10 +68,7 @@ const Projects = () => {
     const t = useTranslations("projects")
 
     return (
-        <section
-            id="projects"
-            className="container"
-        >
+        <section id="projects" className="container">
             <div className="head flex-md">
                 <SlideLeft>
                     <h2 className={`title-small ${fascinate.className}`}>
@@ -106,8 +108,7 @@ const Projects = () => {
                     <PortfolioItem
                         name={item.name}
                         scope={item.scope}
-                        image={item.image}
-                        githubLink={item.githubLink}
+                        images={item.images}
                         key={item.name + index}
                     />
                 ))}

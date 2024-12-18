@@ -1,17 +1,18 @@
 "use client"
 
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import React, { useState } from "react"
 import { useTranslations } from "next-intl"
+import { motion, AnimatePresence } from "motion/react"
 import SlideTop from "@/animations/SlideTop"
 
 export default function PortfolioItemImages({
     children,
-    image,
+    images,
     name,
 }: {
     children: React.ReactNode
-    image: string
+    images: StaticImageData[]
     name: string
 }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -25,11 +26,6 @@ export default function PortfolioItemImages({
         <SlideTop className="project-item">
             <div className="flex-sm">
                 {children}
-                <Image
-                    src={image}
-                    alt={name}
-                    className="hidden-xs"
-                />
                 <div className="flex justify-start gap-1">
                     <button
                         className="btn btn-transparent btn-bubble-bottom"
@@ -57,7 +53,39 @@ export default function PortfolioItemImages({
                     </a>
                 </div>
             </div>
-            {isOpen ? <div>isOpen</div> : null}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{
+                            height: "auto",
+                            opacity: 1,
+                        }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="images overflow-hidden flex flex-col gap-2"
+                    >
+                        {images.map((image, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    delay: index * 0.1,
+                                    duration: 0.3,
+                                }}
+                            >
+                                <Image
+                                    src={image}
+                                    alt={name}
+                                    height={204}
+                                    className="project-image"
+                                />
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </SlideTop>
     )
 }

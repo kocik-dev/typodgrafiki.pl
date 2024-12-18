@@ -102,6 +102,15 @@
     gap: 5%;
 }
 
+.project-image {
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 15%);
+    max-width: 100%;
+    margin-top: 20px;
+    height: auto;
+    max-height: 204px;
+}
+
 @media (min-width: 768px) {
     #projects .project-item {
         padding: 25px 0;

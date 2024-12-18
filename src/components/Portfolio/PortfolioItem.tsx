@@ -1,12 +1,9 @@
 import { ProjectItem } from "./Portfolio"
 import PortfolioItemImages from "./PortfolioItemImages"
 
-const PortfolioItem = ({ name, scope, image }: ProjectItem) => {
+const PortfolioItem = ({ name, scope, images }: ProjectItem) => {
     return (
-        <PortfolioItemImages
-            image={image}
-            name={name}
-        >
+        <PortfolioItemImages images={images} name={name}>
             <p className="name">{name}</p>
             <p className="scope">{scope}</p>
         </PortfolioItemImages>

@@ -5,46 +5,38 @@ import React, { useState } from "react"
 import { useTranslations } from "next-intl"
 import { motion, AnimatePresence } from "motion/react"
 import SlideTop from "@/animations/SlideTop"
+import { ProjectItem } from "@/types/types"
 
 export default function PortfolioItemImages({
     children,
-    images,
-    name,
+    item,
 }: {
     children: React.ReactNode
-    images: StaticImageData[]
-    name: string
+    item: ProjectItem
 }) {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isHover, setIsHover] = useState(false)
     const t = useTranslations("projects")
 
-    const handleOpen = () => {
-        setIsOpen(!isOpen)
+    const { image, name, width, height } = item
+
+    const initialShowImage = {
+        opacity: 0,
+        y: 5,
+    }
+
+    const [isLoading, setIsLoading] = useState(true)
+
+    const handleImageLoad = () => {
+        setIsLoading(false)
+        console.log("test")
     }
 
     return (
         <SlideTop className="project-item">
             <div className="flex-sm">
+                <Plus setIsHover={setIsHover} />
                 {children}
                 <div className="flex justify-start gap-1">
-                    <button
-                        className="btn btn-transparent btn-bubble-bottom"
-                        onClick={handleOpen}
-                    >
-                        <span>
-                            {isOpen ? (
-                                <>
-                                    <Minus />
-                                    Close
-                                </>
-                            ) : (
-                                <>
-                                    <Plus />
-                                    Show
-                                </>
-                            )}
-                        </span>
-                    </button>
                     <a className="btn btn-transparent btn-bubble-bottom">
                         <span>
                             <Lock />
@@ -53,39 +45,24 @@ export default function PortfolioItemImages({
                     </a>
                 </div>
             </div>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{
-                            height: "auto",
-                            opacity: 1,
-                        }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4 }}
-                        className="images overflow-hidden flex flex-col gap-2"
-                    >
-                        {images.map((image, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    delay: index * 0.1,
-                                    duration: 0.3,
-                                }}
-                            >
-                                <Image
-                                    src={image}
-                                    alt={name}
-                                    height={204}
-                                    className="project-image"
-                                />
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {isHover ? (
+                <motion.div
+                    className="project-image"
+                    initial={initialShowImage}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={initialShowImage}
+                    transition={{ duration: 0.1, ease: "easeOut" }}
+                >
+                    <Image
+                        src={image}
+                        alt={name}
+                        width={width}
+                        height={height}
+                        onLoad={handleImageLoad}
+                    />
+                    {isLoading ? <div className="loader"></div> : null}
+                </motion.div>
+            ) : null}
         </SlideTop>
     )
 }
@@ -113,36 +90,32 @@ const Lock = () => {
     )
 }
 
-const Plus = () => {
+const Plus = ({
+    setIsHover,
+}: {
+    setIsHover: React.Dispatch<React.SetStateAction<boolean>>
+}) => {
     return (
-        <svg
-            width="10"
-            height="10"
-            viewBox="0 0 14 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <button
+            className="btn btn-transparent btn-round btn-bubble-bottom"
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
         >
-            <path
-                d="M6.2502 1C6.2502 0.58579 6.586 0.25 7.0002 0.25C7.4145 0.25 7.7502 0.58579 7.7502 1V6.2502H13.0007C13.4149 6.2502 13.7507 6.586 13.7507 7.0002C13.7507 7.4145 13.4149 7.7502 13.0007 7.7502H7.7502V13.0007C7.7502 13.4149 7.4145 13.7507 7.0002 13.7507C6.586 13.7507 6.2502 13.4149 6.2502 13.0007V7.7502H1C0.58579 7.7502 0.25 7.4145 0.25 7.0002C0.25 6.586 0.58579 6.2502 1 6.2502H6.2502V1Z"
-                fill="currentColor"
-            />
-        </svg>
-    )
-}
-
-const Minus = () => {
-    return (
-        <svg
-            width="10"
-            height="10"
-            viewBox="0 0 10 10"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path
-                d="M9.82227 5.00007C9.82227 4.70421 9.58242 4.46436 9.28655 4.46436L0.714622 4.46436C0.418765 4.46436 0.178908 4.70421 0.178908 5.00007C0.178908 5.296 0.418765 5.53578 0.714622 5.53578L9.28655 5.53578C9.58242 5.53578 9.82227 5.296 9.82227 5.00007Z"
-                fill="currentColor"
-            />
-        </svg>
+            <span>
+                <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ margin: 0 }}
+                >
+                    <path
+                        d="M6.2502 1C6.2502 0.58579 6.586 0.25 7.0002 0.25C7.4145 0.25 7.7502 0.58579 7.7502 1V6.2502H13.0007C13.4149 6.2502 13.7507 6.586 13.7507 7.0002C13.7507 7.4145 13.4149 7.7502 13.0007 7.7502H7.7502V13.0007C7.7502 13.4149 7.4145 13.7507 7.0002 13.7507C6.586 13.7507 6.2502 13.4149 6.2502 13.0007V7.7502H1C0.58579 7.7502 0.25 7.4145 0.25 7.0002C0.25 6.586 0.58579 6.2502 1 6.2502H6.2502V1Z"
+                        fill="currentColor"
+                    />
+                </svg>
+            </span>
+        </button>
     )
 }

@@ -1,11 +1,12 @@
-import { ProjectItem } from "./Portfolio"
+import { ProjectItem } from "@/types/types"
+import { useTranslations } from "next-intl"
 import PortfolioItemImages from "./PortfolioItemImages"
 
-const PortfolioItem = ({ name, scope, images }: ProjectItem) => {
+const PortfolioItem = ({ item }: { item: ProjectItem }) => {
     return (
-        <PortfolioItemImages images={images} name={name}>
-            <p className="name">{name}</p>
-            <p className="scope">{scope}</p>
+        <PortfolioItemImages item={item}>
+            <p className="name">{item.name}</p>
+            <p className="scope">{item.scope}</p>
         </PortfolioItemImages>
     )
 }

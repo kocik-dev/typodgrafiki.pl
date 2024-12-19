@@ -6,7 +6,7 @@
         rgba(235, 236, 240, 1) 100%
     );
     padding-top: 50px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #projects .project-list {
@@ -18,11 +18,13 @@
 #projects .project-item {
     border-bottom: 1px solid var(--dark);
     padding: 30px 0;
+    position: relative;
+    transition: padding 0.4s ease;
 }
 
 #projects .project-item .flex-sm {
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 #projects .project-item:last-child {
@@ -38,6 +40,7 @@
     color: var(--dark);
     font-weight: 200;
     margin: 0;
+    position: relative;
 }
 
 #projects .project-item .scope {
@@ -104,11 +107,99 @@
 
 .project-image {
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgb(0 0 0 / 15%);
-    max-width: 100%;
-    margin-top: 20px;
-    height: auto;
-    max-height: 204px;
+    box-shadow: 0 5px 44px rgb(0 0 0 / 15%);
+    position: absolute;
+    margin-left: 25px;
+    top: 0;
+    z-index: 1;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    display: flex;
+    background-color: #fff;
+}
+
+.project-image img {
+    border-radius: inherit;
+}
+
+.project-image:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 29px;
+    left: -10px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 9.5px 10px 9.5px 0;
+    border-color: transparent #fff transparent transparent;
+    transform: rotate(0deg);
+}
+
+.project-image.oute:after {
+    border-color: transparent #f3f3f3 transparent transparent;
+}
+
+.project-item:hover .project-image {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+}
+
+.project-item .project-image .loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-item .project-image .loader:before {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--dark);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#projects .btn-round {
+    border-radius: 100px;
+    padding: 12px;
+    position: absolute;
+    left: -50px;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#projects .btn-round:hover:before,
+#projects .btn-round:hover:after {
+    top: -12%;
+    width: 120%;
+}
+
+#projects .project-item:hover .btn-round {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+#projects .project-item:hover {
+    padding-left: 50px;
 }
 
 @media (min-width: 768px) {

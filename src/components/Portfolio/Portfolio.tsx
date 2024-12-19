@@ -1,66 +1,76 @@
 import { useTranslations } from "next-intl"
 import { fascinate } from "@/components/Fonts"
 import PortfolioItem from "./PortfolioItem"
-import { outeImages } from "@/assets/projects/oute/images"
-import { tripistImages } from "@/assets/projects/tripist/images"
-import { StaticImageData } from "next/image"
-
-import "./Portfolio.css"
 import SlideLeft from "@/animations/SlideLeft"
 import SlideTop from "@/animations/SlideTop"
-import { audiomixImages } from "@/assets/projects/audio-mix/images"
-import { findUnescoImages } from "@/assets/projects/find-unesco/images"
-import { puupilImages } from "@/assets/projects/puupil/images"
-import { cinemaTechImages } from "@/assets/projects/cinema-tech/images"
-import { paulBunyanImages } from "@/assets/projects/paulbunyan/images"
-import { premiumSoundImages } from "@/assets/projects/premium-sound/images"
+import { ProjectItem } from "@/types/types"
+import "./Portfolio.css"
+import outeImg from "@/assets/projects/oute.jpg"
+import tripistImg from "@/assets/projects/tripist.jpg"
 
-export interface ProjectItem {
-    name: string
-    scope: string
-    images: StaticImageData[]
-}
+import findUnescoImg from "@/assets/projects/find-unesco.jpg"
+import audiomixImg from "@/assets/projects/audio-mix.jpg"
+import puupilImg from "@/assets/projects/puupil.jpg"
+import cinemaTechImg from "@/assets/projects/cinematech.jpg"
+import paulBunyanImg from "@/assets/projects/paulbunyan.jpg"
+import premiumSoundImg from "@/assets/projects/premium-sound.jpg"
 
 const projectItems: ProjectItem[] = [
     {
         name: "Oute",
         scope: "Brand, UI/UX, Website, Mobile Application, Fullstack developer",
-        images: outeImages,
+        image: outeImg,
+        width: 476,
+        height: 288,
     },
     {
         name: "Tripist",
         scope: "Brand, UI/UX, Website, Fullstack developer",
-        images: tripistImages,
+        image: tripistImg,
+        width: 380,
+        height: 368,
     },
     {
         name: "Find Unesco",
         scope: "Brand, UI/UX, Website, Fullstack developer",
-        images: findUnescoImages,
+        image: findUnescoImg,
+        width: 479,
+        height: 272,
     },
     {
         name: "Audio Mix",
         scope: "UI, Online shop Template, Frontend developer",
-        images: audiomixImages,
+        image: audiomixImg,
+        width: 479,
+        height: 284,
     },
     {
         name: "Puupil",
         scope: "UI, Online shop Template, Frontend developer",
-        images: puupilImages,
+        image: puupilImg,
+        width: 479,
+        height: 281,
     },
     {
         name: "Cinema Tech",
         scope: "UI, Online shop Template, Frontend developer",
-        images: cinemaTechImages,
+        image: cinemaTechImg,
+        width: 479,
+        height: 281,
     },
     {
         name: "PaulBunyan",
         scope: "UI, Online shop Template, Frontend developer",
-        images: paulBunyanImages,
+        image: paulBunyanImg,
+        width: 479,
+        height: 281,
     },
     {
         name: "Premium Sound",
         scope: "UI, Online shop Template, Frontend developer",
-        images: premiumSoundImages,
+        image: premiumSoundImg,
+        width: 479,
+        height: 281,
     },
 ]
 
@@ -68,7 +78,10 @@ const Projects = () => {
     const t = useTranslations("projects")
 
     return (
-        <section id="projects" className="container">
+        <section
+            id="projects"
+            className="container"
+        >
             <div className="head flex-md">
                 <SlideLeft>
                     <h2 className={`title-small ${fascinate.className}`}>
@@ -106,9 +119,7 @@ const Projects = () => {
             <ul className="project-list">
                 {projectItems.map((item, index) => (
                     <PortfolioItem
-                        name={item.name}
-                        scope={item.scope}
-                        images={item.images}
+                        item={item}
                         key={item.name + index}
                     />
                 ))}

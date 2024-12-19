@@ -12,6 +12,24 @@ const description =
     "Cześć. Jestem Grzegorz Front-end developer o zapleczu graficznym z doświadczeniem w tworzeniu warstwy graficznej ecommerce. Szukam możliwości rozwoju przy projektach wykorzystujących nowe technologie (React)"
 const url = "https://kocik.dev"
 
+// Dane strukturalne w formacie JSON-LD
+// const structuredData = {
+//     "@context": "https://schema.org",
+//     "@type": "Person",
+//     name: "Grzegorz Kocik",
+//     jobTitle: "Front-end Developer",
+//     description: description,
+//     url: url,
+// "sameAs": [
+//     "https://linkedin.com/in/grzegorz-kocik",
+//     "https://github.com/grzegorz-kocik"
+// ],
+//     worksFor: {
+//         "@type": "Organization",
+//         name: "Freelancer",
+//     },
+// }
+
 export const metadata: Metadata = {
     applicationName: "Kocik.dev",
     title: title,
@@ -122,7 +140,10 @@ export default async function RootLayout({
     const locale = await getLocale()
     const messages = await getMessages()
     return (
-        <html lang={locale} className={poppins.className}>
+        <html
+            lang={locale}
+            className={poppins.className}
+        >
             <body>
                 <NextIntlClientProvider messages={messages}>
                     {children}

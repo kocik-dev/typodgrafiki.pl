@@ -74,3 +74,31 @@ h1 {
     transform: translateY(2px) scale(0.98);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+/* ---------------------- */
+
+.hljs {
+    background: #272822; /* kolor tła podobny do okaidia */
+    padding: 1em;
+    border-radius: 0.3em;
+    overflow: auto;
+}
+
+.code-language {
+    margin-bottom: 0.5em;
+    color: #666;
+}
+
+/* Podstawowe kolory dla podświetlania składni */
+.hljs-keyword {
+    color: #f92672;
+}
+.hljs-string {
+    color: #a6e22e;
+}
+.hljs-comment {
+    color: #75715e;
+}
+.hljs-function {
+    color: #66d9ef;
+}

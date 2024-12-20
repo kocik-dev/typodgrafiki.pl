@@ -1,5 +1,4 @@
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { okaidia } from "react-syntax-highlighter/dist/cjs/styles/prism"
+import { Highlight, themes } from "prism-react-renderer"
 import "../../styles/code-snippet.css"
 
 const CodeSnippet = ({
@@ -11,9 +10,32 @@ const CodeSnippet = ({
 }) => (
     <>
         <p className="code-language">{language}</p>
-        <SyntaxHighlighter language={language} style={okaidia}>
-            {code}
-        </SyntaxHighlighter>
+        <Highlight
+            theme={themes.dracula}
+            code={code}
+            language={language}
+        >
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                <pre
+                    className={className}
+                    style={style}
+                >
+                    {tokens.map((line, i) => (
+                        <div
+                            key={i}
+                            {...getLineProps({ line })}
+                        >
+                            {line.map((token, key) => (
+                                <span
+                                    key={key}
+                                    {...getTokenProps({ token })}
+                                />
+                            ))}
+                        </div>
+                    ))}
+                </pre>
+            )}
+        </Highlight>
     </>
 )
 

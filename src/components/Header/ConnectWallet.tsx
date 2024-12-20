@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from "react"
 import { useTranslations } from "next-intl"
-import { ethers } from "ethers"
+import { createWalletClient, custom } from "viem"
+import { mainnet } from "viem/chains"
 
 declare global {
     interface Window {
@@ -20,10 +21,12 @@ export default function ConnectWallet() {
     const connectWallet = async () => {
         if (isWalletInstalled) {
             try {
-                // Poproś użytkownika o połączenie portfela
-                const provider = new ethers.BrowserProvider(window.ethereum)
-                const accounts = await provider.send("eth_requestAccounts", [])
-                const account = accounts[0]
+                const client = createWalletClient({
+                    chain: mainnet,
+                    transport: custom(window.ethereum),
+                })
+
+                const [account] = await client.requestAddresses()
                 setWalletAddress(account)
                 setErrorMessage(null)
 
@@ -60,16 +63,6 @@ export default function ConnectWallet() {
                     Zainstaluj portfel WEB3 aby połączyć.
                 </div>
             ) : null}
-            {/* {walletAddress && (
-                <p style={{ marginTop: "10px" }}>
-                    {formatWalletAddress(walletAddress)}
-                </p>
-            )}
-            {errorMessage && (
-                <p style={{ color: "red", marginTop: "10px" }}>
-                    {errorMessage}
-                </p>
-            )} */}
         </div>
     )
 }

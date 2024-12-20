@@ -1,9 +1,8 @@
 "use client"
 
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
 import React, { useState } from "react"
 import { useTranslations } from "next-intl"
-import { motion, AnimatePresence } from "motion/react"
 import SlideTop from "@/animations/SlideTop"
 import { ProjectItem } from "@/types/types"
 
@@ -19,16 +18,10 @@ export default function PortfolioItemImages({
 
     const { image, name, width, height } = item
 
-    const initialShowImage = {
-        opacity: 0,
-        y: 5,
-    }
-
     const [isLoading, setIsLoading] = useState(true)
 
     const handleImageLoad = () => {
         setIsLoading(false)
-        console.log("test")
     }
 
     return (
@@ -46,13 +39,7 @@ export default function PortfolioItemImages({
                 </div>
             </div>
             {isHover ? (
-                <motion.div
-                    className="project-image"
-                    initial={initialShowImage}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={initialShowImage}
-                    transition={{ duration: 0.1, ease: "easeOut" }}
-                >
+                <div className="project-image">
                     <Image
                         src={image}
                         alt={name}
@@ -61,7 +48,7 @@ export default function PortfolioItemImages({
                         onLoad={handleImageLoad}
                     />
                     {isLoading ? <div className="loader"></div> : null}
-                </motion.div>
+                </div>
             ) : null}
         </SlideTop>
     )

@@ -41,6 +41,7 @@
     font-weight: 200;
     margin: 0;
     position: relative;
+    white-space: nowrap;
 }
 
 #projects .project-item .scope {
@@ -48,6 +49,9 @@
     font-weight: 200;
     flex-grow: 1;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #projects .project-item .btn-transparent {
@@ -113,9 +117,22 @@
     top: 0;
     z-index: 1;
     transition: all 0.3s ease;
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     background-color: #fff;
+    opacity: 0;
+    animation: forwards 0.4s fadein;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        margin-top: 20px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 10px;
+    }
 }
 
 .project-image img {
@@ -138,12 +155,6 @@
 
 .project-image.oute:after {
     border-color: transparent #f3f3f3 transparent transparent;
-}
-
-.project-item:hover .project-image {
-    opacity: 1;
-    visibility: visible;
-    margin-top: 0;
 }
 
 .project-item .project-image .loader {

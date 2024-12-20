@@ -1,16 +1,18 @@
 "use client"
 
 import React from "react"
+import useEmailSender from "@/hooks/useSendEmail"
 
 export default function BtnSendEmail() {
-    const handleSendEmail = () => {
-        window.location.href = "mailto:grzegorz.kocik.pn@gmail.com"
-    }
+    const sendEmail = useEmailSender()
+
+    const emailSubject = "Collaboration with kocik.dev"
+    const emailText = "Hi. Let's talk about..."
 
     return (
         <button
             className="btn btn-default"
-            onClick={handleSendEmail}
+            onClick={() => sendEmail(emailSubject, emailText)}
         >
             <IconEmail />
             Send me an email

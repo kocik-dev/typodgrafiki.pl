@@ -5,6 +5,7 @@ import React, { useState } from "react"
 import { useTranslations } from "next-intl"
 import SlideTop from "@/animations/SlideTop"
 import { ProjectItem } from "@/types/types"
+import useEmailSender from "@/hooks/useSendEmail"
 
 export default function PortfolioItemImages({
     children,
@@ -16,6 +17,8 @@ export default function PortfolioItemImages({
     const [isHover, setIsHover] = useState(false)
     const t = useTranslations("projects")
 
+    const sendEmail = useEmailSender()
+
     const { image, name, width, height } = item
 
     const [isLoading, setIsLoading] = useState(true)
@@ -24,18 +27,24 @@ export default function PortfolioItemImages({
         setIsLoading(false)
     }
 
+    const emailSubject = "Contact for droject details"
+    const emailText = `Hi, I would like to know more about your role in the ${item.name} project`
+
     return (
         <SlideTop className="project-item">
             <div className="flex-sm">
                 <Plus setIsHover={setIsHover} />
                 {children}
                 <div className="flex justify-start gap-1">
-                    <a className="btn btn-transparent btn-bubble-bottom">
+                    <button
+                        className="btn btn-transparent btn-bubble-bottom"
+                        onClick={() => sendEmail(emailSubject, emailText)}
+                    >
                         <span>
                             <Lock />
                             {t("button")}
                         </span>
-                    </a>
+                    </button>
                 </div>
             </div>
             {isHover ? (

@@ -14,3 +14,10 @@ export interface ProjectItem {
     width: number
     height: number
 }
+
+export type PropsSocialLinks = {
+    instagram: string
+    x: string
+    linkedin: string
+    github: string
+}

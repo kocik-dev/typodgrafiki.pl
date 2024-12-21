@@ -6,29 +6,28 @@ import Cursor from "@/components/Cursor"
 import { poppins } from "@/components/Fonts"
 import "@/styles/App.css"
 import "@/styles/menu.css"
+import { Person, WithContext } from "schema-dts"
+import { socialLinks } from "@/data/socialLinks"
 
 const title = "Grzegorz Kocik - Front-end Developer"
 const description =
     "Cześć. Jestem Grzegorz Front-end developer o zapleczu graficznym z doświadczeniem w tworzeniu warstwy graficznej ecommerce. Szukam możliwości rozwoju przy projektach wykorzystujących nowe technologie (React)"
 const url = "https://kocik.dev"
 
-// Dane strukturalne w formacie JSON-LD
-// const structuredData = {
-//     "@context": "https://schema.org",
-//     "@type": "Person",
-//     name: "Grzegorz Kocik",
-//     jobTitle: "Front-end Developer",
-//     description: description,
-//     url: url,
-// "sameAs": [
-//     "https://linkedin.com/in/grzegorz-kocik",
-//     "https://github.com/grzegorz-kocik"
-// ],
-//     worksFor: {
-//         "@type": "Organization",
-//         name: "Freelancer",
-//     },
-// }
+const jsonLd: WithContext<Person> = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Grzegorz Kocik",
+    jobTitle: "Front-end Developer",
+    description:
+        "Doświadczony front-end developer z doświadczeniem w e-commerce.",
+    url: url,
+    sameAs: [socialLinks.linkedin, socialLinks.github],
+    worksFor: {
+        "@type": "Organization",
+        name: "Freelancer",
+    },
+}
 
 export const metadata: Metadata = {
     applicationName: "Kocik.dev",
@@ -61,31 +60,13 @@ export const metadata: Metadata = {
         description: description,
         url: url,
         siteName: "Kocik.dev",
-        // images: [
-        //     {
-        //         url: "https://nextjs.org/og.png", // Must be an absolute URL //TODO: Dodac img
-        //         width: 800,
-        //         height: 600,
-        //     },
-        //     {
-        //         url: "https://nextjs.org/og-alt.png", // Must be an absolute URL //TODO: Dodac img
-        //         width: 1800,
-        //         height: 1600,
-        //         alt: "My custom alt",
-        //     },
-        // ],
-        // videos: [
-        //     {
-        //         url: "https://nextjs.org/video.mp4", // Must be an absolute URL //TODO: Dodac img
-        //         width: 800,
-        //         height: 600,
-        //     },
-        // ],
-        // audio: [
-        //     {
-        //         url: "https://nextjs.org/audio.mp3", // Must be an absolute URL //TODO: Dodac img
-        //     },
-        // ],
+        images: [
+            {
+                url: `${url}/og.png`,
+                width: 1200,
+                height: 630,
+            },
+        ],
         type: "website",
     },
 
@@ -99,36 +80,16 @@ export const metadata: Metadata = {
             noimageindex: true,
         },
     },
-    // icons: {
-    //     icon: [
-    //         { url: "/icon.svg" }, //TODO: Dodac img
-    //         { url: "/icon-dark.svg", media: "(prefers-color-scheme: dark)" }, //TODO: Dodac img
-    //     ],
-    //     shortcut: ["/shortcut-icon.png"], //TODO: Dodac img
-    //     apple: [
-    //         { url: "/apple-icon.png" }, //TODO: Dodac img
-    //         { url: "/apple-icon-x3.png", sizes: "180x180", type: "image/png" }, //TODO: Dodac img
-    //     ],
-    //     other: [
-    //         {
-    //             rel: "apple-touch-icon-precomposed", //TODO: Dodac img
-    //             url: "/apple-touch-icon-precomposed.png", //TODO: Dodac img
-    //         },
-    //     ],
-    // },
-    // twitter: {
-    //     //TODO: Sprawdz calosc
-    //     card: "summary_large_image",
-    //     title: "Next.js",
-    //     description: "The React Framework for the Web",
-    //     siteId: "1467726470533754880",
-    //     creator: "@nextjs",
-    //     creatorId: "1467726470533754880",
-    //     images: ["https://nextjs.org/og.png"], // Must be an absolute URL
-    // },
-    // verification: {
-    //     google: "JZJXXgpbNeCVSOYNu_rH92o3MmlTiQqEJQhTe3F1JJI",
-    // },
+    icons: {
+        icon: [
+            { url: "/icon.svg" },
+            { url: "/icon-dark.svg", media: "(prefers-color-scheme: dark)" },
+        ],
+        shortcut: ["/shortcut-icon.png"],
+        apple: [
+            { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+        ],
+    },
     category: "Web Development",
 }
 
@@ -140,10 +101,13 @@ export default async function RootLayout({
     const locale = await getLocale()
     const messages = await getMessages()
     return (
-        <html
-            lang={locale}
-            className={poppins.className}
-        >
+        <html lang={locale} className={poppins.className}>
+            <head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+            </head>
             <body>
                 <NextIntlClientProvider messages={messages}>
                     {children}

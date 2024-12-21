@@ -5,7 +5,7 @@ import "./About.css"
 import SlideLeft from "@/animations/SlideLeft"
 import SlideTop from "@/animations/SlideTop"
 import Scroll from "@/animations/ScrollTop"
-import { icons } from "@/assets/stack/_images"
+import { technologies, tools } from "@/assets/stack/_images"
 import Image from "next/image"
 import { TypeIcon } from "@/types/types"
 
@@ -38,7 +38,19 @@ const About = () => {
                     <SlideTop className="tech-row">
                         <h4 className="title-smaller">{t("stack")}</h4>
                         <div className="icons flex">
-                            {icons.map((icon, index) => (
+                            {technologies.map((icon, index) => (
+                                <Icon
+                                    icon={icon}
+                                    index={index}
+                                    key={icon.alt + index}
+                                />
+                            ))}
+                        </div>
+                    </SlideTop>
+                    <SlideTop className="tech-row">
+                        <h4 className="title-smaller">{t("tools")}</h4>
+                        <div className="icons flex">
+                            {tools.map((icon, index) => (
                                 <Icon
                                     icon={icon}
                                     index={index}

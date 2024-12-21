@@ -27,7 +27,7 @@ export default function PortfolioItemImages({
         setIsLoading(false)
     }
 
-    const emailSubject = "Contact for droject details"
+    const emailSubject = "Contact for project details"
     const emailText = `Hi, I would like to know more about your role in the ${item.name} project`
 
     return (
@@ -38,6 +38,7 @@ export default function PortfolioItemImages({
                 <div className="flex justify-start gap-1">
                     <button
                         className="btn btn-transparent btn-bubble-bottom"
+                        // aria-label={t("button") + { name } + " project"}
                         onClick={() => sendEmail(emailSubject, emailText)}
                     >
                         <span>

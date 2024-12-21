@@ -89,11 +89,10 @@ const socialLinksData: ISocialData[] = [
 ]
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear()
+
     return (
-        <footer
-            id="contact"
-            className="container"
-        >
+        <footer id="contact" className="container">
             <div className="footer">
                 <div className="footer-content">
                     <div className="contact">
@@ -127,7 +126,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p>&#169; 2024 Grzegorz Kocik. All rights reserved.</p>
+            <p>&#169; {currentYear} Grzegorz Kocik. All rights reserved.</p>
         </footer>
     )
 }

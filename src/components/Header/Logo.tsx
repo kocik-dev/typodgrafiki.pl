@@ -16,7 +16,7 @@ export default function Logo() {
 
     return (
         <Link
-            href="#top"
+            href="/#top"
             className={`logo ${isAnimating ? "animate" : ""}`}
             onMouseEnter={handleMouseEnter}
             onAnimationEnd={handleAnimationEnd}

@@ -20,7 +20,7 @@ export default function BottomMenu({
         <>
             <div id="bottom-menu" className="hidden-xs">
                 <motion.div className="element" style={{ bottom: bottom }}>
-                    <a href="#top" className="logo-small">
+                    <a href="/#top" className="logo-small">
                         <Image src={logo} alt="logo" width={20} height={25} />
                     </a>
                     {children}

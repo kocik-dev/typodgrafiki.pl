@@ -78,11 +78,8 @@ const Projects = () => {
     const t = useTranslations("projects")
 
     return (
-        <section
-            id="projects"
-            className="container"
-        >
-            <div className="head flex-md">
+        <section id="projects" className="container">
+            <div className="head flex-md overflow">
                 <SlideLeft>
                     <h2 className={`title-small ${fascinate.className}`}>
                         {t("title")}
@@ -118,10 +115,7 @@ const Projects = () => {
             </div>
             <ul className="project-list">
                 {projectItems.map((item, index) => (
-                    <PortfolioItem
-                        item={item}
-                        key={item.name + index}
-                    />
+                    <PortfolioItem item={item} key={item.name + index} />
                 ))}
             </ul>
         </section>

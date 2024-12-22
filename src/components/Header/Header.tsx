@@ -1,31 +1,18 @@
 import "./Header.css"
 import Logo from "./Logo"
 import Menu from "./Menu"
+import MenuMobile from "./MenuMobile"
 
 const Header = () => {
     return (
         <header className="top flex">
             <Logo />
-            <nav className="menu flex">
+            <MenuMobile />
+            <nav className="flex" aria-label="Main navigation">
                 <Menu />
             </nav>
         </header>
     )
 }
 
-const MenuMobile = () => {
-    return (
-        <button
-            id="btn-menu-mobile"
-            className="visible-xs"
-            aria-label="Menu"
-            // onClick={showMenu}
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    )
-}
-
-export { Header, MenuMobile }
+export { Header }

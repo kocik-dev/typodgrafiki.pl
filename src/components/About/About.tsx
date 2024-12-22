@@ -15,7 +15,7 @@ const About = () => {
         <section id="about" className="container">
             <Scroll />
             <div className="info flex">
-                <div>
+                <div className="overflow">
                     <SlideLeft>
                         <h2 className={`title-small ${fascinate.className}`}>
                             {t("title")}
@@ -25,7 +25,7 @@ const About = () => {
                         <h3 className="title-smaller">{t("subtitle")}</h3>
                     </SlideLeft>
                 </div>
-                <div className="right">
+                <div className="right overflow">
                     <SlideTop>
                         <p className="text">{t("text1")}</p>
                     </SlideTop>

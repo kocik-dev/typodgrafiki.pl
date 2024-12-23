@@ -28,14 +28,14 @@ export default function Menu() {
                     {t("portfolio")}
                 </a>
             </li>
-            <li role="none">
+            {/* <li role="none">
                 <Link
                     href="/blog"
                     data-mobile-menu-link
                 >
                     Blog
                 </Link>
-            </li>
+            </li> */}
             <li role="none">
                 <a
                     href="/#contact"

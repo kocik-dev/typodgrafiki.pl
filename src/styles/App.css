@@ -1,6 +1,7 @@
 :root {
     --text: #525359;
     --dark: #161924;
+    --yellow: #ffc107;
 }
 
 ::selection {

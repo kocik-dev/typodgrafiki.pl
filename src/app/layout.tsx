@@ -101,7 +101,10 @@ export default async function RootLayout({
     const locale = await getLocale()
     const messages = await getMessages()
     return (
-        <html lang={locale} className={poppins.className}>
+        <html
+            lang={locale}
+            className={poppins.className}
+        >
             <head>
                 <script
                     type="application/ld+json"

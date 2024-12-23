@@ -327,6 +327,11 @@ button {
     gap: 20px;
 }
 
+.modal {
+    position: fixed;
+    inset: 10%;
+}
+
 @media (min-width: 768px) {
     .container {
         padding: 0 3%;

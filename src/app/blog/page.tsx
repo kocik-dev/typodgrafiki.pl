@@ -37,11 +37,42 @@
 //     )
 // }
 
-import { useTranslations } from "next-intl"
+import { getBlogPosts } from "@/lib/blog"
+import Link from "next/link"
 
-export default function About() {
-    // const t = useTranslations("About")
+export const metadata = {
+    title: "Blog - Grzegorz Kocik",
+    description: "Frontend development blog",
+}
 
-    return null
-    // return <p>{t("description")}</p>
+export default async function BlogPage() {
+    const posts = await getBlogPosts()
+
+    return (
+        <main className="container">
+            <h1>Blog</h1>
+            <div className="posts-grid">
+                {posts.map((post) => (
+                    <article
+                        key={post.slug}
+                        className="post-card"
+                    >
+                        <h2>
+                            <Link href={`/blog/${post.slug}`}>
+                                {post.title}
+                            </Link>
+                        </h2>
+                        <time dateTime={post.date}>
+                            {new Date(post.date).toLocaleDateString("pl-PL", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            })}
+                        </time>
+                        {/* {post.description && <p>{post.description}</p>} */}
+                    </article>
+                ))}
+            </div>
+        </main>
+    )
 }

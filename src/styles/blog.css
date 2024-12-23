@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
     font-size: 40px;
     line-height: 110%;
     margin-bottom: 20px;
@@ -76,9 +76,9 @@ h1 {
 }
 
 /* ---------------------- */
-
+/* 
 .hljs {
-    background: #272822; /* kolor tła podobny do okaidia */
+    background: #272822; /* kolor tła podobny do okaidia 
     padding: 1em;
     border-radius: 0.3em;
     overflow: auto;
@@ -89,7 +89,7 @@ h1 {
     color: #666;
 }
 
-/* Podstawowe kolory dla podświetlania składni */
+/* Podstawowe kolory dla podświetlania składni 
 .hljs-keyword {
     color: #f92672;
 }
@@ -100,5 +100,21 @@ h1 {
     color: #75715e;
 }
 .hljs-function {
-    color: #66d9ef;
+    color: #66d9ef; 
+}
+
+/* --------- */
+
+.blog-layout {
+    background-color: var(--dark);
+}
+
+.blog-layout .bg-white {
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.blog-header {
+    position: sticky;
+    top: 0;
 }

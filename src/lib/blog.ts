@@ -35,13 +35,15 @@ export async function getBlogPosts() {
 
             const { data } = matter(fileContents)
 
+            console.log(data)
+
             return {
                 slug: file.replace(/\.(md|mdx)$/, ""),
                 date: data.date
                     ? new Date(data.date).toISOString()
                     : new Date().toISOString(),
-                title: data.title || "Untitled",
-                // możesz dodać więcej metadanych jeśli potrzebujesz
+                title: data.title || "",
+                description: data.description || "",
             }
         })
         .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))

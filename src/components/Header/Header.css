@@ -1,5 +1,5 @@
 .top {
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .top a {
@@ -21,7 +21,7 @@
     gap: inherit;
 }
 
-#main nav {
+header nav {
     gap: 0 10px;
     visibility: hidden;
     position: fixed;
@@ -44,13 +44,13 @@
     position: relative;
 }
 
-#main .menu li:not(.wallet) {
+header .menu li:not(.wallet) {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
 }
 
-#main .menu li:not(.wallet) a {
+header .menu li:not(.wallet) a {
     padding: 17px 20px;
     display: block;
     position: relative;
@@ -60,12 +60,12 @@
     transition: all 0.2s ease;
 }
 
-#main .menu li:not(.wallet):hover a {
+header .menu li:not(.wallet):hover a {
     color: var(--dark);
 }
 
-#main .menu li:not(.wallet):after,
-#main .menu li:not(.wallet):before {
+header .menu li:not(.wallet):after,
+header .menu li:not(.wallet):before {
     content: "";
     display: block;
     /* width: 70%; */
@@ -80,18 +80,18 @@
     border-radius: 50%;
 }
 
-#main .menu li:not(.wallet):before {
+header .menu li:not(.wallet):before {
     left: auto;
     right: 20%;
     transition-delay: 0.1s;
 }
 
-#main .menu li:not(.wallet):hover:after {
+header .menu li:not(.wallet):hover:after {
     width: 100%;
     left: -10%;
 }
 
-#main .menu li:not(.wallet):hover:before {
+header .menu li:not(.wallet):hover:before {
     width: 100%;
     right: -10%;
 }
@@ -133,7 +133,7 @@
         justify-content: flex-end;
     }
 
-    #main .menu li a:not(.btn) {
+    header .menu li a:not(.btn) {
         font-size: 1rem;
     }
 

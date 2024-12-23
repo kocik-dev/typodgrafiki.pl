@@ -9,18 +9,38 @@ export default function Menu() {
     return (
         <ul className="menu flex">
             <li>
-                <a href="/#about">{t("about")}</a>
+                <a
+                    href="/#about"
+                    data-mobile-menu-link
+                >
+                    {t("about")}
+                </a>
             </li>
             <li>
-                <a href="/#projects">{t("portfolio")}</a>
+                <a
+                    href="/#projects"
+                    data-mobile-menu-link
+                >
+                    {t("portfolio")}
+                </a>
             </li>
             <li>
-                <Link href="/blog">Blog</Link>
+                <Link
+                    href="/blog"
+                    data-mobile-menu-link
+                >
+                    Blog
+                </Link>
             </li>
             <li>
-                <a href="/#contact">{t("contact")}</a>
+                <a
+                    href="/#contact"
+                    data-mobile-menu-link
+                >
+                    {t("contact")}
+                </a>
             </li>
-            <li className="wallet">
+            <li className="wallet hidden-xs">
                 <ConnectWallet />
             </li>
         </ul>

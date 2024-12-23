@@ -21,3 +21,9 @@ export type PropsSocialLinks = {
     linkedin: string
     github: string
 }
+export interface BlogPost {
+    slug: string
+    title: string
+    date: string
+    content: string
+}

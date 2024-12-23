@@ -11,21 +11,41 @@ import { TypeIcon } from "@/types/types"
 
 const About = () => {
     const t = useTranslations("about")
+
     return (
-        <section id="about" className="container">
-            <Scroll />
+        <section
+            id="about"
+            className="container"
+            aria-labelledby="about-title"
+        >
+            <Scroll aria-label={t("scrollToTop")} />
+
             <div className="info flex">
                 <div className="overflow">
                     <SlideLeft>
-                        <h2 className={`title-small ${fascinate.className}`}>
+                        <h2
+                            id="about-title"
+                            className={`title-small ${fascinate.className}`}
+                        >
                             {t("title")}
                         </h2>
                     </SlideLeft>
                     <SlideLeft>
-                        <h3 className="title-smaller">{t("subtitle")}</h3>
+                        <h3
+                            className="title-smaller"
+                            id="role-title"
+                        >
+                            {t("subtitle")}
+                        </h3>
                     </SlideLeft>
                 </div>
-                <div className="right overflow">
+
+                <div
+                    className="right"
+                    role="region"
+                    aria-labelledby="about-title"
+                >
+                    {/* Paragraphs */}
                     <SlideTop>
                         <p className="text">{t("text1")}</p>
                     </SlideTop>
@@ -35,29 +55,59 @@ const About = () => {
                     <SlideTop>
                         <p className="text">{t("text3")}</p>
                     </SlideTop>
-                    <SlideTop className="tech-row">
-                        <h4 className="title-smaller">{t("stack")}</h4>
-                        <div className="icons flex">
-                            {technologies.map((icon, index) => (
-                                <Icon
-                                    icon={icon}
-                                    index={index}
-                                    key={icon.alt + index}
-                                />
-                            ))}
-                        </div>
+
+                    {/* Technologies section */}
+                    <SlideTop>
+                        <section
+                            className="tech-row"
+                            aria-labelledby="technologies-title"
+                        >
+                            <h4
+                                id="technologies-title"
+                                className="title-smaller"
+                            >
+                                {t("technologies")}
+                            </h4>
+                            <div
+                                className="icons flex"
+                                role="list"
+                            >
+                                {technologies.map((icon, index) => (
+                                    <Icon
+                                        icon={icon}
+                                        index={index}
+                                        key={icon.alt + index}
+                                    />
+                                ))}
+                            </div>
+                        </section>
                     </SlideTop>
-                    <SlideTop className="tech-row">
-                        <h4 className="title-smaller">{t("tools")}</h4>
-                        <div className="icons flex">
-                            {tools.map((icon, index) => (
-                                <Icon
-                                    icon={icon}
-                                    index={index}
-                                    key={icon.alt + index}
-                                />
-                            ))}
-                        </div>
+
+                    {/* Tools section */}
+                    <SlideTop>
+                        <section
+                            className="tech-row"
+                            aria-labelledby="tools-title"
+                        >
+                            <h4
+                                id="tools-title"
+                                className="title-smaller"
+                            >
+                                {t("tools")}
+                            </h4>
+                            <div
+                                className="icons flex"
+                                role="list"
+                            >
+                                {tools.map((icon, index) => (
+                                    <Icon
+                                        icon={icon}
+                                        index={index}
+                                        key={icon.alt + index}
+                                    />
+                                ))}
+                            </div>
+                        </section>
                     </SlideTop>
                 </div>
             </div>
@@ -65,11 +115,12 @@ const About = () => {
     )
 }
 
-export default About
-
 const Icon = ({ icon, index }: { icon: TypeIcon; index: number }) => {
     return (
-        <div className="icon relative">
+        <div
+            className="icon relative"
+            role="listitem"
+        >
             <Image
                 src={icon.src}
                 alt={icon.alt}
@@ -77,7 +128,15 @@ const Icon = ({ icon, index }: { icon: TypeIcon; index: number }) => {
                 height={26}
                 key={icon.alt + index}
             />
-            <span className="tooltip">{icon.alt}</span>
+            <span
+                className="tooltip"
+                role="tooltip"
+                id={`tooltip-${icon.alt}-${index}`}
+            >
+                {icon.alt}
+            </span>
         </div>
     )
 }
+
+export default About

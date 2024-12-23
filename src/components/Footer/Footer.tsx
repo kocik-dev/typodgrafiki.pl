@@ -68,6 +68,7 @@ interface ISocialData {
     name: string
     primary?: boolean
     icon: ReactElement
+    ariaLabel?: string
 }
 
 const socialLinksData: ISocialData[] = [
@@ -75,16 +76,19 @@ const socialLinksData: ISocialData[] = [
         link: "https://www.x.com/kocik_dev/",
         name: "formerly known as Twitter",
         icon: <IconTwitter />,
+        ariaLabel: "Follow me on X (formerly Twitter)",
     },
     {
         link: "https://www.instagram.com/kocik.dev/",
         name: "Instagram",
         icon: <IconInstagram />,
+        ariaLabel: "Follow me on Instagram",
     },
     {
         link: "https://www.linkedin.com/in/kocik-dev/",
         name: "Linkedin",
         icon: <IconLinkedin />,
+        ariaLabel: "Connect with me on LinkedIn",
     },
 ]
 
@@ -92,12 +96,25 @@ const Footer = () => {
     const currentYear = new Date().getFullYear()
 
     return (
-        <footer id="contact" className="container">
+        <footer
+            id="contact"
+            className="container"
+            role="contentinfo"
+            aria-labelledby="contact-title"
+        >
             <div className="footer">
                 <div className="footer-content">
-                    <div className="contact">
-                        <h2>Contact with me</h2>
-                        <div className="buttons flex flex-wrap">
+                    <div
+                        className="contact"
+                        role="region"
+                        aria-labelledby="contact-title"
+                    >
+                        <h2 id="contact-title">Contact with me</h2>
+                        <div
+                            className="buttons flex flex-wrap"
+                            role="group"
+                            aria-label="Contact options"
+                        >
                             <BtnSendEmail />
                             {socialLinksData.map((item) => (
                                 <Link
@@ -105,17 +122,29 @@ const Footer = () => {
                                     className="btn btn-transparent btn-bubble-bottom"
                                     key={item.name}
                                     target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Visit my ${item.name} profile`}
                                 >
                                     <span>
-                                        {item.icon}
-                                        {item.name}
+                                        <span
+                                            className="icon"
+                                            aria-hidden="true"
+                                        >
+                                            {item.icon}
+                                        </span>
+                                        <span className="link-text">
+                                            {item.name}
+                                        </span>
                                     </span>
                                 </Link>
                             ))}
                         </div>
                     </div>
                 </div>
-                <div className="footer-info">
+                <div
+                    className="footer-info"
+                    role="complementary"
+                >
                     <div className="dark hidden-xs">
                         <Logo />
                     </div>
@@ -126,7 +155,12 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p>&#169; {currentYear} Grzegorz Kocik. All rights reserved.</p>
+            <p className="copyright">
+                <small>
+                    Copyright © {currentYear} Grzegorz Kocik. All rights
+                    reserved.
+                </small>
+            </p>
         </footer>
     )
 }

@@ -20,6 +20,7 @@ export default function Logo() {
             className={`logo ${isAnimating ? "animate" : ""}`}
             onMouseEnter={handleMouseEnter}
             onAnimationEnd={handleAnimationEnd}
+            aria-label="Go to top of page"
         >
             <svg
                 width="142"
@@ -27,6 +28,8 @@ export default function Logo() {
                 viewBox="0 0 142 32"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Kocik.dev logo"
             >
                 <g>
                     <path

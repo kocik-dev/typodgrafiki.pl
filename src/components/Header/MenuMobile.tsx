@@ -33,19 +33,33 @@ export default function MenuMobile() {
         }
     }, [])
 
+    useEffect(() => {
+        const handleEscape = (event: KeyboardEvent) => {
+            if (event.key === "Escape" && isOpen) {
+                setIsOpen(false)
+            }
+        }
+
+        document.addEventListener("keydown", handleEscape)
+        return () => document.removeEventListener("keydown", handleEscape)
+    }, [isOpen])
+
     return (
         <>
             <button
                 id="btn-menu-mobile"
                 className={`visible-xs ${isOpen ? "open" : ""}`}
-                aria-expanded="false"
-                aria-controls="menu"
-                aria-label="Open menu"
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
                 onClick={handleToggleMenu}
             >
-                <span></span>
-                <span></span>
-                <span></span>
+                <span className="visually-hidden">
+                    {isOpen ? "Close menu" : "Open menu"}
+                </span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </button>
         </>
     )

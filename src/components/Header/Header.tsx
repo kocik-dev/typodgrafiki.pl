@@ -4,7 +4,11 @@ import Menu from "./Menu"
 
 const Header = () => {
     return (
-        <header className="top flex">
+        <header
+            role="banner"
+            className="top flex"
+            aria-label="Site header"
+        >
             <Logo />
             <nav
                 className="flex"

@@ -14,7 +14,7 @@ const SlideTop = ({
 }) => {
     return (
         <motion.div
-            className={className}
+            className={`${className} animation`}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
         >

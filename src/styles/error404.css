@@ -4,14 +4,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     height: 100vh;
     color: #a0a2ad;
 }
 
-h1 {
+.error404 h1 {
     font-weight: 700;
     font-size: 80px;
     margin: 0 0 15px;
     color: #fff;
+}
+
+.error404 h1 small {
+    display: block;
+    font-weight: 400;
+    font-size: 25px;
+    margin-top: 15px;
+    font-family: "Poppins", sans-serif;
+}
+
+.error-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

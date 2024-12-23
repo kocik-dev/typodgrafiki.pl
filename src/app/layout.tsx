@@ -6,13 +6,14 @@ import Cursor from "@/components/Cursor"
 import { poppins } from "@/components/Fonts"
 import "@/styles/App.css"
 import "@/styles/menu.css"
+import "@/styles/accesibility.css"
 import { Person, WithContext } from "schema-dts"
 import { socialLinks } from "@/data/socialLinks"
 
 const title = "Grzegorz Kocik - Front-end Developer"
 const description =
-    "Cześć. Jestem Grzegorz Front-end developer o zapleczu graficznym z doświadczeniem w tworzeniu warstwy graficznej ecommerce. Szukam możliwości rozwoju przy projektach wykorzystujących nowe technologie (React)"
-const url = "https://kocik.dev"
+    "Frontend developer z doświadczeniem w projektowaniu i wdrażaniu interfejsów e-commerce. Łączę wiedzę z zakresu UI/UX z umiejętnościami programistycznymi, wykorzystując technologie takie jak React i Next.js. Skupiam się na tworzeniu responsywnych i dostępnych stron internetowych."
+export const url = "https://kocik.dev"
 
 const jsonLd: WithContext<Person> = {
     "@context": "https://schema.org",
@@ -27,6 +28,16 @@ const jsonLd: WithContext<Person> = {
         "@type": "Organization",
         name: "Freelancer",
     },
+    knowsAbout: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "E-commerce Development",
+    ],
+    image: `${url}/profile-photo.jpg`,
 }
 
 export const metadata: Metadata = {
@@ -34,14 +45,37 @@ export const metadata: Metadata = {
     title: title,
     description: description,
     keywords: [
-        "front-end developer",
-        "ui designer",
+        // Podstawowe określenie roli
+        "frontend developer",
+        "web developer",
+
+        // Technologie (bez sugerowania poziomu eksperckiego)
+        "react",
+        "next.js",
+        "javascript",
         "html",
         "css",
-        "portfolio",
-        "web developer",
-        "frontend developer",
+
+        // Doświadczenie branżowe
+        "e-commerce development",
+        "web development",
+
+        // Umiejętności UI/UX
+        "ui developer",
+        "responsive design",
+        "web accessibility",
+
+        // Status zawodowy
         "freelancer",
+        "portfolio",
+
+        // Długi ogon (long-tail keywords)
+        "tworzenie stron internetowych",
+        "projektowanie interfejsów www",
+        "strony internetowe react",
+
+        // Lokalizacja
+        "frontend developer polska",
     ],
     authors: [{ name: "Grzegorz Kocik" }],
     creator: "Grzegorz Kocik",
@@ -65,6 +99,13 @@ export const metadata: Metadata = {
                 url: `${url}/og.png`,
                 width: 1200,
                 height: 630,
+                alt: "Grzegorz Kocik - Front-end Developer",
+            },
+            {
+                url: `${url}/og-small.png`,
+                width: 600,
+                height: 315,
+                alt: "Grzegorz Kocik - Front-end Developer Portfolio",
             },
         ],
         type: "website",
@@ -90,6 +131,12 @@ export const metadata: Metadata = {
             { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
         ],
     },
+    twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [`${url}/og.png`],
+    },
     category: "Web Development",
 }
 
@@ -101,7 +148,10 @@ export default async function RootLayout({
     const locale = await getLocale()
     const messages = await getMessages()
     return (
-        <html lang={locale} className={poppins.className}>
+        <html
+            lang={locale}
+            className={poppins.className}
+        >
             <head>
                 <script
                     type="application/ld+json"

@@ -13,9 +13,15 @@ export default function BtnSendEmail() {
         <button
             className="btn btn-default"
             onClick={() => sendEmail(emailSubject, emailText)}
+            aria-label="Send me an email to discuss collaboration"
         >
-            <IconEmail />
-            Send me an email
+            <span
+                className="icon"
+                aria-hidden="true"
+            >
+                <IconEmail />
+            </span>
+            <span className="button-text">Send me an email</span>
         </button>
     )
 }
@@ -28,6 +34,8 @@ const IconEmail = () => {
             viewBox="0 0 24 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-hidden="true"
         >
             <path
                 fillRule="evenodd"

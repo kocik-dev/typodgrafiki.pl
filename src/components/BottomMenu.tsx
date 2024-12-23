@@ -18,7 +18,11 @@ export default function BottomMenu({
 
     return (
         <>
-            <div id="bottom-menu">
+            <div
+                id="bottom-menu"
+                role="navigation"
+                aria-label="Fixed navigation menu"
+            >
                 <motion.div
                     className="element"
                     style={{ bottom: bottom }}
@@ -26,13 +30,17 @@ export default function BottomMenu({
                     <a
                         href="/#top"
                         className="logo-small hidden-xs"
+                        aria-label="Back to top"
+                        role="button"
                     >
                         <Image
                             src={logo}
                             alt="logo"
                             width={20}
                             height={25}
+                            aria-hidden="true"
                         />
+                        <span className="visually-hidden">Back to top</span>
                     </a>
                     {children}
                 </motion.div>

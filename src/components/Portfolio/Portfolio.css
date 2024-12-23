@@ -22,7 +22,7 @@
     transition: padding 0.4s ease;
 }
 
-#projects .project-item:last-child {
+#projects li:last-child .project-item {
     border-bottom: none;
 }
 
@@ -83,7 +83,7 @@
     margin: 0;
 }
 
-#projects .tags li:before {
+#projects .tags li span:before {
     content: "#";
     font-size: 0.85rem;
     margin-right: 1px;

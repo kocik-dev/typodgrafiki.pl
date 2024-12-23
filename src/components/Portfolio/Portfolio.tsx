@@ -78,44 +78,107 @@ const Projects = () => {
     const t = useTranslations("projects")
 
     return (
-        <section id="projects" className="container">
+        <section
+            id="projects"
+            className="container"
+            aria-labelledby="projects-title"
+        >
             <div className="head flex-md overflow">
                 <SlideLeft>
-                    <h2 className={`title-small ${fascinate.className}`}>
+                    <h2
+                        id="projects-title"
+                        className={`title-small ${fascinate.className}`}
+                    >
                         {t("title")}
                     </h2>
                 </SlideLeft>
                 <div className="columns flex">
                     <SlideTop>
-                        <h3 className="title-smaller">Discipline</h3>
-                        <ul className="list">
-                            <li>UI design</li>
-                            <li>Code development</li>
-                        </ul>
+                        <div
+                            role="region"
+                            aria-labelledby="discipline-title"
+                        >
+                            <h3
+                                id="discipline-title"
+                                className="title-smaller"
+                            >
+                                Discipline
+                            </h3>
+                            <ul
+                                className="list"
+                                role="list"
+                            >
+                                <li role="listitem">UI design</li>
+                                <li role="listitem">Code development</li>
+                            </ul>
+                        </div>
                     </SlideTop>
                     <SlideTop delay={500}>
-                        <h3 className="title-smaller">Tools</h3>
-                        <ul className="list">
-                            <li>React</li>
-                            <li>Next.js</li>
-                            <li>React Native</li>
-                            <li>Postgresql</li>
-                        </ul>
+                        <div
+                            role="region"
+                            aria-labelledby="tools-title"
+                        >
+                            <h3
+                                id="tools-title"
+                                className="title-smaller"
+                            >
+                                Tools
+                            </h3>
+                            <ul
+                                className="list"
+                                role="list"
+                            >
+                                <li role="listitem">React</li>
+                                <li role="listitem">Next.js</li>
+                                <li role="listitem">React Native</li>
+                                <li role="listitem">Postgresql</li>
+                            </ul>
+                        </div>
                     </SlideTop>
                     <SlideTop delay={1000}>
-                        <h3 className="title-smaller hidden-xs">Industry</h3>
-                        <ul className="list tags flex">
-                            <li className="btn btn-white">tech</li>
-                            <li className="btn btn-white">ecommenrce</li>
-                            <li className="btn btn-white">sass</li>
-                            <li className="btn btn-white">web3</li>
-                        </ul>
+                        <div
+                            role="region"
+                            aria-labelledby="industry-title"
+                        >
+                            <h3
+                                id="industry-title"
+                                className="title-smaller hidden-xs"
+                            >
+                                Industry
+                            </h3>
+                            <ul
+                                className="list tags flex"
+                                role="list"
+                            >
+                                {["tech", "ecommerce", "sass", "web3"].map(
+                                    (tag) => (
+                                        <li
+                                            key={tag}
+                                            role="listitem"
+                                        >
+                                            <span className="btn btn-white">
+                                                {tag}
+                                            </span>
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+                        </div>
                     </SlideTop>
                 </div>
             </div>
-            <ul className="project-list">
+            <ul
+                className="project-list"
+                role="list"
+                aria-label={t("projectsList")}
+            >
                 {projectItems.map((item, index) => (
-                    <PortfolioItem item={item} key={item.name + index} />
+                    <li
+                        key={item.name + index}
+                        role="listitem"
+                    >
+                        <PortfolioItem item={item} />
+                    </li>
                 ))}
             </ul>
         </section>

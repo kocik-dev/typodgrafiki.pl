@@ -9,17 +9,53 @@ export default function Custom404() {
         <>
             <Head>
                 <title>
-                    You lost! - Grzegorz Kocik - Front-end Developer Portfolio
+                    404: Page Not Found - Grzegorz Kocik - Front-end Developer
+                    Portfolio
                 </title>
+                <meta
+                    name="description"
+                    content="The page you're looking for cannot be found. Return to the homepage of Grzegorz Kocik's portfolio."
+                />
             </Head>
-            <div className="error404">
-                <h1 className={`${fascinate.className}`}>Opps!</h1>
-                <p>Strona nie została znaleziona.</p>
-                <Link href="/" className="btn btn-default">
-                    <Arrow />
-                    Back to the home page
-                </Link>
-            </div>
+
+            <main
+                className="error404"
+                role="main"
+                aria-labelledby="error-title"
+            >
+                <div className="error-content">
+                    <h1
+                        id="error-title"
+                        className={`${fascinate.className}`}
+                    >
+                        Oops! <small>Page Not Found</small>
+                    </h1>
+
+                    <p
+                        role="status"
+                        aria-live="polite"
+                    >
+                        Sorry, the page you're looking for cannot be found.
+                        Error 404.
+                    </p>
+
+                    <Link
+                        href="/"
+                        className="btn btn-default"
+                        aria-label="Return to the homepage"
+                    >
+                        <span
+                            className="icon"
+                            aria-hidden="true"
+                        >
+                            <Arrow />
+                        </span>
+                        <span className="button-text">
+                            Back to the home page
+                        </span>
+                    </Link>
+                </div>
+            </main>
         </>
     )
 }
@@ -32,6 +68,9 @@ const Arrow = () => {
             viewBox="0 0 512 512"
             width={16}
             height={16}
+            role="img"
+            aria-hidden="true"
+            focusable="false"
         >
             <path
                 fill="none"

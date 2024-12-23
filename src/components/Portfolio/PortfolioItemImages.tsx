@@ -15,49 +15,61 @@ export default function PortfolioItemImages({
     item: ProjectItem
 }) {
     const [isHover, setIsHover] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
     const t = useTranslations("projects")
 
     const sendEmail = useEmailSender()
 
     const { image, name, width, height } = item
 
-    const [isLoading, setIsLoading] = useState(true)
-
     const handleImageLoad = () => {
         setIsLoading(false)
     }
 
     const emailSubject = "Contact for project details"
-    const emailText = `Hi, I would like to know more about your role in the ${item.name} project`
+    const emailText = `Hi, I would like to know more about your role in the ${name} project`
 
     return (
-        <SlideTop className="project-item">
+        <SlideTop>
             <div className="flex-sm">
-                <Plus setIsHover={setIsHover} />
+                <Plus
+                    setIsHover={setIsHover}
+                    name={name}
+                />
                 {children}
                 <div className="flex justify-start gap-1">
                     <button
                         className="btn btn-transparent btn-bubble-bottom"
-                        // aria-label={t("button") + { name } + " project"}
                         onClick={() => sendEmail(emailSubject, emailText)}
+                        aria-label={t("requestDetails", { name: name })}
                     >
                         <span>
-                            <Lock />
+                            <Lock aria-hidden="true" />
                             {t("button")}
                         </span>
                     </button>
                 </div>
             </div>
             {isHover ? (
-                <div className="project-image">
+                <div
+                    className="project-image"
+                    role="img"
+                    aria-label={t("projectImageAlt", { name: name })}
+                >
                     <Image
                         src={image}
-                        alt={name}
+                        alt={t("projectImageAlt", { name: name })}
                         width={width}
                         height={height}
                         onLoad={handleImageLoad}
                     />
-                    {isLoading ? <div className="loader"></div> : null}
+                    {isLoading ? (
+                        <div
+                            className="loader"
+                            role="status"
+                            aria-label={t("loading")}
+                        ></div>
+                    ) : null}
                 </div>
             ) : null}
         </SlideTop>
@@ -89,15 +101,25 @@ const Lock = () => {
 
 const Plus = ({
     setIsHover,
+    name,
 }: {
     setIsHover: React.Dispatch<React.SetStateAction<boolean>>
+    name: string
 }) => {
+    const t = useTranslations("projects")
+
     return (
         <button
             className="btn btn-transparent btn-round btn-bubble-bottom"
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
+            onFocus={() => setIsHover(true)}
+            onBlur={() => setIsHover(false)}
+            aria-label={t("showProjectImage", { name: name })}
         >
+            <span className="visually-hidden">
+                {t("showProjectImage", { name: name })}
+            </span>
             <span>
                 <svg
                     width="10"

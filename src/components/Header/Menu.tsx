@@ -7,16 +7,20 @@ export default function Menu() {
     const t = useTranslations("menu")
 
     return (
-        <ul className="menu flex">
-            <li>
+        <ul
+            className="menu flex"
+            role="menubar"
+        >
+            <li role="none">
                 <a
                     href="/#about"
                     data-mobile-menu-link
+                    role="menuitem"
                 >
                     {t("about")}
                 </a>
             </li>
-            <li>
+            <li role="none">
                 <a
                     href="/#projects"
                     data-mobile-menu-link
@@ -24,7 +28,7 @@ export default function Menu() {
                     {t("portfolio")}
                 </a>
             </li>
-            <li>
+            <li role="none">
                 <Link
                     href="/blog"
                     data-mobile-menu-link
@@ -32,7 +36,7 @@ export default function Menu() {
                     Blog
                 </Link>
             </li>
-            <li>
+            <li role="none">
                 <a
                     href="/#contact"
                     data-mobile-menu-link
@@ -40,7 +44,10 @@ export default function Menu() {
                     {t("contact")}
                 </a>
             </li>
-            <li className="wallet hidden-xs">
+            <li
+                className="wallet hidden-xs"
+                role="none"
+            >
                 <ConnectWallet />
             </li>
         </ul>

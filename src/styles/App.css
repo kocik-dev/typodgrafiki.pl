@@ -1,18 +1,17 @@
-@import url("./animations.css");
-
 :root {
-    --text: #c5c7cd;
+    --text: #525359;
     --dark: #161924;
+}
+
+::selection {
+    background-color: #ffc077;
+    color: #000000;
 }
 
 *,
 *::after,
 *::before {
     box-sizing: border-box;
-}
-
-* {
-    cursor: none !important;
 }
 
 html {
@@ -25,23 +24,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--text);
-    background-color: var(--dark);
+    background-color: #fff;
     font-size: 1rem;
     letter-spacing: -0.01em;
-    line-height: 1.6;
-}
-
-.cursorSmall {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    top: -3px;
-    left: -3px;
-    background-color: white;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 1000;
-    mix-blend-mode: difference;
+    line-height: 1.1;
 }
 
 .cursorCanvas {
@@ -52,16 +38,8 @@ body {
     mix-blend-mode: difference;
 }
 
-.bg-gradient {
+.container {
     padding: 0 7%;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.bg-gradient > .content {
-    flex-grow: 1;
 }
 
 code {
@@ -85,7 +63,6 @@ h4,
 h5,
 h6,
 strong {
-    color: #fff;
     font-weight: 500;
 }
 
@@ -95,7 +72,6 @@ p {
 
 .flex {
     display: flex;
-    align-items: center;
 }
 
 button {
@@ -106,29 +82,40 @@ button {
     color: inherit;
     font-size: 1rem;
     line-height: 1.6;
-}
-
-.background-noise {
-    position: fixed;
-    inset: 0;
-    background-image: url("/images/noise.gif");
-    background-repeat: repeat;
-    background-size: 200px;
-    mix-blend-mode: hard-light;
-    opacity: 0.05;
+    font-family: inherit;
 }
 
 .title {
     color: #fff;
     font-size: 34px;
-    line-height: 100%;
+    font-size: clamp(3.6rem, 7vw, 110px);
+    line-height: 90%;
     margin: 0 0 10px;
 }
 
+.subtitle {
+    font-weight: 200;
+    line-height: 93%;
+    /* font-size: 25px; */
+    font-size: clamp(2rem, 4.2vw, 43px);
+    margin: 0;
+}
+
 .title-small {
-    font-size: 30px;
+    /* font-size: 80px; */
+    font-size: clamp(2rem, 10vw, 80px);
     margin: 0 0 10px;
     line-height: 120%;
+    color: var(--dark);
+}
+
+.title-smaller {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    margin: 0;
 }
 
 .nowrap {
@@ -136,12 +123,24 @@ button {
 }
 
 .btn {
-    display: inline-block;
+    /* display: inline-block; */
+    display: flex;
+    align-items: center;
     padding: 13px 22px;
     border-radius: 10px;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.2s ease;
+}
+
+.btn:disabled {
+    /* pointer-events: none; */
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn svg {
+    margin-right: 7px;
 }
 
 .btn-default {
@@ -157,7 +156,7 @@ button {
     background-size: 200%;
 }
 
-.btn-default:is(:hover, :focus, :active) {
+.btn-default:not(:disabled):is(:hover, :focus, :active) {
     background-color: #454b5a;
     background-position: 100%;
     color: #fff;
@@ -170,10 +169,59 @@ button {
     border-radius: 10px;
 }
 
-.btn-white:is(:hover, :focus, :active),
-.btn-transparent:is(:hover, :focus, :active) {
+.btn-transparent {
+    background-color: transparent;
+    border: 1px solid var(--dark);
+}
+
+.btn-white:is(:hover, :focus, :active) {
     background-color: #161924;
     color: #fff;
+}
+
+.btn-bubble-bottom {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-bubble-bottom > span {
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    position: relative;
+    z-index: 1;
+    gap: inherit;
+}
+
+.btn-bubble-bottom:is(:hover) {
+    color: #fff;
+}
+
+.btn-bubble-bottom:before,
+.btn-bubble-bottom:after {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: var(--dark);
+    border-radius: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 100%;
+    left: -30%;
+    transition: all 0.4s ease-out;
+}
+
+.btn-bubble-bottom:after {
+    width: 80%;
+    left: 40%;
+    transition: all 0.5s ease-out;
+    transition-delay: 0.08s;
+}
+
+.btn-bubble-bottom:hover:before,
+.btn-bubble-bottom:hover:after {
+    top: -70%;
 }
 
 .btn-yellow {
@@ -258,65 +306,59 @@ button {
     width: 100%;
 }
 
-.small-width {
-    width: 100%;
-    max-width: 760px;
+.bg-white {
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -5px 10px rgba(0 0 0 / 15%);
+    /* overflow: hidden;  not overflow!*/
 }
 
-.margin-section {
-    margin-bottom: 80px;
+.overflow {
+    overflow: hidden;
 }
 
-.margin-section > .flex {
-    width: 100%;
-    justify-content: center;
+.gap-1 {
+    gap: 10px;
 }
 
-.gap-5 {
-    gap: 5px;
+.gap-2 {
+    gap: 20px;
 }
 
 @media (min-width: 768px) {
-    .bg-gradient {
+    .container {
         padding: 0 3%;
     }
 
-    #main,
-    #contact {
-        margin-bottom: 0;
+    .flex-sm {
+        display: flex;
     }
 
-    .title {
-        font-size: 61px;
-    }
-
-    .window-height {
-        min-height: 100dvh;
-    }
-
-    .margin-section {
-        margin-bottom: 40vh;
+    .hidden-sm {
+        display: none !important;
     }
 
     .visible-xs {
         display: none !important;
     }
 
-    .col-sm-50 {
-        width: 50%;
-    }
-
     .title {
         transform: translateX(200px);
         opacity: 0;
         animation: slideIn 0.9s forwards cubic-bezier(0.075, 0.82, 0.165, 1)
-            0.8s;
+            0.2s;
     }
 
     .subtitle {
+        line-height: 95%;
+        font-size: clamp(2rem, 3.2vw, 43px);
+        font-weight: 100;
         transform: translateX(200px);
         opacity: 0;
-        animation: slideIn 0.9s forwards cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+        animation: slideIn 0.9s forwards cubic-bezier(0.075, 0.82, 0.165, 1)
+            0.4s;
     }
 
     @keyframes slideIn {
@@ -328,5 +370,17 @@ button {
             transform: translateX(0);
             opacity: 1;
         }
+    }
+}
+
+@media (min-width: 991px) {
+    .flex-md {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .hidden-xs {
+        display: none !important;
     }
 }

@@ -1,141 +1,188 @@
-import Image from "next/image"
-import PortfolioItem from "./PortfolioItem/PortfolioItem"
-import { linkScroll } from "../Header/Header"
-import imageHtml from "../../assets/tech/html.svg"
-import imageJs from "../../assets/tech/js.svg"
-import imageReact from "../../assets/tech/react.svg"
-import imageGithub from "../../assets/tech/github.svg"
-import imageUnesco from "../../assets/tech/unesco.svg"
-import imageTrip from "../../assets/tech/trip.svg"
-
+import { useTranslations } from "next-intl"
+import { fascinate } from "@/components/Fonts"
+import PortfolioItem from "./PortfolioItem"
+import SlideLeft from "@/animations/SlideLeft"
+import SlideTop from "@/animations/SlideTop"
+import { ProjectItem } from "@/types/types"
 import "./Portfolio.css"
+import outeImg from "@/assets/projects/oute.jpg"
+import tripistImg from "@/assets/projects/tripist.jpg"
 
-export interface ProjectItem {
-    link?: string
-    classList: string
-    name: string
-    subName: string
-    description?: string
-    icon: string
-    githubLink?: string
-    slogan?: string
-}
+import findUnescoImg from "@/assets/projects/find-unesco.jpg"
+import audiomixImg from "@/assets/projects/audio-mix.jpg"
+import puupilImg from "@/assets/projects/puupil.jpg"
+import cinemaTechImg from "@/assets/projects/cinematech.jpg"
+import paulBunyanImg from "@/assets/projects/paulbunyan.jpg"
+import premiumSoundImg from "@/assets/projects/premium-sound.jpg"
 
-const projectsItem1: ProjectItem[] = [
+const projectItems: ProjectItem[] = [
     {
-        // link: "http://html.typodgrafiki.pl/",
-        classList: "box box-html",
-        name: "HTML / CSS",
-        subName: "Semantyka i stylowanie",
-        slogan: "Showcase",
-        description:
-            "Ten projekt demonstruje moje umiejętności w zakresie HTML i CSS, pokazując, jak można wykorzystać te technologie do tworzenia estetycznie przyjemnych i funkcjonalnych interfejsów użytkownika. Został stworzony wyłącznie do celów portfolio i przedstawia szeroki zakres technik projektowania responsywnego oraz zaawansowanych efektów wizualnych.",
-        icon: imageHtml,
-        githubLink: "https://github.com/typodgrafiki/portfolio-html",
+        name: "Oute",
+        scope: "Brand, UI/UX, Website, Mobile Application, Fullstack developer",
+        image: outeImg,
+        width: 476,
+        height: 288,
     },
     {
-        link: "https://tripist.pl",
-        classList: "box box-trip",
         name: "Tripist",
-        subName: "Aplikacja Travel Plannel",
-        slogan: "Fullstack, Next.js",
-        description:
-            "Tripist to kompleksowa aplikacja do planowania podróży, łącząca front-end i back-end w Next.js. Umożliwia użytkownikom logowanie, tworzenie i zarządzanie listami rzeczy do zabrania na różne okazje, takie jak wyjazdy, wycieczki czy treningi. Ta aplikacja demonstruje moje umiejętności w tworzeniu pełnoprawnych, zintegrowanych rozwiązań webowych, które są zarówno funkcjonalne, jak i intuicyjne w obsłudze.",
-        icon: imageTrip,
-        githubLink: "https://github.com/typodgrafiki/tripist",
+        scope: "Brand, UI/UX, Website, Fullstack developer",
+        image: tripistImg,
+        width: 380,
+        height: 368,
+    },
+    {
+        name: "Find Unesco",
+        scope: "Brand, UI/UX, Website, Fullstack developer",
+        image: findUnescoImg,
+        width: 479,
+        height: 272,
+    },
+    {
+        name: "Audio Mix",
+        scope: "UI, Online shop Template, Frontend developer",
+        image: audiomixImg,
+        width: 479,
+        height: 284,
+    },
+    {
+        name: "Puupil",
+        scope: "UI, Online shop Template, Frontend developer",
+        image: puupilImg,
+        width: 479,
+        height: 281,
+    },
+    {
+        name: "Cinema Tech",
+        scope: "UI, Online shop Template, Frontend developer",
+        image: cinemaTechImg,
+        width: 479,
+        height: 281,
+    },
+    {
+        name: "PaulBunyan",
+        scope: "UI, Online shop Template, Frontend developer",
+        image: paulBunyanImg,
+        width: 479,
+        height: 281,
+    },
+    {
+        name: "Premium Sound",
+        scope: "UI, Online shop Template, Frontend developer",
+        image: premiumSoundImg,
+        width: 479,
+        height: 281,
     },
 ]
 
-const projectsItem2: ProjectItem[] = [
-    {
-        // link: "http://react.typodgrafiki.pl/",
-        classList: "box box-react",
-        name: "React",
-        subName: "Projekt",
-        icon: imageReact,
-        githubLink: "https://github.com/typodgrafiki/portfolio-react",
-    },
-    {
-        // link: "http://js.typodgrafiki.pl/",
-        classList: "box box-js",
-        name: "JS",
-        subName: "Dynamiczne elementy",
-        icon: imageJs,
-        githubLink: "https://github.com/typodgrafiki/portfolio-js",
-    },
-    {
-        // link: "http://findunesco.com/",
-        link: "https://find-unesco.vercel.app/",
-        classList: "box box-unesco",
-        name: "Find UNESCO",
-        subName: "Projekt wyszukujący miejsca UNESCO w Europie",
-        slogan: "Frontend, Next.js",
-        description:
-            "Ten projekt, zrealizowany w Next.js, prezentuje interaktywną mapę miejsc światowego dziedzictwa UNESCO. Użytkownicy mogą przeszukiwać i odkrywać różnorodne lokalizacje w Europie. Projekt łączy zaawansowane funkcje przeglądania z interaktywnym interfejsem użytkownika, demonstrując moje umiejętności w zakresie tworzenia responsywnych i użytkowych aplikacji webowych.",
-        icon: imageUnesco,
-        githubLink: "https://github.com/typodgrafiki/find-unesco",
-    },
-    {
-        link: "https://github.com/typodgrafiki",
-        classList: "box box-github",
-        name: "Github",
-        subName: "Moje konto",
-        icon: imageGithub,
-    },
-]
+const Projects = () => {
+    const t = useTranslations("projects")
 
-const Portfolio: React.FC = () => {
     return (
         <section
-            id="portfolio"
-            className="flex horizontal-center margin-section"
+            id="projects"
+            className="container"
+            aria-labelledby="projects-title"
         >
-            <div className="flex flex-column">
-                <div className="caption small-width">
-                    <h2 className="title-small">Przykładowe projekty</h2>
+            <div className="head flex-md overflow">
+                <SlideLeft>
+                    <h2
+                        id="projects-title"
+                        className={`title-small ${fascinate.className}`}
+                    >
+                        {t("title")}
+                    </h2>
+                </SlideLeft>
+                <div className="columns flex">
+                    <SlideTop>
+                        <div
+                            role="region"
+                            aria-labelledby="discipline-title"
+                        >
+                            <h3
+                                id="discipline-title"
+                                className="title-smaller"
+                            >
+                                Discipline
+                            </h3>
+                            <ul
+                                className="list"
+                                role="list"
+                            >
+                                <li role="listitem">UI design</li>
+                                <li role="listitem">Code development</li>
+                            </ul>
+                        </div>
+                    </SlideTop>
+                    <SlideTop delay={500}>
+                        <div
+                            role="region"
+                            aria-labelledby="tools-title"
+                        >
+                            <h3
+                                id="tools-title"
+                                className="title-smaller"
+                            >
+                                Tools
+                            </h3>
+                            <ul
+                                className="list"
+                                role="list"
+                            >
+                                <li role="listitem">React</li>
+                                <li role="listitem">Next.js</li>
+                                <li role="listitem">React Native</li>
+                                <li role="listitem">Postgresql</li>
+                            </ul>
+                        </div>
+                    </SlideTop>
+                    <SlideTop delay={1000}>
+                        <div
+                            role="region"
+                            aria-labelledby="industry-title"
+                        >
+                            <h3
+                                id="industry-title"
+                                className="title-smaller hidden-xs"
+                            >
+                                Industry
+                            </h3>
+                            <ul
+                                className="list tags flex"
+                                role="list"
+                            >
+                                {["tech", "ecommerce", "sass", "web3"].map(
+                                    (tag) => (
+                                        <li
+                                            key={tag}
+                                            role="listitem"
+                                        >
+                                            <span className="btn btn-white">
+                                                {tag}
+                                            </span>
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+                        </div>
+                    </SlideTop>
                 </div>
-                <div className="wide-width">
-                    <div className="grid grid-left">
-                        {projectsItem1.map((item) => (
-                            <PortfolioItem
-                                link={item.link}
-                                classList={item.classList}
-                                name={item.name}
-                                subName={item.subName}
-                                icon={item.icon}
-                                description={item.description}
-                                slogan={item.slogan}
-                                githubLink={item.githubLink}
-                                key={item.name}
-                            />
-                        ))}
-                    </div>
-                    <div className="grid grid-right">
-                        {projectsItem2.map((item) => (
-                            <PortfolioItem
-                                link={item.link}
-                                classList={item.classList}
-                                name={item.name}
-                                subName={item.subName}
-                                icon={item.icon}
-                                description={item.description}
-                                slogan={item.slogan}
-                                githubLink={item.githubLink}
-                                key={item.name}
-                            />
-                        ))}
-                    </div>
-                </div>
-                <a
-                    href="#contact"
-                    className="link-border"
-                    onClick={linkScroll}
-                >
-                    Napisz do mnie
-                </a>
             </div>
+            <ul
+                className="project-list"
+                role="list"
+                aria-label={t("projectsList")}
+            >
+                {projectItems.map((item, index) => (
+                    <li
+                        key={item.name + index}
+                        role="listitem"
+                    >
+                        <PortfolioItem item={item} />
+                    </li>
+                ))}
+            </ul>
         </section>
     )
 }
 
-export default Portfolio
+export default Projects

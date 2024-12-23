@@ -1,27 +1,141 @@
 import React from "react"
-import { linkScroll } from "../Header/Header"
+import { useTranslations } from "next-intl"
+import { fascinate } from "@/components/Fonts"
 import "./About.css"
+import SlideLeft from "@/animations/SlideLeft"
+import SlideTop from "@/animations/SlideTop"
+import Scroll from "@/animations/ScrollTop"
+import { technologies, tools } from "@/assets/stack/_images"
+import Image from "next/image"
+import { TypeIcon } from "@/types/types"
 
-const About: React.FC = () => {
+const About = () => {
+    const t = useTranslations("about")
+
     return (
         <section
             id="about"
-            className="flex horizontal-center margin-section"
+            className="container"
+            aria-labelledby="about-title"
         >
-            <div className="caption small-width caption-border">
-                <h2 className="title-small">O mnie</h2>
-                <p>Jako entuzjasta technologii i kreatywny front-end developer, posiadam bogate doświadczenie w projektowaniu warstwy użytkowej dla branży e-commerce. W pracy komercyjnej korzystam z <span className="primary">HTML5/CSS3</span> , <span className="primary">JavaScript DOM</span> , <span className="primary">jQuery</span> , <span className="primary">Bootstrap 3</span> , <span className="primary">LESS</span> używając takich narzędzi jak <span className="primary primary-dark">Visual Studio Code</span> , <span className="primary primary-dark">Terminal</span> , <span className="primary primary-dark">Figma</span> oraz <span className="primary primary-dark">Photoshop</span>.</p>
-                <p>Równolegle do mojej komercyjnej działalności, prowadzę projekt open source, wykorzystujący dodatkowo <span className="primary">Prisma</span>, <span className="primary">Postgresql</span> , <span className="primary">Tailwind CSS</span> , <span className="primary">Javascript</span> , <span className="primary">Typescript</span> i <span className="primary">Next.js</span>. Jest to przestrzeń, gdzie mogę eksperymentować z nowymi technologiami i dzielić się innowacjami.</p>
-                <p>Moje umiejętności w kontroli wersji i zarządzaniu projektami (<span className="primary">SVN</span>, <span className="primary">Github</span>, <span className="primary">Jira</span>) wspierają efektywną współpracę w zespołach. Dążę do tworzenia intuicyjnych, wydajnych i estetycznie przyjemnych interfejsów, które zaspokajają potrzeby biznesowe i zachwycą użytkowników.</p>
-                <a
-                    className="btn btn-yellow"
-                    href="#portfolio"
-                    onClick={linkScroll}
+            <Scroll aria-label={t("scrollToTop")} />
+
+            <div className="info flex">
+                <div className="overflow">
+                    <SlideLeft>
+                        <h2
+                            id="about-title"
+                            className={`title-small ${fascinate.className}`}
+                        >
+                            {t("title")}
+                        </h2>
+                    </SlideLeft>
+                    <SlideLeft>
+                        <h3
+                            className="title-smaller"
+                            id="role-title"
+                        >
+                            {t("subtitle")}
+                        </h3>
+                    </SlideLeft>
+                </div>
+
+                <div
+                    className="right"
+                    role="region"
+                    aria-labelledby="about-title"
                 >
-                    Zobacz projekty
-                </a>
+                    {/* Paragraphs */}
+                    <SlideTop>
+                        <p className="text">{t("text1")}</p>
+                    </SlideTop>
+                    <SlideTop>
+                        <p className="text">{t("text2")}</p>
+                    </SlideTop>
+                    <SlideTop>
+                        <p className="text">{t("text3")}</p>
+                    </SlideTop>
+
+                    {/* Technologies section */}
+                    <SlideTop>
+                        <section
+                            className="tech-row"
+                            aria-labelledby="technologies-title"
+                        >
+                            <h4
+                                id="technologies-title"
+                                className="title-smaller"
+                            >
+                                {t("technologies")}
+                            </h4>
+                            <div
+                                className="icons flex"
+                                role="list"
+                            >
+                                {technologies.map((icon, index) => (
+                                    <Icon
+                                        icon={icon}
+                                        index={index}
+                                        key={icon.alt + index}
+                                    />
+                                ))}
+                            </div>
+                        </section>
+                    </SlideTop>
+
+                    {/* Tools section */}
+                    <SlideTop>
+                        <section
+                            className="tech-row"
+                            aria-labelledby="tools-title"
+                        >
+                            <h4
+                                id="tools-title"
+                                className="title-smaller"
+                            >
+                                {t("tools")}
+                            </h4>
+                            <div
+                                className="icons flex"
+                                role="list"
+                            >
+                                {tools.map((icon, index) => (
+                                    <Icon
+                                        icon={icon}
+                                        index={index}
+                                        key={icon.alt + index}
+                                    />
+                                ))}
+                            </div>
+                        </section>
+                    </SlideTop>
+                </div>
             </div>
         </section>
+    )
+}
+
+const Icon = ({ icon, index }: { icon: TypeIcon; index: number }) => {
+    return (
+        <div
+            className="icon relative"
+            role="listitem"
+        >
+            <Image
+                src={icon.src}
+                alt={icon.alt}
+                width={26}
+                height={26}
+                key={icon.alt + index}
+            />
+            <span
+                className="tooltip"
+                role="tooltip"
+                id={`tooltip-${icon.alt}-${index}`}
+            >
+                {icon.alt}
+            </span>
+        </div>
     )
 }
 

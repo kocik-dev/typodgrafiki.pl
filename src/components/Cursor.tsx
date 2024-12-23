@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react"
 
 const Cursor = () => {
     const promien = 20
-    const cursorRef = useRef<HTMLDivElement>(null)
+    const promienHover = 0
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const mousePos = useRef({ x: 100, y: 100 })
     const lastPos = useRef({ x: 100, y: 100 })
@@ -18,9 +18,6 @@ const Cursor = () => {
         }
 
         const updateCursorPosition = () => {
-            if (cursorRef.current) {
-                cursorRef.current.style.transform = `translate(${mousePos.current.x}px, ${mousePos.current.y}px)`
-            }
             requestAnimationFrame(updateCursorPosition)
         }
 
@@ -99,7 +96,7 @@ const Cursor = () => {
     useEffect(() => {
         // Obsługa zdarzeń `mouseenter` i `mouseleave` dla interaktywnych elementów
         const handleMouseEnter = () => {
-            targetRadius.current = 50 // Docelowy promień, gdy nad interaktywnym elementem
+            targetRadius.current = promienHover // Docelowy promień, gdy nad interaktywnym elementem
         }
         const handleMouseLeave = () => {
             targetRadius.current = promien // Powrót do domyślnego promienia
@@ -121,16 +118,10 @@ const Cursor = () => {
 
     return (
         <>
-            {/* Mały kursor */}
-            <div
-                ref={cursorRef}
-                className="cursorSmall"
-            ></div>
-
             {/* Canvas do efektów */}
             <canvas
                 ref={canvasRef}
-                className="cursorCanvas"
+                className="cursorCanvas hidden-xs"
             />
         </>
     )

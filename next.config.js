@@ -1,7 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    output: "export",
-    images: { unoptimized: true },
-}
+const createNextIntlPlugin = require("next-intl/plugin")
+const withNextIntl = createNextIntlPlugin()
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+    enabled: process.env.ANALYZE === "true",
+})
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {}
+
+// Kompozycja wielu pluginów
+module.exports = withBundleAnalyzer(withNextIntl(nextConfig))

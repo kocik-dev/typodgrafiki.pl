@@ -1,0 +1,143 @@
+#btn-menu-mobile {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    padding: 6px 10px;
+    margin: 0;
+    border: 1px solid #fff;
+    overflow: hidden;
+    height: 41px;
+    width: 42px;
+    border-radius: 7px;
+    z-index: 3;
+    mix-blend-mode: difference;
+}
+
+#btn-menu-mobile span {
+    height: 1px;
+    margin: 5px 0;
+    display: block;
+    width: 20px;
+    background-color: #fff;
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    transition: all 0.3s ease;
+}
+
+#btn-menu-mobile > span:nth-child(2) {
+    top: 7px;
+}
+
+#btn-menu-mobile > span:nth-child(3) {
+    top: 13px;
+}
+
+#btn-menu-mobile > span:nth-child(4) {
+    top: 19px;
+}
+
+#btn-menu-mobile.open {
+    border-color: transparent;
+}
+
+#btn-menu-mobile.open > span:nth-child(2),
+#btn-menu-mobile.open > span:nth-child(4) {
+    left: 8px;
+    width: 25px;
+    top: 13px;
+}
+
+#btn-menu-mobile.open > span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+#btn-menu-mobile.open > span:nth-child(3) {
+    left: 100%;
+}
+
+#btn-menu-mobile.open > span:nth-child(4) {
+    transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 768px) {
+    #bottom-menu {
+        position: sticky;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    #bottom-menu .element {
+        display: flex;
+        background-color: rgb(19 20 23 / 6%);
+        backdrop-filter: blur(20px);
+        border-radius: 10px;
+        position: relative;
+        bottom: 40px;
+    }
+
+    #bottom-menu .wallet {
+        display: none;
+    }
+
+    #bottom-menu ul {
+        padding: 0 15px 0 8px;
+        margin: 15px 0;
+        display: flex;
+        list-style: none;
+        color: var(--dark);
+        border-left: 1px solid rgb(0 0 0 / 20%);
+    }
+
+    #bottom-menu ul li {
+        display: flex;
+        align-items: center;
+    }
+
+    #bottom-menu ul a {
+        text-decoration: none;
+        padding: 0px 10px;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        height: 100%;
+    }
+
+    #bottom-menu .logo-small {
+        padding: 18px 23px 12px 27px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #bottom-menu .element {
+        inset: 0 !important;
+        visibility: hidden;
+        display: flex;
+        opacity: 0;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(11 12 18 / 94%);
+        backdrop-filter: blur(5px);
+        color: #fff;
+        position: fixed;
+        transition: all 0.3s ease;
+    }
+
+    #bottom-menu .menu {
+        position: relative;
+        z-index: 1;
+    }
+
+    #bottom-menu .menu a {
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        font-size: 23px;
+    }
+
+    body:has(#btn-menu-mobile.open) #bottom-menu .element {
+        opacity: 1;
+        visibility: visible;
+    }
+}

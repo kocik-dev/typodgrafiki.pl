@@ -9,11 +9,11 @@ import "@/styles/menu.css"
 import "@/styles/accesibility.css"
 import { Person, WithContext } from "schema-dts"
 import { socialLinks } from "@/data/socialLinks"
+import { SITE_URL } from "@/data/variables"
 
 const title = "Grzegorz Kocik - Front-end Developer"
 const description =
     "Frontend developer z doświadczeniem w projektowaniu i wdrażaniu interfejsów e-commerce. Łączę wiedzę z zakresu UI/UX z umiejętnościami programistycznymi, wykorzystując technologie takie jak React i Next.js. Skupiam się na tworzeniu responsywnych i dostępnych stron internetowych."
-export const url = "https://kocik.dev"
 
 const jsonLd: WithContext<Person> = {
     "@context": "https://schema.org",
@@ -22,7 +22,7 @@ const jsonLd: WithContext<Person> = {
     jobTitle: "Front-end Developer",
     description:
         "Doświadczony front-end developer z doświadczeniem w e-commerce.",
-    url: url,
+    url: SITE_URL,
     sameAs: [socialLinks.linkedin, socialLinks.github],
     worksFor: {
         "@type": "Organization",
@@ -37,7 +37,7 @@ const jsonLd: WithContext<Person> = {
         "CSS3",
         "E-commerce Development",
     ],
-    image: `${url}/profile-photo.jpg`,
+    image: `${SITE_URL}/profile-photo.jpg`,
 }
 
 export const metadata: Metadata = {
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     authors: [{ name: "Grzegorz Kocik" }],
     creator: "Grzegorz Kocik",
     generator: "Next.js",
-    metadataBase: new URL(url),
+    metadataBase: new URL(SITE_URL),
     alternates: {
         canonical: "/",
         // languages: {
@@ -92,17 +92,17 @@ export const metadata: Metadata = {
     openGraph: {
         title: title,
         description: description,
-        url: url,
+        url: SITE_URL,
         siteName: "Kocik.dev",
         images: [
             {
-                url: `${url}/og.png`,
+                url: `${SITE_URL}/og.png`,
                 width: 1200,
                 height: 630,
                 alt: "Grzegorz Kocik - Front-end Developer",
             },
             {
-                url: `${url}/og-small.png`,
+                url: `${SITE_URL}/og-small.png`,
                 width: 600,
                 height: 315,
                 alt: "Grzegorz Kocik - Front-end Developer Portfolio",
@@ -135,7 +135,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title,
         description,
-        images: [`${url}/og.png`],
+        images: [`${SITE_URL}/og.png`],
     },
     category: "Web Development",
 }

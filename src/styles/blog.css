@@ -47,6 +47,11 @@
 
 .blog-layout .data {
     font-style: italic;
+    display: block;
+}
+
+.posts-list .data {
+    margin-bottom: 18px;
 }
 
 .posts-list .tags {
@@ -59,6 +64,25 @@
     padding: 0;
     position: relative;
     text-decoration: none;
+    display: block;
+}
+
+.blog-layout .list-tags .title-smaller:hover {
+    color: #8342fd;
+    animation: upBounce 0.2s ease forwards;
+    will-change: transform, color;
+}
+
+@keyframes upBounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-1px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .blog-layout .tags {
@@ -136,7 +160,7 @@
         --grid_column: 2;
     }
 
-    .posts-list .post:hover {
+    /* .posts-list .post :hover {
         cursor: pointer;
-    }
+    } */
 }

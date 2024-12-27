@@ -4,6 +4,7 @@ import React from "react"
 
 export default function Post({ post }: { post: BlogPostMetadata }) {
     const tags = post.tags || []
+    const link = `/blog/${post.slug}`
     return (
         <article key={post.slug} className="post">
             <div className="tags">
@@ -13,7 +14,7 @@ export default function Post({ post }: { post: BlogPostMetadata }) {
             </div>
             <header>
                 <h2 className="name">
-                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                    <Link href={link}>{post.title}</Link>
                 </h2>
             </header>
             {post.description && (
@@ -25,6 +26,14 @@ export default function Post({ post }: { post: BlogPostMetadata }) {
                     month: "long",
                 })}
             </time>
+            <div className="flex">
+                <Link
+                    href={link}
+                    className="btn btn-transparent btn-bubble-bottom"
+                >
+                    <span>See more</span>
+                </Link>
+            </div>
         </article>
     )
 }

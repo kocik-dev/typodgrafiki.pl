@@ -8,7 +8,11 @@ export const metadata = {
     description: "Frontend development blog",
 }
 
-export default async function BlogPage({ searchParams }) {
+export default async function BlogPage({
+    searchParams,
+}: {
+    searchParams: { tag?: string }
+}) {
     const posts = await getBlogPosts()
     const tags = listTags
 
@@ -48,11 +52,23 @@ export default async function BlogPage({ searchParams }) {
                     </li>
                 ))}
             </ul>
-            <div className="posts-list">
-                {filteredPosts.map((post) => (
-                    <Post post={post} key={post.slug} />
-                ))}
-            </div>
+
+            {filteredPosts.length > 0 ? (
+                <div className="posts-list">
+                    {filteredPosts.map((post) => (
+                        <Post post={post} key={post.slug} />
+                    ))}
+                </div>
+            ) : (
+                <div className="empty-list text text-center flex horizontal-center">
+                    <div>
+                        <p>Post list is empty.</p>
+                        <Link href="/blog" className="btn btn-default">
+                            See all posts
+                        </Link>
+                    </div>
+                </div>
+            )}
         </main>
     )
 }

@@ -2,6 +2,7 @@ import { getPostBySlug, postExists, getBlogPosts } from "@/lib/blog"
 import { MDXRemote } from "next-mdx-remote/rsc"
 import { notFound } from "next/navigation"
 import CodeSnippet from "@/components/Blog/CodeSnippet"
+import { fascinate } from "@/components/Fonts"
 // import type { Metadata } from "next"
 
 // Definiujemy komponenty dostępne w MDX
@@ -61,33 +62,29 @@ export default async function BlogPost({
     return (
         <article className="blog-post container">
             <header>
-                <h1>{post.title}</h1>
-                <time dateTime={post.date}>
+                {post.tags && (
+                    <div className="tags">
+                        {post.tags.map((tag) => (
+                            <span key={tag} className="title-smaller">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                )}
+                <h1 className={`title-small ${fascinate.className}`}>
+                    {post.title}
+                </h1>
+                <time dateTime={post.date} className="data">
                     {new Date(post.date).toLocaleDateString("pl-PL", {
                         year: "numeric",
                         month: "long",
                         day: "numeric",
                     })}
                 </time>
-                {post.tags && (
-                    <div className="tags">
-                        {post.tags.map((tag) => (
-                            <span
-                                key={tag}
-                                className="tag"
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                )}
             </header>
 
-            <div className="content">
-                <MDXRemote
-                    source={post.content}
-                    components={components}
-                />
+            <div className="content text">
+                <MDXRemote source={post.content} components={components} />
             </div>
         </article>
     )

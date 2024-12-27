@@ -4,7 +4,7 @@
 
 .blog-layout .bg-white {
     margin-top: 30px;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 .blog-header {
@@ -19,6 +19,11 @@
     gap: 10px 30px;
     grid-auto-flow: dense;
     margin-bottom: 50px;
+}
+
+.blog-post,
+.empty-list {
+    margin-bottom: 80px;
 }
 
 .posts-list .post {
@@ -40,7 +45,7 @@
     margin: 0 0 12px;
 }
 
-.posts-list .data {
+.blog-layout .data {
     font-style: italic;
 }
 
@@ -78,6 +83,52 @@
     height: 3px;
     background-color: #8342fd;
     border-radius: 3px;
+}
+
+.blog-layout .title-small {
+    line-height: 0.85;
+    font-size: clamp(2rem, 10vw, 50px);
+}
+
+.blog-post .tags {
+    margin-bottom: 10px;
+}
+
+.blog-post .title-small {
+    margin-bottom: 15px;
+}
+
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+    color: var(--dark);
+    line-height: 1.2;
+}
+
+.blog-post header {
+    border-bottom: 1px solid #b7b7b7;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.code-language {
+    border-radius: 7px 7px 0 0;
+    background-color: var(--dark);
+    color: #8e91a0;
+    padding: 5px 15px;
+}
+
+.prism-code {
+    padding: 12px 15px;
+    border-radius: 0 0 7px 7px;
+    margin-top: 0;
+}
+
+.empty-list {
+    margin-top: 60px;
 }
 
 @media screen and (min-width: 768px) {

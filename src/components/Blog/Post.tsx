@@ -20,10 +20,9 @@ export default function Post({ post }: { post: BlogPostMetadata }) {
                 <p className="description text">{post.description}</p>
             )}
             <time dateTime={post.date} className="data">
-                {new Date(post.date).toLocaleDateString("pl-PL", {
+                {new Date(post.date).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
-                    day: "numeric",
                 })}
             </time>
         </article>

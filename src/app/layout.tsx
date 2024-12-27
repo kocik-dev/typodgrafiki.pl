@@ -10,6 +10,9 @@ import "@/styles/accesibility.css"
 import { Person, WithContext } from "schema-dts"
 import { socialLinks } from "@/data/socialLinks"
 import { SITE_URL } from "@/data/variables"
+import WalletModal from "@/components/Web3/ModalWalletConnect"
+import Modal from "@/components/layout/Modal"
+import { ModalProvider } from "@/hooks/useModalContext"
 
 const title = "Grzegorz Kocik - Front-end Developer"
 const description =
@@ -148,10 +151,7 @@ export default async function RootLayout({
     const locale = await getLocale()
     const messages = await getMessages()
     return (
-        <html
-            lang={locale}
-            className={poppins.className}
-        >
+        <html lang={locale} className={poppins.className}>
             <head>
                 <script
                     type="application/ld+json"
@@ -159,9 +159,12 @@ export default async function RootLayout({
                 />
             </head>
             <body>
-                <NextIntlClientProvider messages={messages}>
-                    {children}
-                </NextIntlClientProvider>
+                <ModalProvider>
+                    <NextIntlClientProvider messages={messages}>
+                        {children}
+                    </NextIntlClientProvider>
+                    <Modal />
+                </ModalProvider>
                 <Cursor />
             </body>
         </html>

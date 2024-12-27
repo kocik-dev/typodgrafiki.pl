@@ -27,3 +27,8 @@ export interface BlogPost {
     date: string
     content: string
 }
+
+export interface ModalProps {
+    title: string
+    content: React.ReactNode
+}

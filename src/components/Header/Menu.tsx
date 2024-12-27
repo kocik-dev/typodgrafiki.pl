@@ -1,7 +1,7 @@
 import Link from "next/link"
 import React from "react"
 import { useTranslations } from "next-intl"
-import ConnectWallet from "./ConnectWallet"
+import ConnectWallet from "@/components/Web3/ConnectWallet"
 
 export default function Menu() {
     const t = useTranslations("menu")

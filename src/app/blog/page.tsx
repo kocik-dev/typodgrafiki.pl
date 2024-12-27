@@ -2,8 +2,9 @@ import { getBlogPosts, listTags } from "@/lib/blog"
 import { fascinate } from "@/components/Fonts"
 import Link from "next/link"
 import Post from "@/components/Blog/Post"
+import { Metadata } from "next"
 
-export const metadata = {
+export const metadata: Metadata = {
     title: "Blog - Grzegorz Kocik",
     description: "Frontend development blog",
 }
@@ -60,7 +61,7 @@ export default async function BlogPage({
                     ))}
                 </div>
             ) : (
-                <div className="empty-list text text-center flex horizontal-center">
+                <div className="empty-list text text-center flex justify-center">
                     <div>
                         <p>Post list is empty.</p>
                         <Link href="/blog" className="btn btn-default">

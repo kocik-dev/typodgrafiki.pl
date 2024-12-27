@@ -1,40 +1,30 @@
 import Link from "next/link"
-import Head from "next/head"
 import "@/styles/App.css"
 import "@/styles/error404.css"
 import { fascinate } from "@/components/Fonts"
 
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "404: Page Not Found - Grzegorz Kocik - Front-end Developer",
+    description:
+        "The page you're looking for cannot be found. Return to the homepage of Grzegorz Kocik's portfolio",
+}
+
 export default function Custom404() {
     return (
         <>
-            <Head>
-                <title>
-                    404: Page Not Found - Grzegorz Kocik - Front-end Developer
-                    Portfolio
-                </title>
-                <meta
-                    name="description"
-                    content="The page you're looking for cannot be found. Return to the homepage of Grzegorz Kocik's portfolio."
-                />
-            </Head>
-
             <main
                 className="error404"
                 role="main"
                 aria-labelledby="error-title"
             >
                 <div className="error-content">
-                    <h1
-                        id="error-title"
-                        className={`${fascinate.className}`}
-                    >
+                    <h1 id="error-title" className={`${fascinate.className}`}>
                         Oops! <small>Page Not Found</small>
                     </h1>
 
-                    <p
-                        role="status"
-                        aria-live="polite"
-                    >
+                    <p role="status" aria-live="polite">
                         Sorry, the page you're looking for cannot be found.
                         Error 404.
                     </p>
@@ -44,10 +34,7 @@ export default function Custom404() {
                         className="btn btn-default"
                         aria-label="Return to the homepage"
                     >
-                        <span
-                            className="icon"
-                            aria-hidden="true"
-                        >
+                        <span className="icon" aria-hidden="true">
                             <Arrow />
                         </span>
                         <span className="button-text">

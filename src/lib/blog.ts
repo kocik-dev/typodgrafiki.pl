@@ -35,8 +35,6 @@ export async function getBlogPosts() {
 
             const { data } = matter(fileContents)
 
-            console.log(data)
-
             return {
                 slug: file.replace(/\.(md|mdx)$/, ""),
                 date: data.date
@@ -44,6 +42,7 @@ export async function getBlogPosts() {
                     : new Date().toISOString(),
                 title: data.title || "",
                 description: data.description || "",
+                tags: data.tags || [],
             }
         })
         .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
@@ -80,3 +79,12 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 export async function postExists(slug: string): Promise<boolean> {
     return fs.existsSync(path.join(postsDirectory, `${slug}.mdx`))
 }
+
+export const listTags = [
+    "animations",
+    "react",
+    "accessibility",
+    "css and layouts",
+    "next.js",
+    "web3",
+]

@@ -15,9 +15,9 @@
     "about": {
         "title": "About",
         "subtitle": "Mid Frontend Developer",
-        "text1": "Hi, I'm Grzegorz Kocik – a front-end developer passionate about creating modern, aesthetic, and functional interfaces. My goal is to deliver well-thought-out solutions that combine visual appeal with an excellent user experience.",
-        "text2": "In addition to commercial work, I’m growing in the web3 space, exploring new possibilities and technologies that are reshaping how the internet operates. I love challenges that allow me to blend creativity with technical precision, creating projects that stand out from the rest.",
-        "text3": "I’m constantly seeking inspiration and opportunities to experiment with new approaches, believing that attention to detail makes all the difference.",
+        "text1": "Hi, I'm Grzegorz Kocik – a Frontend Developer from Poland focused on creating modern, responsive, and user-friendly web applications. I specialize in React, JavaScript, and TypeScript, delivering clean code solutions that combine aesthetic design with exceptional user experience.",
+        "text2": "In addition to building commercial web applications, I'm actively developing in the Web3 space, working with blockchain technologies and smart contracts to create decentralized applications (dApps). I embrace challenging projects that allow me to combine technical expertise with creative problem-solving, ensuring each solution meets the highest standards of performance and accessibility.",
+        "text3": "I continuously expand my frontend development skills through hands-on experience with modern frameworks and tools, believing that attention to detail and staying current with web technologies creates outstanding digital experiences.",
         "scrollToTop": "Scroll to top of page",
         "technologies": "Technologies I use",
         "tools": "Tools I work with"

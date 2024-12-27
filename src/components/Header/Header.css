@@ -119,9 +119,10 @@ header .menu li:not(.wallet):hover:before {
 @media (min-width: 768px) {
     .top {
         justify-content: space-between;
+        align-items: center;
     }
 
-    #main nav {
+    header nav {
         visibility: visible;
         position: static;
         opacity: 1;

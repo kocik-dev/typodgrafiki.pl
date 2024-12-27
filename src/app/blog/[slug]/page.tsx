@@ -3,7 +3,11 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import { notFound } from "next/navigation"
 import CodeSnippet from "@/components/Blog/CodeSnippet"
 import { fascinate } from "@/components/Fonts"
-// import type { Metadata } from "next"
+
+// export const metadata = {
+//     title: "Blog - Grzegorz Kocik",
+//     description: "Frontend development blog",
+// }
 
 // Definiujemy komponenty dostępne w MDX
 const components = {
@@ -35,7 +39,7 @@ export async function generateMetadata({
     }
 
     return {
-        title: `${post.title} - Blog`,
+        title: `${post.title} - Blog - Grzegorz Kocik`,
         description: post.description,
         // Możesz dodać więcej metadanych jak OpenGraph itp.
     }

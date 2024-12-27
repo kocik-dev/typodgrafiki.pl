@@ -60,7 +60,8 @@ export default function ConnectWallet() {
             </button>
             {!isWalletInstalled ? (
                 <div className="tooltip">
-                    Zainstaluj portfel WEB3 aby połączyć.
+                    {/* Zainstaluj portfel WEB3 aby połączyć. */}
+                    Install WEB3 wallet to connect.
                 </div>
             ) : null}
         </div>

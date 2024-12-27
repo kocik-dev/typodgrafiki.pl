@@ -1,19 +1,29 @@
-import React from "react"
-import { Header } from "../../components/Header/Header"
-import Footer from "../../components/Footer/Footer"
+import Footer from "@/components/Footer/Footer"
+import { Header } from "@/components/Header/Header"
+import { ReactNode } from "react"
+import "@/styles/blog.css"
+import BottomMenu from "@/components/BottomMenu"
+import Menu from "@/components/Header/Menu"
 
-export default function BlogLayout({
+export default async function RootLayout({
     children,
 }: {
-    children: React.ReactNode
+    children: ReactNode
 }) {
     return (
-        <div className="bg-gradient">
-            <div className="content">
-                <Header />
-                {children}
+        <div className="blog-layout">
+            <div className="blog-header">
+                <div className="container">
+                    <Header />
+                </div>
             </div>
-            <Footer />
+            <div className="bg-white">
+                {children}
+                <Footer />
+                <BottomMenu>
+                    <Menu />
+                </BottomMenu>
+            </div>
         </div>
     )
 }

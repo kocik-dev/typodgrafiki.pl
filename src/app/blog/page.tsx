@@ -1,47 +1,74 @@
-// import React from "react"
-// import "../../styles/blog.css"
-// import Link from "next/link"
-// import Image from "next/image"
-// import blog1 from "../../assets/blog/ecommerce-microinteractions.png"
+import { getBlogPosts, listTags } from "@/lib/blog"
+import { fascinate } from "@/components/Fonts"
+import Link from "next/link"
+import Post from "@/components/Blog/Post"
 
-// const data = [
-//     {
-//         title: "Animowane mikrointerakcje w e-commerce: Jak wpływają na UX?",
-//         image: blog1,
-//         slug: "animowane-mikrointerakcje-w-ecommerce-jak-wplywaja-na-ux",
-//     },
-// ]
+export const metadata = {
+    title: "Blog - Grzegorz Kocik",
+    description: "Frontend development blog",
+}
 
-// export default async function Blog() {
-//     return (
-//         <div className="container">
-//             <h1>Blog</h1>
-//             <div className="blog-container">
-//                 {data.map((post) => (
-//                     <Link
-//                         key={post.slug}
-//                         className="item"
-//                         href={`/blog/${post.slug}`}
-//                     >
-//                         <Image
-//                             src={post.image}
-//                             alt={post.title}
-//                             width={350}
-//                             height={170}
-//                         />
-//                         <span className="title">{post.title}</span>
-//                     </Link>
-//                 ))}
-//             </div>
-//         </div>
-//     )
-// }
+export default async function BlogPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ tag?: string }>
+}) {
+    const posts = await getBlogPosts()
+    const tags = listTags
 
-import { useTranslations } from "next-intl"
+    // Pobierz tag z URL-a, np. ?tag=javascript
+    const selectedTag = (await searchParams).tag || "all"
 
-export default function About() {
-    // const t = useTranslations("About")
+    // Filtrowanie po stronie serwera
+    const filteredPosts =
+        selectedTag === "all"
+            ? posts
+            : posts.filter((post) => post.tags.includes(selectedTag))
 
-    return null
-    // return <p>{t("description")}</p>
+    return (
+        <main className="container">
+            <h1 className={`title-small ${fascinate.className}`}>Blog</h1>
+            <ul className="tags list-tags">
+                <li>
+                    <Link
+                        href="/blog"
+                        className={`title-smaller ${
+                            selectedTag === "all" ? "active" : ""
+                        }`}
+                    >
+                        all
+                    </Link>
+                </li>
+                {tags.map((tag) => (
+                    <li key={tag}>
+                        <Link
+                            href={`/blog?tag=${tag}`}
+                            className={`title-smaller ${
+                                selectedTag === tag ? "active" : ""
+                            }`}
+                        >
+                            {tag}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+
+            {filteredPosts.length > 0 ? (
+                <div className="posts-list">
+                    {filteredPosts.map((post) => (
+                        <Post post={post} key={post.slug} />
+                    ))}
+                </div>
+            ) : (
+                <div className="empty-list text text-center flex horizontal-center">
+                    <div>
+                        <p>Post list is empty.</p>
+                        <Link href="/blog" className="btn btn-default">
+                            See all posts
+                        </Link>
+                    </div>
+                </div>
+            )}
+        </main>
+    )
 }

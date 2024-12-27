@@ -327,6 +327,9 @@ button {
 .gap-2 {
     gap: 20px;
 }
+.text {
+    line-height: 1.5;
+}
 
 @media (min-width: 768px) {
     .container {

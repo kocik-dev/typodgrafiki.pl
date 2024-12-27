@@ -11,13 +11,13 @@ export const metadata = {
 export default async function BlogPage({
     searchParams,
 }: {
-    searchParams: { tag?: string }
+    searchParams: Promise<{ tag?: string }>
 }) {
     const posts = await getBlogPosts()
     const tags = listTags
 
     // Pobierz tag z URL-a, np. ?tag=javascript
-    const selectedTag = searchParams.tag || "all"
+    const selectedTag = (await searchParams).tag || "all"
 
     // Filtrowanie po stronie serwera
     const filteredPosts =

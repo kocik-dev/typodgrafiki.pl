@@ -1,7 +1,7 @@
 import Link from "next/link"
 import React from "react"
 import { useTranslations } from "next-intl"
-import ConnectWallet from "@/components/Web3/ConnectWallet"
+import { WalletButton } from "@/components/Web3/WalletButton"
 
 export default function Menu() {
     const t = useTranslations("menu")
@@ -29,7 +29,7 @@ export default function Menu() {
                 </a>
             </li>
             <li className="wallet hidden-xs" role="none">
-                <ConnectWallet />
+                <WalletButton />
             </li>
         </ul>
     )

@@ -1,5 +1,5 @@
 export function formatWalletAddress(address: string) {
-    const dots = "&#9679;&#9679;&#9679;&#9679;"
+    const dots = "...."
     if (!address || address.length < 10) {
         return "Invalid address"
     }

@@ -10,9 +10,9 @@ import "@/styles/accesibility.css"
 import { Person, WithContext } from "schema-dts"
 import { socialLinks } from "@/data/socialLinks"
 import { SITE_URL } from "@/data/variables"
-import WalletModal from "@/components/Web3/ModalWalletConnect"
-import Modal from "@/components/layout/Modal"
-import { ModalProvider } from "@/hooks/useModalContext"
+import { Web3ModalProvider } from "@/contexts/Web3ModalContext"
+import { WalletModal } from "@/components/Web3/WalletModal"
+import { WalletProvider } from "@/contexts/WalletContext"
 
 const title = "Grzegorz Kocik - Front-end Developer"
 const description =
@@ -159,12 +159,14 @@ export default async function RootLayout({
                 />
             </head>
             <body>
-                <ModalProvider>
-                    <NextIntlClientProvider messages={messages}>
-                        {children}
-                    </NextIntlClientProvider>
-                    <Modal />
-                </ModalProvider>
+                <Web3ModalProvider>
+                    <WalletProvider>
+                        <NextIntlClientProvider messages={messages}>
+                            {children}
+                        </NextIntlClientProvider>
+                        <WalletModal />
+                    </WalletProvider>
+                </Web3ModalProvider>
                 <Cursor />
             </body>
         </html>

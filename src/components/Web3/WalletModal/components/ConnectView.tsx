@@ -12,7 +12,7 @@ declare global {
 }
 
 export const ConnectView = () => {
-    const { connect } = useWallet()
+    const { connect, isConnecting } = useWallet()
     const { navigateTo } = useWeb3Modal()
 
     const handleMetamaskConnect = async () => {
@@ -20,7 +20,6 @@ export const ConnectView = () => {
             navigateTo("install")
             return
         }
-
         const result = await connect("metamask")
         if (result.success) {
             navigateTo("disconnect")
@@ -32,9 +31,11 @@ export const ConnectView = () => {
             <button
                 className="flex vertical-center justify-between btn btn-transparent btn-wallet-connect btn-bubble-bottom"
                 onClick={handleMetamaskConnect}
+                disabled={isConnecting}
             >
                 <span style={{ width: "inherit" }}>
                     MetaMask
+                    {isConnecting && "Connecting..."}
                     <Image
                         src={iconMetamask}
                         alt="Metamask"

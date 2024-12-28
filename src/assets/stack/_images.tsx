@@ -16,7 +16,7 @@ import vsc from "./visual-studio-code.svg"
 import css3 from "./css3.svg"
 import html5 from "./html5.svg"
 import claude from "./claude.svg"
-import { TypeIcons } from "@/types/types"
+import { TypeIcons } from "@/types/website"
 
 const technologies: TypeIcons = [
     { src: html5, alt: "HTML5" },

@@ -7,7 +7,7 @@ import SlideTop from "@/animations/SlideTop"
 import Scroll from "@/animations/ScrollTop"
 import { technologies, tools } from "@/assets/stack/_images"
 import Image from "next/image"
-import { TypeIcon } from "@/types/types"
+import { TypeIcon } from "@/types/website"
 
 const About = () => {
     const t = useTranslations("about")

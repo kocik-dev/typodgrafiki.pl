@@ -44,3 +44,11 @@
 .modal-title {
     font-size: 19px;
 }
+
+.empty-image-wallet {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(120deg, #d53369 0%, #daae51 100%);
+    margin-bottom: 20px;
+}

@@ -1,49 +1,46 @@
 "use client"
 
 import { useWallet } from "@/contexts/WalletContext"
-import { getWalletClient } from "@/hooks/---useWalletClient"
+import { useState, useEffect } from "react"
+import { publicClient } from "@/config/web3.config"
 import { formatWalletAddress } from "@/lib/web3"
-import React from "react"
+import { formatEther } from "viem"
 
-export default function DisconnectView() {
-    const { disconnect, address, isConnected } = useWallet()
+export const DisconnectView = () => {
+    const { disconnect, address } = useWallet()
+    const [balance, setBalance] = useState<string | null>(null)
 
-    return (
-        <div>
-            <button onClick={() => disconnect()} className="btn btn-default">
-                disconnect button
-            </button>
-            {address ? formatWalletAddress(address) : null}
-            <button>Kopiuj</button>
-            {isConnected ? <MintNft /> : null}
-        </div>
-    )
-}
+    useEffect(() => {
+        const fetchBalance = async () => {
+            if (!address) return
 
-const MintNft = () => {
-    const handleMint = async () => {
-        const client = await getWalletClient()
-        if (!client) return
-
-        try {
-            const txHash = await client.writeContract({
-                address: contractAddress,
-                abi,
-                functionName: "mint",
-                args: [connectedAccount],
-            })
-
-            console.log("NFT wymintowane! Tx hash:", txHash)
-            alert(`NFT wymintowane! Hash transakcji: ${txHash}`)
-        } catch (error) {
-            console.error("Błąd podczas mintowania:", error)
-            alert("Wystąpił błąd podczas mintowania NFT.")
+            try {
+                // Pobierz saldo portfela
+                const balanceInWei = await publicClient.getBalance({
+                    address: address as `0x${string}`,
+                })
+                const balanceInEther = formatEther(balanceInWei)
+                setBalance(Number(balanceInEther).toFixed(4))
+            } catch (error) {
+                console.error("Failed to fetch balance:", error)
+                setBalance(null)
+            }
         }
-    }
+
+        fetchBalance()
+    }, [address])
+
+    if (!address) return null
 
     return (
-        <div>
-            <button className="btn btn-transparent">Mint</button>
+        <div className="flex flex-column vertical-center">
+            <div className="empty-image-wallet"></div>
+            <p>{formatWalletAddress(address)}</p>
+            <p>Kopiuj</p>
+            <p>Saldo: {balance ? `${balance} ETH` : "Ładowanie..."}</p>
+            <button onClick={disconnect} className="btn btn-transparent">
+                Disconnect
+            </button>
         </div>
     )
 }

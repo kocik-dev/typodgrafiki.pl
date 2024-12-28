@@ -4,10 +4,18 @@ import React from "react"
 import browserChrome from "@/assets/web3/browsers/chrome.svg"
 import Image from "next/image"
 import Link from "next/link"
+import iconMetamask from "@/assets/web3/wallets/metamask.svg"
 
 export default function InstallView() {
     return (
         <div className="text-center">
+            <Image
+                src={iconMetamask}
+                alt="Metamask"
+                width={70}
+                height={70}
+                style={{ marginBottom: "10px" }}
+            />
             <p className="modal-title">Install MetaMask</p>
             <p className="text">
                 To connect your MetaMask wallet, install the browser extension.

@@ -1,4 +1,4 @@
-import { PropsSocialLinks } from "@/types/types"
+import { PropsSocialLinks } from "@/types/website"
 
 export const socialLinks: PropsSocialLinks = {
     instagram: "https://www.instagram.com/kocik.dev/",

@@ -1,6 +1,7 @@
 export interface WalletContextType {
     address: string | null
-    isConnected: boolean
+    walletType: WalletType | null
+    isConnecting: boolean
     connect: (type: WalletType) => Promise<{ success: boolean; error?: string }>
     disconnect: () => void
 }

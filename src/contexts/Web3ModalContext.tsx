@@ -12,6 +12,7 @@ interface Web3ModalContextType {
     navigateTo: (view: ModalView) => void
     goBack: () => void
     canGoBack: boolean
+    title: string
 }
 
 const Web3ModalContext = createContext<Web3ModalContextType | undefined>(
@@ -55,6 +56,17 @@ export const Web3ModalProvider = ({
         }
     }, [history, close])
 
+    const title = (() => {
+        switch (view) {
+            case "connect":
+                return "Connect Wallet"
+            case "install":
+                return "Metamask"
+            case "disconnect":
+                return "Connected"
+        }
+    })()
+
     const value = {
         isOpen,
         view,
@@ -63,6 +75,7 @@ export const Web3ModalProvider = ({
         navigateTo,
         goBack,
         canGoBack: history.length > 0,
+        title,
     }
 
     return (

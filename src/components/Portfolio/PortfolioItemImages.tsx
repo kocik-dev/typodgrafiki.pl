@@ -4,7 +4,7 @@ import Image from "next/image"
 import React, { useState } from "react"
 import { useTranslations } from "next-intl"
 import SlideTop from "@/animations/SlideTop"
-import { ProjectItem } from "@/types/types"
+import { ProjectItem } from "@/types/website"
 import useEmailSender from "@/hooks/useSendEmail"
 
 export default function PortfolioItemImages({
@@ -32,10 +32,7 @@ export default function PortfolioItemImages({
     return (
         <SlideTop>
             <div className="flex-sm">
-                <Plus
-                    setIsHover={setIsHover}
-                    name={name}
-                />
+                <Plus setIsHover={setIsHover} name={name} />
                 {children}
                 <div className="flex justify-start gap-1">
                     <button

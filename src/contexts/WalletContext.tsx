@@ -63,6 +63,11 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
             return { success: true }
         } catch (error) {
             console.error("Connection error:", error)
+
+            if (error.code === 4001) {
+                return { success: false, error: "cancelled" }
+            }
+
             return { success: false, error: "connection-failed" }
         } finally {
             setIsConnecting(false)

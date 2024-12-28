@@ -24,9 +24,6 @@ export const WalletModal = () => {
 
     return (
         <>
-            <div style={{ position: "fixed", top: 0, left: 0 }}>
-                {isOpen ? "open" : "close"}
-            </div>
             <dialog className="modal" open={isOpen}>
                 <header className="flex modal-header justify-between align-center vertical-center">
                     {canGoBack && (

@@ -41,7 +41,16 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
             ? window.ethereum.providers.find((p: any) => p.isMetaMask)
             : window.ethereum
 
-        if (!provider) return { success: false, error: "no-client" }
+        if (!provider) {
+            return {
+                success: false,
+                error: "no-client",
+                message: {
+                    title: "No Wallet Detected",
+                    text: "We couldn't detect a wallet. Please install MetaMask or another compatible wallet.",
+                },
+            }
+        }
 
         setIsConnecting(true)
         try {
@@ -60,15 +69,97 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
             localStorage.setItem("walletAddress", address)
             localStorage.setItem("walletType", type)
 
-            return { success: true }
-        } catch (error) {
-            console.error("Connection error:", error)
+            return {
+                success: true,
+                message: {
+                    title: "Connected Successfully",
+                    text: "Your wallet is now connected. You can proceed with your transactions.",
+                },
+            }
+        } catch (error: any) {
+            // console.error("Connection error:", error)
 
+            // Obsługa różnych kodów błędów
             if (error.code === 4001) {
-                return { success: false, error: "cancelled" }
+                return {
+                    success: false,
+                    error: "cancelled",
+                    message: {
+                        title: "Connection Cancelled",
+                        text: "You cancelled the connection request. Please try again if you wish to connect.",
+                        btn: true,
+                    },
+                }
+            } else if (error.code === -32002) {
+                return {
+                    success: false,
+                    error: "request-pending",
+                    message: {
+                        title: "Request Pending",
+                        text: "A connection request is already pending. Please check your wallet or try again later.",
+                    },
+                }
+            } else if (error.code === 4900) {
+                return {
+                    success: false,
+                    error: "disconnected",
+                    message: {
+                        title: "Provider Disconnected",
+                        text: "The wallet provider is disconnected. Please reconnect your wallet and try again.",
+                        btn: true,
+                    },
+                }
+            } else if (error.code === 4901) {
+                return {
+                    success: false,
+                    error: "chain-disconnected",
+                    message: {
+                        title: "Chain Disconnected",
+                        text: "Your wallet is not connected to a supported chain. Please switch networks and try again.",
+                        btn: true,
+                    },
+                }
+            } else if (error.code === -32601) {
+                return {
+                    success: false,
+                    error: "method-not-found",
+                    message: {
+                        title: "Unsupported Method",
+                        text: "The requested method is not supported by your wallet. Please check your setup and try again.",
+                        btn: true,
+                    },
+                }
+            } else if (error.code === -32602) {
+                return {
+                    success: false,
+                    error: "invalid-parameters",
+                    message: {
+                        title: "Invalid Parameters",
+                        text: "The connection request contained invalid parameters. Please try again.",
+                        btn: true,
+                    },
+                }
+            } else if (error.code === -32005) {
+                return {
+                    success: false,
+                    error: "resource-unavailable",
+                    message: {
+                        title: "Resource Unavailable",
+                        text: "The wallet provider is currently unavailable. Please try again later.",
+                        btn: true,
+                    },
+                }
             }
 
-            return { success: false, error: "connection-failed" }
+            return {
+                success: false,
+                error: "connection-failed",
+                message: {
+                    title: "Connection Failed",
+                    text: "An unknown error occurred while trying to connect your wallet. Please try again.",
+                    btn: true,
+                },
+            }
         } finally {
             setIsConnecting(false)
         }

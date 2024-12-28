@@ -13,7 +13,7 @@ export const WalletButton = () => {
     const t = useTranslations("web3")
 
     const handleClick = () => {
-        open(address ? "disconnect" : "connect")
+        open(address ? "success" : "connect")
     }
 
     return (

@@ -7,7 +7,7 @@ import { useState } from "react"
 // import { formatEther } from "viem"
 import { IoExitOutline, IoCopyOutline, IoCheckmarkSharp } from "react-icons/io5"
 
-export const DisconnectView = () => {
+export const SuccessView = () => {
     const { disconnect, address } = useWallet()
     const [isCopied, setIsCopied] = useState(false)
     // const [balance, setBalance] = useState<string | null>(null)

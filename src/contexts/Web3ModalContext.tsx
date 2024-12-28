@@ -1,8 +1,7 @@
 "use client"
 
 import { createContext, useContext, useCallback, useState } from "react"
-
-type ModalView = "connect" | "install" | "disconnect"
+import { ModalView, WalletConnectMessageType } from "@/types/web3"
 
 interface Web3ModalContextType {
     isOpen: boolean
@@ -27,6 +26,8 @@ export const Web3ModalProvider = ({
     const [isOpen, setIsOpen] = useState(false)
     const [view, setView] = useState<ModalView>("connect")
     const [history, setHistory] = useState<ModalView[]>([])
+    const [errorMessage, setErrorMessage] =
+        useState<WalletConnectMessageType | null>(null)
 
     const open = useCallback((initialView: ModalView = "connect") => {
         setView(initialView)
@@ -36,10 +37,14 @@ export const Web3ModalProvider = ({
     const close = useCallback(() => {
         setIsOpen(false)
         setHistory([])
+        setView("connect")
     }, [])
 
     const navigateTo = useCallback(
-        (newView: ModalView) => {
+        (newView: ModalView, errorMessage?: WalletConnectMessageType) => {
+            if (newView === "error" && errorMessage) {
+                setErrorMessage(errorMessage) // Ustaw wiadomość błędu
+            }
             setHistory((prev) => [...prev, view])
             setView(newView)
         },
@@ -62,8 +67,10 @@ export const Web3ModalProvider = ({
                 return "Connect Wallet"
             case "install":
                 return "Metamask"
-            case "disconnect":
+            case "success":
                 return "Connected"
+            case "error":
+                return "Metamask"
         }
     })()
 
@@ -76,6 +83,7 @@ export const Web3ModalProvider = ({
         goBack,
         canGoBack: history.length > 0,
         title,
+        errorMessage,
     }
 
     return (

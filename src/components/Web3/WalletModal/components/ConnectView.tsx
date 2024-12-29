@@ -4,17 +4,9 @@ import { useWallet } from "@/contexts/WalletContext"
 import { useWeb3Modal } from "@/contexts/Web3ModalContext"
 import Image from "next/image"
 import iconMetamask from "@/assets/web3/wallets/metamask.svg"
-import { useState } from "react"
-import { WalletConnectMessageType } from "@/types/web3"
-
-declare global {
-    interface Window {
-        ethereum: any
-    }
-}
 
 export const ConnectView = () => {
-    const { connect, isConnecting } = useWallet()
+    const { connect, isConnecting, walletType } = useWallet()
     const { navigateTo } = useWeb3Modal()
 
     const handleMetamaskConnect = async () => {
@@ -49,7 +41,10 @@ export const ConnectView = () => {
             disabled={isConnecting}
         >
             <span style={{ width: "inherit" }}>
-                MetaMask
+                <span>
+                    MetaMask
+                    {walletType ? <small>(Recent)</small> : null}
+                </span>
                 <Image
                     src={iconMetamask}
                     alt="Metamask"

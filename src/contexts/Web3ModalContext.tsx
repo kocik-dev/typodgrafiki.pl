@@ -1,18 +1,11 @@
 "use client"
 
 import { createContext, useContext, useCallback, useState } from "react"
-import { ModalView, WalletConnectMessageType } from "@/types/web3"
-
-interface Web3ModalContextType {
-    isOpen: boolean
-    view: ModalView
-    open: (view?: ModalView) => void
-    close: () => void
-    navigateTo: (view: ModalView) => void
-    goBack: () => void
-    canGoBack: boolean
-    title: string
-}
+import {
+    ModalView,
+    WalletConnectMessageType,
+    Web3ModalContextType,
+} from "@/types/web3"
 
 const Web3ModalContext = createContext<Web3ModalContextType | undefined>(
     undefined
@@ -25,9 +18,10 @@ export const Web3ModalProvider = ({
 }) => {
     const [isOpen, setIsOpen] = useState(false)
     const [view, setView] = useState<ModalView>("connect")
-    const [history, setHistory] = useState<ModalView[]>([])
     const [errorMessage, setErrorMessage] =
         useState<WalletConnectMessageType | null>(null)
+
+    const canGoBack = view === "install" || view === "error"
 
     const open = useCallback((initialView: ModalView = "connect") => {
         setView(initialView)
@@ -36,7 +30,6 @@ export const Web3ModalProvider = ({
 
     const close = useCallback(() => {
         setIsOpen(false)
-        setHistory([])
         setView("connect")
     }, [])
 
@@ -45,21 +38,10 @@ export const Web3ModalProvider = ({
             if (newView === "error" && errorMessage) {
                 setErrorMessage(errorMessage) // Ustaw wiadomość błędu
             }
-            setHistory((prev) => [...prev, view])
             setView(newView)
         },
         [view]
     )
-
-    const goBack = useCallback(() => {
-        const previousView = history[history.length - 1]
-        if (previousView) {
-            setView(previousView)
-            setHistory((prev) => prev.slice(0, -1))
-        } else {
-            close()
-        }
-    }, [history, close])
 
     const title = (() => {
         switch (view) {
@@ -79,9 +61,8 @@ export const Web3ModalProvider = ({
         view,
         open,
         close,
+        canGoBack,
         navigateTo,
-        goBack,
-        canGoBack: history.length > 0,
         title,
         errorMessage,
     }

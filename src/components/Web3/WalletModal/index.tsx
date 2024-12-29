@@ -10,7 +10,7 @@ import ErrorView from "./components/ErrorView"
 import "@/styles/modal.css"
 
 export const WalletModal = () => {
-    const { isOpen, view, close, goBack, canGoBack, title } = useWeb3Modal()
+    const { isOpen, view, close, title, navigateTo, canGoBack } = useWeb3Modal()
 
     const renderContent = () => {
         switch (view) {
@@ -30,7 +30,7 @@ export const WalletModal = () => {
             <dialog className="modal" open={isOpen}>
                 <header className="flex modal-header justify-between align-center vertical-center">
                     <button
-                        onClick={goBack}
+                        onClick={() => navigateTo("connect")}
                         disabled={!canGoBack}
                         style={{ opacity: canGoBack ? "1" : "0" }}
                     >

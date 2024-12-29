@@ -10,25 +10,30 @@ import {
 import { createWalletClient, custom } from "viem"
 import { mainnet } from "viem/chains"
 import { useWeb3Modal } from "./Web3ModalContext"
-import { WalletContextType, WalletType } from "@/types/web3"
+import { WalletContextType, WalletTypeProps } from "@/types/web3"
+
+declare global {
+    interface Window {
+        ethereum?: {
+            providers?: any[]
+            request: (args: any) => Promise<any>
+        }
+    }
+}
 
 const WalletContext = createContext<WalletContextType | null>(null)
 
 export const WalletProvider = ({ children }: { children: ReactNode }) => {
     const [address, setAddress] = useState<string | null>(null)
-    const [walletType, setWalletType] = useState<
-        "metamask" | "coinbase" | null
-    >(null)
-    // const [walletClient, setWalletClient] = useState<WalletClient | null>(null)
+    const [walletType, setWalletType] = useState<WalletTypeProps | null>(null)
     const [isConnecting, setIsConnecting] = useState(false)
     const { navigateTo } = useWeb3Modal()
 
     useEffect(() => {
         const savedAddress = localStorage.getItem("walletAddress")
-        const savedType = localStorage.getItem("walletType") as
-            | "metamask"
-            | "coinbase"
-            | null
+        const savedType = localStorage.getItem(
+            "walletType"
+        ) as WalletTypeProps | null
 
         if (savedAddress && savedType) {
             setAddress(savedAddress)
@@ -36,7 +41,7 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
         }
     }, [])
 
-    const connect = async (type: WalletType) => {
+    const connect = async (type: WalletTypeProps) => {
         const provider = window.ethereum?.providers
             ? window.ethereum.providers.find((p: any) => p.isMetaMask)
             : window.ethereum
@@ -167,10 +172,10 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
 
     const disconnect = () => {
         setAddress(null)
-        setWalletType(null)
+        // setWalletType(null)
         // setWalletClient(null)
         localStorage.removeItem("walletAddress")
-        localStorage.removeItem("walletType")
+        // localStorage.removeItem("walletType")
 
         navigateTo("connect")
     }

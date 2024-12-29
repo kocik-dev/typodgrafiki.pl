@@ -8,8 +8,10 @@ export default function Post({ post }: { post: BlogPostMetadata }) {
     return (
         <article key={post.slug} className="post">
             <div className="tags">
-                {tags.map((tag) => (
-                    <button className="title-smaller">{tag}</button>
+                {tags.map((tag, index) => (
+                    <button className="title-smaller" key={tag + index}>
+                        {tag}
+                    </button>
                 ))}
             </div>
             <header>

@@ -2,9 +2,7 @@
     "menu": {
         "about": "About",
         "portfolio": "Work",
-        "contact": "Contact",
-        "btnConnectWeb3": "Connect WEB3 wallet",
-        "btnWeb3Connected": "Wallet Connected"
+        "contact": "Contact"
     },
     "main": {
         "h2": "I create innovative and efficient user interfaces for the e-commerce industry. Explore my projects and learn how I can help your business.",
@@ -31,5 +29,9 @@
         "projectScope": "Project scope: {scope}",
         "projectImageAlt": "Preview of {name} project",
         "loading": "Loading project image"
+    },
+    "web3": {
+        "btnConnectWeb3": "Connect wallet",
+        "btnWeb3Connected": "Wallet Connected"
     }
 }

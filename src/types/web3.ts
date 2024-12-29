@@ -3,7 +3,10 @@ export interface Web3ModalContextType {
     view: ModalView
     open: (view?: ModalView) => void
     close: () => void
-    navigateTo: (view: ModalView) => void
+    navigateTo: (
+        view: ModalView,
+        errorMessage?: WalletConnectMessageType
+    ) => void
     canGoBack: boolean
     title: string
     errorMessage: WalletConnectMessageType | null

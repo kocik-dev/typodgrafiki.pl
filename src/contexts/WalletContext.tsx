@@ -13,11 +13,14 @@ import { useWeb3Modal } from "./Web3ModalContext"
 import { WalletContextType, WalletTypeProps } from "@/types/web3"
 
 declare global {
+    interface EthereumProvider {
+        isMetaMask?: boolean // Opcjonalna właściwość
+        providers?: EthereumProvider[] // Lista providerów
+        request: (args: { method: string; params?: unknown[] }) => Promise<any>
+    }
+
     interface Window {
-        ethereum?: {
-            providers?: any[]
-            request: (args: any) => Promise<any>
-        }
+        ethereum?: EthereumProvider
     }
 }
 

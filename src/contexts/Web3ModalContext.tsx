@@ -36,7 +36,7 @@ export const Web3ModalProvider = ({
     const navigateTo = useCallback(
         (newView: ModalView, errorMessage?: WalletConnectMessageType) => {
             if (newView === "error" && errorMessage) {
-                setErrorMessage(errorMessage) // Ustaw wiadomość błędu
+                setErrorMessage(errorMessage)
             }
             setView(newView)
         },

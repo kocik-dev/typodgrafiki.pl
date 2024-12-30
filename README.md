@@ -1,32 +1,51 @@
 # Grzegorz Kocik &#8226; Portfolio
+
 ## _Front-end developer_
 
 ### Introduction
-The project is my personal portfolio website. I have included information about myself, my sample works, and demonstrations of my skills on the website. The site is built using React, and deliberately avoids the use of unnecessary external libraries to showcase my code. The only external packages used are [Normalize] for CSS reset, and [Emailjs] for sending emails from the contact form. 
 
-### Technologies
-- HTML
-- CSS
-- JavaScript
-- React
-- Typescript
-- Next
+This is my personal portfolio website showcasing my work and skills as a Front-end Developer. Built with modern web technologies, the site demonstrates my expertise in React, Next.js, and Web3 integration. The project emphasizes clean code, performance optimization, and accessibility while maintaining a minimalist approach to external dependencies.
 
-### Used Libraries
-- [Normalize]
-- [Emailjs]
+### Core Technologies
 
-#### table of contents
-- About Me
-- CV
-- Check me out
-- Contact
+-   Next.js 15
+-   React 19
+-   TypeScript
+-   Viem (Web3 integration)
+-   next-intl (Internationalization)
 
+### Key Features
 
-#### Sources
-- [dribble]
+-   Server-Side Rendering (SSR)
+-   Internationalization (i18n)
+-   Web3 Wallet Integration
+-   MDX Blog Support
+-   Performance Optimization
+-   SEO Best Practices
+-   Responsive Design
+-   Dark Mode Support
 
+### Performance & Analytics
 
-[dribble]: <https://dribbble.com/>
-[Normalize]: <https://github.com/necolas/normalize.css/>
-[Emailjs]: <https://www.emailjs.com/>
+The project utilizes Next.js Bundle Analyzer to monitor and optimize bundle sizes, ensuring optimal loading performance.
+
+### Website Sections
+
+-   About Me
+-   Projects
+-   Blog
+-   Contact
+
+### Dependencies Highlights
+
+-   `motion`: Performant animations
+-   `next-intl`: Internationalization support
+-   `next-mdx-remote`: MDX content processing
+-   `viem`: Ethereum wallet integration
+
+### Connect with Me
+
+[Github](https://github.com/kocik-dev/)
+[Instagram](https://www.instagram.com/kocik.dev)
+[X](https://x.com/kocik_dev)
+[LinkedIn](https://www.linkedin.com/in/kocik-dev/)

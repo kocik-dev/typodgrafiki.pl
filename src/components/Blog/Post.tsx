@@ -1,12 +1,12 @@
 import { BlogPostMetadata } from "@/lib/blog"
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 import Link from "next/link"
 import React from "react"
 
-export default function Post({ post }: { post: BlogPostMetadata }) {
+export default async function Post({ post }: { post: BlogPostMetadata }) {
+    const t = await getTranslations("blog")
     const tags = post.tags || []
     const link = `/blog/${post.slug}`
-    const t = useTranslations("blog")
     return (
         <article
             key={post.slug}

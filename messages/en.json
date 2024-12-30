@@ -1,9 +1,9 @@
 {
-    "metatags": {
+    "metadata": {
         "title": "Grzegorz Kocik - Front-end Developer",
-        "description": "Frontend developer z doświadczeniem w projektowaniu i wdrażaniu interfejsów e-commerce. Łączę wiedzę z zakresu UI/UX z umiejętnościami programistycznymi, wykorzystując technologie takie jak React i Next.js. Skupiam się na tworzeniu responsywnych i dostępnych stron internetowych.",
+        "description": "Frontend developer with experience in designing and implementing e-commerce interfaces. I combine UI/UX knowledge with programming skills, using technologies such as React and Next.js. I focus on creating responsive and accessible websites.",
         "jobTitle": "Front-end Developer",
-        "schemaDescription": "Doświadczony front-end developer z doświadczeniem w e-commerce."
+        "schemaDescription": "Experienced front-end developer with e-commerce expertise."
     },
     "menu": {
         "about": "About",

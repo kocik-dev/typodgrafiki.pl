@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 import { fascinate } from "@/components/Fonts"
 import PortfolioItem from "./PortfolioItem"
 import SlideLeft from "@/animations/SlideLeft"
@@ -74,8 +74,8 @@ const projectItems: ProjectItem[] = [
     },
 ]
 
-const Projects = () => {
-    const t = useTranslations("projects")
+const Projects = async () => {
+    const t = await getTranslations("projects")
 
     return (
         <section

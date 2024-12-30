@@ -166,8 +166,8 @@ export default async function RootLayout({
                     <WalletProvider>
                         <NextIntlClientProvider messages={messages}>
                             {children}
+                            <WalletModal />
                         </NextIntlClientProvider>
-                        <WalletModal />
                     </WalletProvider>
                 </Web3ModalProvider>
                 <Cursor />

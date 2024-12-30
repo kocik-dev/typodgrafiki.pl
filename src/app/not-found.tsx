@@ -4,7 +4,7 @@ import "@/styles/error404.css"
 import { fascinate } from "@/components/Fonts"
 
 import { Metadata } from "next"
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 
 export const metadata: Metadata = {
     title: "404: Page Not Found - Grzegorz Kocik - Front-end Developer",
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
         "The page you're looking for cannot be found. Return to the homepage of Grzegorz Kocik's portfolio",
 }
 
-export default function Custom404() {
-    const t = useTranslations("notFound")
+export default async function Custom404() {
+    const t = await getTranslations("notFound")
     return (
         <>
             <main

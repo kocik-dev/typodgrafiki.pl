@@ -3,7 +3,8 @@ import { fascinate } from "@/components/Fonts"
 import Link from "next/link"
 import Post from "@/components/Blog/Post"
 import { Metadata } from "next"
-import { useTranslations } from "next-intl"
+// import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 
 export const metadata: Metadata = {
     title: "Blog - Grzegorz Kocik",
@@ -15,7 +16,8 @@ export default async function BlogPage({
 }: {
     searchParams: Promise<{ tag?: string }>
 }) {
-    const t = useTranslations("blog")
+    // const t = useTranslations("blog")
+    const t = await getTranslations("blog")
     const posts = await getBlogPosts()
     const tags = listTags
 

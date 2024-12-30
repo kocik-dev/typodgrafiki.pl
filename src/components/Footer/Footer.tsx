@@ -3,7 +3,7 @@ import "./Footer.css"
 import Logo from "../Header/Logo"
 import Link from "next/link"
 import BtnSendEmail from "./BtnSendEmail"
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 
 const IconTwitter = () => {
     return (
@@ -93,9 +93,9 @@ const socialLinksData: ISocialData[] = [
     },
 ]
 
-const Footer = () => {
+const Footer = async () => {
     const currentYear = new Date().getFullYear()
-    const t = useTranslations("footer")
+    const t = await getTranslations("footer")
 
     return (
         <footer

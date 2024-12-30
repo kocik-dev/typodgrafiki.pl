@@ -1,5 +1,5 @@
 import React from "react"
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 import { fascinate } from "@/components/Fonts"
 import "./About.css"
 import SlideLeft from "@/animations/SlideLeft"
@@ -9,11 +9,16 @@ import { technologies, tools } from "@/assets/stack/_images"
 import Image from "next/image"
 import { TypeIcon } from "@/types/website"
 
-const About = () => {
-    const t = useTranslations("about")
+const About = async () => {
+    // const t = useTranslations("about")
+    const t = await getTranslations("about")
 
     return (
-        <section id="about" className="container" aria-labelledby="about-title">
+        <section
+            id="about"
+            className="container"
+            aria-labelledby="about-title"
+        >
             <Scroll aria-label={t("scrollToTop")} />
 
             <div className="info flex">
@@ -27,7 +32,10 @@ const About = () => {
                         </h2>
                     </SlideLeft>
                     <SlideLeft>
-                        <h3 className="title-smaller" id="role-title">
+                        <h3
+                            className="title-smaller"
+                            id="role-title"
+                        >
                             {t("subtitle")}
                         </h3>
                     </SlideLeft>
@@ -61,7 +69,10 @@ const About = () => {
                             >
                                 {t("technologies")}
                             </h4>
-                            <div className="icons flex" role="list">
+                            <div
+                                className="icons flex"
+                                role="list"
+                            >
                                 {technologies.map((icon, index) => (
                                     <Icon
                                         icon={icon}
@@ -79,10 +90,16 @@ const About = () => {
                             className="tech-row"
                             aria-labelledby="tools-title"
                         >
-                            <h4 id="tools-title" className="title-smaller">
+                            <h4
+                                id="tools-title"
+                                className="title-smaller"
+                            >
                                 {t("tools")}
                             </h4>
-                            <div className="icons flex" role="list">
+                            <div
+                                className="icons flex"
+                                role="list"
+                            >
                                 {tools.map((icon, index) => (
                                     <Icon
                                         icon={icon}
@@ -101,7 +118,10 @@ const About = () => {
 
 const Icon = ({ icon, index }: { icon: TypeIcon; index: number }) => {
     return (
-        <div className="icon relative" role="listitem">
+        <div
+            className="icon relative"
+            role="listitem"
+        >
             <Image
                 src={icon.src}
                 alt={icon.alt}

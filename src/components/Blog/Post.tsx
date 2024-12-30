@@ -1,15 +1,23 @@
 import { BlogPostMetadata } from "@/lib/blog"
+import { useTranslations } from "next-intl"
 import Link from "next/link"
 import React from "react"
 
 export default function Post({ post }: { post: BlogPostMetadata }) {
     const tags = post.tags || []
     const link = `/blog/${post.slug}`
+    const t = useTranslations("blog")
     return (
-        <article key={post.slug} className="post">
+        <article
+            key={post.slug}
+            className="post"
+        >
             <div className="tags">
                 {tags.map((tag, index) => (
-                    <button className="title-smaller" key={tag + index}>
+                    <button
+                        className="title-smaller"
+                        key={tag + index}
+                    >
                         {tag}
                     </button>
                 ))}
@@ -22,7 +30,10 @@ export default function Post({ post }: { post: BlogPostMetadata }) {
             {post.description && (
                 <p className="description text">{post.description}</p>
             )}
-            <time dateTime={post.date} className="data">
+            <time
+                dateTime={post.date}
+                className="data"
+            >
                 {new Date(post.date).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
@@ -33,7 +44,7 @@ export default function Post({ post }: { post: BlogPostMetadata }) {
                     href={link}
                     className="btn btn-transparent btn-bubble-bottom"
                 >
-                    <span>See more</span>
+                    <span>{t("postBtn")}</span>
                 </Link>
             </div>
         </article>

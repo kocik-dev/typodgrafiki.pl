@@ -3,6 +3,7 @@
 import { useWallet } from "@/contexts/WalletContext"
 // import { publicClient } from "@/config/web3.config"
 import { formatWalletAddress } from "@/lib/web3"
+import { useTranslations } from "next-intl"
 import { useState } from "react"
 // import { formatEther } from "viem"
 import { IoExitOutline, IoCopyOutline, IoCheckmarkSharp } from "react-icons/io5"
@@ -10,6 +11,7 @@ import { IoExitOutline, IoCopyOutline, IoCheckmarkSharp } from "react-icons/io5"
 export const SuccessView = () => {
     const { disconnect, address } = useWallet()
     const [isCopied, setIsCopied] = useState(false)
+    const t = useTranslations("web3")
     // const [balance, setBalance] = useState<string | null>(null)
 
     // useEffect(() => {
@@ -62,9 +64,12 @@ export const SuccessView = () => {
                 </button>
             </p>
             {/* <p>Saldo: {balance ? `${balance} ETH` : "Ładowanie..."}</p> */}
-            <button onClick={disconnect} className="btn btn-transparent">
+            <button
+                onClick={disconnect}
+                className="btn btn-transparent"
+            >
                 <IoExitOutline />
-                Disconnect
+                {t("disconnect")}
             </button>
         </div>
     )

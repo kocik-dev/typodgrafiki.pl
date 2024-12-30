@@ -3,6 +3,7 @@ import { fascinate } from "@/components/Fonts"
 import Link from "next/link"
 import Post from "@/components/Blog/Post"
 import { Metadata } from "next"
+import { useTranslations } from "next-intl"
 
 export const metadata: Metadata = {
     title: "Blog - Grzegorz Kocik",
@@ -14,6 +15,7 @@ export default async function BlogPage({
 }: {
     searchParams: Promise<{ tag?: string }>
 }) {
+    const t = useTranslations("blog")
     const posts = await getBlogPosts()
     const tags = listTags
 
@@ -28,7 +30,9 @@ export default async function BlogPage({
 
     return (
         <main className="container">
-            <h1 className={`title-small ${fascinate.className}`}>Blog</h1>
+            <h1 className={`title-small ${fascinate.className}`}>
+                {t("title")}
+            </h1>
             <ul className="tags list-tags">
                 <li>
                     <Link
@@ -37,7 +41,7 @@ export default async function BlogPage({
                             selectedTag === "all" ? "active" : ""
                         }`}
                     >
-                        all
+                        {t("all")}
                     </Link>
                 </li>
                 {tags.map((tag) => (
@@ -57,15 +61,21 @@ export default async function BlogPage({
             {filteredPosts.length > 0 ? (
                 <div className="posts-list">
                     {filteredPosts.map((post) => (
-                        <Post post={post} key={post.slug} />
+                        <Post
+                            post={post}
+                            key={post.slug}
+                        />
                     ))}
                 </div>
             ) : (
                 <div className="empty-list text text-center flex justify-center">
                     <div>
-                        <p>Post list is empty.</p>
-                        <Link href="/blog" className="btn btn-default">
-                            See all posts
+                        <p>{t("listEmptyText")}.</p>
+                        <Link
+                            href="/blog"
+                            className="btn btn-default"
+                        >
+                            {t("seeAllPosts")}
                         </Link>
                     </div>
                 </div>

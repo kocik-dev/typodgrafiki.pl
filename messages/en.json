@@ -1,8 +1,17 @@
 {
+    "metatags": {
+        "title": "Grzegorz Kocik - Front-end Developer",
+        "description": "Frontend developer z doświadczeniem w projektowaniu i wdrażaniu interfejsów e-commerce. Łączę wiedzę z zakresu UI/UX z umiejętnościami programistycznymi, wykorzystując technologie takie jak React i Next.js. Skupiam się na tworzeniu responsywnych i dostępnych stron internetowych.",
+        "jobTitle": "Front-end Developer",
+        "schemaDescription": "Doświadczony front-end developer z doświadczeniem w e-commerce."
+    },
     "menu": {
         "about": "About",
         "portfolio": "Work",
-        "contact": "Contact"
+        "contact": "Contact",
+        "menuOpen": "Open menu",
+        "menuClose": "Close menu",
+        "toTop": "Back to top"
     },
     "main": {
         "h2": "I create innovative and efficient user interfaces for the e-commerce industry. Explore my projects and learn how I can help your business.",
@@ -18,7 +27,8 @@
         "text3": "I continuously expand my frontend development skills through hands-on experience with modern frameworks and tools, believing that attention to detail and staying current with web technologies creates outstanding digital experiences.",
         "scrollToTop": "Scroll to top of page",
         "technologies": "Technologies I use",
-        "tools": "Tools I work with"
+        "tools": "Tools I work with",
+        "scroll": "Scroll"
     },
     "projects": {
         "title": "Projects",
@@ -28,10 +38,44 @@
         "requestDetails": "Request details about {name} project",
         "projectScope": "Project scope: {scope}",
         "projectImageAlt": "Preview of {name} project",
-        "loading": "Loading project image"
+        "loading": "Loading project image",
+        "discipline": "Discipline",
+        "tools": "Tools",
+        "industry": "Industry"
     },
     "web3": {
         "btnConnectWeb3": "Connect wallet",
-        "btnWeb3Connected": "Wallet Connected"
+        "btnWeb3Connected": "Wallet Connected",
+        "modalRequestTitle": "Requesting Connection",
+        "modalRequestText": "Open the MetaMask browser extension to connect your wallet",
+        "modalRequestRecent": "Recent",
+        "btnTryAgain": "Try again",
+        "install": "Install",
+        "installText1": "To connect your",
+        "installText2": "wallet, install the browser extension.",
+        "installBtn": "Install the Extension",
+        "disconnect": "Disconnect"
+    },
+    "blog": {
+        "title": "Blog",
+        "all": "all",
+        "listEmptyText": "Post list is empty",
+        "seeAllPosts": "See all posts",
+        "postBtn": "See more"
+    },
+    "notFound": {
+        "title": "Oops!",
+        "subtitle": "Page Not Found",
+        "text": "Sorry, the page you're looking for cannot be found. Error 404.",
+        "button": "Back to the home page"
+    },
+    "footer": {
+        "title": "Contact with me",
+        "contactSectionLabel": "Contact options",
+        "emailSubject": "Collaboration with kocik.dev",
+        "emailText": "Hi. Let's talk about...",
+        "emailBtnLabel": "Send me an email to discuss collaboration",
+        "emailBtnText": "Send me an email",
+        "copyright": "All rights reserved"
     }
 }

@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion, useScroll, useTransform } from "motion/react"
 import logo from "@/assets/logo-small.svg"
 import MenuMobile from "./Header/MenuMobile"
+import { useTranslations } from "next-intl"
 
 export default function BottomMenu({
     children,
@@ -15,6 +16,8 @@ export default function BottomMenu({
     const bottom = useTransform(scrollY, [100, 200], [-50, 40], {
         clamp: true,
     })
+
+    const t = useTranslations("menu")
 
     return (
         <>
@@ -30,7 +33,7 @@ export default function BottomMenu({
                     <a
                         href="/#top"
                         className="logo-small hidden-xs"
-                        aria-label="Back to top"
+                        aria-label={t("toTop")}
                         role="button"
                     >
                         <Image
@@ -40,7 +43,7 @@ export default function BottomMenu({
                             height={25}
                             aria-hidden="true"
                         />
-                        <span className="visually-hidden">Back to top</span>
+                        <span className="visually-hidden">{t("toTop")}</span>
                     </a>
                     {children}
                 </motion.div>

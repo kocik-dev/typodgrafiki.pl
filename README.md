@@ -1,10 +1,10 @@
-# Grzegorz Kocik &#8226; Portfolio
+# Grzegorz Kocik &#8226;
 
 ## _Front-end developer_
 
 ### Introduction
 
-This is my personal portfolio website showcasing my work and skills as a Front-end Developer. Built with modern web technologies, the site demonstrates my expertise in React, Next.js, and Web3 integration. The project emphasizes clean code, performance optimization, and accessibility while maintaining a minimalist approach to external dependencies.
+This is my personal website showcasing my work and skills as a Front-end Developer. Built with modern web technologies, the site demonstrates my expertise in React, Next.js, and Web3 integration. The project emphasizes clean code, performance optimization, and accessibility while maintaining a minimalist approach to external dependencies.
 
 ### Core Technologies
 

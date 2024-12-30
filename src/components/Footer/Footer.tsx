@@ -3,6 +3,7 @@ import "./Footer.css"
 import Logo from "../Header/Logo"
 import Link from "next/link"
 import BtnSendEmail from "./BtnSendEmail"
+import { getTranslations } from "next-intl/server"
 
 const IconTwitter = () => {
     return (
@@ -92,8 +93,9 @@ const socialLinksData: ISocialData[] = [
     },
 ]
 
-const Footer = () => {
+const Footer = async () => {
     const currentYear = new Date().getFullYear()
+    const t = await getTranslations("footer")
 
     return (
         <footer
@@ -109,11 +111,11 @@ const Footer = () => {
                         role="region"
                         aria-labelledby="contact-title"
                     >
-                        <h2 id="contact-title">Contact with me</h2>
+                        <h2 id="contact-title">{t("title")}</h2>
                         <div
                             className="buttons flex flex-wrap"
                             role="group"
-                            aria-label="Contact options"
+                            aria-label={t("contactSectionLabel")}
                         >
                             <BtnSendEmail />
                             {socialLinksData.map((item) => (
@@ -157,8 +159,7 @@ const Footer = () => {
             </div>
             <p className="copyright">
                 <small>
-                    Copyright © {currentYear} Grzegorz Kocik. All rights
-                    reserved.
+                    Copyright © {currentYear} Grzegorz Kocik. {t("copyright")}.
                 </small>
             </p>
         </footer>

@@ -1,10 +1,10 @@
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 import "./Main.css"
 import { fascinate } from "../../components/Fonts"
 import { Header } from "../Header/Header"
 
-const Main = () => {
-    const t = useTranslations("main")
+const Main = async () => {
+    const t = await getTranslations("main")
 
     return (
         <>

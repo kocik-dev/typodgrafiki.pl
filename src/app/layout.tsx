@@ -108,7 +108,7 @@ export const metadata: Metadata = {
                 url: `${SITE_URL}/og-small.png`,
                 width: 600,
                 height: 315,
-                alt: "Grzegorz Kocik - Front-end Developer Portfolio",
+                alt: "Grzegorz Kocik - Front-end Developer",
             },
         ],
         type: "website",
@@ -151,7 +151,10 @@ export default async function RootLayout({
     const locale = await getLocale()
     const messages = await getMessages()
     return (
-        <html lang={locale} className={poppins.className}>
+        <html
+            lang={locale}
+            className={poppins.className}
+        >
             <head>
                 <script
                     type="application/ld+json"
@@ -163,8 +166,8 @@ export default async function RootLayout({
                     <WalletProvider>
                         <NextIntlClientProvider messages={messages}>
                             {children}
+                            <WalletModal />
                         </NextIntlClientProvider>
-                        <WalletModal />
                     </WalletProvider>
                 </Web3ModalProvider>
                 <Cursor />

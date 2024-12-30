@@ -2,18 +2,20 @@
 
 import React from "react"
 import useEmailSender from "@/hooks/useSendEmail"
+import { useTranslations } from "next-intl"
 
 export default function BtnSendEmail() {
+    const t = useTranslations("footer")
     const sendEmail = useEmailSender()
 
-    const emailSubject = "Collaboration with kocik.dev"
-    const emailText = "Hi. Let's talk about..."
+    const emailSubject = t("emailSubject")
+    const emailText = t("emailText")
 
     return (
         <button
             className="btn btn-default"
             onClick={() => sendEmail(emailSubject, emailText)}
-            aria-label="Send me an email to discuss collaboration"
+            aria-label={t("emailBtnLabel")}
         >
             <span
                 className="icon"
@@ -21,7 +23,7 @@ export default function BtnSendEmail() {
             >
                 <IconEmail />
             </span>
-            <span className="button-text">Send me an email</span>
+            <span className="button-text">{t("emailBtnText")}</span>
         </button>
     )
 }

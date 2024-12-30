@@ -1,15 +1,21 @@
 import { ProjectItem } from "@/types/website"
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 import PortfolioItemImages from "./PortfolioItemImages"
 
-const PortfolioItem = ({ item }: { item: ProjectItem }) => {
-    const t = useTranslations("projects")
+const PortfolioItem = async ({ item }: { item: ProjectItem }) => {
+    const t = await getTranslations("projects")
     const labelledby = labelledbyFn(item.name)
 
     return (
-        <article className="project-item" aria-labelledby={labelledby}>
+        <article
+            className="project-item"
+            aria-labelledby={labelledby}
+        >
             <PortfolioItemImages item={item}>
-                <h3 id={labelledby} className="name">
+                <h3
+                    id={labelledby}
+                    className="name"
+                >
                     {item.name}
                 </h3>
                 <p

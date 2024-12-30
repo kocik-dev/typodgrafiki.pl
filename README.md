@@ -45,7 +45,7 @@ The project utilizes Next.js Bundle Analyzer to monitor and optimize bundle size
 
 ### Connect with Me
 
-[Github](https://github.com/kocik-dev/)
-[Instagram](https://www.instagram.com/kocik.dev)
-[X](https://x.com/kocik_dev)
-[LinkedIn](https://www.linkedin.com/in/kocik-dev/)
+-   [Github](https://github.com/kocik-dev/)
+-   [Instagram](https://www.instagram.com/kocik.dev)
+-   [X](https://x.com/kocik_dev)
+-   [LinkedIn](https://www.linkedin.com/in/kocik-dev/)

@@ -35,26 +35,33 @@ export const ConnectView = () => {
     }
 
     return (
-        <button
-            className="flex vertical-center justify-between btn btn-transparent btn-wallet-connect btn-bubble-bottom"
-            onClick={handleMetamaskConnect}
-            disabled={isConnecting}
-        >
-            <span style={{ width: "inherit" }}>
-                <span>
-                    MetaMask
-                    {walletType ? (
-                        <small>({t("modalRequestRecent")})</small>
-                    ) : null}
+        <div className="text-center">
+            <p>Choose a wallet to connect with this website</p>
+            <button
+                className="flex vertical-center justify-between btn btn-transparent btn-wallet-connect btn-bubble-bottom"
+                onClick={handleMetamaskConnect}
+                disabled={isConnecting}
+            >
+                <span style={{ width: "inherit" }}>
+                    <span>
+                        MetaMask
+                        {walletType ? (
+                            <small>({t("modalRequestRecent")})</small>
+                        ) : null}
+                    </span>
+                    <Image
+                        src={iconMetamask}
+                        alt="Metamask"
+                        width={32}
+                        height={32}
+                    />
                 </span>
-                <Image
-                    src={iconMetamask}
-                    alt="Metamask"
-                    width={32}
-                    height={32}
-                />
-            </span>
-        </button>
+            </button>
+            {/*
+            <p>Connect with MetaMask to access Web3 features</p>
+            [i] Your connection is secure and can be disconnected at any time 
+            */}
+        </div>
     )
 }
 

@@ -1,3 +1,48 @@
+/**
+ * BtnSendEmail - Komponent przycisku do wysyłania maila
+ *
+ * Przycisk z ikoną koperty, który po kliknięciu otwiera domyślnego klienta
+ * pocztowego z predefiniowanym tematem i treścią wiadomości.
+ * Wykorzystuje hook useEmailSender oraz internacjonalizację.
+ *
+ * @features
+ * - Otwieranie klienta pocztowego z prefill'em
+ * - Ikona koperty SVG
+ * - Tłumaczenia tekstów
+ * - Pełna dostępność
+ *
+ * @hooks
+ * - useEmailSender - Custom hook do obsługi wysyłania maila
+ * - useTranslations - Hook do tłumaczeń
+ *
+ * @translations
+ * Wykorzystuje namespace "footer" z kluczami:
+ * - emailSubject: Temat maila
+ * - emailText: Treść maila
+ * - emailBtnLabel: Aria label przycisku
+ * - emailBtnText: Tekst przycisku
+ *
+ * @accessibility
+ * - Przycisk z aria-label
+ * - Ikona oznaczona jako dekoracyjna (aria-hidden)
+ * - Właściwa struktura tekstu i ikony
+ *
+ * @components
+ * - IconEmail: Wewnętrzny komponent SVG ikony koperty
+ */
+
+/**
+ * IconEmail - Komponent ikony koperty
+ *
+ * SVG ikona koperty z właściwymi atrybutami dostępności.
+ * Używa currentColor do dziedziczenia koloru.
+ *
+ * @accessibility
+ * - role="img"
+ * - aria-hidden="true"
+ * - Skalowalne SVG z viewBox
+ */
+
 "use client"
 
 import React from "react"

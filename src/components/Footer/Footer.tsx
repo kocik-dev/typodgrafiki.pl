@@ -1,3 +1,66 @@
+/**
+ * Footer - Komponent stopki z kontaktem i linkami społecznościowymi
+ *
+ * Renderuje stopkę strony zawierającą sekcję kontaktową, linki do mediów
+ * społecznościowych oraz informacje o prawach autorskich. W pełni dostępny
+ * i przetłumaczalny.
+ *
+ * @components
+ * - IconTwitter - SVG ikona X (Twitter)
+ * - IconInstagram - SVG ikona Instagram
+ * - IconLinkedin - SVG ikona LinkedIn
+ * - BtnSendEmail - Przycisk do wysyłania maila
+ * - Logo - Logo w ciemnej wersji
+ *
+ * @structure
+ * - Sekcja kontaktowa
+ *   - Tytuł
+ *   - Przyciski social media
+ * - Informacje dodatkowe
+ *   - Logo (ukryte na mobile)
+ *   - Informacja o technologii
+ * - Copyright
+ *
+ * @interfaces
+ * ISocialData {
+ *   link: string - URL do profilu
+ *   name: string - Nazwa platformy
+ *   primary?: boolean - Czy to główny link
+ *   icon: ReactElement - Komponent ikony
+ *   ariaLabel?: string - Etykieta dla czytników
+ * }
+ *
+ * @accessibility
+ * - Pełne wsparcie ARIA (role, labels, live regions)
+ * - Dostępna nawigacja
+ * - Ukryte elementy dekoracyjne
+ * - Poprawna struktura nagłówków
+ *
+ * @i18n
+ * - Wykorzystuje przestrzeń nazw "footer" dla tłumaczeń
+ * - Dynamiczny rok w copyrightach
+ *
+ * @styling
+ * - Własne style z Footer.css
+ * - Responsywny układ
+ * - Wsparcie dla dark/light mode
+ *
+ * @dependencies
+ * - next/link - dla linków
+ * - next-intl - dla tłumaczeń
+ */
+
+/**
+ * Komponenty ikon social media (IconTwitter, IconInstagram, IconLinkedin)
+ *
+ * SVG ikony z odpowiednimi atrybutami dostępności.
+ * Wykorzystują currentColor dla dynamicznego koloru.
+ *
+ * @accessibility
+ * - viewBox dla skalowania
+ * - aria-hidden w kontekście użycia
+ */
+
 import React, { ReactElement } from "react"
 import "./Footer.css"
 import Logo from "../Header/Logo"

@@ -1,3 +1,38 @@
+/**
+ * BlogPage - Strona bloga z filtrowaniem po tagach
+ *
+ * Komponent renderuje listę postów blogowych z możliwością filtrowania po tagach.
+ * Obsługuje server-side rendering i dynamiczne filtrowanie postów.
+ * Wykorzystuje internacjonalizację do tłumaczeń interfejsu.
+ *
+ * @metadata
+ * - Ustawia własne meta tagi dla SEO
+ * - Używa niestandardowego fontu (fascinate)
+ *
+ * @features
+ * - Filtrowanie postów po tagach poprzez parametry URL
+ * - Responsywna lista postów
+ * - Stan pustej listy z komunikatem
+ * - Server-side rendering dla lepszej wydajności
+ *
+ * @params
+ * - searchParams: {tag?: string} - Parametry URL do filtrowania (np. ?tag=javascript)
+ *
+ * @dependencies
+ * - getBlogPosts - Funkcja pobierająca posty
+ * - listTags - Lista dostępnych tagów
+ * - next-intl - Internacjonalizacja
+ * - Post - Komponent pojedynczego posta
+ *
+ * @i18n
+ * - Wykorzystuje namespace "blog"
+ * - Tłumaczone: tytuł, "wszystkie", komunikat pustej listy, przycisk
+ *
+ * @example
+ * // Automatycznie renderowany przez Next.js dla ścieżki /blog
+ * <BlogPage searchParams={{ tag: "javascript" }} />
+ */
+
 import { getBlogPosts, listTags } from "@/lib/blog"
 import { fascinate } from "@/components/Fonts"
 import Link from "next/link"

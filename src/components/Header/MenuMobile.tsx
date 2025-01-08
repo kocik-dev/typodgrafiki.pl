@@ -1,3 +1,51 @@
+/**
+ * MenuMobile - Przycisk hamburger menu dla widoku mobilnego
+ *
+ * Komponent zarządza stanem menu mobilnego, obsługuje interakcje użytkownika
+ * i zapewnia pełną dostępność. Zawiera zaawansowaną obsługę zdarzeń dla
+ * różnych scenariuszy interakcji.
+ *
+ * @features
+ * - Przycisk hamburger z animacją
+ * - Automatyczne zamykanie po kliknięciu w link
+ * - Obsługa klawisza Escape
+ * - Zamykanie przy kliknięciu poza menu
+ * - Wsparcie dla standardowych linków i komponentów Next.js Link
+ * - Pełna obsługa dostępności
+ *
+ * @state
+ * - isOpen: boolean - Stan otwarcia/zamknięcia menu
+ *
+ * @eventHandlers
+ * - handleToggleMenu - Przełączanie stanu menu
+ * - handleLinkClick - Zamykanie menu po kliknięciu w link
+ * - handleEscape - Obsługa klawisza Escape
+ * - handleClickOutside - Obsługa kliknięcia poza menu
+ *
+ * @accessibility
+ * - aria-expanded dla stanu menu
+ * - aria-controls wskazujący na kontrolowany element
+ * - aria-label zmieniający się ze stanem
+ * - Obsługa klawiatury (Escape)
+ * - visually-hidden dla czytników ekranu
+ *
+ * @i18n
+ * Wykorzystuje przestrzeń nazw "menu" dla tłumaczeń:
+ * - menuOpen: Tekst dla zamkniętego menu
+ * - menuClose: Tekst dla otwartego menu
+ *
+ * @responsive
+ * - visible-xs - Widoczne tylko na mobile
+ * - Breakpoint 768px dla logiki mobilnej
+ *
+ * @cleanup
+ * - Usuwa nasłuchiwanie zdarzeń przy odmontowaniu
+ * - Czyści event listenery dla linków
+ *
+ * @example
+ * <MenuMobile />
+ */
+
 "use client"
 
 import { useTranslations } from "next-intl"

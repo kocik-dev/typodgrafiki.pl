@@ -1,3 +1,59 @@
+/**
+ * Projects - Sekcja portfolio z listą projektów i animacjami
+ *
+ * Komponent renderuje sekcję portfolio zawierającą informacje o umiejętnościach,
+ * narzędziach, branżach oraz listę projektów. Zawiera animowane wejścia elementów
+ * i pełne wsparcie dla dostępności.
+ *
+ * @structure
+ * - Nagłówek sekcji (h2)
+ * - Kolumny informacyjne:
+ *   - Dyscypliny (UI design, Code development)
+ *   - Narzędzia (React, Next.js, React Native, Postgresql)
+ *   - Branże (tagi: tech, ecommerce, sass, web3)
+ * - Lista projektów z danymi i obrazami
+ *
+ * @data
+ * projectItems: ProjectItem[] - Tablica obiektów z danymi projektów:
+ * - name: string - Nazwa projektu
+ * - scope: string - Zakres prac
+ * - image: StaticImageData - Obraz projektu
+ * - width: number - Szerokość obrazu
+ * - height: number - Wysokość obrazu
+ *
+ * @animations
+ * - SlideLeft - Animacja wejścia od lewej (nagłówek)
+ * - SlideTop - Animacja wejścia z góry (kolumny)
+ * - Sekwencyjne opóźnienia dla kolumn (0ms, 500ms, 1000ms)
+ *
+ * @accessibility
+ * - Właściwa struktura nagłówków (h2, h3)
+ * - ARIA landmarks i labels
+ * - Role dla list i elementów
+ * - Semantyczna struktura HTML
+ *
+ * @i18n
+ * Wykorzystuje przestrzeń nazw "projects" dla tłumaczeń:
+ * - title: Tytuł sekcji
+ * - discipline: Nagłówek dyscyplin
+ * - tools: Nagłówek narzędzi
+ * - industry: Nagłówek branż
+ * - projectsList: Label dla listy projektów
+ *
+ * @styling
+ * - Portfolio.css dla stylów
+ * - Fascinate font dla nagłówka
+ * - Responsywny układ z flexbox
+ * - RWD klasy (hidden-xs, flex-md)
+ *
+ * @components
+ * - PortfolioItem - Komponent pojedynczego projektu
+ * - SlideLeft, SlideTop - Komponenty animacji
+ *
+ * @example
+ * <Projects />
+ */
+
 import { getTranslations } from "next-intl/server"
 import { fascinate } from "@/components/Fonts"
 import PortfolioItem from "./PortfolioItem"

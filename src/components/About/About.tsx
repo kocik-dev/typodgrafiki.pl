@@ -1,3 +1,58 @@
+/**
+ * About - Sekcja "O mnie" z animowanymi elementami i ikonami technologii
+ *
+ * Komponent renderuje sekcję "O mnie" zawierającą informacje o programiście,
+ * używanych technologiach i narzędziach. Zawiera animowane elementy i jest
+ * w pełni dostępny (ARIA).
+ *
+ * @features
+ * - Animowane wejścia elementów (SlideLeft, SlideTop)
+ * - Przycisk przewijania do góry (Scroll)
+ * - Responsywny układ
+ * - Internacjonalizacja (next-intl)
+ * - Ikony technologii i narzędzi z tooltipami
+ *
+ * @structure
+ * - Nagłówek z animacją (tytuł i podtytuł)
+ * - Sekcja tekstowa (3 paragrafy)
+ * - Sekcja technologii (lista ikon)
+ * - Sekcja narzędzi (lista ikon)
+ *
+ * @accessibility
+ * - Poprawna struktura nagłówków (h2-h4)
+ * - ARIA landmarks i labels
+ * - Role dla list i elementów listy
+ * - Dostępne tooltips
+ * - Alt teksty dla ikon
+ *
+ * @components
+ * - Icon - Wewnętrzny komponent dla ikon z tooltipami
+ *
+ * @dependencies
+ * - next-intl - internacjonalizacja
+ * - animations/* - komponenty animacji
+ * - assets/stack - ikony technologii i narzędzi
+ *
+ * @styles
+ * - About.css - dedykowane style
+ * - fascinate - font
+ *
+ * @example
+ * <About />
+ */
+
+/**
+ * Icon - Komponent ikony z tooltipem
+ *
+ * @param {TypeIcon} icon - Obiekt ikony (src i alt)
+ * @param {number} index - Indeks dla unikalnych kluczy
+ *
+ * @accessibility
+ * - role="listitem" dla struktury listy
+ * - role="tooltip" dla podpowiedzi
+ * - Unikalne ID dla tooltipów
+ */
+
 import React from "react"
 import { getTranslations } from "next-intl/server"
 import { fascinate } from "@/components/Fonts"
@@ -10,7 +65,6 @@ import Image from "next/image"
 import { TypeIcon } from "@/types/website"
 
 const About = async () => {
-    // const t = useTranslations("about")
     const t = await getTranslations("about")
 
     return (

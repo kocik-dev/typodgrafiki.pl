@@ -1,3 +1,57 @@
+/**
+ * Cursor - Niestandardowy animator kursora
+ *
+ * Komponent renderuje animowany kursor w postaci okręgu na warstwie canvas,
+ * który płynnie podąża za kursorem myszy i reaguje na interaktywne elementy.
+ * Widoczny tylko na desktopie.
+ *
+ * @features
+ * - Płynna animacja ruchu (lerp)
+ * - Responsywne skalowanie canvas
+ * - Interaktywna zmiana rozmiaru nad klikalnymi elementami
+ * - Optymalizacja wydajności przez requestAnimationFrame
+ * - High DPI support
+ *
+ * @state
+ * Wykorzystuje refs do przechowywania:
+ * - mousePos: Aktualna pozycja kursora
+ * - lastPos: Ostatnia pozycja do interpolacji
+ * - radiusRef: Aktualny promień kursora
+ * - targetRadius: Docelowy promień do interpolacji
+ *
+ * @constants
+ * - promien: number (20) - Domyślny promień kursora
+ * - promienHover: number (0) - Promień przy hover na interaktywnych elementach
+ *
+ * @effects
+ * 1. Śledzenie ruchu myszy
+ * 2. Inicjalizacja i rendering canvas
+ * 3. Obsługa interakcji z elementami (a, button)
+ *
+ * @animations
+ * - Interpolacja liniowa (lerp) dla płynnego ruchu (0.11)
+ * - Interpolacja rozmiaru kursora (0.2)
+ * - requestAnimationFrame dla płynnej animacji
+ *
+ * @responsive
+ * - Ukryty na urządzeniach mobilnych (hidden-xs)
+ * - Skalowanie canvas pod devicePixelRatio
+ *
+ * @performance
+ * - Optymalizacja przez RAF
+ * - Cleanup event listenerów
+ * - Efektywne skalowanie canvas
+ *
+ * @example
+ * ```jsx
+ * // Dodaj na poziomie layoutu
+ * <Cursor />
+ * ```
+ *
+ * @dependencies
+ * Nie wymaga zewnętrznych zależności poza React
+ */
+
 "use client"
 
 import React, { useEffect, useRef, useState } from "react"

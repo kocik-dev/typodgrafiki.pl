@@ -1,3 +1,49 @@
+/**
+ * SuccessView - Widok po pomyślnym połączeniu z portfelem Web3
+ *
+ * Komponent wyświetla informacje o połączonym portfelu, umożliwia kopiowanie
+ * adresu i rozłączenie. Obsługuje animacje i informacje zwrotne dla użytkownika.
+ *
+ * @features
+ * - Wyświetlanie sformatowanego adresu portfela
+ * - Kopiowanie adresu do schowka z animacją potwierdzenia
+ * - Przycisk rozłączenia portfela
+ * - Wsparcie dla internacjonalizacji
+ * - Obsługa stanu kopiowania
+ *
+ * @state
+ * - isCopied: boolean - Stan potwierdzenia kopiowania
+ *
+ * @hooks
+ * - useWallet - Dostęp do funkcji portfela (disconnect, address)
+ * - useTranslations - Internacjonalizacja
+ * - useState - Zarządzanie stanem kopiowania
+ *
+ * @functions
+ * handleCopy()
+ * - Kopiuje adres do schowka
+ * - Pokazuje potwierdzenie na 2 sekundy
+ * - Obsługuje błędy kopiowania
+ *
+ * @i18n
+ * Używa namespace "web3":
+ * - disconnect: Tekst przycisku rozłączenia
+ *
+ * @ui
+ * - Empty state dla portfela
+ * - Ikony z react-icons/io5
+ * - Animowane przejścia stanów
+ * - Responsywny layout z flexbox
+ *
+ * @notes
+ * Zawiera zakomentowany kod do obsługi salda ETH,
+ * który można odkomentować po dodaniu odpowiedniej konfiguracji.
+ *
+ * @example
+ * // Używane w WalletModal dla stanu success
+ * <SuccessView />
+ */
+
 "use client"
 
 import { useWallet } from "@/contexts/WalletContext"

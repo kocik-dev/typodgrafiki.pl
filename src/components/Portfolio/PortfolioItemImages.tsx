@@ -1,3 +1,84 @@
+/**
+ * PortfolioItemImages - Komponent zarządzający obrazami projektu
+ *
+ * Obsługuje interaktywne wyświetlanie obrazów projektu z animacjami,
+ * stanem ładowania i przyciskami akcji. Zawiera komponenty Plus i Lock
+ * dla ikon oraz pełne wsparcie dostępności.
+ *
+ * @props
+ * - children: React.ReactNode - Zawartość (nazwa i opis projektu)
+ * - item: ProjectItem - Dane projektu:
+ *   - image: StaticImageData - Obraz projektu
+ *   - name: string - Nazwa projektu
+ *   - width: number - Szerokość obrazu
+ *   - height: number - Wysokość obrazu
+ *
+ * @state
+ * - isHover: boolean - Stan najechania/fokusa na przycisk plus
+ * - isLoading: boolean - Stan ładowania obrazu
+ *
+ * @hooks
+ * - useEmailSender - Hook do wysyłania maili
+ * - useTranslations - Hook do tłumaczeń
+ *
+ * @components
+ * - Plus - Przycisk pokazujący obraz
+ * - Lock - Ikona blokady
+ * - SlideTop - Komponent animacji
+ *
+ * @accessibility
+ * - Przyciski z odpowiednimi aria-labels
+ * - Ukryte teksty dla czytników (visually-hidden)
+ * - Stan ładowania z role="status"
+ * - Obsługa klawiatury (focus/blur)
+ *
+ * @i18n
+ * Używa przestrzeni nazw "projects" dla tłumaczeń:
+ * - requestDetails: Label przycisku szczegółów
+ * - button: Tekst przycisku
+ * - projectImageAlt: Alt tekst obrazu
+ * - loading: Text stanu ładowania
+ * - showProjectImage: Label przycisku plus
+ *
+ * @interactions
+ * - Pokazywanie obrazu po najechaniu/fokusie
+ * - Wysyłanie maila z zapytaniem o projekt
+ * - Obsługa stanu ładowania obrazu
+ *
+ * @example
+ * ```jsx
+ * <PortfolioItemImages
+ *   item={{
+ *     name: "Project Name",
+ *     image: projectImage,
+ *     width: 480,
+ *     height: 320
+ *   }}
+ * >
+ *   <h3>Project Name</h3>
+ *   <p>Project Description</p>
+ * </PortfolioItemImages>
+ * ```
+ */
+
+/**
+ * Lock - Komponent ikony blokady
+ * SVG ikona używana w przycisku szczegółów projektu
+ */
+
+/**
+ * Plus - Komponent przycisku pokazującego obraz
+ *
+ * @props
+ * - setIsHover: React.Dispatch<React.SetStateAction<boolean>>
+ * - name: string - Nazwa projektu dla dostępności
+ *
+ * @accessibility
+ * - aria-label z tłumaczonym tekstem
+ * - Ukryty tekst dla czytników
+ * - Obsługa hover i focus
+ */
+
 "use client"
 
 import Image from "next/image"
@@ -32,7 +113,10 @@ export default function PortfolioItemImages({
     return (
         <SlideTop>
             <div className="flex-sm">
-                <Plus setIsHover={setIsHover} name={name} />
+                <Plus
+                    setIsHover={setIsHover}
+                    name={name}
+                />
                 {children}
                 <div className="flex justify-start gap-1">
                     <button

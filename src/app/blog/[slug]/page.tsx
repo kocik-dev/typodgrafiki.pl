@@ -1,3 +1,43 @@
+/**
+ * BlogPost - Komponent strony pojedynczego wpisu blogowego
+ *
+ * Odpowiada za renderowanie pojedynczego postu blogowego z obsługą MDX.
+ * Implementuje statyczne generowanie ścieżek (SSG) oraz dynamiczne metadane.
+ * Obsługuje sytuacje błędów i brakujących postów.
+ *
+ * @features
+ * - Renderowanie contentu MDX z niestandardowymi komponentami
+ * - Statyczne generowanie ścieżek dla lepszej wydajności
+ * - Dynamiczne metadane SEO
+ * - Formatowanie daty według locale pl-PL
+ * - Wyświetlanie tagów
+ * - Obsługa błędów 404
+ *
+ * @dependencies
+ * - next-mdx-remote - renderowanie MDX
+ * - lib/blog - funkcje dostępu do danych (getPostBySlug, postExists, getBlogPosts)
+ * - CodeSnippet - komponent do wyświetlania kodu
+ * - fascinate - font
+ *
+ * @staticGeneration
+ * - generateStaticParams - generuje statyczne ścieżki dla wszystkich postów
+ * - generateMetadata - generuje dynamiczne metadane dla każdego posta
+ *
+ * @structure
+ * - article.blog-post
+ *   - header (meta informacje posta)
+ *     - tagi
+ *     - tytuł
+ *     - data
+ *   - content (treść MDX)
+ *
+ * @param {Promise<{slug: string}>} params - Parametry ścieżki z Next.js
+ *
+ * @example
+ * // Automatycznie renderowany przez Next.js dla ścieżki /blog/[slug]
+ * <BlogPost params={{ slug: "nazwa-posta" }} />
+ */
+
 import { getPostBySlug, postExists, getBlogPosts } from "@/lib/blog"
 import { MDXRemote } from "next-mdx-remote/rsc"
 import { notFound } from "next/navigation"
@@ -69,7 +109,10 @@ export default async function BlogPost({
                 {post.tags && (
                     <div className="tags">
                         {post.tags.map((tag) => (
-                            <span key={tag} className="title-smaller">
+                            <span
+                                key={tag}
+                                className="title-smaller"
+                            >
                                 {tag}
                             </span>
                         ))}
@@ -78,7 +121,10 @@ export default async function BlogPost({
                 <h1 className={`title-small ${fascinate.className}`}>
                     {post.title}
                 </h1>
-                <time dateTime={post.date} className="data">
+                <time
+                    dateTime={post.date}
+                    className="data"
+                >
                     {new Date(post.date).toLocaleDateString("pl-PL", {
                         year: "numeric",
                         month: "long",
@@ -88,7 +134,10 @@ export default async function BlogPost({
             </header>
 
             <div className="content text">
-                <MDXRemote source={post.content} components={components} />
+                <MDXRemote
+                    source={post.content}
+                    components={components}
+                />
             </div>
         </article>
     )

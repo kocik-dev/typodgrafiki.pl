@@ -1,3 +1,61 @@
+/**
+ * WalletModal - Modalne okno zarządzania portfelem Web3
+ *
+ * Komponent wyświetla modalne okno z różnymi widokami związanymi z łączeniem
+ * i zarządzaniem portfelem kryptowalutowym. Obsługuje nawigację między widokami,
+ * zamykanie modalu i overlay tła.
+ *
+ * @features
+ * - Wielowidokowy interfejs
+ * - Nawigacja z historią (możliwość powrotu)
+ * - Zamykanie przez przycisk lub kliknięcie tła
+ * - Responsywny design
+ *
+ * @views
+ * Obsługiwane widoki:
+ * - connect: Widok łączenia z portfelem
+ * - install: Instrukcje instalacji portfela
+ * - success: Potwierdzenie połączenia
+ * - error: Obsługa błędów
+ *
+ * @navigation
+ * - Przycisk powrotu (pokazywany gdy canGoBack=true)
+ * - Przycisk zamknięcia
+ * - Kliknięcie w tło zamyka modal
+ *
+ * @hooks
+ * useWeb3Modal zwraca:
+ * - isOpen: Stan otwarcia modalu
+ * - view: Aktualny widok
+ * - close: Funkcja zamykania
+ * - title: Tytuł aktualnego widoku
+ * - navigateTo: Funkcja nawigacji
+ * - canGoBack: Możliwość powrotu
+ *
+ * @styling
+ * - modal.css dla stylowania
+ * - Flexbox dla layoutu
+ * - Overlay dla tła
+ * - Ikony z react-icons/lia
+ *
+ * @components
+ * - ConnectView: Widok łączenia
+ * - InstallView: Widok instalacji
+ * - SuccessView: Widok sukcesu
+ * - ErrorView: Widok błędu
+ *
+ * @accessibility
+ * - Użycie natywnego elementu <dialog>
+ * - Właściwa struktura nagłówków
+ * - Interaktywne elementy jako przyciski
+ * - Zamykanie przez overlay
+ *
+ * @example
+ * ```jsx
+ * <WalletModal />
+ * ```
+ */
+
 "use client"
 
 import React from "react"
@@ -27,7 +85,10 @@ export const WalletModal = () => {
 
     return (
         <>
-            <dialog className="modal" open={isOpen}>
+            <dialog
+                className="modal"
+                open={isOpen}
+            >
                 <header className="flex modal-header justify-between align-center vertical-center">
                     <button
                         onClick={() => navigateTo("connect")}
@@ -44,7 +105,10 @@ export const WalletModal = () => {
                 <div className="modal-content">{renderContent()}</div>
             </dialog>
             {isOpen ? (
-                <div className="modal-shadow" onClick={close}></div>
+                <div
+                    className="modal-shadow"
+                    onClick={close}
+                ></div>
             ) : null}
         </>
     )

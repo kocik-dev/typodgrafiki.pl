@@ -1,3 +1,48 @@
+/**
+ * Custom404 - Strona błędu 404 (Not Found)
+ *
+ * Komponent strony błędu 404 z pełnym wsparciem dla dostępności (ARIA)
+ * i internacjonalizacji (next-intl). Wyświetla komunikat o błędzie
+ * i przycisk powrotu do strony głównej.
+ *
+ * @metadata
+ * - Ustawia własne meta tagi dla SEO
+ * - Używa niestandardowego fontu (fascinate)
+ *
+ * @accessibility
+ * - Poprawna struktura nagłówków
+ * - ARIA labels i roles
+ * - Status message dla czytników ekranu
+ * - Dostępna nawigacja przyciskiem
+ *
+ * @i18n
+ * - Wszystkie teksty są tłumaczone (namespace: "notFound")
+ * - Obsługa wielu języków
+ *
+ * @components
+ * - Arrow - Wewnętrzny komponent SVG dla ikony strzałki
+ *
+ * @styling
+ * - Wykorzystuje dedykowane style: error404.css
+ * - Kompatybilny z dark/light mode
+ *
+ * @example
+ * // Używany automatycznie przez Next.js dla ścieżek 404
+ * <Custom404 />
+ */
+
+/**
+ * Arrow - Komponent ikony strzałki
+ *
+ * Dostępny komponent SVG używany w przycisku powrotu.
+ * Zawiera odpowiednie atrybuty ARIA i jest ukryty przed czytnikami ekranu.
+ *
+ * @accessibility
+ * - aria-hidden="true"
+ * - focusable="false"
+ * - role="img"
+ */
+
 import Link from "next/link"
 import "@/styles/App.css"
 import "@/styles/error404.css"

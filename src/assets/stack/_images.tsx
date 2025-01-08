@@ -1,3 +1,39 @@
+/**
+ * Konfiguracja ikon technologii i narzędzi
+ *
+ * Moduł eksportuje dwie tablice obiektów zawierające informacje o ikonach
+ * używanych technologii i narzędzi w portfolio.
+ *
+ * @type {TypeIcons}
+ * Interface dla obiektów ikon:
+ * {
+ *   src: StaticImageData  // importowany zasób SVG
+ *   alt: string           // tekst alternatywny dla ikony
+ * }
+ *
+ * @exports
+ * - technologies: Tablica ikon technologii frontendowych i backendowych
+ *   - HTML5, CSS3, JavaScript, React, Next.js, TypeScript
+ *   - Tailwind CSS, Bootstrap, Sass
+ *   - Prisma, PostgreSQL
+ *
+ * - tools: Tablica ikon narzędzi deweloperskich
+ *   - Visual Studio Code, Version control, GitHub
+ *   - Figma, Adobe Photoshop, Jira, Claude
+ *
+ * @imports
+ * Wszystkie ikony są importowane jako pliki SVG z lokalnego katalogu
+ *
+ * @usage
+ * @example
+ * import { technologies, tools } from '@/data/icons'
+ *
+ * // Wykorzystanie w komponencie
+ * {technologies.map(icon => (
+ *   <img key={icon.alt} src={icon.src} alt={icon.alt} />
+ * ))}
+ */
+
 import bootstrap from "./bootstrap.svg"
 import figma from "./figma.svg"
 import github from "./github.svg"

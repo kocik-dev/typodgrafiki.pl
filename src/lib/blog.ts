@@ -1,3 +1,66 @@
+/**
+ * Blog - Moduł zarządzania postami blogowymi
+ *
+ * Moduł udostępnia funkcje do obsługi postów blogowych zapisanych w plikach MDX.
+ * Obsługuje metadane, sortowanie, filtry i operacje CRUD na postach.
+ *
+ * @interfaces
+ * BlogPostMetadata {
+ *   slug: string - Unikalny identyfikator URL
+ *   title: string - Tytuł posta
+ *   date: string - Data publikacji (ISO string)
+ *   description?: string - Opcjonalny opis
+ *   author?: string - Opcjonalny autor
+ *   tags?: string[] - Opcjonalne tagi
+ * }
+ *
+ * BlogPost extends BlogPostMetadata {
+ *   content: string - Treść posta w MDX
+ * }
+ *
+ * @functions
+ * getBlogPosts(): Promise<BlogPostMetadata[]>
+ * - Pobiera wszystkie posty
+ * - Filtruje pliki .md i .mdx
+ * - Sortuje po dacie (malejąco)
+ * - Parsuje frontmatter przez gray-matter
+ *
+ * getPostBySlug(slug: string): Promise<BlogPost | null>
+ * - Pobiera pojedynczy post po slugu
+ * - Zwraca pełną treść i metadane
+ * - Obsługuje błędy (zwraca null)
+ *
+ * postExists(slug: string): Promise<boolean>
+ * - Sprawdza czy post o danym slugu istnieje
+ *
+ * @constants
+ * postsDirectory: Ścieżka do katalogu z postami
+ * listTags: Predefiniowana lista dostępnych tagów
+ *
+ * @fileStructure
+ * content/blog/en/
+ * - Pliki .mdx z frontmatter
+ * - Metadane w YAML
+ * - Treść w MDX
+ *
+ * @example
+ * ```ts
+ * // Pobranie wszystkich postów
+ * const posts = await getBlogPosts();
+ *
+ * // Pobranie pojedynczego posta
+ * const post = await getPostBySlug('post-slug');
+ *
+ * // Sprawdzenie istnienia
+ * const exists = await postExists('post-slug');
+ * ```
+ *
+ * @errorHandling
+ * - Obsługa braku katalogu postów
+ * - Obsługa błędów odczytu plików
+ * - Wartości domyślne dla brakujących metadanych
+ */
+
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"

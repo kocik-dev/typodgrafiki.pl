@@ -1,3 +1,22 @@
+/**
+ * Scroll - Animowany przycisk przewijania strony
+ *
+ * Komponent wyświetla przycisk ze strzałką w dół, który animuje się podczas przewijania strony.
+ * Wykorzystuje framer-motion do płynnych animacji opartych o pozycję przewijania.
+ * Tekst przycisku jest przetłumaczony przy użyciu next-intl.
+ *
+ * @dependencies
+ * - motion/react - do animacji opartej o scroll
+ * - next-intl - do tłumaczeń
+ *
+ * @animation
+ * - Przycisk przesuwa się w górę gdy użytkownik przewija stronę (0-280px)
+ * - Animacja jest ograniczona (clamp: true)
+ *
+ * @example
+ * <Scroll />
+ */
+
 "use client"
 
 import React from "react"

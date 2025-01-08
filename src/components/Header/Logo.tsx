@@ -1,3 +1,41 @@
+/**
+ * Logo - Interaktywne animowane logo strony
+ *
+ * Komponent wyświetla logo jako link do góry strony z animacją przy najechaniu.
+ * Wykorzystuje SVG dla wysokiej jakości renderowania w każdej rozdzielczości.
+ *
+ * @features
+ * - Animacja przy najechaniu myszką
+ * - Link do góry strony
+ * - Responsywne SVG logo
+ * - Stan animacji zarządzany przez React
+ *
+ * @hooks
+ * - useState - zarządzanie stanem animacji
+ *
+ * @animation
+ * - Animacja uruchamiana przy najechaniu (mouseenter)
+ * - Stan animacji resetowany po zakończeniu (animationend)
+ *
+ * @accessibility
+ * - Właściwe aria-label dla linku
+ * - role="img" dla SVG
+ * - aria-label dla logo SVG
+ * - Poprawna struktura viewBox dla skalowania
+ *
+ * @styling
+ * - SVG używa currentColor dla kolorów
+ * - Responsywne wymiary (142x32)
+ * - Animacja zdefiniowana w CSS
+ *
+ * @events
+ * - onMouseEnter - rozpoczęcie animacji
+ * - onAnimationEnd - zakończenie animacji
+ *
+ * @example
+ * <Logo />
+ */
+
 "use client"
 
 import Link from "next/link"

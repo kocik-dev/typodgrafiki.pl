@@ -21,7 +21,10 @@ export const Web3ModalProvider = ({
     const [errorMessage, setErrorMessage] =
         useState<WalletConnectMessageType | null>(null)
 
-    const canGoBack = view === "install" || view === "error"
+    const canGoBack =
+        view === "installMetamask" ||
+        view === "installCoinbase" ||
+        view === "error"
 
     const open = useCallback((initialView: ModalView = "connect") => {
         setView(initialView)
@@ -47,12 +50,16 @@ export const Web3ModalProvider = ({
         switch (view) {
             case "connect":
                 return "Connect Wallet"
-            case "install":
+            case "installMetamask":
                 return "Metamask"
+            case "installCoinbase":
+                return "Coinbase Wallet"
             case "success":
                 return "Connected"
             case "error":
                 return "Metamask"
+            case "disconnected":
+                return "Disconnected"
         }
     })()
 

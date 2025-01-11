@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server"
-import { fascinate } from "@/components/Fonts"
+import { fascinate } from "@/components/layout/Fonts"
 import PortfolioItem from "./PortfolioItem"
 import SlideLeft from "@/animations/SlideLeft"
 import SlideTop from "@/animations/SlideTop"
@@ -94,40 +94,22 @@ const Projects = async () => {
                 </SlideLeft>
                 <div className="columns flex">
                     <SlideTop>
-                        <div
-                            role="region"
-                            aria-labelledby="discipline-title"
-                        >
-                            <h3
-                                id="discipline-title"
-                                className="title-smaller"
-                            >
+                        <div role="region" aria-labelledby="discipline-title">
+                            <h3 id="discipline-title" className="title-smaller">
                                 {t("discipline")}
                             </h3>
-                            <ul
-                                className="list"
-                                role="list"
-                            >
+                            <ul className="list" role="list">
                                 <li role="listitem">UI design</li>
                                 <li role="listitem">Code development</li>
                             </ul>
                         </div>
                     </SlideTop>
                     <SlideTop delay={500}>
-                        <div
-                            role="region"
-                            aria-labelledby="tools-title"
-                        >
-                            <h3
-                                id="tools-title"
-                                className="title-smaller"
-                            >
+                        <div role="region" aria-labelledby="tools-title">
+                            <h3 id="tools-title" className="title-smaller">
                                 {t("tools")}
                             </h3>
-                            <ul
-                                className="list"
-                                role="list"
-                            >
+                            <ul className="list" role="list">
                                 <li role="listitem">React</li>
                                 <li role="listitem">Next.js</li>
                                 <li role="listitem">React Native</li>
@@ -136,26 +118,17 @@ const Projects = async () => {
                         </div>
                     </SlideTop>
                     <SlideTop delay={1000}>
-                        <div
-                            role="region"
-                            aria-labelledby="industry-title"
-                        >
+                        <div role="region" aria-labelledby="industry-title">
                             <h3
                                 id="industry-title"
                                 className="title-smaller hidden-xs"
                             >
                                 {t("industry")}
                             </h3>
-                            <ul
-                                className="list tags flex"
-                                role="list"
-                            >
+                            <ul className="list tags flex" role="list">
                                 {["tech", "ecommerce", "sass", "web3"].map(
                                     (tag) => (
-                                        <li
-                                            key={tag}
-                                            role="listitem"
-                                        >
+                                        <li key={tag} role="listitem">
                                             <span className="btn btn-white">
                                                 {tag}
                                             </span>
@@ -173,10 +146,7 @@ const Projects = async () => {
                 aria-label={t("projectsList")}
             >
                 {projectItems.map((item, index) => (
-                    <li
-                        key={item.name + index}
-                        role="listitem"
-                    >
+                    <li key={item.name + index} role="listitem">
                         <PortfolioItem item={item} />
                     </li>
                 ))}

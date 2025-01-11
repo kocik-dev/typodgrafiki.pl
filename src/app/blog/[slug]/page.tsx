@@ -2,7 +2,7 @@ import { getPostBySlug, postExists, getBlogPosts } from "@/lib/blog"
 import { MDXRemote } from "next-mdx-remote/rsc"
 import { notFound } from "next/navigation"
 import CodeSnippet from "@/components/Blog/CodeSnippet"
-import { fascinate } from "@/components/Fonts"
+import { fascinate } from "@/components/layout/Fonts"
 
 // export const metadata = {
 //     title: "Blog - Grzegorz Kocik",

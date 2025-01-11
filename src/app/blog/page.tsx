@@ -1,5 +1,5 @@
 import { getBlogPosts, listTags } from "@/lib/blog"
-import { fascinate } from "@/components/Fonts"
+import { fascinate } from "@/components/layout/Fonts"
 import Link from "next/link"
 import Post from "@/components/Blog/Post"
 import { Metadata } from "next"
@@ -63,20 +63,14 @@ export default async function BlogPage({
             {filteredPosts.length > 0 ? (
                 <div className="posts-list">
                     {filteredPosts.map((post) => (
-                        <Post
-                            post={post}
-                            key={post.slug}
-                        />
+                        <Post post={post} key={post.slug} />
                     ))}
                 </div>
             ) : (
                 <div className="empty-list text text-center flex justify-center">
                     <div>
                         <p>{t("listEmptyText")}.</p>
-                        <Link
-                            href="/blog"
-                            className="btn btn-default"
-                        >
+                        <Link href="/blog" className="btn btn-default">
                             {t("seeAllPosts")}
                         </Link>
                     </div>

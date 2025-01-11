@@ -2,7 +2,7 @@ import Footer from "@/components/Footer/Footer"
 import { Header } from "@/components/Header/Header"
 import { ReactNode } from "react"
 import "@/styles/blog.css"
-import BottomMenu from "@/components/BottomMenu"
+import BottomMenu from "@/components/layout/BottomMenu"
 import Menu from "@/components/Header/Menu"
 
 export default async function RootLayout({

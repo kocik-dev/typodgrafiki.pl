@@ -1,38 +1,19 @@
 "use client"
 
-import { useWallet } from "@/contexts/WalletContext"
-// import { publicClient } from "@/config/web3.config"
+import { useAccount, useDisconnect } from "wagmi"
 import { formatWalletAddress } from "@/lib/web3"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
-// import { formatEther } from "viem"
 import { IoExitOutline, IoCopyOutline, IoCheckmarkSharp } from "react-icons/io5"
+import { useWeb3Modal } from "@/contexts/Web3ModalContext"
 
 export const SuccessView = () => {
-    const { disconnect, address } = useWallet()
+    // const { disconnect, address } = useWallet()
+    const { address } = useAccount()
+    const { disconnect } = useDisconnect()
+    const { navigateTo } = useWeb3Modal()
     const [isCopied, setIsCopied] = useState(false)
     const t = useTranslations("web3")
-    // const [balance, setBalance] = useState<string | null>(null)
-
-    // useEffect(() => {
-    //     const fetchBalance = async () => {
-    //         if (!address) return
-
-    //         try {
-    //             // Pobierz saldo portfela
-    //             const balanceInWei = await publicClient.getBalance({
-    //                 address: address as `0x${string}`,
-    //             })
-    //             const balanceInEther = formatEther(balanceInWei)
-    //             setBalance(Number(balanceInEther).toFixed(4))
-    //         } catch (error) {
-    //             console.error("Failed to fetch balance:", error)
-    //             setBalance(null)
-    //         }
-    //     }
-
-    //     fetchBalance()
-    // }, [address])
 
     if (!address) return null
 
@@ -50,6 +31,11 @@ export const SuccessView = () => {
         }
     }
 
+    const handleDisconnect = () => {
+        disconnect()
+        navigateTo("disconnected")
+    }
+
     return (
         <div className="flex flex-column vertical-center">
             <div className="empty-image-wallet"></div>
@@ -65,11 +51,13 @@ export const SuccessView = () => {
             </p>
             {/* <p>Saldo: {balance ? `${balance} ETH` : "Ładowanie..."}</p> */}
             <button
-                onClick={disconnect}
-                className="btn btn-transparent"
+                onClick={handleDisconnect}
+                className="btn btn-transparent btn-bubble-bottom"
             >
-                <IoExitOutline />
-                {t("disconnect")}
+                <span>
+                    <IoExitOutline />
+                    {t("disconnect")}
+                </span>
             </button>
         </div>
     )

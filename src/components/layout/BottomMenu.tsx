@@ -4,7 +4,7 @@ import React from "react"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "motion/react"
 import logo from "@/assets/logo-small.svg"
-import MenuMobile from "./Header/MenuMobile"
+import MenuMobile from "@/components/Header/MenuMobile"
 import { useTranslations } from "next-intl"
 
 export default function BottomMenu({
@@ -26,10 +26,7 @@ export default function BottomMenu({
                 role="navigation"
                 aria-label="Fixed navigation menu"
             >
-                <motion.div
-                    className="element"
-                    style={{ bottom: bottom }}
-                >
+                <motion.div className="element" style={{ bottom: bottom }}>
                     <a
                         href="/#top"
                         className="logo-small hidden-xs"

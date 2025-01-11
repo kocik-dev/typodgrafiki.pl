@@ -2,8 +2,8 @@ import { ReactNode } from "react"
 import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
 import type { Metadata } from "next"
-import Cursor from "@/components/Cursor"
-import { poppins } from "@/components/Fonts"
+import Cursor from "@/components/layout/Cursor"
+import { poppins } from "@/components/layout/Fonts"
 import "@/styles/App.css"
 import "@/styles/menu.css"
 import "@/styles/accesibility.css"
@@ -12,7 +12,7 @@ import { socialLinks } from "@/data/socialLinks"
 import { SITE_URL } from "@/data/variables"
 import { Web3ModalProvider } from "@/contexts/Web3ModalContext"
 import { WalletModal } from "@/components/Web3/WalletModal"
-import { WalletProvider } from "@/contexts/WalletContext"
+import { WalletProvider } from "@/contexts/WalletProvider"
 
 const title = "Grzegorz Kocik - Front-end Developer"
 const description =
@@ -151,10 +151,7 @@ export default async function RootLayout({
     const locale = await getLocale()
     const messages = await getMessages()
     return (
-        <html
-            lang={locale}
-            className={poppins.className}
-        >
+        <html lang={locale} className={poppins.className}>
             <head>
                 <script
                     type="application/ld+json"
@@ -162,14 +159,14 @@ export default async function RootLayout({
                 />
             </head>
             <body>
-                <Web3ModalProvider>
-                    <WalletProvider>
-                        <NextIntlClientProvider messages={messages}>
+                <NextIntlClientProvider messages={messages}>
+                    <Web3ModalProvider>
+                        <WalletProvider>
                             {children}
                             <WalletModal />
-                        </NextIntlClientProvider>
-                    </WalletProvider>
-                </Web3ModalProvider>
+                        </WalletProvider>
+                    </Web3ModalProvider>
+                </NextIntlClientProvider>
                 <Cursor />
             </body>
         </html>

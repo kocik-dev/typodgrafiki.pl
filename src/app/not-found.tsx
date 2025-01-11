@@ -1,7 +1,7 @@
 import Link from "next/link"
 import "@/styles/App.css"
 import "@/styles/error404.css"
-import { fascinate } from "@/components/Fonts"
+import { fascinate } from "@/components/layout/Fonts"
 
 import { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
@@ -22,17 +22,11 @@ export default async function Custom404() {
                 aria-labelledby="error-title"
             >
                 <div className="error-content">
-                    <h1
-                        id="error-title"
-                        className={`${fascinate.className}`}
-                    >
+                    <h1 id="error-title" className={`${fascinate.className}`}>
                         {t("title")} <small>{t("subtitle")}</small>
                     </h1>
 
-                    <p
-                        role="status"
-                        aria-live="polite"
-                    >
+                    <p role="status" aria-live="polite">
                         {t("text")}
                     </p>
 
@@ -41,10 +35,7 @@ export default async function Custom404() {
                         className="btn btn-default"
                         aria-label="Return to the homepage"
                     >
-                        <span
-                            className="icon"
-                            aria-hidden="true"
-                        >
+                        <span className="icon" aria-hidden="true">
                             <Arrow />
                         </span>
                         <span className="button-text">{t("button")}</span>

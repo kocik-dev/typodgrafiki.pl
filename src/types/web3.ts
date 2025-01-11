@@ -32,4 +32,10 @@ export type WalletConnectMessageType = {
 
 export type WalletTypeProps = "metamask" | "coinbase"
 
-export type ModalView = "connect" | "install" | "success" | "error"
+export type ModalView =
+    | "connect"
+    | "installMetamask"
+    | "installCoinbase"
+    | "success"
+    | "error"
+    | "disconnected"

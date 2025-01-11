@@ -1,6 +1,6 @@
 import React from "react"
 import { getTranslations } from "next-intl/server"
-import { fascinate } from "@/components/Fonts"
+import { fascinate } from "@/components/layout/Fonts"
 import "./About.css"
 import SlideLeft from "@/animations/SlideLeft"
 import SlideTop from "@/animations/SlideTop"
@@ -14,11 +14,7 @@ const About = async () => {
     const t = await getTranslations("about")
 
     return (
-        <section
-            id="about"
-            className="container"
-            aria-labelledby="about-title"
-        >
+        <section id="about" className="container" aria-labelledby="about-title">
             <Scroll aria-label={t("scrollToTop")} />
 
             <div className="info flex">
@@ -32,10 +28,7 @@ const About = async () => {
                         </h2>
                     </SlideLeft>
                     <SlideLeft>
-                        <h3
-                            className="title-smaller"
-                            id="role-title"
-                        >
+                        <h3 className="title-smaller" id="role-title">
                             {t("subtitle")}
                         </h3>
                     </SlideLeft>
@@ -69,10 +62,7 @@ const About = async () => {
                             >
                                 {t("technologies")}
                             </h4>
-                            <div
-                                className="icons flex"
-                                role="list"
-                            >
+                            <div className="icons flex" role="list">
                                 {technologies.map((icon, index) => (
                                     <Icon
                                         icon={icon}
@@ -90,16 +80,10 @@ const About = async () => {
                             className="tech-row"
                             aria-labelledby="tools-title"
                         >
-                            <h4
-                                id="tools-title"
-                                className="title-smaller"
-                            >
+                            <h4 id="tools-title" className="title-smaller">
                                 {t("tools")}
                             </h4>
-                            <div
-                                className="icons flex"
-                                role="list"
-                            >
+                            <div className="icons flex" role="list">
                                 {tools.map((icon, index) => (
                                     <Icon
                                         icon={icon}
@@ -118,10 +102,7 @@ const About = async () => {
 
 const Icon = ({ icon, index }: { icon: TypeIcon; index: number }) => {
     return (
-        <div
-            className="icon relative"
-            role="listitem"
-        >
+        <div className="icon relative" role="listitem">
             <Image
                 src={icon.src}
                 alt={icon.alt}

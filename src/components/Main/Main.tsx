@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server"
 import "./Main.css"
-import { fascinate } from "../../components/Fonts"
+import { fascinate } from "../layout/Fonts"
 import { Header } from "../Header/Header"
 
 const Main = async () => {
@@ -8,10 +8,7 @@ const Main = async () => {
 
     return (
         <>
-            <a
-                href="#top"
-                className="skip-link-keyboard"
-            >
+            <a href="#top" className="skip-link-keyboard">
                 {t("skipToMain")}
             </a>
             <div id="top"></div>
@@ -29,10 +26,7 @@ const Main = async () => {
                             >
                                 Front-end Developer
                             </h1>
-                            <p
-                                className="subtitle"
-                                aria-label={t("h2")}
-                            >
+                            <p className="subtitle" aria-label={t("h2")}>
                                 {t("h2")}
                             </p>
                         </section>

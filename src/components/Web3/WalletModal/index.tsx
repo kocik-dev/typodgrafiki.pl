@@ -5,9 +5,13 @@ import { useWeb3Modal } from "@/contexts/Web3ModalContext"
 import { ConnectView } from "./components/ConnectView"
 import { SuccessView } from "./components/SuccessView"
 import { LiaAngleLeftSolid, LiaTimesSolid } from "react-icons/lia"
-import InstallView from "./components/InstallView"
+import {
+    InstallMetamaskView,
+    InstallCoinbaseView,
+} from "./components/InstallView"
 import ErrorView from "./components/ErrorView"
 import "@/styles/modal.css"
+import DisconnectedView from "./components/DisconnectedView"
 
 export const WalletModal = () => {
     const { isOpen, view, close, title, navigateTo, canGoBack } = useWeb3Modal()
@@ -16,12 +20,16 @@ export const WalletModal = () => {
         switch (view) {
             case "connect":
                 return <ConnectView />
-            case "install":
-                return <InstallView />
+            case "installMetamask":
+                return <InstallMetamaskView />
+            case "installCoinbase":
+                return <InstallCoinbaseView />
             case "success":
                 return <SuccessView />
             case "error":
                 return <ErrorView />
+            case "disconnected":
+                return <DisconnectedView />
         }
     }
 

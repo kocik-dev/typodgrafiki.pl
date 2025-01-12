@@ -16,7 +16,7 @@ import { WalletProvider } from "@/contexts/WalletContext"
 
 const title = "Grzegorz Kocik - Front-end Developer"
 const description =
-    "Frontend developer z doświadczeniem w projektowaniu i wdrażaniu interfejsów e-commerce. Łączę wiedzę z zakresu UI/UX z umiejętnościami programistycznymi, wykorzystując technologie takie jak React i Next.js. Skupiam się na tworzeniu responsywnych i dostępnych stron internetowych."
+    "Frontend developer with experience in designing and implementing e-commerce interfaces. I combine UI/UX knowledge with programming skills, utilizing technologies like React and Next.js. I focus on creating responsive and accessible websites."
 
 const jsonLd: WithContext<Person> = {
     "@context": "https://schema.org",
@@ -24,7 +24,7 @@ const jsonLd: WithContext<Person> = {
     name: "Grzegorz Kocik",
     jobTitle: "Front-end Developer",
     description:
-        "Doświadczony front-end developer z doświadczeniem w e-commerce.",
+        "Experienced front-end developer with expertise in e-commerce.",
     url: SITE_URL,
     sameAs: [socialLinks.linkedin, socialLinks.github],
     worksFor: {
@@ -151,10 +151,7 @@ export default async function RootLayout({
     const locale = await getLocale()
     const messages = await getMessages()
     return (
-        <html
-            lang={locale}
-            className={poppins.className}
-        >
+        <html lang={locale} className={poppins.className}>
             <head>
                 <script
                     type="application/ld+json"

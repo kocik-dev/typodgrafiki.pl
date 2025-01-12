@@ -11,9 +11,7 @@ import { useEffect, useState } from "react"
 export const ConnectView = () => {
     const { isConnecting, address } = useAccount()
     const { connectors, connect } = useConnect()
-    const [lastUsedWallet, setLastUsedWallet] = useState(() =>
-        localStorage.getItem("lastUsedWallet")
-    )
+    const [lastUsedWallet, setLastUsedWallet] = useState<string | null>(null)
     const { navigateTo } = useWeb3Modal()
     const t = useTranslations("web3")
 
@@ -21,6 +19,14 @@ export const ConnectView = () => {
     const filteredConnectors = connectors.filter((connector) =>
         ["MetaMask", "Coinbase Wallet"].includes(connector.name)
     )
+
+    // Dodajemy useEffect do bezpiecznego dostępu do localStorage
+    useEffect(() => {
+        const savedWallet = localStorage.getItem("lastUsedWallet")
+        if (savedWallet) {
+            setLastUsedWallet(savedWallet)
+        }
+    }, [])
 
     const getWalletIcon = (connectorName: string) => {
         switch (connectorName.toLowerCase()) {

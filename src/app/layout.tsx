@@ -11,7 +11,6 @@ import { Person, WithContext } from "schema-dts"
 import { socialLinks } from "@/data/socialLinks"
 import { SITE_URL } from "@/data/variables"
 import { Web3ModalProvider } from "@/contexts/Web3ModalContext"
-import { WalletModal } from "@/components/Web3/WalletModal"
 import { WalletProvider } from "@/contexts/WalletProvider"
 
 const title = "Grzegorz Kocik - Front-end Developer"
@@ -161,10 +160,7 @@ export default async function RootLayout({
             <body>
                 <NextIntlClientProvider messages={messages}>
                     <Web3ModalProvider>
-                        <WalletProvider>
-                            {children}
-                            <WalletModal />
-                        </WalletProvider>
+                        <WalletProvider>{children}</WalletProvider>
                     </Web3ModalProvider>
                 </NextIntlClientProvider>
                 <Cursor />

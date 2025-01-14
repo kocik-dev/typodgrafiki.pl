@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
+import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import Cursor from "@/components/Cursor"
 import { poppins } from "@/components/Fonts"
@@ -13,6 +14,11 @@ import { SITE_URL } from "@/data/variables"
 import { Web3ModalProvider } from "@/contexts/Web3ModalContext"
 import { WalletModal } from "@/components/Web3/WalletModal"
 import { WalletProvider } from "@/contexts/WalletContext"
+import { locales } from "@/i18n/settings"
+
+export function generateStaticParams() {
+    return locales.map((locale) => ({ locale }))
+}
 
 const title = "Grzegorz Kocik - Front-end Developer"
 const description =
@@ -145,13 +151,26 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
     children,
+    params: { locale },
 }: {
     children: ReactNode
+    params: { locale: string }
 }) {
-    const locale = await getLocale()
-    const messages = await getMessages()
+    let messages
+    if (!locales.includes(locale as any)) {
+        messages = (await import(`@root/messages/en-US.json`)).default
+    }
+
+    try {
+        messages = (await import(`@root/messages/${locale}.json`)).default
+    } catch (error) {
+        messages = (await import(`@root/messages/en-US.json`)).default
+    }
     return (
-        <html lang={locale} className={poppins.className}>
+        <html
+            lang={locale}
+            className={poppins.className}
+        >
             <head>
                 <script
                     type="application/ld+json"
@@ -161,7 +180,10 @@ export default async function RootLayout({
             <body>
                 <Web3ModalProvider>
                     <WalletProvider>
-                        <NextIntlClientProvider messages={messages}>
+                        <NextIntlClientProvider
+                            locale={locale}
+                            messages={messages}
+                        >
                             {children}
                             <WalletModal />
                         </NextIntlClientProvider>

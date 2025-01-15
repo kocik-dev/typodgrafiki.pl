@@ -1,8 +1,7 @@
-import React from "react"
 import PageHome from "@/components/layout/PageHome"
 
-const Home = () => {
+const HomeDefault = () => {
     return <PageHome />
 }
 
-export default Home
+export default HomeDefault

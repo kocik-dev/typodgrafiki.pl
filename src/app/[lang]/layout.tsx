@@ -2,8 +2,6 @@
 import { ReactNode } from "react"
 import RootLayoutComponent from "@/components/layout/RootLayout"
 import { poppins } from "@/components/Fonts"
-import Cursor from "@/components/Cursor"
-import { jsonLd } from "@/app/layout"
 
 export default async function LocalizedLayout({
     children,
@@ -20,19 +18,8 @@ export default async function LocalizedLayout({
     }
 
     return (
-        <html lang={locale} className={poppins.className}>
-            <head>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
-            </head>
-            <body>
-                <RootLayoutComponent locale={locale} messages={messages}>
-                    {children}
-                </RootLayoutComponent>
-                <Cursor />
-            </body>
-        </html>
+        <RootLayoutComponent locale={locale} messages={messages}>
+            {children}
+        </RootLayoutComponent>
     )
 }

@@ -41,8 +41,6 @@ function getLocale(request: Request): string {
     try {
         const acceptLanguage = request.headers.get("accept-language")
 
-        console.log(acceptLanguage)
-
         if (!acceptLanguage) {
             return defaultLocale
         }
@@ -61,11 +59,7 @@ function getLocale(request: Request): string {
 }
 
 export function middleware(request: Request) {
-    console.log("---------")
-
     const { pathname } = new URL(request.url)
-
-    console.log("1. pathname: ", pathname)
 
     // Sprawdź czy ścieżka już zawiera lokalizację
     const pathnameHasLocale = locales.some(
@@ -79,8 +73,6 @@ export function middleware(request: Request) {
 
     // Sprawdź preferencje językowe użytkownika
     const userLocale = getLocale(request)
-
-    console.log("2. userLocale: ", userLocale)
 
     // Jeśli użytkownik preferuje domyślny język (np. en-US),
     // nie rób przekierowania i zostaw oryginalny URL

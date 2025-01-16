@@ -1,26 +1,39 @@
 import { ReactNode } from "react"
 import RootLayoutComponent from "@/components/layout/RootLayout"
+import { Metadata } from "next"
+import { getMessages } from "@/lib/metadata"
+import { NextIntlClientProvider } from "next-intl"
 
-export default async function LocalizedLayout({
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ lang: string }>
+}): Promise<Metadata> {
+    const lang = (await params).lang
+    const messages = await getMessages(lang)
+
+    return {
+        title: messages.metadata.title,
+        description: messages.metadata.description,
+    }
+}
+
+export default async function LangLayout({
     children,
-    params: { locale },
+    params,
 }: {
     children: ReactNode
-    params: { locale: string }
+    params: Promise<{ lang: string }>
 }) {
-    let messages
-    try {
-        messages = (await import(`@root/messages/${locale}.json`)).default
-    } catch (error) {
-        messages = (await import(`@root/messages/en-US.json`)).default
-    }
+    const lang = (await params).lang
+    const messages = await getMessages(lang)
 
     return (
-        <RootLayoutComponent
-            locale={locale}
+        <NextIntlClientProvider
+            locale={lang}
             messages={messages}
         >
-            {children}
-        </RootLayoutComponent>
+            <RootLayoutComponent locale={lang}>{children}</RootLayoutComponent>
+        </NextIntlClientProvider>
     )
 }

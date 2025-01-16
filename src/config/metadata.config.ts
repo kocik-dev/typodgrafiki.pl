@@ -131,3 +131,8 @@ export const metadata: Metadata = {
     },
     category: "Web Development",
 }
+
+export const metadataBlog = {
+    title: "Blog - Grzegorz Kocik",
+    description: "Frontend development blog",
+}

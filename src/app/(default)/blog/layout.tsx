@@ -8,7 +8,7 @@ import { metadataBlog as metadata } from "@/config/metadata.config"
 
 export { metadata }
 
-export default async function BlogLayout({
+export default async function BlogLayoutDefault({
     children,
 }: {
     children: ReactNode

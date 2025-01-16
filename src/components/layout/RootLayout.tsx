@@ -1,5 +1,4 @@
 import { ReactNode } from "react"
-import { NextIntlClientProvider } from "next-intl"
 import Cursor from "@/components/Cursor"
 import { poppins } from "@/components/Fonts"
 import { Web3ModalProvider } from "@/contexts/Web3ModalContext"
@@ -10,13 +9,11 @@ import { jsonLd } from "@/config/metadata.config"
 type RootLayoutProps = {
     children: ReactNode
     locale: string
-    messages: any
 }
 
 export default function RootLayoutComponent({
     children,
     locale,
-    messages,
 }: RootLayoutProps) {
     return (
         <html
@@ -26,19 +23,16 @@ export default function RootLayoutComponent({
             <head>
                 <script
                     type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(jsonLd),
+                    }}
                 />
             </head>
             <body>
                 <Web3ModalProvider>
                     <WalletProvider>
-                        <NextIntlClientProvider
-                            locale={locale}
-                            messages={messages}
-                        >
-                            {children}
-                            <WalletModal />
-                        </NextIntlClientProvider>
+                        {children}
+                        <WalletModal />
                     </WalletProvider>
                 </Web3ModalProvider>
                 <Cursor />

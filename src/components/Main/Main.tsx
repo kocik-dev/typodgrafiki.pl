@@ -1,57 +1,17 @@
-/**
- * Main - Sekcja hero strony głównej
- *
- * Komponent renderuje sekcję powitalną (hero) strony głównej, zawierającą
- * nagłówek, tytuł, podtytuł oraz animowaną sekcję słów kluczowych.
- * Zoptymalizowany pod kątem dostępności i SEO.
- *
- * @structure
- * - Skip link dla nawigacji klawiaturowej
- * - Header
- * - Główna sekcja hero
- *   - Tytuł ("Front-end Developer")
- *   - Podtytuł (tłumaczony)
- * - Sekcja słów kluczowych z animacją
- *
- * @accessibility
- * - Skip link dla użytkowników klawiatury
- * - Właściwa struktura nagłówków
- * - ARIA labels dla sekcji
- * - Ukryte elementy dekoracyjne (aria-hidden)
- * - Semantyczna struktura HTML
- *
- * @i18n
- * Wykorzystuje przestrzeń nazw "main" dla tłumaczeń:
- * - skipToMain: Tekst dla skip linka
- * - h2: Podtytuł
- * - keywordsSection: Label dla sekcji słów kluczowych
- * - seoText: Tekst animowany
- *
- * @styling
- * - Main.css dla stylów
- * - Font fascinate dla tytułu
- * - Flexbox dla layoutu
- * - Klasy utility dla RWD
- *
- * @components
- * - Header - Komponent nagłówka
- *
- * @seo
- * - Semantyczna struktura HTML
- * - Odpowiednie znaczniki nagłówkowe
- * - Teksty zoptymalizowane pod SEO
- *
- * @example
- * <Main />
- */
-
 import { getTranslations } from "next-intl/server"
 import "./Main.css"
 import { fascinate } from "../../components/Fonts"
 import { Header } from "../Header/Header"
+import { MessagesProps, Messages } from "@/types/i18n"
 
-const Main = async () => {
+const Main = async ({ messages }: MessagesProps) => {
+    const { main: text } = messages || {}
     const t = await getTranslations("main")
+
+    // Helper do uzyskania tekstu
+    const getText = (key: keyof Messages["main"]) => {
+        return text ? text[key] : t(key)
+    }
 
     return (
         <>
@@ -59,7 +19,7 @@ const Main = async () => {
                 href="#top"
                 className="skip-link-keyboard"
             >
-                {t("skipToMain")}
+                {getText("skipToMain")}
             </a>
             <div id="top"></div>
             <div id="main">
@@ -78,22 +38,22 @@ const Main = async () => {
                             </h1>
                             <p
                                 className="subtitle"
-                                aria-label={t("h2")}
+                                aria-label={getText("h2")}
                             >
-                                {t("h2")}
+                                {getText("h2")}
                             </p>
                         </section>
 
                         <section
                             className="keywords-section"
-                            aria-label={t("keywordsSection")} // np. "Skills and technologies"
+                            aria-label={getText("keywordsSection")}
                         >
                             <div
                                 className="text-animated"
                                 aria-hidden="true" // jeśli to jest tylko animacja dekoracyjna
                             >
-                                <span data-text={t("seoText")}>
-                                    {t("seoText")}
+                                <span data-text={getText("seoText")}>
+                                    {getText("seoText")}
                                 </span>
                             </div>
                         </section>

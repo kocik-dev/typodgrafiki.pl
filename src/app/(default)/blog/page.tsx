@@ -1,5 +1,10 @@
-import React from "react"
+// Drugi page.tsx
+import BlogContent from "@/components/layout/PageBlog"
 
-export default function BlogPageDefault() {
-    return <div>BlogPageDefault</div>
+export default async function BlogPageDefault({
+    searchParams,
+}: {
+    searchParams: Promise<{ tag?: string }>
+}) {
+    return <BlogContent searchParams={searchParams} />
 }

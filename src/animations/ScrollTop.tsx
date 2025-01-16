@@ -31,14 +31,8 @@ const Scroll = () => {
     })
 
     return (
-        <motion.div
-            className="scroll"
-            style={{ top: top }}
-        >
-            <a
-                href="#about"
-                className="btn-bubble-bottom"
-            >
+        <motion.div className="scroll" style={{ top: top }}>
+            <a href="#about" className="btn-bubble-bottom">
                 <span>
                     <svg
                         width="8"

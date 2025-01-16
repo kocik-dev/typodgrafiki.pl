@@ -1,5 +1,8 @@
+import React from "react"
 import PageHome from "@/components/layout/PageHome"
 
-export default async function HomePage() {
+const Home = () => {
     return <PageHome />
 }
+
+export default Home

@@ -1,25 +1,15 @@
-import { getTranslations } from "next-intl/server"
 import "./Main.css"
 import { fascinate } from "../../components/Fonts"
 import { Header } from "../Header/Header"
-import { MessagesProps, Messages } from "@/types/i18n"
+import { getSectionTranslations } from "@/i18n/translations"
 
-const Main = async ({ messages }: MessagesProps) => {
-    const { main: text } = messages || {}
-    const t = await getTranslations("main")
-
-    // Helper do uzyskania tekstu
-    const getText = (key: keyof Messages["main"]) => {
-        return text ? text[key] : t(key)
-    }
+const Main = async () => {
+    const t = await getSectionTranslations("main")
 
     return (
         <>
-            <a
-                href="#top"
-                className="skip-link-keyboard"
-            >
-                {getText("skipToMain")}
+            <a href="#top" className="skip-link-keyboard">
+                {t.skipToMain}
             </a>
             <div id="top"></div>
             <div id="main">
@@ -36,25 +26,20 @@ const Main = async ({ messages }: MessagesProps) => {
                             >
                                 Front-end Developer
                             </h1>
-                            <p
-                                className="subtitle"
-                                aria-label={getText("h2")}
-                            >
-                                {getText("h2")}
+                            <p className="subtitle" aria-label={t.h2}>
+                                {t.h2}
                             </p>
                         </section>
 
                         <section
                             className="keywords-section"
-                            aria-label={getText("keywordsSection")}
+                            aria-label={t.keywordsSection}
                         >
                             <div
                                 className="text-animated"
                                 aria-hidden="true" // jeśli to jest tylko animacja dekoracyjna
                             >
-                                <span data-text={getText("seoText")}>
-                                    {getText("seoText")}
-                                </span>
+                                <span data-text={t.seoText}>{t.seoText}</span>
                             </div>
                         </section>
                     </main>

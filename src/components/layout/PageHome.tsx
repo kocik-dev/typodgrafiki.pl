@@ -5,19 +5,18 @@ import About from "@/components/About/About"
 import Portfolio from "@/components/Portfolio/Portfolio"
 import BottomMenu from "@/components/BottomMenu"
 import Menu from "@/components/Header/Menu"
-import { MessagesProps } from "@/types/i18n"
 
-const PageHome = ({ messages }: MessagesProps) => {
+const PageHome = () => {
     return (
         <>
-            <Main messages={messages} />
+            <Main />
             <div className="bg-white">
-                <About />
+                {/* <About />
                 <Portfolio />
                 <Footer />
                 <BottomMenu>
                     <Menu />
-                </BottomMenu>
+                </BottomMenu> */}
             </div>
         </>
     )

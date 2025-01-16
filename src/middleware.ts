@@ -1,18 +1,17 @@
 import { match } from "@formatjs/intl-localematcher"
 import { NextResponse } from "next/server"
 import { locales, defaultLocale } from "@/i18n/settings"
+import type { NextRequest } from "next/server"
 
-function getLocale(request: Request): string {
+function getLocale(request: NextRequest): string {
     try {
         const acceptLanguage = request.headers.get("accept-language")
-
         if (!acceptLanguage) {
             return defaultLocale
         }
 
-        // Proste parsowanie nagłówka accept-language
         const languages = acceptLanguage.split(",").map((lang) => {
-            const [language, weight] = lang.trim().split(";q=")
+            const [language] = lang.trim().split(";q=")
             return language
         })
 
@@ -23,10 +22,17 @@ function getLocale(request: Request): string {
     }
 }
 
-export function middleware(request: Request) {
+export function middleware(request: NextRequest) {
     const { pathname } = new URL(request.url)
 
-    console.log("pathname: ", pathname)
+    // Ignoruj ścieżki statyczne i API
+    if (
+        pathname.startsWith("/_next") ||
+        pathname.startsWith("/api") ||
+        pathname.includes(".")
+    ) {
+        return NextResponse.next()
+    }
 
     // Sprawdź czy ścieżka już zawiera lokalizację
     const pathnameHasLocale = locales.some(
@@ -35,26 +41,29 @@ export function middleware(request: Request) {
     )
 
     if (pathnameHasLocale) {
-        return NextResponse.next()
+        const response = NextResponse.next()
+        response.headers.set("x-locale", pathname.split("/")[1])
+        return response
     }
 
-    // Sprawdź preferencje językowe użytkownika
+    // Pobierz preferowany język użytkownika
     const userLocale = getLocale(request)
 
-    console.log("userLocale: ", userLocale)
-
-    // Jeśli użytkownik preferuje domyślny język (np. en-US),
-    // nie rób przekierowania i zostaw oryginalny URL
+    // Dla domyślnego języka nie dodawaj prefiksu
     if (userLocale === defaultLocale) {
-        return NextResponse.next()
+        const response = NextResponse.next()
+        response.headers.set("x-locale", defaultLocale)
+        return response
     }
 
-    // Dla innych języków, przekieruj na odpowiednią wersję
+    // Dla innych języków, przekieruj na wersję z prefiksem
     const newUrl = new URL(request.url)
     newUrl.pathname = `/${userLocale}${pathname}`
 
     const response = NextResponse.redirect(newUrl)
     response.headers.set("Cache-Control", "public, max-age=3600")
+    response.headers.set("x-locale", userLocale)
+
     return response
 }
 

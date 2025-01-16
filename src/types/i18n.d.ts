@@ -1,9 +1,7 @@
 import { locales } from "@/i18n/settings"
 export type Locale = (typeof locales)[number]
 
-export type MessagesProps = { messages?: Messages }
-
-type Messages = {
+type Translations = {
     metadata: Metadata
     menu: Menu
     main: Main

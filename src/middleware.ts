@@ -26,6 +26,8 @@ function getLocale(request: Request): string {
 export function middleware(request: Request) {
     const { pathname } = new URL(request.url)
 
+    console.log("pathname: ", pathname)
+
     // Sprawdź czy ścieżka już zawiera lokalizację
     const pathnameHasLocale = locales.some(
         (locale) =>
@@ -38,6 +40,8 @@ export function middleware(request: Request) {
 
     // Sprawdź preferencje językowe użytkownika
     const userLocale = getLocale(request)
+
+    console.log("userLocale: ", userLocale)
 
     // Jeśli użytkownik preferuje domyślny język (np. en-US),
     // nie rób przekierowania i zostaw oryginalny URL

@@ -1,5 +1,5 @@
 import RootLayoutComponent from "@/components/layout/RootLayout"
-import { getMessages } from "next-intl/server"
+import { defaultLocale } from "@/i18n/settings"
 import { ReactNode } from "react"
 
 export default async function RootLayout({
@@ -8,10 +8,14 @@ export default async function RootLayout({
     children: ReactNode
 }) {
     // const messages = await getMessages()
-    const messages = (await import(`@root/messages/en-US.json`)).default
+    const messages = (await import(`@root/messages/${defaultLocale}.json`))
+        .default
 
     return (
-        <RootLayoutComponent locale="en-US" messages={messages}>
+        <RootLayoutComponent
+            locale={defaultLocale}
+            messages={messages}
+        >
             {children}
         </RootLayoutComponent>
     )

@@ -1,7 +1,5 @@
-// app/[lang]/layout.tsx
 import { ReactNode } from "react"
 import RootLayoutComponent from "@/components/layout/RootLayout"
-import { poppins } from "@/components/Fonts"
 
 export default async function LocalizedLayout({
     children,
@@ -18,7 +16,10 @@ export default async function LocalizedLayout({
     }
 
     return (
-        <RootLayoutComponent locale={locale} messages={messages}>
+        <RootLayoutComponent
+            locale={locale}
+            messages={messages}
+        >
             {children}
         </RootLayoutComponent>
     )

@@ -49,6 +49,7 @@ import "@/styles/error404.css"
 import { fascinate } from "@/components/Fonts"
 import { Metadata } from "next"
 import { getTranslationsSection } from "@/i18n/translations"
+import { generateHref } from "@/lib/i18n"
 
 export const metadata: Metadata = {
     title: "404: Page Not Found - Grzegorz Kocik - Front-end Developer",
@@ -58,6 +59,8 @@ export const metadata: Metadata = {
 
 export default async function Custom404() {
     const t = await getTranslationsSection("notFound")
+
+    const link = await generateHref("/")
     return (
         <>
             <main
@@ -81,7 +84,7 @@ export default async function Custom404() {
                     </p>
 
                     <Link
-                        href="/"
+                        href={link}
                         className="btn btn-default"
                         aria-label="Return to the homepage"
                     >

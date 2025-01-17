@@ -1,8 +1,9 @@
-import { getBlogPosts, listTags } from "@/lib/blog"
+import { addLinkToTags, getBlogPosts, listTags } from "@/lib/blog"
 import { fascinate } from "@/components/Fonts"
 import Link from "next/link"
 import Post from "@/components/Blog/Post"
 import { getTranslationsSection } from "@/i18n/translations"
+import { generateHref, getLangUrl } from "@/lib/i18n"
 
 export default async function BlogContent({
     searchParams,
@@ -11,7 +12,9 @@ export default async function BlogContent({
 }) {
     const t = await getTranslationsSection("blog")
     const posts = await getBlogPosts()
-    const tags = listTags
+    const locale = await getLangUrl()
+
+    const tags = addLinkToTags(listTags)
 
     const selectedTag = (await searchParams).tag || "all"
 
@@ -26,7 +29,7 @@ export default async function BlogContent({
             <ul className="tags list-tags">
                 <li>
                     <Link
-                        href="/blog"
+                        href={await generateHref("/blog")}
                         className={`title-smaller ${
                             selectedTag === "all" ? "active" : ""
                         }`}
@@ -34,15 +37,15 @@ export default async function BlogContent({
                         {t.all}
                     </Link>
                 </li>
-                {tags.map((tag) => (
-                    <li key={tag}>
+                {tags.map((item) => (
+                    <li key={item.tag}>
                         <Link
-                            href={`/blog?tag=${tag}`}
+                            href={`${locale}/blog?tag=${item.tag}`}
                             className={`title-smaller ${
-                                selectedTag === tag ? "active" : ""
+                                selectedTag === item.tag ? "active" : ""
                             }`}
                         >
-                            {tag}
+                            {item.tag}
                         </Link>
                     </li>
                 ))}
@@ -54,6 +57,7 @@ export default async function BlogContent({
                         <Post
                             post={post}
                             key={post.slug}
+                            locale={locale}
                         />
                     ))}
                 </div>
@@ -62,7 +66,7 @@ export default async function BlogContent({
                     <div>
                         <p>{t.listEmptyText}.</p>
                         <Link
-                            href="/blog"
+                            href={await generateHref("/blog")}
                             className="btn btn-default"
                         >
                             {t.seeAllPosts}

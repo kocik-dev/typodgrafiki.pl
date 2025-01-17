@@ -6,6 +6,12 @@ export async function getLocaleFromHeaders() {
     return headersList.get("x-locale") || defaultLocale
 }
 
+export const getLangUrl = async () => {
+    const locale = await getLocaleFromHeaders()
+    const basePath = locale === defaultLocale ? "" : `/${locale}`
+    return basePath
+}
+
 // Funkcja pomocnicza do generowania linków
 export const generateHref = async (path: string) => {
     const locale = await getLocaleFromHeaders()

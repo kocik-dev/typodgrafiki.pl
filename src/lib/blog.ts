@@ -64,6 +64,7 @@
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
+import { TagsWithLink } from "@/types/website"
 
 const postsDirectory = path.join(process.cwd(), "content/blog/en")
 
@@ -150,7 +151,7 @@ export async function postExists(slug: string): Promise<boolean> {
     return fs.existsSync(path.join(postsDirectory, `${slug}.mdx`))
 }
 
-export const listTags = [
+export const listTags: string[] = [
     "animations",
     "react",
     "accessibility",
@@ -158,3 +159,10 @@ export const listTags = [
     "next.js",
     "web3",
 ]
+
+export function addLinkToTags(tags: string[]): TagsWithLink[] {
+    return tags.map((tag) => ({
+        tag: tag,
+        link: `/blog?${tag}`,
+    }))
+}

@@ -27,3 +27,8 @@ export interface BlogPost {
     date: string
     content: string
 }
+
+export interface TagsWithLink {
+    tag: string
+    link: string
+}

@@ -46,11 +46,11 @@
  */
 
 import { ProjectItem } from "@/types/website"
-import { getTranslations } from "next-intl/server"
+import { getTranslationsSection } from "@/i18n/translations"
 import PortfolioItemImages from "./PortfolioItemImages"
 
 const PortfolioItem = async ({ item }: { item: ProjectItem }) => {
-    const t = await getTranslations("projects")
+    const t = await getTranslationsSection("projects")
     const labelledby = labelledbyFn(item.name)
 
     return (
@@ -67,7 +67,7 @@ const PortfolioItem = async ({ item }: { item: ProjectItem }) => {
                 </h3>
                 <p
                     className="scope"
-                    aria-label={t("projectScope", { scope: item.scope })}
+                    aria-label={t.projectScope + " " + item.scope}
                 >
                     {item.scope}
                 </p>

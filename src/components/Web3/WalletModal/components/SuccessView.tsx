@@ -49,7 +49,7 @@
 import { useWallet } from "@/contexts/WalletContext"
 // import { publicClient } from "@/config/web3.config"
 import { formatWalletAddress } from "@/lib/web3"
-import { useTranslations } from "next-intl"
+import { useTranslationsSection } from "@/hooks/useTranslations"
 import { useState } from "react"
 // import { formatEther } from "viem"
 import { IoExitOutline, IoCopyOutline, IoCheckmarkSharp } from "react-icons/io5"
@@ -57,7 +57,7 @@ import { IoExitOutline, IoCopyOutline, IoCheckmarkSharp } from "react-icons/io5"
 export const SuccessView = () => {
     const { disconnect, address } = useWallet()
     const [isCopied, setIsCopied] = useState(false)
-    const t = useTranslations("web3")
+    const t = useTranslationsSection("web3")
     // const [balance, setBalance] = useState<string | null>(null)
 
     // useEffect(() => {
@@ -115,7 +115,7 @@ export const SuccessView = () => {
                 className="btn btn-transparent"
             >
                 <IoExitOutline />
-                {t("disconnect")}
+                {t.disconnect}
             </button>
         </div>
     )

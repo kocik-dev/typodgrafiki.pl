@@ -54,7 +54,7 @@
  */
 
 import React from "react"
-import { getTranslations } from "next-intl/server"
+import { getTranslationsSection } from "@/i18n/translations"
 import { fascinate } from "@/components/Fonts"
 import "./About.css"
 import SlideLeft from "@/animations/SlideLeft"
@@ -65,7 +65,7 @@ import Image from "next/image"
 import { TypeIcon } from "@/types/website"
 
 const About = async () => {
-    const t = await getTranslations("about")
+    const t = await getTranslationsSection("about")
 
     return (
         <section
@@ -73,7 +73,7 @@ const About = async () => {
             className="container"
             aria-labelledby="about-title"
         >
-            <Scroll aria-label={t("scrollToTop")} />
+            <Scroll aria-label={t.scrollToTop} />
 
             <div className="info flex">
                 <div className="overflow">
@@ -82,7 +82,7 @@ const About = async () => {
                             id="about-title"
                             className={`title-small ${fascinate.className}`}
                         >
-                            {t("title")}
+                            {t.title}
                         </h2>
                     </SlideLeft>
                     <SlideLeft>
@@ -90,7 +90,7 @@ const About = async () => {
                             className="title-smaller"
                             id="role-title"
                         >
-                            {t("subtitle")}
+                            {t.subtitle}
                         </h3>
                     </SlideLeft>
                 </div>
@@ -102,13 +102,13 @@ const About = async () => {
                 >
                     {/* Paragraphs */}
                     <SlideTop>
-                        <p className="text">{t("text1")}</p>
+                        <p className="text">{t.text1}</p>
                     </SlideTop>
                     <SlideTop>
-                        <p className="text">{t("text2")}</p>
+                        <p className="text">{t.text2}</p>
                     </SlideTop>
                     <SlideTop>
-                        <p className="text">{t("text3")}</p>
+                        <p className="text">{t.text3}</p>
                     </SlideTop>
 
                     {/* Technologies section */}
@@ -121,7 +121,7 @@ const About = async () => {
                                 id="technologies-title"
                                 className="title-smaller"
                             >
-                                {t("technologies")}
+                                {t.technologies}
                             </h4>
                             <div
                                 className="icons flex"
@@ -148,7 +148,7 @@ const About = async () => {
                                 id="tools-title"
                                 className="title-smaller"
                             >
-                                {t("tools")}
+                                {t.tools}
                             </h4>
                             <div
                                 className="icons flex"

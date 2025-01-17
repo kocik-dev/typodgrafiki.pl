@@ -1,8 +1,8 @@
 import React from "react"
 import PageHome from "@/components/layout/PageHome"
 
-const Home = () => {
+const HomeLang = () => {
     return <PageHome />
 }
 
-export default Home
+export default HomeLang

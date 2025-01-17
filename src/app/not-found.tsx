@@ -47,9 +47,8 @@ import Link from "next/link"
 import "@/styles/App.css"
 import "@/styles/error404.css"
 import { fascinate } from "@/components/Fonts"
-
 import { Metadata } from "next"
-import { getTranslations } from "next-intl/server"
+import { getTranslationsSection } from "@/i18n/translations"
 
 export const metadata: Metadata = {
     title: "404: Page Not Found - Grzegorz Kocik - Front-end Developer",
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Custom404() {
-    const t = await getTranslations("notFound")
+    const t = await getTranslationsSection("notFound")
     return (
         <>
             <main
@@ -71,14 +70,14 @@ export default async function Custom404() {
                         id="error-title"
                         className={`${fascinate.className}`}
                     >
-                        {t("title")} <small>{t("subtitle")}</small>
+                        {t.title} <small>{t.subtitle}</small>
                     </h1>
 
                     <p
                         role="status"
                         aria-live="polite"
                     >
-                        {t("text")}
+                        {t.text}
                     </p>
 
                     <Link
@@ -92,7 +91,7 @@ export default async function Custom404() {
                         >
                             <Arrow />
                         </span>
-                        <span className="button-text">{t("button")}</span>
+                        <span className="button-text">{t.button}</span>
                     </Link>
                 </div>
             </main>

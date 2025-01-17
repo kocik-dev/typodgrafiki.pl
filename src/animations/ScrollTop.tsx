@@ -21,10 +21,10 @@
 
 import React from "react"
 import { motion, useScroll, useTransform } from "motion/react"
-import { useTranslations } from "next-intl"
+import { useTranslationsSection } from "@/hooks/useTranslations"
 
 const Scroll = () => {
-    const t = useTranslations("about")
+    const t = useTranslationsSection("about")
     const { scrollY } = useScroll()
     const top = useTransform(scrollY, [0, 200, 280], [-70, -50, 0], {
         clamp: true,
@@ -52,7 +52,7 @@ const Scroll = () => {
                             fill="currentColor"
                         />
                     </svg>
-                    {t("scroll")}
+                    {t.scroll}
                 </span>
             </a>
         </motion.div>

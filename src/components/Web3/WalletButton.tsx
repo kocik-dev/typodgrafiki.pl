@@ -55,13 +55,13 @@ import React from "react"
 import { useWallet } from "@/contexts/WalletContext"
 import { useWeb3Modal } from "@/contexts/Web3ModalContext"
 import { formatWalletAddress } from "@/lib/web3"
-import { useTranslations } from "next-intl"
+import { useTranslationsSection } from "@/hooks/useTranslations"
 
 export const WalletButton = () => {
     const { address } = useWallet()
     const { open } = useWeb3Modal()
 
-    const t = useTranslations("web3")
+    const t = useTranslationsSection("web3")
 
     const handleClick = () => {
         open(address ? "success" : "connect")
@@ -73,7 +73,7 @@ export const WalletButton = () => {
                 className="btn btn-default"
                 onClick={handleClick}
             >
-                {address ? formatWalletAddress(address) : t("btnConnectWeb3")}
+                {address ? formatWalletAddress(address) : t.btnConnectWeb3}
             </button>
         </div>
     )

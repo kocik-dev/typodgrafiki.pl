@@ -38,11 +38,13 @@
 
 "use client"
 
+import { useLocale } from "@/hooks/useTranslations"
 import Link from "next/link"
 import React, { useState } from "react"
 
 export default function Logo() {
     const [isAnimating, setIsAnimating] = useState(false)
+    const locale = useLocale()
 
     const handleMouseEnter = () => {
         setIsAnimating(true)
@@ -54,7 +56,7 @@ export default function Logo() {
 
     return (
         <Link
-            href="/#top"
+            href={locale + "/#top"}
             className={`logo ${isAnimating ? "animate" : ""}`}
             onMouseEnter={handleMouseEnter}
             onAnimationEnd={handleAnimationEnd}

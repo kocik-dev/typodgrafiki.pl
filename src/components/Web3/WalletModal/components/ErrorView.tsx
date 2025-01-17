@@ -3,11 +3,11 @@
 import React from "react"
 import { ImageMetamaskBig } from "./ConnectView"
 import { useWeb3Modal } from "@/contexts/Web3ModalContext"
-import { useTranslations } from "next-intl"
+import { useTranslationsSection } from "@/hooks/useTranslations"
 
 export default function ErrorView() {
     const { errorMessage, navigateTo } = useWeb3Modal()
-    const t = useTranslations("web3")
+    const t = useTranslationsSection("web3")
 
     if (!errorMessage) {
         return null // Nie wyświetlaj niczego, jeśli brak wiadomości błędu
@@ -23,7 +23,7 @@ export default function ErrorView() {
                     className="btn btn-transparent"
                     onClick={() => navigateTo("connect")} // Powrót do widoku connect
                 >
-                    {t("btnTryAgain")}
+                    {t.btnTryAgain}
                 </button>
             )}
         </div>

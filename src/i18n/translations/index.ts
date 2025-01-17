@@ -15,7 +15,7 @@ export function getTranslations(locale: string): Translations {
 }
 
 // Helper do pobierania tłumaczeń dla konkretnej sekcji
-export async function getSectionTranslations<K extends keyof Translations>(
+export async function getTranslationsSection<K extends keyof Translations>(
     section: K
 ): Promise<Translations[K]> {
     const locale = await getLocaleFromHeaders()

@@ -40,12 +40,12 @@
  */
 
 import { BlogPostMetadata } from "@/lib/blog"
-import { getTranslations } from "next-intl/server"
+import { getTranslationsSection } from "@/i18n/translations"
 import Link from "next/link"
 import React from "react"
 
 export default async function Post({ post }: { post: BlogPostMetadata }) {
-    const t = await getTranslations("blog")
+    const t = await getTranslationsSection("blog")
     const tags = post.tags || []
     const link = `/blog/${post.slug}`
     return (
@@ -85,7 +85,7 @@ export default async function Post({ post }: { post: BlogPostMetadata }) {
                     href={link}
                     className="btn btn-transparent btn-bubble-bottom"
                 >
-                    <span>{t("postBtn")}</span>
+                    <span>{t.postBtn}</span>
                 </Link>
             </div>
         </article>

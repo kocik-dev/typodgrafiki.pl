@@ -10,8 +10,9 @@ import { Web3ModalProvider } from "@/contexts/Web3ModalContext"
 import { WalletProvider } from "@/contexts/WalletContext"
 import { WalletModal } from "@/components/Web3/WalletModal"
 import { jsonLd } from "@/config/metadata.config"
-import { getSectionTranslations } from "@/i18n/translations"
+import { getTranslationsSection, getTranslations } from "@/i18n/translations"
 import { getLocaleFromHeaders } from "@/lib/i18n"
+import { I18nProvider } from "@/contexts/i18nContext"
 
 export { metadata }
 
@@ -21,12 +22,14 @@ export default async function RootLayout({
     children: React.ReactNode
 }) {
     const locale = await getLocaleFromHeaders()
-    const t = await getSectionTranslations("main")
-
-    console.log(t)
+    // const t = await getTranslationsSection("main")
+    const translations = getTranslations(locale)
 
     return (
-        <html lang={locale} className={poppins.className}>
+        <html
+            lang={locale}
+            className={poppins.className}
+        >
             <head>
                 <script
                     type="application/ld+json"
@@ -36,13 +39,18 @@ export default async function RootLayout({
                 />
             </head>
             <body>
-                {/* <Web3ModalProvider>
-                    <WalletProvider> */}
-                {children}
-                {/* <WalletModal /> */}
-                {/* </WalletProvider>
-                </Web3ModalProvider> */}
-                <Cursor />
+                <I18nProvider
+                    locale={locale}
+                    translations={translations}
+                >
+                    <Web3ModalProvider>
+                        <WalletProvider>
+                            {children}
+                            <WalletModal />
+                        </WalletProvider>
+                    </Web3ModalProvider>
+                    <Cursor />
+                </I18nProvider>
             </body>
         </html>
     )

@@ -1,5 +1,6 @@
-// i18n/translations/en-US.ts
-export const translations = {
+import { Translations } from "@/types/i18n"
+
+export const translations: Translations = {
     metadata: {
         title: "Grzegorz Kocik - Front-end Developer",
         description:
@@ -83,4 +84,4 @@ export const translations = {
         emailBtnText: "Send me an email",
         copyright: "All rights reserved",
     },
-} as const
+}

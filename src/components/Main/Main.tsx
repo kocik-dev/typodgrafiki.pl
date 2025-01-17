@@ -1,14 +1,17 @@
 import "./Main.css"
 import { fascinate } from "../../components/Fonts"
 import { Header } from "../Header/Header"
-import { getSectionTranslations } from "@/i18n/translations"
+import { getTranslationsSection } from "@/i18n/translations"
 
 const Main = async () => {
-    const t = await getSectionTranslations("main")
+    const t = await getTranslationsSection("main")
 
     return (
         <>
-            <a href="#top" className="skip-link-keyboard">
+            <a
+                href="#top"
+                className="skip-link-keyboard"
+            >
                 {t.skipToMain}
             </a>
             <div id="top"></div>
@@ -26,7 +29,10 @@ const Main = async () => {
                             >
                                 Front-end Developer
                             </h1>
-                            <p className="subtitle" aria-label={t.h2}>
+                            <p
+                                className="subtitle"
+                                aria-label={t.h2}
+                            >
                                 {t.h2}
                             </p>
                         </section>

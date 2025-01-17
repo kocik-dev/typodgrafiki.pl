@@ -2,14 +2,14 @@ import { getBlogPosts, listTags } from "@/lib/blog"
 import { fascinate } from "@/components/Fonts"
 import Link from "next/link"
 import Post from "@/components/Blog/Post"
-import { getTranslations } from "next-intl/server"
+import { getTranslationsSection } from "@/i18n/translations"
 
 export default async function BlogContent({
     searchParams,
 }: {
     searchParams: Promise<{ tag?: string }>
 }) {
-    const t = await getTranslations("blog")
+    const t = await getTranslationsSection("blog")
     const posts = await getBlogPosts()
     const tags = listTags
 
@@ -22,9 +22,7 @@ export default async function BlogContent({
 
     return (
         <main className="container">
-            <h1 className={`title-small ${fascinate.className}`}>
-                {t("title")}
-            </h1>
+            <h1 className={`title-small ${fascinate.className}`}>{t.title}</h1>
             <ul className="tags list-tags">
                 <li>
                     <Link
@@ -33,7 +31,7 @@ export default async function BlogContent({
                             selectedTag === "all" ? "active" : ""
                         }`}
                     >
-                        {t("all")}
+                        {t.all}
                     </Link>
                 </li>
                 {tags.map((tag) => (
@@ -62,12 +60,12 @@ export default async function BlogContent({
             ) : (
                 <div className="empty-list text text-center flex justify-center">
                     <div>
-                        <p>{t("listEmptyText")}.</p>
+                        <p>{t.listEmptyText}.</p>
                         <Link
                             href="/blog"
                             className="btn btn-default"
                         >
-                            {t("seeAllPosts")}
+                            {t.seeAllPosts}
                         </Link>
                     </div>
                 </div>

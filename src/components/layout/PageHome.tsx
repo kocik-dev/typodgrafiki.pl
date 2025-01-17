@@ -11,12 +11,12 @@ const PageHome = () => {
         <>
             <Main />
             <div className="bg-white">
-                {/* <About />
+                <About />
                 <Portfolio />
                 <Footer />
                 <BottomMenu>
                     <Menu />
-                </BottomMenu> */}
+                </BottomMenu>
             </div>
         </>
     )

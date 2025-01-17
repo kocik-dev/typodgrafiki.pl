@@ -48,12 +48,12 @@
 
 "use client"
 
-import { useTranslations } from "next-intl"
+import { useTranslationsSection } from "@/hooks/useTranslations"
 import React, { useState, useEffect } from "react"
 
 export default function MenuMobile() {
     const [isOpen, setIsOpen] = useState(false)
-    const t = useTranslations("menu")
+    const t = useTranslationsSection("menu")
 
     const handleToggleMenu = () => {
         setIsOpen(!isOpen)
@@ -132,11 +132,11 @@ export default function MenuMobile() {
                 className={`visible-xs ${isOpen ? "open" : ""}`}
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
-                aria-label={isOpen ? t("menuClose") : t("menuOpen")}
+                aria-label={isOpen ? t.menuClose : t.menuOpen}
                 onClick={handleToggleMenu}
             >
                 <span className="visually-hidden">
-                    {isOpen ? t("menuClose") : t("menuOpen")}
+                    {isOpen ? t.menuClose : t.menuOpen}
                 </span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>

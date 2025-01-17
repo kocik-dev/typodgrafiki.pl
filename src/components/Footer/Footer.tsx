@@ -66,7 +66,7 @@ import "./Footer.css"
 import Logo from "../Header/Logo"
 import Link from "next/link"
 import BtnSendEmail from "./BtnSendEmail"
-import { getTranslations } from "next-intl/server"
+import { getTranslationsSection } from "@/i18n/translations"
 
 const IconTwitter = () => {
     return (
@@ -158,7 +158,7 @@ const socialLinksData: ISocialData[] = [
 
 const Footer = async () => {
     const currentYear = new Date().getFullYear()
-    const t = await getTranslations("footer")
+    const t = await getTranslationsSection("footer")
 
     return (
         <footer
@@ -174,11 +174,11 @@ const Footer = async () => {
                         role="region"
                         aria-labelledby="contact-title"
                     >
-                        <h2 id="contact-title">{t("title")}</h2>
+                        <h2 id="contact-title">{t.title}</h2>
                         <div
                             className="buttons flex flex-wrap"
                             role="group"
-                            aria-label={t("contactSectionLabel")}
+                            aria-label={t.contactSectionLabel}
                         >
                             <BtnSendEmail />
                             {socialLinksData.map((item) => (
@@ -222,7 +222,7 @@ const Footer = async () => {
             </div>
             <p className="copyright">
                 <small>
-                    Copyright © {currentYear} Grzegorz Kocik. {t("copyright")}.
+                    Copyright © {currentYear} Grzegorz Kocik. {t.copyright}.
                 </small>
             </p>
         </footer>

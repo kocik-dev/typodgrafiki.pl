@@ -42,11 +42,11 @@
 
 import Link from "next/link"
 import React from "react"
-import { getTranslations } from "next-intl/server"
 import { WalletButton } from "@/components/Web3/WalletButton"
+import { getTranslationsSection } from "@/i18n/translations"
 
 export default async function Menu() {
-    const t = await getTranslations("menu")
+    const t = await getTranslationsSection("menu")
 
     return (
         <ul
@@ -59,7 +59,7 @@ export default async function Menu() {
                     data-mobile-menu-link
                     role="menuitem"
                 >
-                    {t("about")}
+                    {t.about}
                 </a>
             </li>
             <li role="none">
@@ -67,7 +67,7 @@ export default async function Menu() {
                     href="/#projects"
                     data-mobile-menu-link
                 >
-                    {t("portfolio")}
+                    {t.portfolio}
                 </a>
             </li>
             <li role="none">
@@ -83,7 +83,7 @@ export default async function Menu() {
                     href="#contact"
                     data-mobile-menu-link
                 >
-                    {t("contact")}
+                    {t.contact}
                 </a>
             </li>
             <li

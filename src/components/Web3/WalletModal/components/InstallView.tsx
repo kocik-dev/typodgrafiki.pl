@@ -5,10 +5,10 @@ import browserChrome from "@/assets/web3/browsers/chrome.svg"
 import Image from "next/image"
 import Link from "next/link"
 import iconMetamask from "@/assets/web3/wallets/metamask.svg"
-import { useTranslations } from "next-intl"
+import { useTranslationsSection } from "@/hooks/useTranslations"
 
 export default function InstallView() {
-    const t = useTranslations("web3")
+    const t = useTranslationsSection("web3")
     return (
         <div className="text-center">
             <Image
@@ -18,9 +18,9 @@ export default function InstallView() {
                 height={70}
                 style={{ marginBottom: "10px" }}
             />
-            <p className="modal-title">{t("install")} MetaMask</p>
+            <p className="modal-title">{t.install} MetaMask</p>
             <p className="text">
-                {t("installText1")} MetaMask {t("installText2")}
+                {t.installText1} MetaMask {t.installText2}
             </p>
             <div className="flex justify-center">
                 <Link
@@ -35,7 +35,7 @@ export default function InstallView() {
                             height={20}
                             alt="Chrome browser"
                         />
-                        {t("installBtn")}
+                        {t.installBtn}
                     </span>
                 </Link>
             </div>

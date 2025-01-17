@@ -83,7 +83,7 @@
 
 import Image from "next/image"
 import React, { useState } from "react"
-import { useTranslations } from "next-intl"
+import { useTranslationsSection } from "@/hooks/useTranslations"
 import SlideTop from "@/animations/SlideTop"
 import { ProjectItem } from "@/types/website"
 import useEmailSender from "@/hooks/useSendEmail"
@@ -97,7 +97,7 @@ export default function PortfolioItemImages({
 }) {
     const [isHover, setIsHover] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
-    const t = useTranslations("projects")
+    const t = useTranslationsSection("projects")
 
     const sendEmail = useEmailSender()
 
@@ -122,11 +122,11 @@ export default function PortfolioItemImages({
                     <button
                         className="btn btn-transparent btn-bubble-bottom"
                         onClick={() => sendEmail(emailSubject, emailText)}
-                        aria-label={t("requestDetails", { name: name })}
+                        aria-label={`${t.requestDetails} ${name}`}
                     >
                         <span>
                             <Lock aria-hidden="true" />
-                            {t("button")}
+                            {t.button}
                         </span>
                     </button>
                 </div>
@@ -135,11 +135,11 @@ export default function PortfolioItemImages({
                 <div
                     className="project-image"
                     role="img"
-                    aria-label={t("projectImageAlt", { name: name })}
+                    aria-label={t.projectImageAlt + " " + name}
                 >
                     <Image
                         src={image}
-                        alt={t("projectImageAlt", { name: name })}
+                        alt={t.projectImageAlt + " " + name}
                         width={width}
                         height={height}
                         onLoad={handleImageLoad}
@@ -148,7 +148,7 @@ export default function PortfolioItemImages({
                         <div
                             className="loader"
                             role="status"
-                            aria-label={t("loading")}
+                            aria-label={t.loading}
                         ></div>
                     ) : null}
                 </div>
@@ -187,7 +187,7 @@ const Plus = ({
     setIsHover: React.Dispatch<React.SetStateAction<boolean>>
     name: string
 }) => {
-    const t = useTranslations("projects")
+    const t = useTranslationsSection("projects")
 
     return (
         <button
@@ -196,10 +196,10 @@ const Plus = ({
             onMouseLeave={() => setIsHover(false)}
             onFocus={() => setIsHover(true)}
             onBlur={() => setIsHover(false)}
-            aria-label={t("showProjectImage", { name: name })}
+            aria-label={t.showProjectImage + " " + name}
         >
             <span className="visually-hidden">
-                {t("showProjectImage", { name: name })}
+                {t.showProjectImage + " " + name}
             </span>
             <span>
                 <svg

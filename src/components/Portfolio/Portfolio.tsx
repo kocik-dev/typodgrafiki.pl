@@ -54,7 +54,7 @@
  * <Projects />
  */
 
-import { getTranslations } from "next-intl/server"
+import { getTranslationsSection } from "@/i18n/translations"
 import { fascinate } from "@/components/Fonts"
 import PortfolioItem from "./PortfolioItem"
 import SlideLeft from "@/animations/SlideLeft"
@@ -63,7 +63,6 @@ import { ProjectItem } from "@/types/website"
 import "./Portfolio.css"
 import outeImg from "@/assets/projects/oute.jpg"
 import tripistImg from "@/assets/projects/tripist.jpg"
-
 import findUnescoImg from "@/assets/projects/find-unesco.jpg"
 import audiomixImg from "@/assets/projects/audio-mix.jpg"
 import puupilImg from "@/assets/projects/puupil.jpg"
@@ -131,7 +130,7 @@ const projectItems: ProjectItem[] = [
 ]
 
 const Projects = async () => {
-    const t = await getTranslations("projects")
+    const t = await getTranslationsSection("projects")
 
     return (
         <section
@@ -145,7 +144,7 @@ const Projects = async () => {
                         id="projects-title"
                         className={`title-small ${fascinate.className}`}
                     >
-                        {t("title")}
+                        {t.title}
                     </h2>
                 </SlideLeft>
                 <div className="columns flex">
@@ -158,7 +157,7 @@ const Projects = async () => {
                                 id="discipline-title"
                                 className="title-smaller"
                             >
-                                {t("discipline")}
+                                {t.discipline}
                             </h3>
                             <ul
                                 className="list"
@@ -178,7 +177,7 @@ const Projects = async () => {
                                 id="tools-title"
                                 className="title-smaller"
                             >
-                                {t("tools")}
+                                {t.tools}
                             </h3>
                             <ul
                                 className="list"
@@ -200,7 +199,7 @@ const Projects = async () => {
                                 id="industry-title"
                                 className="title-smaller hidden-xs"
                             >
-                                {t("industry")}
+                                {t.industry}
                             </h3>
                             <ul
                                 className="list tags flex"
@@ -226,7 +225,7 @@ const Projects = async () => {
             <ul
                 className="project-list"
                 role="list"
-                aria-label={t("projectsList")}
+                aria-label={t.projectsList}
             >
                 {projectItems.map((item, index) => (
                     <li

@@ -21,18 +21,24 @@
 
 import React from "react"
 import { motion, useScroll, useTransform } from "motion/react"
-import { useTranslations } from "next-intl"
+import { useTranslationsSection } from "@/hooks/useTranslations"
 
 const Scroll = () => {
-    const t = useTranslations("about")
+    const t = useTranslationsSection("about")
     const { scrollY } = useScroll()
     const top = useTransform(scrollY, [0, 200, 280], [-70, -50, 0], {
         clamp: true,
     })
 
     return (
-        <motion.div className="scroll" style={{ top: top }}>
-            <a href="#about" className="btn-bubble-bottom">
+        <motion.div
+            className="scroll"
+            style={{ top: top }}
+        >
+            <a
+                href="#about"
+                className="btn-bubble-bottom"
+            >
                 <span>
                     <svg
                         width="8"
@@ -46,7 +52,7 @@ const Scroll = () => {
                             fill="currentColor"
                         />
                     </svg>
-                    {t("scroll")}
+                    {t.scroll}
                 </span>
             </a>
         </motion.div>

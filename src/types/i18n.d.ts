@@ -1,7 +1,7 @@
 import { locales } from "@/i18n/settings"
 export type Locale = (typeof locales)[number]
 
-type Translations = {
+export type Translations = {
     metadata: Metadata
     menu: Menu
     main: Main

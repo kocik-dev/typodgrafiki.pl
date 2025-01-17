@@ -10,7 +10,7 @@ import { Web3ModalProvider } from "@/contexts/Web3ModalContext"
 import { WalletProvider } from "@/contexts/WalletContext"
 import { WalletModal } from "@/components/Web3/WalletModal"
 import { jsonLd } from "@/config/metadata.config"
-import { getTranslationsSection, getTranslations } from "@/i18n/translations"
+import { getTranslations } from "@/i18n/translations"
 import { getLocaleFromHeaders } from "@/lib/i18n"
 import { I18nProvider } from "@/contexts/i18nContext"
 
@@ -22,7 +22,6 @@ export default async function RootLayout({
     children: React.ReactNode
 }) {
     const locale = await getLocaleFromHeaders()
-    // const t = await getTranslationsSection("main")
     const translations = getTranslations(locale)
 
     return (

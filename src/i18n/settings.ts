@@ -30,6 +30,6 @@ export const locales = [
     // Australia i Oceania
     "en-AU", // Australia - Sydney, Melbourne
     "en-NZ", // Nowa Zelandia
-] as const
+]
 
 export const defaultLocale = "en-US"

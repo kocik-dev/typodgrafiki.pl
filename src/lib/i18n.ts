@@ -1,4 +1,4 @@
-import { defaultLocale } from "@/i18n/settings"
+import { defaultLocale, locales } from "@/i18n/settings"
 import { headers } from "next/headers"
 
 export async function getLocaleFromHeaders() {
@@ -11,4 +11,8 @@ export const generateHref = async (path: string) => {
     const locale = await getLocaleFromHeaders()
     const basePath = locale === defaultLocale ? "" : `/${locale}`
     return `${basePath}${path}`
+}
+
+export const isBadUrl = (url: string) => {
+    return !locales.includes(url)
 }

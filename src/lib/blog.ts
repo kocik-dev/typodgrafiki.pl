@@ -117,6 +117,13 @@ export async function getBlogPosts() {
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     try {
         const filePath = path.join(postsDirectory, `${slug}.mdx`)
+
+        // Sprawdzamy, czy plik istnieje, zanim go otworzymy
+        if (!fs.existsSync(filePath)) {
+            console.error(`File not found: ${filePath}`)
+            return null
+        }
+
         const fileContents = fs.readFileSync(filePath, "utf8")
 
         const { data, content } = matter(fileContents)

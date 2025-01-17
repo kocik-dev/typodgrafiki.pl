@@ -21,6 +21,8 @@ export default async function RootLayout({
 }: {
     children: React.ReactNode
 }) {
+    console.log("Have a great day! 🏖️")
+
     const locale = await getLocaleFromHeaders()
     const translations = getTranslations(locale)
 

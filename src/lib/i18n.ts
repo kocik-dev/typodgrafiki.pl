@@ -12,13 +12,6 @@ export const getLangUrl = async () => {
     return basePath
 }
 
-// Funkcja pomocnicza do generowania linków
-export const generateHref = async (path: string) => {
-    const locale = await getLocaleFromHeaders()
-    const basePath = locale === defaultLocale ? "" : `/${locale}`
-    return `${basePath}${path}`
-}
-
 export const isBadUrl = (url: string) => {
     return !locales.includes(url)
 }

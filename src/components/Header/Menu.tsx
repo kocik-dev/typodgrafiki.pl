@@ -44,10 +44,11 @@ import Link from "next/link"
 import React from "react"
 import { WalletButton } from "@/components/Web3/WalletButton"
 import { getTranslationsSection } from "@/i18n/translations"
-import { generateHref } from "@/lib/i18n"
+import { getLangUrl } from "@/lib/i18n"
 
 export default async function Menu() {
     const t = await getTranslationsSection("menu")
+    const locale = await getLangUrl()
 
     return (
         <ul
@@ -56,7 +57,7 @@ export default async function Menu() {
         >
             <li role="none">
                 <a
-                    href={await generateHref("/#about")}
+                    href={locale + "/#about"}
                     data-mobile-menu-link
                     role="menuitem"
                 >
@@ -65,7 +66,7 @@ export default async function Menu() {
             </li>
             <li role="none">
                 <a
-                    href={await generateHref("/#projects")}
+                    href={locale + "/#projects"}
                     data-mobile-menu-link
                 >
                     {t.portfolio}
@@ -73,7 +74,7 @@ export default async function Menu() {
             </li>
             <li role="none">
                 <Link
-                    href={await generateHref("/blog")}
+                    href={locale + "/blog"}
                     data-mobile-menu-link
                 >
                     Blog

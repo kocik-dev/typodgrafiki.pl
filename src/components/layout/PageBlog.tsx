@@ -3,7 +3,7 @@ import { fascinate } from "@/components/Fonts"
 import Link from "next/link"
 import Post from "@/components/Blog/Post"
 import { getTranslationsSection } from "@/i18n/translations"
-import { generateHref, getLangUrl } from "@/lib/i18n"
+import { getLangUrl } from "@/lib/i18n"
 
 export default async function BlogContent({
     searchParams,
@@ -29,7 +29,7 @@ export default async function BlogContent({
             <ul className="tags list-tags">
                 <li>
                     <Link
-                        href={await generateHref("/blog")}
+                        href={locale + "/blog"}
                         className={`title-smaller ${
                             selectedTag === "all" ? "active" : ""
                         }`}
@@ -66,7 +66,7 @@ export default async function BlogContent({
                     <div>
                         <p>{t.listEmptyText}.</p>
                         <Link
-                            href={await generateHref("/blog")}
+                            href={locale + "/blog"}
                             className="btn btn-default"
                         >
                             {t.seeAllPosts}

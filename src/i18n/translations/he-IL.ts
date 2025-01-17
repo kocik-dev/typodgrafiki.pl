@@ -11,6 +11,7 @@ export const translations: Translations = {
     menu: {
         about: "אודות",
         portfolio: "עבודות",
+        blog: "בלוג",
         contact: "צור קשר",
         menuOpen: "פתח תפריט",
         menuClose: "סגור תפריט",
@@ -44,8 +45,17 @@ export const translations: Translations = {
         projectImageAlt: "תצוגה מקדימה של פרויקט {name}",
         loading: "טוען תמונת פרויקט",
         discipline: "תחום",
+        disciplineText1: "עיצוב UI",
+        disciplineText2: "פיתוח קוד",
         tools: "כלים",
         industry: "תעשייה",
+        role: {
+            brand: "מותג",
+            design: "UI/UX",
+            www: "אתר אינטרנט",
+            mobile: "אפליקציה לנייד",
+            fullstack: "מפתח פולסטאק",
+        },
     },
     web3: {
         btnConnectWeb3: "חבר ארנק",

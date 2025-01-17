@@ -12,6 +12,7 @@ export const translations: Translations = {
     menu: {
         about: "소개",
         portfolio: "프로젝트",
+        blog: "블로그",
         contact: "연락하기",
         menuOpen: "메뉴 열기",
         menuClose: "메뉴 닫기",
@@ -45,8 +46,17 @@ export const translations: Translations = {
         projectImageAlt: "{name} 프로젝트 미리보기",
         loading: "프로젝트 이미지 로딩 중",
         discipline: "분야",
+        disciplineText1: "UI 디자인",
+        disciplineText2: "코드 개발",
         tools: "도구",
         industry: "산업",
+        role: {
+            brand: "브랜드",
+            design: "UI/UX",
+            www: "웹사이트",
+            mobile: "모바일 애플리케이션",
+            fullstack: "풀스택 개발자",
+        },
     },
     web3: {
         btnConnectWeb3: "지갑 연결",

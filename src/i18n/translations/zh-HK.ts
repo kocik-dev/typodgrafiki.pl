@@ -11,6 +11,7 @@ export const translations: Translations = {
     menu: {
         about: "關於我",
         portfolio: "作品集",
+        blog: "博客",
         contact: "聯絡",
         menuOpen: "開啟選單",
         menuClose: "關閉選單",
@@ -44,8 +45,17 @@ export const translations: Translations = {
         projectImageAlt: "{name}項目預覽",
         loading: "正在載入項目圖片",
         discipline: "專業領域",
+        disciplineText1: "UI設計",
+        disciplineText2: "代碼開發",
         tools: "工具",
         industry: "行業",
+        role: {
+            brand: "品牌",
+            design: "UI/UX",
+            www: "網站",
+            mobile: "移動應用程式",
+            fullstack: "全棧開發者",
+        },
     },
     web3: {
         btnConnectWeb3: "連接錢包",

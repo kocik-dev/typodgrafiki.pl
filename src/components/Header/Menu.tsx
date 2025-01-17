@@ -51,10 +51,7 @@ export default async function Menu() {
     const locale = await getLangUrl()
 
     return (
-        <ul
-            className="menu flex"
-            role="menubar"
-        >
+        <ul className="menu flex" role="menubar">
             <li role="none">
                 <a
                     href={locale + "/#about"}
@@ -65,33 +62,21 @@ export default async function Menu() {
                 </a>
             </li>
             <li role="none">
-                <a
-                    href={locale + "/#projects"}
-                    data-mobile-menu-link
-                >
+                <a href={locale + "/#projects"} data-mobile-menu-link>
                     {t.portfolio}
                 </a>
             </li>
             <li role="none">
-                <Link
-                    href={locale + "/blog"}
-                    data-mobile-menu-link
-                >
-                    Blog
+                <Link href={locale + "/blog"} data-mobile-menu-link>
+                    {t.blog}
                 </Link>
             </li>
             <li role="none">
-                <a
-                    href="#contact"
-                    data-mobile-menu-link
-                >
+                <a href="#contact" data-mobile-menu-link>
                     {t.contact}
                 </a>
             </li>
-            <li
-                className="wallet hidden-xs"
-                role="none"
-            >
+            <li className="wallet hidden-xs" role="none">
                 <WalletButton />
             </li>
         </ul>

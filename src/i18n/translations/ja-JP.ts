@@ -12,6 +12,7 @@ export const translations: Translations = {
     menu: {
         about: "プロフィール",
         portfolio: "制作実績",
+        blog: "ブログ",
         contact: "お問い合わせ",
         menuOpen: "メニューを開く",
         menuClose: "メニューを閉じる",
@@ -45,8 +46,17 @@ export const translations: Translations = {
         projectImageAlt: "{name}プロジェクトのプレビュー",
         loading: "プロジェクト画像を読み込み中",
         discipline: "専門分野",
+        disciplineText1: "UIデザイン",
+        disciplineText2: "コード開発",
         tools: "使用ツール",
         industry: "業界",
+        role: {
+            brand: "ブランド",
+            design: "UI/UX",
+            www: "ウェブサイト",
+            mobile: "モバイルアプリケーション",
+            fullstack: "フルスタック開発者",
+        },
     },
     web3: {
         btnConnectWeb3: "ウォレットを接続",

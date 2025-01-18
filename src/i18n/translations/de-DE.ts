@@ -12,6 +12,7 @@ export const translations: Translations = {
     menu: {
         about: "Über mich",
         portfolio: "Projekte",
+        blog: "Blog",
         contact: "Kontakt",
         menuOpen: "Menü öffnen",
         menuClose: "Menü schließen",
@@ -45,8 +46,17 @@ export const translations: Translations = {
         projectImageAlt: "Vorschau des Projekts {name}",
         loading: "Projektbild wird geladen",
         discipline: "Fachgebiet",
+        disciplineText1: "UI-Design",
+        disciplineText2: "Code-Entwicklung",
         tools: "Werkzeuge",
         industry: "Branche",
+        role: {
+            brand: "Marke",
+            design: "UI/UX",
+            www: "Webseite",
+            mobile: "Mobile Anwendung",
+            fullstack: "Fullstack-Entwickler",
+        },
     },
     web3: {
         btnConnectWeb3: "Wallet verbinden",

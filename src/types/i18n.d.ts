@@ -23,6 +23,7 @@ type Metadata = {
 type Menu = {
     about: string
     portfolio: string
+    blog: string
     contact: string
     menuOpen: string
     menuClose: string
@@ -58,8 +59,17 @@ type Project = {
     projectImageAlt: string
     loading: string
     discipline: string
+    disciplineText1: string
+    disciplineText2: string
     tools: string
     industry: string
+    role: {
+        brand?: string
+        design?: string
+        www?: string
+        mobile?: string
+        fullstack?: string
+    }
 }
 
 type Web3 = {

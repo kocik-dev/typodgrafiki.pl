@@ -12,6 +12,7 @@ export const translations: Translations = {
     menu: {
         about: "عني",
         portfolio: "أعمالي",
+        blog: "مدونة",
         contact: "اتصل بي",
         menuOpen: "فتح القائمة",
         menuClose: "إغلاق القائمة",
@@ -45,8 +46,17 @@ export const translations: Translations = {
         projectImageAlt: "معاينة مشروع {name}",
         loading: "جاري تحميل صورة المشروع",
         discipline: "المجال",
+        disciplineText1: "تصميم واجهة المستخدم",
+        disciplineText2: "تطوير الكود",
         tools: "الأدوات",
         industry: "القطاع",
+        role: {
+            brand: "العلامة التجارية",
+            design: "UI/UX",
+            www: "الموقع الإلكتروني",
+            mobile: "تطبيق الهاتف المحمول",
+            fullstack: "مطوّر متكامل",
+        },
     },
     web3: {
         btnConnectWeb3: "ربط المحفظة",

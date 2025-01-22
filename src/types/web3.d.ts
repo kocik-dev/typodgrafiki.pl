@@ -3,33 +3,12 @@ export interface Web3ModalContextType {
     view: ModalView
     open: (view?: ModalView) => void
     close: () => void
-    navigateTo: (
-        view: ModalView,
-        errorMessage?: WalletConnectMessageType
-    ) => void
+    navigateTo: (view: ModalView, errorMessage?: string) => void
     canGoBack: boolean
     title: string
-    errorMessage: WalletConnectMessageType | null
+    errorMessage: string | null
 }
-
-export interface WalletContextType {
-    address: string | null
-    walletType: WalletTypeProps | null
-    isConnecting: boolean
-    connect: (type: WalletTypeProps) => Promise<{
-        success: boolean
-        error?: string
-        message: WalletConnectMessageType
-    }>
-    disconnect: () => void
-}
-
-export type WalletConnectMessageType = {
-    title: string
-    text: string
-    btn?: boolean
-}
-
-export type WalletTypeProps = "metamask" | "coinbase"
 
 export type ModalView = "connect" | "install" | "success" | "error"
+
+export type addressType = `0x${string}` | undefined

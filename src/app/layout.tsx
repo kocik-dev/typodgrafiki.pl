@@ -35,10 +35,7 @@ export default async function RootLayout({
             <body>
                 <I18nProvider locale={locale} translations={translations}>
                     <Web3ModalProvider>
-                        <WalletProvider>
-                            {children}
-                            <WalletModal />
-                        </WalletProvider>
+                        <WalletProvider>{children}</WalletProvider>
                     </Web3ModalProvider>
                     <Cursor />
                 </I18nProvider>

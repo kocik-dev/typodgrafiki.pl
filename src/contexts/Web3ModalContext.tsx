@@ -1,11 +1,7 @@
 "use client"
 
 import { createContext, useContext, useCallback, useState } from "react"
-import {
-    ModalView,
-    WalletConnectMessageType,
-    Web3ModalContextType,
-} from "@/types/web3"
+import { ModalView, Web3ModalContextType } from "@/types/web3"
 
 const Web3ModalContext = createContext<Web3ModalContextType | undefined>(
     undefined
@@ -18,8 +14,7 @@ export const Web3ModalProvider = ({
 }) => {
     const [isOpen, setIsOpen] = useState(false)
     const [view, setView] = useState<ModalView>("connect")
-    const [errorMessage, setErrorMessage] =
-        useState<WalletConnectMessageType | null>(null)
+    const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
     const canGoBack = view === "install" || view === "error"
 
@@ -34,7 +29,7 @@ export const Web3ModalProvider = ({
     }, [])
 
     const navigateTo = useCallback(
-        (newView: ModalView, errorMessage?: WalletConnectMessageType) => {
+        (newView: ModalView, errorMessage?: string) => {
             if (newView === "error" && errorMessage) {
                 setErrorMessage(errorMessage)
             }

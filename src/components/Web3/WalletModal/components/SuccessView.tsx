@@ -46,43 +46,28 @@
 
 "use client"
 
-import { useWallet } from "@/contexts/WalletContext"
-// import { publicClient } from "@/config/web3.config"
+import { useAccount, useDisconnect, useBalance } from "wagmi"
 import { formatWalletAddress } from "@/lib/web3"
 import { useTranslationsSection } from "@/hooks/useTranslations"
 import { useState } from "react"
-// import { formatEther } from "viem"
 import { IoExitOutline, IoCopyOutline, IoCheckmarkSharp } from "react-icons/io5"
+import { useWeb3Modal } from "@/contexts/Web3ModalContext"
+import { addressType } from "@/types/web3"
 
 export const SuccessView = () => {
-    const { disconnect, address } = useWallet()
+    const { navigateTo } = useWeb3Modal()
+    const { address } = useAccount()
+    const { disconnect } = useDisconnect()
     const [isCopied, setIsCopied] = useState(false)
     const t = useTranslationsSection("web3")
-    // const [balance, setBalance] = useState<string | null>(null)
 
-    // useEffect(() => {
-    //     const fetchBalance = async () => {
-    //         if (!address) return
-
-    //         try {
-    //             // Pobierz saldo portfela
-    //             const balanceInWei = await publicClient.getBalance({
-    //                 address: address as `0x${string}`,
-    //             })
-    //             const balanceInEther = formatEther(balanceInWei)
-    //             setBalance(Number(balanceInEther).toFixed(4))
-    //         } catch (error) {
-    //             console.error("Failed to fetch balance:", error)
-    //             setBalance(null)
-    //         }
-    //     }
-
-    //     fetchBalance()
-    // }, [address])
-
-    if (!address) return null
+    const handleDisconnect = () => {
+        disconnect()
+        navigateTo("connect")
+    }
 
     const handleCopy = async () => {
+        if (!address) return
         try {
             await navigator.clipboard.writeText(address)
             setIsCopied(true)
@@ -109,14 +94,36 @@ export const SuccessView = () => {
                     )}
                 </button>
             </p>
-            {/* <p>Saldo: {balance ? `${balance} ETH` : "Ładowanie..."}</p> */}
+            <Balance address={address} />
             <button
-                onClick={disconnect}
-                className="btn btn-transparent"
+                onClick={handleDisconnect}
+                className="btn btn-transparent btn-bubble-bottom"
             >
-                <IoExitOutline />
-                {t.disconnect}
+                <span>
+                    <IoExitOutline />
+                    {t.disconnect}
+                </span>
             </button>
         </div>
+    )
+}
+
+const Balance = ({ address }: { address: addressType }) => {
+    const {
+        data: balance,
+        isError,
+        isLoading,
+    } = useBalance({
+        address,
+    })
+
+    if (isLoading) return <p>Ładowanie...</p>
+
+    if (!balance || isError) return null
+
+    return (
+        <p>
+            Saldo: {balance.formatted} {balance.symbol}
+        </p>
     )
 }

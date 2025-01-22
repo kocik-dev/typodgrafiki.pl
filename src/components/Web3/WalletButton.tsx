@@ -52,13 +52,13 @@
 "use client"
 
 import React from "react"
-import { useWallet } from "@/contexts/WalletContext"
 import { useWeb3Modal } from "@/contexts/Web3ModalContext"
+import { useAccount } from "wagmi"
 import { formatWalletAddress } from "@/lib/web3"
 import { useTranslationsSection } from "@/hooks/useTranslations"
 
 export const WalletButton = () => {
-    const { address } = useWallet()
+    const { address } = useAccount()
     const { open } = useWeb3Modal()
 
     const t = useTranslationsSection("web3")
@@ -69,10 +69,7 @@ export const WalletButton = () => {
 
     return (
         <div className="menu-web3 relative">
-            <button
-                className="btn btn-default"
-                onClick={handleClick}
-            >
+            <button className="btn btn-default" onClick={handleClick}>
                 {address ? formatWalletAddress(address) : t.btnConnectWeb3}
             </button>
         </div>

@@ -85,10 +85,7 @@ export const WalletModal = () => {
 
     return (
         <>
-            <dialog
-                className="modal"
-                open={isOpen}
-            >
+            <dialog className="modal" open={isOpen}>
                 <header className="flex modal-header justify-between align-center vertical-center">
                     <button
                         onClick={() => navigateTo("connect")}
@@ -105,10 +102,7 @@ export const WalletModal = () => {
                 <div className="modal-content">{renderContent()}</div>
             </dialog>
             {isOpen ? (
-                <div
-                    className="modal-shadow"
-                    onClick={close}
-                ></div>
+                <div className="modal-shadow" onClick={close}></div>
             ) : null}
         </>
     )

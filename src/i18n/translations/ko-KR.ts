@@ -78,6 +78,14 @@ export const translations: Translations = {
         listEmptyText: "게시물이 없습니다",
         seeAllPosts: "모든 게시물 보기",
         postBtn: "더 보기",
+        tags: {
+            anim: "애니메이션",
+            react: "리액트",
+            a11y: "접근성",
+            css: "CSS 및 레이아웃",
+            next: "Next.js",
+            web3: "웹3",
+        },
     },
     notFound: {
         title: "앗!",

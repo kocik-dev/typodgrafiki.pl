@@ -5,6 +5,7 @@ import { notFound } from "next/navigation"
 import CodeSnippet from "@/components/Blog/CodeSnippet"
 import { fascinate } from "@/components/Fonts"
 import { defaultLocale } from "@/i18n/settings"
+import { getTranslationsSection } from "@/i18n/translations"
 
 const components = {
     CodeSnippet,
@@ -21,6 +22,7 @@ export default async function BlogPostContent({
         notFound()
     }
 
+    const t = await getTranslationsSection("blog")
     const post = await getPostBySlug(slug)
 
     if (!post) {
@@ -33,11 +35,8 @@ export default async function BlogPostContent({
                 {post.tags && (
                     <div className="tags">
                         {post.tags.map((tag) => (
-                            <span
-                                key={tag}
-                                className="title-smaller"
-                            >
-                                {tag}
+                            <span key={tag} className="title-smaller">
+                                {t.tags[tag as keyof typeof t.tags]}
                             </span>
                         ))}
                     </div>
@@ -45,10 +44,7 @@ export default async function BlogPostContent({
                 <h1 className={`title-small ${fascinate.className}`}>
                     {post.title}
                 </h1>
-                <time
-                    dateTime={post.date}
-                    className="data"
-                >
+                <time dateTime={post.date} className="data">
                     {new Date(post.date).toLocaleDateString(defaultLocale, {
                         year: "numeric",
                         month: "long",
@@ -58,10 +54,7 @@ export default async function BlogPostContent({
             </header>
 
             <div className="content text">
-                <MDXRemote
-                    source={post.content}
-                    components={components}
-                />
+                <MDXRemote source={post.content} components={components} />
             </div>
         </article>
     )

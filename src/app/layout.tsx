@@ -2,8 +2,6 @@ import "@/styles/App.css"
 import "@/styles/menu.css"
 import "@/styles/accesibility.css"
 import { metadata } from "@/config/metadata.config"
-import { headers } from "next/headers"
-import { defaultLocale } from "@/i18n/settings"
 import Cursor from "@/components/Cursor"
 import { poppins } from "@/components/Fonts"
 import { Web3ModalProvider } from "@/contexts/Web3ModalContext"
@@ -21,16 +19,11 @@ export default async function RootLayout({
 }: {
     children: React.ReactNode
 }) {
-    console.log("Have a great day! 🏖️")
-
     const locale = await getLocaleFromHeaders()
     const translations = getTranslations(locale)
 
     return (
-        <html
-            lang={locale}
-            className={poppins.className}
-        >
+        <html lang={locale} className={poppins.className}>
             <head>
                 <script
                     type="application/ld+json"
@@ -40,10 +33,7 @@ export default async function RootLayout({
                 />
             </head>
             <body>
-                <I18nProvider
-                    locale={locale}
-                    translations={translations}
-                >
+                <I18nProvider locale={locale} translations={translations}>
                     <Web3ModalProvider>
                         <WalletProvider>
                             {children}

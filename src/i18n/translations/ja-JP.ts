@@ -78,6 +78,14 @@ export const translations: Translations = {
         listEmptyText: "投稿がありません",
         seeAllPosts: "すべての投稿を見る",
         postBtn: "もっと見る",
+        tags: {
+            anim: "アニメーション",
+            react: "React",
+            a11y: "アクセシビリティ",
+            css: "CSSとレイアウト",
+            next: "Next.js",
+            web3: "Web3",
+        },
     },
     notFound: {
         title: "申し訳ありません！",

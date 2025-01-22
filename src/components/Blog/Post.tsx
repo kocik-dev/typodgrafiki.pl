@@ -55,17 +55,11 @@ export default async function Post({
     const tags = post.tags || []
     const link = `${locale}/blog/${post.slug}`
     return (
-        <article
-            key={post.slug}
-            className="post"
-        >
+        <article key={post.slug} className="post">
             <div className="tags">
                 {tags.map((tag, index) => (
-                    <button
-                        className="title-smaller"
-                        key={tag + index}
-                    >
-                        {tag}
+                    <button className="title-smaller" key={tag + index}>
+                        {t.tags[tag as keyof typeof t.tags]}
                     </button>
                 ))}
             </div>
@@ -77,10 +71,7 @@ export default async function Post({
             {post.description && (
                 <p className="description text">{post.description}</p>
             )}
-            <time
-                dateTime={post.date}
-                className="data"
-            >
+            <time dateTime={post.date} className="data">
                 {new Date(post.date).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",

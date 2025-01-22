@@ -78,6 +78,14 @@ export const translations: Translations = {
         listEmptyText: "Artikkelilista on tyhjä",
         seeAllPosts: "Katso kaikki artikkelit",
         postBtn: "Katso lisää",
+        tags: {
+            anim: "animaatiot",
+            react: "react",
+            a11y: "saavutettavuus",
+            css: "css ja asettelu",
+            next: "next.js",
+            web3: "web3",
+        },
     },
     notFound: {
         title: "Hups!",

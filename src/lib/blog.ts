@@ -64,9 +64,20 @@
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
-import { TagsWithLink } from "@/types/website"
+import { TagWithLink } from "@/types/website"
+import { Locale } from "@/types/i18n"
+import { getLocaleFromHeaders } from "./i18n"
+import { defaultLocale } from "@/i18n/settings"
 
-const postsDirectory = path.join(process.cwd(), "content/blog/en")
+export async function getPostsDirectory() {
+    let locale = defaultLocale
+    try {
+        locale = await getLocaleFromHeaders()
+    } catch {
+        console.error("Nie znaleniono jezyka")
+    }
+    return path.join(process.cwd(), `content/blog/${locale}`)
+}
 
 export interface BlogPostMetadata {
     slug: string
@@ -82,9 +93,10 @@ export interface BlogPost extends BlogPostMetadata {
     content: string
 }
 
-// Funkcja do pobierania wszystkich postów (już masz)
-
+// Funkcja do pobierania wszystkich postów
 export async function getBlogPosts() {
+    const postsDirectory = await getPostsDirectory()
+
     if (!fs.existsSync(postsDirectory)) {
         return []
     }
@@ -116,6 +128,7 @@ export async function getBlogPosts() {
 
 // Nowa funkcja do pobierania pojedynczego posta
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
+    const postsDirectory = await getPostsDirectory()
     try {
         const filePath = path.join(postsDirectory, `${slug}.mdx`)
 
@@ -148,21 +161,23 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 
 // Funkcja pomocnicza do sprawdzania czy post istnieje
 export async function postExists(slug: string): Promise<boolean> {
+    const postsDirectory = await getPostsDirectory()
     return fs.existsSync(path.join(postsDirectory, `${slug}.mdx`))
 }
 
-export const listTags: string[] = [
-    "animations",
+export const listTags = [
+    "anim",
     "react",
-    "accessibility",
-    "css and layouts",
-    "next.js",
+    "a11y",
+    "css",
+    "next",
     "web3",
-]
+] as const
 
-export function addLinkToTags(tags: string[]): TagsWithLink[] {
-    return tags.map((tag) => ({
-        tag: tag,
-        link: `/blog?${tag}`,
+export function addLinkToTags(): TagWithLink[] {
+    return listTags.map((tagId) => ({
+        id: tagId,
+        translationKey: tagId,
+        link: `/blog?tag=${tagId}`,
     }))
 }

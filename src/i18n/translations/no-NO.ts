@@ -78,6 +78,14 @@ export const translations: Translations = {
         listEmptyText: "Innleggslisten er tom",
         seeAllPosts: "Se alle innlegg",
         postBtn: "Se mer",
+        tags: {
+            anim: "animasjoner",
+            react: "react",
+            a11y: "tilgjengelighet",
+            css: "css og layouts",
+            next: "next.js",
+            web3: "web3",
+        },
     },
     notFound: {
         title: "Ups!",

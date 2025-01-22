@@ -1,4 +1,6 @@
 import { locales } from "@/i18n/settings"
+import { TagId } from "@/types/website"
+
 export type Locale = (typeof locales)[number]
 
 export type Translations = {
@@ -92,6 +94,14 @@ type Blog = {
     listEmptyText: string
     seeAllPosts: string
     postBtn: string
+    tags: {
+        anim: string
+        react: string
+        a11y: string
+        css: string
+        next: string
+        web3: string
+    }
 }
 
 type NotFound = {
@@ -109,4 +119,13 @@ type Footer = {
     emailBtnLabel: string
     emailBtnText: string
     copyright: string
+}
+
+declare module "*.mdx" {
+    export interface FrontMatter {
+        title: string
+        date: string
+        description?: string
+        tags: TagId[]
+    }
 }

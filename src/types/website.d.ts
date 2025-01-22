@@ -28,7 +28,10 @@ export interface BlogPost {
     content: string
 }
 
-export interface TagsWithLink {
-    tag: string
+export type TagId = (typeof listTags)[number]
+
+export interface TagWithLink {
+    id: TagId
+    translationKey: string
     link: string
 }

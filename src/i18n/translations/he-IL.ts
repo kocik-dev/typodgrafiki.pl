@@ -76,6 +76,14 @@ export const translations: Translations = {
         listEmptyText: "רשימת הפוסטים ריקה",
         seeAllPosts: "ראה את כל הפוסטים",
         postBtn: "ראה עוד",
+        tags: {
+            anim: "אנימציות",
+            react: "ריאקט",
+            a11y: "נגישות",
+            css: "CSS ופריסות",
+            next: "Next.js",
+            web3: "Web3",
+        },
     },
     notFound: {
         title: "אופס!",

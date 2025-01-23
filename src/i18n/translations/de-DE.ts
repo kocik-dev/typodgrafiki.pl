@@ -103,5 +103,9 @@ export const translations: Translations = {
             "Senden Sie mir eine E-Mail, um über eine Zusammenarbeit zu sprechen",
         emailBtnText: "E-Mail senden",
         copyright: "Alle Rechte vorbehalten",
+        socialTwitter: "ehemals bekannt als Twitter",
+        socialTwitterAria: "Folge mir auf X (ehemals Twitter)",
+        socialInstagramAria: "Folge mir auf Instagram",
+        socialLinkedinAria: "Vernetze dich mit mir auf LinkedIn",
     },
 }

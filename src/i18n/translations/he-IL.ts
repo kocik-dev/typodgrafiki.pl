@@ -99,5 +99,9 @@ export const translations: Translations = {
         emailBtnLabel: "שלח לי מייל לדיון על שיתוף פעולה",
         emailBtnText: "שלח לי מייל",
         copyright: "כל הזכויות שמורות",
+        socialTwitter: "לשעבר טוויטר",
+        socialTwitterAria: "עקבו אחרי ב-X (לשעבר טוויטר)",
+        socialInstagramAria: "עקבו אחרי באינסטגרם",
+        socialLinkedinAria: "התחברו איתי בלינקדאין",
     },
 }

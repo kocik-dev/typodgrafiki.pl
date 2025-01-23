@@ -101,5 +101,9 @@ export const translations: Translations = {
         emailBtnLabel: "Wyślij do mnie email, aby omówić współpracę",
         emailBtnText: "Wyślij do mnie email",
         copyright: "Wszelkie prawa zastrzeżone",
+        socialTwitter: "wcześniej znane jako Twitter",
+        socialTwitterAria: "Śledź mnie na X (wcześniej Twitter)",
+        socialInstagramAria: "Śledź mnie na Instagramie",
+        socialLinkedinAria: "Połącz się ze mną na LinkedIn",
     },
 } as const

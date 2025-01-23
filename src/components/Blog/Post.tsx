@@ -43,17 +43,20 @@ import { BlogPostMetadata } from "@/lib/blog"
 import { getTranslationsSection } from "@/i18n/translations"
 import Link from "next/link"
 import React from "react"
+import { Locale } from "@/types/i18n"
 
 export default async function Post({
     post,
     locale,
 }: {
     post: BlogPostMetadata
-    locale: string
+    locale: Locale
 }) {
     const t = await getTranslationsSection("blog")
     const tags = post.tags || []
+
     const link = `${locale}/blog/${post.slug}`
+
     return (
         <article key={post.slug} className="post">
             <div className="tags">

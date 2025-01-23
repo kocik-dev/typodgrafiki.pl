@@ -102,5 +102,9 @@ export const translations: Translations = {
             "Skicka mig ett e-postmeddelande för att diskutera samarbete",
         emailBtnText: "Skicka mig ett e-postmeddelande",
         copyright: "Alla rättigheter förbehållna",
+        socialTwitter: "tidigare känt som Twitter",
+        socialTwitterAria: "Följ mig på X (tidigare Twitter)",
+        socialInstagramAria: "Följ mig på Instagram",
+        socialLinkedinAria: "Koppla upp med mig på LinkedIn",
     },
 }

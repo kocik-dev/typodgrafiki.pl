@@ -101,5 +101,9 @@ export const translations: Translations = {
         emailBtnLabel: "Lähetä minulle sähköpostia yhteistyön merkeissä",
         emailBtnText: "Lähetä minulle sähköpostia",
         copyright: "Kaikki oikeudet pidätetään",
+        socialTwitter: "aiemmin tunnettu nimellä Twitter",
+        socialTwitterAria: "Seuraa minua X:ssä (aiemmin Twitter)",
+        socialInstagramAria: "Seuraa minua Instagramissa",
+        socialLinkedinAria: "Yhdistä kanssani LinkedInissä",
     },
 }

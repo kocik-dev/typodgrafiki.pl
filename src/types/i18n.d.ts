@@ -1,7 +1,7 @@
-import { locales } from "@/i18n/settings"
+import { defaultLocale, locales } from "@/i18n/settings"
 import { TagId } from "@/types/website"
 
-export type Locale = (typeof locales)[number]
+export type Locale = (typeof locales)[number] | defaultLocale
 
 export type Translations = {
     metadata: Metadata

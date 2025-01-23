@@ -1,0 +1,78 @@
+---
+title: "استخدام CSS Houdini: إنشاء تأثيرات مخصصة غير متوفرة في CSS العادي"
+date: "2024-01-01"
+description: "هل رغبت يوماً في إنشاء تأثيرات متقدمة تتجاوز إمكانيات CSS العادي؟ CSS Houdini هي تقنية جديدة تتيح لك تصميم تأثيرات وأنماط مخصصة كان من المستحيل تحقيقها سابقاً. تعرف على كيف يمكن لـ CSS Houdini أن تغير طريقة بناء مواقع الويب."
+tags: ["css", "anim"]
+---
+
+# استخدام CSS Houdini: إنشاء تأثيرات مخصصة غير متوفرة في CSS العادي
+
+هل رغبت يوماً في إنشاء تأثيرات متقدمة تتجاوز إمكانيات CSS العادي؟ CSS Houdini هي تقنية جديدة تتيح لك تصميم تأثيرات وأنماط مخصصة كان من المستحيل تحقيقها سابقاً. مع Houdini، يمكنك التحكم في سلوك العرض في المتصفحات بطريقة كانت ممكنة فقط باستخدام JavaScript من قبل.
+
+## ما هو CSS Houdini؟
+
+CSS Houdini هو مجموعة من واجهات برمجة التطبيقات التي تسمح للمطورين بـ "فتح" والتحكم في آلية عرض CSS في المتصفحات. يفتح Houdini إمكانيات جديدة تماماً لإنشاء تأثيرات وحركات وأنماط مخصصة كانت بعيدة المنال سابقاً. على سبيل المثال، يمكنك إنشاء خصائص CSS مخصصة وتأثيرات، وحتى التحكم في عرض العناصر التي كانت تتطلب عادةً JavaScript.
+
+### كيف يعمل؟
+
+يتكون CSS Houdini من عدة واجهات برمجة رئيسية تتيح لك التعامل مع CSS بطرق كانت مستحيلة سابقاً:
+
+-   **CSS Paint API** – يسمح لك بإنشاء خلفيات مخصصة كانت تحتاج عادةً إلى رسمها باستخدام الصور. يمكنك رسم أي شيء من التدرجات إلى الحركات الديناميكية.
+-   **CSS Layout API** – يتيح لك إنشاء تخطيطات مخصصة تعمل بسلاسة مع CSS.
+-   **CSS Typed OM** – يتيح لك التعامل مع قيم CSS باستخدام JavaScript بطريقة أكثر مرونة وكفاءة.
+-   **CSS Animation Worklet** – يمنحك تحكماً كاملاً في الحركات، مما يمكنك من إنشاء تأثيرات أكثر تعقيداً.
+
+### مثال: إنشاء خلفية مخصصة باستخدام CSS Paint API
+
+<CodeSnippet language="html" code={`<div class="custom-background"></div>`} />
+
+<CodeSnippet
+    language="css"
+    code={`.custom-background {
+  width: 100%;
+  height: 400px;
+  background: paint(pulsingGradient);
+}
+`}
+/>
+
+### جافا سكريبت (CSS Paint API)
+
+<CodeSnippet
+    language="javascript"
+    code={`if ('paintWorklet' in CSS) {
+  CSS.paintWorklet.addModule('pulsing-gradient.js');
+}`}
+/>
+
+ومحتوى ملف pulsing-gradient.js:
+
+<CodeSnippet language="javascript" code={`class PulsingGradientPainter {
+  paint(ctx, size, properties) {
+    const gradient = ctx.createLinearGradient(0, 0, size.width, size.height);
+    gradient.addColorStop(0, 'rgba(255, 0, 0, 1)');
+    gradient.addColorStop(1, 'rgba(255, 255, 0, 0.5)');
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, size.width, size.height);
+  }
+}
+
+registerPaint('pulsingGradient', PulsingGradientPainter);
+`} />
+
+## لماذا يعمل؟
+
+-   **مرونة أكبر** – يتيح Houdini إنشاء تأثيرات يصعب تحقيقها باستخدام CSS العادي.
+-   **أداء محسن** – التحكم في العرض مباشرة في CSS يعني عبئاً أقل على المتصفح وتحميلاً أسرع للصفحة.
+-   **التكامل مع الأدوات الحالية** – يعمل Houdini بسلاسة مع CSS.
+
+## نصائح عملية
+
+-   **فهم الأساسيات** – Houdini أداة قوية، لكنها تتطلب فهماً لكيفية عمل CSS.
+-   **اختبار التوافق** – تأكد من عمله في جميع المتصفحات.
+-   **تجنب المبالغة** – تذكر عدم تعقيد الأمور بإنشاء تأثيرات معقدة.
+
+## الخاتمة
+
+CSS Houdini تقنية تفتح إمكانيات جديدة تماماً لإنشاء تأثيرات وأنماط على الويب. لمعرفة المزيد عن أحدث تقنيات الويب، تابع مدونتي وقنوات التواصل الاجتماعي.

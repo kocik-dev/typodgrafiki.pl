@@ -46,9 +46,10 @@
 import { MetadataRoute } from "next"
 import { getBlogPosts } from "@/lib/blog"
 import { SITE_URL } from "@/data/variables"
+import { defaultLocale, locales } from "@/i18n/settings"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const posts = await getBlogPosts()
+    const posts = await getBlogPosts(defaultLocale)
 
     const staticRoutes = [
         {
@@ -65,16 +66,51 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
     ]
 
-    const blogRoutes = posts.map((post) => {
-        return {
-            url: `${SITE_URL}/blog/${post.slug}`,
-            lastModified: new Date(post.date),
+    // Generowanie ścieżek dla langRoutes
+    const langRoutes = locales.flatMap((locale) => [
+        {
+            url: `${SITE_URL}/${locale}`,
+            lastModified: new Date(),
             changeFrequency: "monthly" as const,
-            priority: 0.6,
-        }
-    })
+            priority: 1,
+        },
+        {
+            url: `${SITE_URL}/${locale}/blog`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.8,
+        },
+    ])
 
-    const allRoutes = [...staticRoutes, ...blogRoutes]
+    // Generowanie ścieżek dla blogRoutes
+    const blogRoutes = posts.map((post) => ({
+        url: `${SITE_URL}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+    }))
 
+    // Generowanie ścieżek dla postsLang
+    const postsLang = (
+        await Promise.all(
+            locales.map(async (locale) => {
+                const posts = await getBlogPosts(locale)
+                return posts.map((post) => ({
+                    url: `${SITE_URL}/${locale}/blog/${post.slug}`,
+                    lastModified: new Date(post.date),
+                    changeFrequency: "monthly" as const,
+                    priority: 0.6,
+                }))
+            })
+        )
+    ).flat()
+
+    // Łączenie wszystkich ścieżek
+    const allRoutes = [
+        ...staticRoutes,
+        ...langRoutes,
+        ...blogRoutes,
+        ...postsLang,
+    ]
     return allRoutes
 }

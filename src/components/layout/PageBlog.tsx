@@ -3,17 +3,23 @@ import { fascinate } from "@/components/Fonts"
 import Link from "next/link"
 import Post from "@/components/Blog/Post"
 import { getTranslationsSection } from "@/i18n/translations"
-import { getLangUrl } from "@/lib/i18n"
 import { TagId } from "@/types/website"
+import { Locale } from "@/types/i18n"
+import { defaultLocale } from "@/i18n/settings"
 
 export default async function BlogContent({
     searchParams,
+    params,
 }: {
     searchParams: Promise<{ tag?: string }>
+    params?: Promise<{ lang: Locale }>
 }) {
     const t = await getTranslationsSection("blog")
-    const locale = await getLangUrl()
-    const posts = await getBlogPosts()
+    const locale = params
+        ? (await params)?.lang || defaultLocale
+        : defaultLocale
+
+    const posts = await getBlogPosts(locale)
 
     const tags = addLinkToTags()
 

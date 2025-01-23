@@ -6,6 +6,7 @@ import CodeSnippet from "@/components/Blog/CodeSnippet"
 import { fascinate } from "@/components/Fonts"
 import { defaultLocale } from "@/i18n/settings"
 import { getTranslationsSection } from "@/i18n/translations"
+import { Locale } from "@/types/i18n"
 
 const components = {
     CodeSnippet,
@@ -14,16 +15,17 @@ const components = {
 export default async function BlogPostContent({
     params,
 }: {
-    params: Promise<{ slug: string }>
+    params: Promise<{ slug: string; lang: Locale }>
 }) {
     const slug = (await params).slug
+    const locale = (await params).lang
 
-    if (!(await postExists(slug))) {
+    if (!(await postExists(slug, locale))) {
         notFound()
     }
 
     const t = await getTranslationsSection("blog")
-    const post = await getPostBySlug(slug)
+    const post = await getPostBySlug(slug, locale)
 
     if (!post) {
         notFound()

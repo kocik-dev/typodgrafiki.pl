@@ -13,6 +13,6 @@ export const getLangUrl = async () => {
     return basePath
 }
 
-export const isBadUrl = (url: string): boolean => {
-    return !locales.includes(url as Locale)
+export const isBadUrl = (url: Locale): boolean => {
+    return !locales.includes(url)
 }

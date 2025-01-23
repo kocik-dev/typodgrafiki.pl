@@ -66,17 +66,14 @@ import path from "path"
 import matter from "gray-matter"
 import { TagWithLink } from "@/types/website"
 import { Locale } from "@/types/i18n"
-import { getLocaleFromHeaders } from "./i18n"
 import { defaultLocale } from "@/i18n/settings"
 
-export async function getPostsDirectory() {
-    let locale = defaultLocale
-    try {
-        locale = await getLocaleFromHeaders()
-    } catch {
-        console.error("Nie znaleniono jezyka")
+export async function getPostsDirectory(locale: Locale) {
+    if (!locale) {
+        locale = defaultLocale
     }
-    return path.join(process.cwd(), `content/blog/${locale}`)
+    const result = path.join(process.cwd(), `content/blog/${locale}`)
+    return result
 }
 
 export interface BlogPostMetadata {
@@ -94,8 +91,8 @@ export interface BlogPost extends BlogPostMetadata {
 }
 
 // Funkcja do pobierania wszystkich postów
-export async function getBlogPosts() {
-    const postsDirectory = await getPostsDirectory()
+export async function getBlogPosts(locale: Locale) {
+    const postsDirectory = await getPostsDirectory(locale)
 
     if (!fs.existsSync(postsDirectory)) {
         return []
@@ -127,8 +124,11 @@ export async function getBlogPosts() {
 }
 
 // Nowa funkcja do pobierania pojedynczego posta
-export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-    const postsDirectory = await getPostsDirectory()
+export async function getPostBySlug(
+    slug: string,
+    locale: Locale
+): Promise<BlogPost | null> {
+    const postsDirectory = await getPostsDirectory(locale)
     try {
         const filePath = path.join(postsDirectory, `${slug}.mdx`)
 
@@ -160,8 +160,11 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 }
 
 // Funkcja pomocnicza do sprawdzania czy post istnieje
-export async function postExists(slug: string): Promise<boolean> {
-    const postsDirectory = await getPostsDirectory()
+export async function postExists(
+    slug: string,
+    locale: Locale
+): Promise<boolean> {
+    const postsDirectory = await getPostsDirectory(locale)
     return fs.existsSync(path.join(postsDirectory, `${slug}.mdx`))
 }
 

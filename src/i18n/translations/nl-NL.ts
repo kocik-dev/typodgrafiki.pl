@@ -78,6 +78,14 @@ export const translations: Translations = {
         listEmptyText: "Berichtenlijst is leeg",
         seeAllPosts: "Bekijk alle berichten",
         postBtn: "Meer bekijken",
+        tags: {
+            anim: "animaties",
+            react: "react",
+            a11y: "toegankelijkheid",
+            css: "css en layouts",
+            next: "next.js",
+            web3: "web3",
+        },
     },
     notFound: {
         title: "Oeps!",

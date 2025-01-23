@@ -78,6 +78,14 @@ export const translations: Translations = {
         listEmptyText: "Post list is empty",
         seeAllPosts: "See all posts",
         postBtn: "See more",
+        tags: {
+            anim: "animayions",
+            react: "react",
+            a11y: "accessibility",
+            css: "css and layouts",
+            next: "next.js",
+            web3: "web3",
+        },
     },
     notFound: {
         title: "Oops!",

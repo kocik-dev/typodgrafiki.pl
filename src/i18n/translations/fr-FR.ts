@@ -78,6 +78,14 @@ export const translations: Translations = {
         listEmptyText: "La liste des articles est vide",
         seeAllPosts: "Voir tous les articles",
         postBtn: "Voir plus",
+        tags: {
+            anim: "animations",
+            react: "react",
+            a11y: "accessibilité",
+            css: "css et mises en page",
+            next: "next.js",
+            web3: "web3",
+        },
     },
     notFound: {
         title: "Oups !",

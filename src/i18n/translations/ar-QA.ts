@@ -77,6 +77,14 @@ export const translations: Translations = {
         listEmptyText: "لا توجد منشورات",
         seeAllPosts: "عرض جميع المنشورات",
         postBtn: "عرض المزيد",
+        tags: {
+            anim: "الرسوم المتحركة",
+            react: "رياكت",
+            a11y: "إمكانية الوصول",
+            css: "CSS والتخطيطات",
+            next: "Next.js",
+            web3: "ويب3",
+        },
     },
     notFound: {
         title: "عذراً!",

@@ -64,9 +64,17 @@
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
-import { TagsWithLink } from "@/types/website"
+import { TagWithLink } from "@/types/website"
+import { Locale } from "@/types/i18n"
+import { defaultLocale } from "@/i18n/settings"
 
-const postsDirectory = path.join(process.cwd(), "content/blog/en")
+export async function getPostsDirectory(locale: Locale) {
+    if (!locale) {
+        locale = defaultLocale
+    }
+    const result = path.join(process.cwd(), `content/blog/${locale}`)
+    return result
+}
 
 export interface BlogPostMetadata {
     slug: string
@@ -82,9 +90,10 @@ export interface BlogPost extends BlogPostMetadata {
     content: string
 }
 
-// Funkcja do pobierania wszystkich postów (już masz)
+// Funkcja do pobierania wszystkich postów
+export async function getBlogPosts(locale: Locale) {
+    const postsDirectory = await getPostsDirectory(locale)
 
-export async function getBlogPosts() {
     if (!fs.existsSync(postsDirectory)) {
         return []
     }
@@ -115,7 +124,11 @@ export async function getBlogPosts() {
 }
 
 // Nowa funkcja do pobierania pojedynczego posta
-export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
+export async function getPostBySlug(
+    slug: string,
+    locale: Locale
+): Promise<BlogPost | null> {
+    const postsDirectory = await getPostsDirectory(locale)
     try {
         const filePath = path.join(postsDirectory, `${slug}.mdx`)
 
@@ -147,22 +160,27 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 }
 
 // Funkcja pomocnicza do sprawdzania czy post istnieje
-export async function postExists(slug: string): Promise<boolean> {
+export async function postExists(
+    slug: string,
+    locale: Locale
+): Promise<boolean> {
+    const postsDirectory = await getPostsDirectory(locale)
     return fs.existsSync(path.join(postsDirectory, `${slug}.mdx`))
 }
 
-export const listTags: string[] = [
-    "animations",
+export const listTags = [
+    "anim",
     "react",
-    "accessibility",
-    "css and layouts",
-    "next.js",
+    "a11y",
+    "css",
+    "next",
     "web3",
-]
+] as const
 
-export function addLinkToTags(tags: string[]): TagsWithLink[] {
-    return tags.map((tag) => ({
-        tag: tag,
-        link: `/blog?${tag}`,
+export function addLinkToTags(): TagWithLink[] {
+    return listTags.map((tagId) => ({
+        id: tagId,
+        translationKey: tagId,
+        link: `/blog?tag=${tagId}`,
     }))
 }

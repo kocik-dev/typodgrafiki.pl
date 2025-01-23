@@ -79,6 +79,14 @@ export const translations: Translations = {
         listEmptyText: "Keine Beiträge vorhanden",
         seeAllPosts: "Alle Beiträge anzeigen",
         postBtn: "Mehr anzeigen",
+        tags: {
+            anim: "Animationen",
+            react: "React",
+            a11y: "Barrierefreiheit",
+            css: "CSS und Layouts",
+            next: "Next.js",
+            web3: "Web3",
+        },
     },
     notFound: {
         title: "Hoppla!",

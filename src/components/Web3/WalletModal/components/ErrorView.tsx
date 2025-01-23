@@ -16,16 +16,14 @@ export default function ErrorView() {
     return (
         <div className="flex flex-column vertical-center text-center">
             <ImageMetamaskBig />
-            <p className="modal-title">{errorMessage.title}</p>
-            <p className="text">{errorMessage.text}</p>
-            {errorMessage.btn && (
-                <button
-                    className="btn btn-transparent"
-                    onClick={() => navigateTo("connect")} // Powrót do widoku connect
-                >
-                    {t.btnTryAgain}
-                </button>
-            )}
+            <p className="modal-title">Error</p>
+            <p className="text">{errorMessage}</p>
+            <button
+                className="btn btn-transparent"
+                onClick={() => navigateTo("connect")} // Powrót do widoku connect
+            >
+                {t.btnTryAgain}
+            </button>
         </div>
     )
 }

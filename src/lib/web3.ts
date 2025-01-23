@@ -21,7 +21,9 @@
  * - Zwraca komunikat błędu dla nieprawidłowych danych
  */
 
-export const formatWalletAddress = (address: string) => {
+import { addressType } from "@/types/web3"
+
+export const formatWalletAddress = (address: addressType) => {
     const dots = "...."
     if (!address || address.length < 10) {
         return "Invalid address"

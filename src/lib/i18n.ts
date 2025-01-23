@@ -1,4 +1,5 @@
 import { defaultLocale, locales } from "@/i18n/settings"
+import { Locale } from "@/types/i18n"
 import { headers } from "next/headers"
 
 export async function getLocaleFromHeaders() {
@@ -12,6 +13,6 @@ export const getLangUrl = async () => {
     return basePath
 }
 
-export const isBadUrl = (url: string) => {
+export const isBadUrl = (url: Locale): boolean => {
     return !locales.includes(url)
 }

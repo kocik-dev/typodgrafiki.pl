@@ -1,27 +1,34 @@
-import { addLinkToTags, getBlogPosts, listTags } from "@/lib/blog"
+import { addLinkToTags, getBlogPosts } from "@/lib/blog"
 import { fascinate } from "@/components/Fonts"
 import Link from "next/link"
 import Post from "@/components/Blog/Post"
 import { getTranslationsSection } from "@/i18n/translations"
-import { getLangUrl } from "@/lib/i18n"
+import { TagId } from "@/types/website"
+import { Locale } from "@/types/i18n"
+import { defaultLocale } from "@/i18n/settings"
 
 export default async function BlogContent({
     searchParams,
+    params,
 }: {
     searchParams: Promise<{ tag?: string }>
+    params?: Promise<{ lang: Locale }>
 }) {
     const t = await getTranslationsSection("blog")
-    const posts = await getBlogPosts()
-    const locale = await getLangUrl()
+    const locale = params
+        ? (await params)?.lang || defaultLocale
+        : defaultLocale
 
-    const tags = addLinkToTags(listTags)
+    const posts = await getBlogPosts(locale)
 
-    const selectedTag = (await searchParams).tag || "all"
+    const tags = addLinkToTags()
+
+    const selectedTagId = ((await searchParams).tag || "all") as TagId | "all"
 
     const filteredPosts =
-        selectedTag === "all"
+        selectedTagId === "all"
             ? posts
-            : posts.filter((post) => post.tags.includes(selectedTag))
+            : posts.filter((post) => post.tags.includes(selectedTagId))
 
     return (
         <main className="container">
@@ -31,21 +38,21 @@ export default async function BlogContent({
                     <Link
                         href={locale + "/blog"}
                         className={`title-smaller ${
-                            selectedTag === "all" ? "active" : ""
+                            selectedTagId === "all" ? "active" : ""
                         }`}
                     >
                         {t.all}
                     </Link>
                 </li>
                 {tags.map((item) => (
-                    <li key={item.tag}>
+                    <li key={item.id}>
                         <Link
-                            href={`${locale}/blog?tag=${item.tag}`}
+                            href={`${locale}/blog?tag=${item.id}`}
                             className={`title-smaller ${
-                                selectedTag === item.tag ? "active" : ""
+                                selectedTagId === item.id ? "active" : ""
                             }`}
                         >
-                            {item.tag}
+                            {t.tags[item.id as keyof typeof t.tags]}
                         </Link>
                     </li>
                 ))}
@@ -54,11 +61,7 @@ export default async function BlogContent({
             {filteredPosts.length > 0 ? (
                 <div className="posts-list">
                     {filteredPosts.map((post) => (
-                        <Post
-                            post={post}
-                            key={post.slug}
-                            locale={locale}
-                        />
+                        <Post post={post} key={post.slug} locale={locale} />
                     ))}
                 </div>
             ) : (

@@ -39,8 +39,9 @@
 "use client"
 
 import { useLocale } from "@/hooks/useTranslations"
+import { consoleFun } from "@/lib/utils"
 import Link from "next/link"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 export default function Logo() {
     const [isAnimating, setIsAnimating] = useState(false)
@@ -53,6 +54,10 @@ export default function Logo() {
     const handleAnimationEnd = () => {
         setIsAnimating(false)
     }
+
+    useEffect(() => {
+        consoleFun()
+    }, [])
 
     return (
         <Link

@@ -1,28 +1,29 @@
 "use client"
 
-import { useWallet } from "@/contexts/WalletContext"
+import { useAccount, useConnect } from "wagmi"
 import { useWeb3Modal } from "@/contexts/Web3ModalContext"
 import Image from "next/image"
-import iconMetamask from "@/assets/web3/wallets/metamask.svg"
 import { useTranslationsSection } from "@/hooks/useTranslations"
 
-export const ConnectView = () => {
-    const { connect, isConnecting, walletType } = useWallet()
-    const { navigateTo } = useWeb3Modal()
-    const t = useTranslationsSection("web3")
+import iconWallet from "@/assets/web3/wallets/default.svg"
+import iconMetamask from "@/assets/web3/wallets/metamask.svg"
 
-    const handleMetamaskConnect = async () => {
-        if (!window.ethereum?.providers && !window.ethereum?.isMetaMask) {
-            navigateTo("install")
-            return
-        }
-        const result = await connect("metamask")
-        if (result.success) {
-            navigateTo("success")
-        } else {
-            navigateTo("error", result.message)
-        }
-    }
+export const ConnectView = () => {
+    const { navigateTo } = useWeb3Modal()
+    const { isConnecting } = useAccount()
+    const { connect, connectors } = useConnect({
+        mutation: {
+            onSuccess(data) {
+                navigateTo("success")
+            },
+            onError(error) {
+                console.log(error.message)
+                navigateTo("error", error.message)
+            },
+        },
+    })
+
+    const t = useTranslationsSection("web3")
 
     if (isConnecting) {
         return (
@@ -35,26 +36,29 @@ export const ConnectView = () => {
     }
 
     return (
-        <button
-            className="flex vertical-center justify-between btn btn-transparent btn-wallet-connect btn-bubble-bottom"
-            onClick={handleMetamaskConnect}
-            disabled={isConnecting}
-        >
-            <span style={{ width: "inherit" }}>
-                <span>
-                    MetaMask
-                    {walletType ? (
-                        <small>({t.modalRequestRecent})</small>
-                    ) : null}
-                </span>
-                <Image
-                    src={iconMetamask}
-                    alt="Metamask"
-                    width={32}
-                    height={32}
-                />
-            </span>
-        </button>
+        <div className="flex flex-column gap-1">
+            {connectors.map((connector) => (
+                <button
+                    key={connector.id}
+                    onClick={() => connect({ connector })}
+                    className="flex vertical-center justify-between btn btn-transparent btn-wallet-connect btn-bubble-bottom"
+                    disabled={isConnecting}
+                >
+                    <span style={{ width: "inherit" }}>
+                        <span>{connector.name}</span>
+                        {connector.icon && (
+                            <img
+                                src={connector.icon?.trimStart() || iconWallet}
+                                alt={connector.name}
+                                width={28}
+                                height={28}
+                                style={{ borderRadius: "5px" }}
+                            />
+                        )}
+                    </span>
+                </button>
+            ))}
+        </div>
     )
 }
 

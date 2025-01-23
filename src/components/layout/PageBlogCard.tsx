@@ -5,6 +5,8 @@ import { notFound } from "next/navigation"
 import CodeSnippet from "@/components/Blog/CodeSnippet"
 import { fascinate } from "@/components/Fonts"
 import { defaultLocale } from "@/i18n/settings"
+import { getTranslationsSection } from "@/i18n/translations"
+import { Locale } from "@/types/i18n"
 
 const components = {
     CodeSnippet,
@@ -13,15 +15,17 @@ const components = {
 export default async function BlogPostContent({
     params,
 }: {
-    params: Promise<{ slug: string }>
+    params: Promise<{ slug: string; lang: Locale }>
 }) {
     const slug = (await params).slug
+    const locale = (await params).lang
 
-    if (!(await postExists(slug))) {
+    if (!(await postExists(slug, locale))) {
         notFound()
     }
 
-    const post = await getPostBySlug(slug)
+    const t = await getTranslationsSection("blog")
+    const post = await getPostBySlug(slug, locale)
 
     if (!post) {
         notFound()
@@ -33,11 +37,8 @@ export default async function BlogPostContent({
                 {post.tags && (
                     <div className="tags">
                         {post.tags.map((tag) => (
-                            <span
-                                key={tag}
-                                className="title-smaller"
-                            >
-                                {tag}
+                            <span key={tag} className="title-smaller">
+                                {t.tags[tag as keyof typeof t.tags]}
                             </span>
                         ))}
                     </div>
@@ -45,10 +46,7 @@ export default async function BlogPostContent({
                 <h1 className={`title-small ${fascinate.className}`}>
                     {post.title}
                 </h1>
-                <time
-                    dateTime={post.date}
-                    className="data"
-                >
+                <time dateTime={post.date} className="data">
                     {new Date(post.date).toLocaleDateString(defaultLocale, {
                         year: "numeric",
                         month: "long",
@@ -58,10 +56,7 @@ export default async function BlogPostContent({
             </header>
 
             <div className="content text">
-                <MDXRemote
-                    source={post.content}
-                    components={components}
-                />
+                <MDXRemote source={post.content} components={components} />
             </div>
         </article>
     )

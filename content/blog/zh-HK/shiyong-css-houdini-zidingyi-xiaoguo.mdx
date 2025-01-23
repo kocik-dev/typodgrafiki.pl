@@ -1,0 +1,69 @@
+---
+title: "使用 CSS Houdini：創建普通 CSS 無法實現的自定義效果"
+date: "2024-01-01"
+description: "你是否想創建超越普通 CSS 功能的高級效果？CSS Houdini 是一項新技術，讓你能夠設計以前無法實現的自定義效果和樣式。了解 CSS Houdini 如何改變你構建網站的方式。"
+tags: ["css", "anim"]
+---
+
+# 使用 CSS Houdini：創建普通 CSS 無法實現的自定義效果
+
+你是否想創建超越普通 CSS 功能的高級效果？CSS Houdini 是一項新技術，讓你能夠設計以前無法實現的自定義效果和樣式。使用 Houdini，你可以以前所未有的方式控制瀏覽器的渲染行為。
+
+## 什麼是 CSS Houdini？
+
+CSS Houdini 是一組 API 介面，讓開發者能夠「解鎖」和控制瀏覽器中的 CSS 渲染機制。Houdini 為創建自定義效果、動畫和樣式開闢了全新的可能性。
+
+### 如何運作？
+
+CSS Houdini 包含幾個核心 API：
+
+-   **CSS Paint API** – 創建自定義背景
+-   **CSS Layout API** – 創建自定義佈局
+-   **CSS Typed OM** – 更高效的 CSS 值操作
+-   **CSS Animation Worklet** – 完全控制動畫
+
+### 示例：使用 CSS Paint API 創建自定義背景
+
+<CodeSnippet language="html" code={`<div class="custom-background"></div>`} />
+
+<CodeSnippet
+    language="css"
+    code={`.custom-background {
+  width: 100%;
+  height: 400px;
+  background: paint(pulsingGradient);
+}
+`}
+/>
+
+### JavaScript (CSS Paint API)
+
+<CodeSnippet language="javascript" code={`class PulsingGradientPainter {
+  paint(ctx, size, properties) {
+    const gradient = ctx.createLinearGradient(0, 0, size.width, size.height);
+    gradient.addColorStop(0, 'rgba(255, 0, 0, 1)');
+    gradient.addColorStop(1, 'rgba(255, 255, 0, 0.5)');
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, size.width, size.height);
+  }
+}
+
+registerPaint('pulsingGradient', PulsingGradientPainter);
+`} />
+
+## 為什麼有效？
+
+-   **更大靈活性** – 創建普通 CSS 難以實現的效果
+-   **性能提升** – 減少瀏覽器負擔
+-   **無縫整合** – 與現有 CSS 完美配合
+
+## 實用技巧
+
+-   **了解基礎** – 掌握 CSS 內部運作機制
+-   **測試兼容性** – 確保在所有瀏覽器中運作
+-   **避免複雜化** – 保持效果簡單高效
+
+## 結論
+
+CSS Houdini 為網頁開發開啟新可能。關注我的博客和社交媒體以了解更多網頁技術。

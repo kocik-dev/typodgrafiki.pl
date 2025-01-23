@@ -76,6 +76,14 @@ export const translations: Translations = {
         listEmptyText: "暫無文章",
         seeAllPosts: "查看所有文章",
         postBtn: "查看更多",
+        tags: {
+            anim: "動畫",
+            react: "React",
+            a11y: "無障礙性",
+            css: "CSS和佈局",
+            next: "Next.js",
+            web3: "Web3",
+        },
     },
     notFound: {
         title: "哎呀！",

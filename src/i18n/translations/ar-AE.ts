@@ -77,6 +77,14 @@ export const translations: Translations = {
         listEmptyText: "قائمة المنشورات فارغة",
         seeAllPosts: "مشاهدة جميع المنشورات",
         postBtn: "مشاهدة المزيد",
+        tags: {
+            anim: "الرسوم المتحركة",
+            react: "رياكت",
+            a11y: "إمكانية الوصول",
+            css: "CSS والتخطيطات",
+            next: "Next.js",
+            web3: "ويب3",
+        },
     },
     notFound: {
         title: "عذراً!",

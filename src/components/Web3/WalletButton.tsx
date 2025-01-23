@@ -56,16 +56,27 @@ import { useWeb3Modal } from "@/contexts/Web3ModalContext"
 import { useAccount } from "wagmi"
 import { formatWalletAddress } from "@/lib/web3"
 import { useTranslationsSection } from "@/hooks/useTranslations"
+import { addressType } from "@/types/web3"
 
-export const WalletButton = () => {
+const WalletButton = () => {
     const { address } = useAccount()
     const { open } = useWeb3Modal()
-
-    const t = useTranslationsSection("web3")
 
     const handleClick = () => {
         open(address ? "success" : "connect")
     }
+
+    return <Button address={address} handleClick={handleClick} />
+}
+
+export const Button = ({
+    address,
+    handleClick,
+}: {
+    address: addressType
+    handleClick: () => void
+}) => {
+    const t = useTranslationsSection("web3")
 
     return (
         <div className="menu-web3 relative">
@@ -75,3 +86,5 @@ export const WalletButton = () => {
         </div>
     )
 }
+
+export default WalletButton

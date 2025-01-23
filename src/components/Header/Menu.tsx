@@ -42,7 +42,7 @@
 
 import Link from "next/link"
 import React from "react"
-import { WalletButton } from "@/components/Web3/WalletButton"
+import Wallet from "@/components/Web3/index"
 import { getTranslationsSection } from "@/i18n/translations"
 import { getLangUrl } from "@/lib/i18n"
 
@@ -77,7 +77,7 @@ export default async function Menu() {
                 </a>
             </li>
             <li className="wallet hidden-xs" role="none">
-                <WalletButton />
+                <Wallet />
             </li>
         </ul>
     )

@@ -67,7 +67,7 @@ import InstallView from "./components/InstallView"
 import ErrorView from "./components/ErrorView"
 import "@/styles/modal.css"
 
-export const WalletModal = () => {
+const WalletModal = () => {
     const { isOpen, view, close, title, navigateTo, canGoBack } = useWeb3Modal()
 
     const renderContent = () => {
@@ -107,3 +107,5 @@ export const WalletModal = () => {
         </>
     )
 }
+
+export default WalletModal

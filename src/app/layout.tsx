@@ -4,9 +4,7 @@ import "@/styles/accesibility.css"
 import { metadata } from "@/config/metadata.config"
 import Cursor from "@/components/Cursor"
 import { poppins } from "@/components/Fonts"
-import { Web3ModalProvider } from "@/contexts/Web3ModalContext"
 import { WalletProvider } from "@/contexts/WalletContext"
-import { WalletModal } from "@/components/Web3/WalletModal"
 import { jsonLd } from "@/config/metadata.config"
 import { getTranslations } from "@/i18n/translations"
 import { getLocaleFromHeaders } from "@/lib/i18n"
@@ -34,9 +32,7 @@ export default async function RootLayout({
             </head>
             <body>
                 <I18nProvider locale={locale} translations={translations}>
-                    <Web3ModalProvider>
-                        <WalletProvider>{children}</WalletProvider>
-                    </Web3ModalProvider>
+                    <WalletProvider>{children}</WalletProvider>
                     <Cursor />
                 </I18nProvider>
             </body>

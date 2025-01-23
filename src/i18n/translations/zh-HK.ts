@@ -99,5 +99,9 @@ export const translations: Translations = {
         emailBtnLabel: "發送電郵討論合作",
         emailBtnText: "發送電郵",
         copyright: "版權所有",
+        socialTwitter: "前稱為Twitter",
+        socialTwitterAria: "在X（前稱Twitter）上追蹤我",
+        socialInstagramAria: "在Instagram上追蹤我",
+        socialLinkedinAria: "在LinkedIn上與我連接",
     },
 }

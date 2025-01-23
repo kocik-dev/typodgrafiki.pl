@@ -101,5 +101,9 @@ export const translations: Translations = {
         emailBtnLabel: "Send meg en e-post for å diskutere samarbeid",
         emailBtnText: "Send meg en e-post",
         copyright: "Alle rettigheter forbeholdt",
+        socialTwitter: "tidligere kjent som Twitter",
+        socialTwitterAria: "Følg meg på X (tidligere Twitter)",
+        socialInstagramAria: "Følg meg på Instagram",
+        socialLinkedinAria: "Koble til med meg på LinkedIn",
     },
 }

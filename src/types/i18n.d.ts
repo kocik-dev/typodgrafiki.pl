@@ -119,6 +119,10 @@ type Footer = {
     emailBtnLabel: string
     emailBtnText: string
     copyright: string
+    socialTwitter: string
+    socialTwitterAria: string
+    socialInstagramAria: string
+    socialLinkedinAria: string
 }
 
 declare module "*.mdx" {

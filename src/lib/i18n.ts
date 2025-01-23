@@ -7,9 +7,14 @@ export async function getLocaleFromHeaders() {
     return headersList.get("x-locale") || defaultLocale
 }
 
-export const getLangUrl = async () => {
-    const locale = await getLocaleFromHeaders()
-    const basePath = locale === defaultLocale ? "" : `/${locale}`
+export const getLangUrl = async (locale?: Locale) => {
+    let lang = locale
+
+    if (!locale) {
+        lang = await getLocaleFromHeaders()
+    }
+
+    const basePath = lang === defaultLocale ? "" : `/${lang}`
     return basePath
 }
 

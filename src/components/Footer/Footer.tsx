@@ -135,30 +135,30 @@ interface ISocialData {
     ariaLabel?: string
 }
 
-const socialLinksData: ISocialData[] = [
-    {
-        link: "https://www.x.com/kocik_dev/",
-        name: "formerly known as Twitter",
-        icon: <IconTwitter />,
-        ariaLabel: "Follow me on X (formerly Twitter)",
-    },
-    {
-        link: "https://www.instagram.com/kocik.dev/",
-        name: "Instagram",
-        icon: <IconInstagram />,
-        ariaLabel: "Follow me on Instagram",
-    },
-    {
-        link: "https://www.linkedin.com/in/kocik-dev/",
-        name: "Linkedin",
-        icon: <IconLinkedin />,
-        ariaLabel: "Connect with me on LinkedIn",
-    },
-]
-
 const Footer = async () => {
     const currentYear = new Date().getFullYear()
     const t = await getTranslationsSection("footer")
+
+    const socialLinksData: ISocialData[] = [
+        {
+            link: "https://www.x.com/kocik_dev/",
+            name: t.socialTwitter,
+            icon: <IconTwitter />,
+            ariaLabel: t.socialTwitterAria,
+        },
+        {
+            link: "https://www.instagram.com/kocik.dev/",
+            name: "Instagram",
+            icon: <IconInstagram />,
+            ariaLabel: t.socialInstagramAria,
+        },
+        {
+            link: "https://www.linkedin.com/in/kocik-dev/",
+            name: "Linkedin",
+            icon: <IconLinkedin />,
+            ariaLabel: t.socialLinkedinAria,
+        },
+    ]
 
     return (
         <footer
@@ -206,10 +206,7 @@ const Footer = async () => {
                         </div>
                     </div>
                 </div>
-                <div
-                    className="footer-info"
-                    role="complementary"
-                >
+                <div className="footer-info" role="complementary">
                     <div className="dark hidden-xs">
                         <Logo />
                     </div>

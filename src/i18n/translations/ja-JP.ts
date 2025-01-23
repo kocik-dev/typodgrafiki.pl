@@ -101,5 +101,9 @@ export const translations: Translations = {
         emailBtnLabel: "コラボレーションについて相談するメールを送信",
         emailBtnText: "メールを送信",
         copyright: "All rights reserved",
+        socialTwitter: "以前はTwitterとして知られていました",
+        socialTwitterAria: "X（以前のTwitter）でフォローしてください",
+        socialInstagramAria: "Instagramでフォローしてください",
+        socialLinkedinAria: "LinkedInでつながりましょう",
     },
 }

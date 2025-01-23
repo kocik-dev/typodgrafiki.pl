@@ -6,6 +6,7 @@ import { getTranslationsSection } from "@/i18n/translations"
 import { TagId } from "@/types/website"
 import { Locale } from "@/types/i18n"
 import { defaultLocale } from "@/i18n/settings"
+import { getLangUrl } from "@/lib/i18n"
 
 export default async function BlogContent({
     searchParams,
@@ -15,9 +16,9 @@ export default async function BlogContent({
     params?: Promise<{ lang: Locale }>
 }) {
     const t = await getTranslationsSection("blog")
-    const locale = params
-        ? (await params)?.lang || defaultLocale
-        : defaultLocale
+
+    const lang = (await params)?.lang
+    const locale = await getLangUrl(lang)
 
     const posts = await getBlogPosts(locale)
 

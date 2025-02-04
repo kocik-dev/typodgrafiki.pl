@@ -53,6 +53,7 @@ import { useState } from "react"
 import { IoExitOutline, IoCopyOutline, IoCheckmarkSharp } from "react-icons/io5"
 import { useWeb3Modal } from "@/contexts/Web3ModalContext"
 import { addressType } from "@/types/web3"
+import MintButton from "./MintNFT"
 
 export const SuccessView = () => {
     const { navigateTo } = useWeb3Modal()
@@ -95,15 +96,18 @@ export const SuccessView = () => {
                 </button>
             </p>
             <Balance address={address} />
-            <button
-                onClick={handleDisconnect}
-                className="btn btn-transparent btn-bubble-bottom"
-            >
-                <span>
-                    <IoExitOutline />
-                    {t.disconnect}
-                </span>
-            </button>
+            <div className="flex gap-1">
+                <MintButton />
+                <button
+                    onClick={handleDisconnect}
+                    className="btn btn-transparent btn-bubble-bottom"
+                >
+                    <span>
+                        <IoExitOutline />
+                        {t.disconnect}
+                    </span>
+                </button>
+            </div>
         </div>
     )
 }

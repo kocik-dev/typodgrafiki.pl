@@ -19,6 +19,7 @@
     padding: 0;
     width: 90%;
     max-width: 390px;
+    color: var(--text);
 }
 
 .modal-header {
@@ -46,9 +47,10 @@
 }
 
 .empty-image-wallet {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     background: linear-gradient(120deg, #d53369 0%, #daae51 100%);
     margin-bottom: 20px;
+    overflow: hidden;
 }

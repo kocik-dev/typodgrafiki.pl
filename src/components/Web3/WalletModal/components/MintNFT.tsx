@@ -9,6 +9,7 @@ import {
 import { writeContract } from "wagmi/actions"
 import { parseEther } from "viem"
 import { useState } from "react"
+import { IoHammerOutline } from "react-icons/io5"
 
 const CONTRACT_ADDRESS = "0xEb9ea800431966d550526B669766Fe6Ac6021C5A" // Adres kontraktu
 const ABI = [
@@ -46,20 +47,24 @@ export default function MintButton() {
     }
 
     return (
-        <div>
-            <button
-                onClick={mintNFT}
-                // disabled={!isConnected || isLoading}
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg disabled:bg-gray-400"
-            >
-                {/* {isLoading ? "Minting..." : "Mint NFT"} */}
-            </button>
+        // <div>
+        //     <button
+        //         onClick={mintNFT}
+        //         // disabled={!isConnected || isLoading}
+        //         className="bg-blue-500 text-white px-4 py-2 rounded-lg disabled:bg-gray-400"
+        //     >
+        //         {/* {isLoading ? "Minting..." : "Mint NFT"} */}
+        //     </button>
 
-            {/* {isSuccess && (
-                <p className="text-green-500 mt-2">
-                    NFT Minted Successfully! ✅
-                </p>
-            )} */}
-        </div>
+        //     {/* {isSuccess && (
+        //         <p className="text-green-500 mt-2">
+        //             NFT Minted Successfully!
+        //         </p>
+        //     )} */}
+        // </div>
+        <button className="btn btn-default wide-width justify-center">
+            <IoHammerOutline />
+            MINT FOR FREE
+        </button>
     )
 }

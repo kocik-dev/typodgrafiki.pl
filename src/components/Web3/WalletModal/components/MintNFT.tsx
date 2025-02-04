@@ -1,7 +1,13 @@
 "use client"
 import { useState } from "react"
-import { IoHammerOutline } from "react-icons/io5"
-import { useAccount, useWriteContract, useChainId, useSwitchChain } from "wagmi"
+import { IoHammerOutline, IoRefreshOutline } from "react-icons/io5"
+import {
+    useAccount,
+    useWriteContract,
+    useChainId,
+    useSwitchChain,
+    useWaitForTransactionReceipt,
+} from "wagmi"
 import { mainnet, sepolia } from "wagmi/chains"
 
 const abi = [
@@ -20,31 +26,37 @@ const contractConfig = {
 } as const
 
 export default function MintButton() {
-    const [isSuccess, setIsSuccess] = useState(false)
+    const [txHash, setTxHash] = useState<`0x${string}` | undefined>(undefined)
+    // const [isSuccess, setIsSuccess] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const { address } = useAccount()
     const chainId = useChainId()
     const { switchChain } = useSwitchChain()
 
     const baseChain = sepolia.id //mainnet.id
-
     const isWrongNetwork = chainId !== baseChain
 
-    const { writeContract } = useWriteContract()
+    const { writeContractAsync } = useWriteContract()
+
+    const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt(
+        {
+            hash: txHash,
+        }
+    )
+
+    const changeChain = async () => {
+        switchChain({ chainId: baseChain })
+        return
+    }
 
     const handleMint = async () => {
-        if (isWrongNetwork) {
-            await switchChain({ chainId: baseChain })
-            return
-        }
-
         try {
             setIsLoading(true)
-            await writeContract({
+            const hash = await writeContractAsync({
                 ...contractConfig,
                 functionName: "mint",
             })
-            setIsSuccess(true)
+            setTxHash(hash)
         } catch (err) {
             console.error("Minting failed:", err)
         } finally {
@@ -53,11 +65,16 @@ export default function MintButton() {
     }
 
     return (
-        <div className="flex gap-1">
-            <button className="btn btn-default">
-                {isWrongNetwork ? "Switch to Ethereum" : "is Ethereum"}
-            </button>
-
+        <div className="flex flex-column gap-1">
+            {isWrongNetwork && (
+                <button
+                    onClick={changeChain}
+                    className="btn btn-default justify-center"
+                >
+                    <IoRefreshOutline />
+                    Switch to Ethereum
+                </button>
+            )}
             <button
                 onClick={handleMint}
                 disabled={!address || isLoading || isSuccess || isWrongNetwork}
@@ -65,7 +82,9 @@ export default function MintButton() {
             >
                 <IoHammerOutline />
                 {isLoading
-                    ? "Minting..."
+                    ? "Waiting for wallet..."
+                    : isConfirming
+                    ? "Confirming..."
                     : isSuccess
                     ? "Minted!"
                     : "MINT FOR FREE"}

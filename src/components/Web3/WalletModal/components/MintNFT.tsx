@@ -1,4 +1,5 @@
 "use client"
+import { contractAdress } from "@/config/wagmi.config"
 import { useState } from "react"
 import { IoHammerOutline, IoRefreshOutline } from "react-icons/io5"
 import {
@@ -21,13 +22,12 @@ const abi = [
 ] as const
 
 const contractConfig = {
-    address: "0xEb9ea800431966d550526B669766Fe6Ac6021C5A",
+    address: contractAdress,
     abi,
 } as const
 
 export default function MintButton() {
     const [txHash, setTxHash] = useState<`0x${string}` | undefined>(undefined)
-    // const [isSuccess, setIsSuccess] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const { address } = useAccount()
     const chainId = useChainId()

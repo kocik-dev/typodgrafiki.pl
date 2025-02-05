@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useCallback, useState } from "react"
 import { ModalView, Web3ModalContextType } from "@/types/web3"
+import { useTranslationsSection } from "@/hooks/useTranslations"
 
 const Web3ModalContext = createContext<Web3ModalContextType | undefined>(
     undefined
@@ -15,6 +16,7 @@ export const Web3ModalProvider = ({
     const [isOpen, setIsOpen] = useState(false)
     const [view, setView] = useState<ModalView>("connect")
     const [errorMessage, setErrorMessage] = useState<string | null>(null)
+    const t = useTranslationsSection("modal")
 
     const canGoBack = view === "install" || view === "error" || view === "mint"
 
@@ -41,13 +43,13 @@ export const Web3ModalProvider = ({
     const title = (() => {
         switch (view) {
             case "connect":
-                return "Connect Wallet"
+                return t.titleConnect
             case "install":
                 return "Metamask"
             case "success":
-                return "Connected"
+                return t.titleConnected
             case "mint":
-                return "Mint free NFT"
+                return t.titleNft
             case "error":
                 return "Metamask"
         }

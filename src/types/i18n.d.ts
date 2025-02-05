@@ -13,6 +13,7 @@ export type Translations = {
     blog: Blog
     notFound: NotFound
     footer: Footer
+    modal: Modal
 }
 
 type Metadata = {
@@ -86,6 +87,18 @@ type Web3 = {
     installText2: string
     installBtn: string
     disconnect: string
+    loading: string
+    mint: {
+        buttonTop: string
+        button1: string
+        button2: string
+        left: string
+        switch: string
+        textSuccess: string
+        contractAddress: string
+        buttonWaiting: string
+        buttonConfirming: string
+    }
 }
 
 type Blog = {
@@ -123,6 +136,12 @@ type Footer = {
     socialTwitterAria: string
     socialInstagramAria: string
     socialLinkedinAria: string
+}
+
+type Modal = {
+    titleConnected: string
+    titleConnect: string
+    titleNft: string
 }
 
 declare module "*.mdx" {

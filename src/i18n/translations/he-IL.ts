@@ -69,6 +69,18 @@ export const translations: Translations = {
         installText2: "הארנק שלך, התקן את תוסף הדפדפן.",
         installBtn: "התקן את התוסף",
         disconnect: "התנתק",
+        loading: "טוען...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "יצירת NFT",
+            button2: "יצירה בחינם",
+            left: "נותר",
+            switch: "החלפה ל-Arbitrum",
+            textSuccess: "נוצר",
+            contractAddress: "כתובת החוזה",
+            buttonWaiting: "ממתין לארנק",
+            buttonConfirming: "מאשר...",
+        },
     },
     blog: {
         title: "בלוג",
@@ -103,5 +115,10 @@ export const translations: Translations = {
         socialTwitterAria: "עקבו אחרי ב-X (לשעבר טוויטר)",
         socialInstagramAria: "עקבו אחרי באינסטגרם",
         socialLinkedinAria: "התחברו איתי בלינקדאין",
+    },
+    modal: {
+        titleConnected: "מחובר",
+        titleConnect: "חיבור ארנק",
+        titleNft: "יצירת NFT בחינם",
     },
 }

@@ -71,6 +71,18 @@ export const translations: Translations = {
         installText2: "lompakkosi, asenna selainlaajennus.",
         installBtn: "Asenna laajennus",
         disconnect: "Katkaise yhteys",
+        loading: "Ladataan...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "LUO NFT",
+            button2: "LUO ILMAISEKSI",
+            left: "Jäljellä",
+            switch: "Vaihda Arbitrumiin",
+            textSuccess: "Luotu",
+            contractAddress: "Sopimusosoite",
+            buttonWaiting: "Odotetaan lompakkoa",
+            buttonConfirming: "Vahvistetaan",
+        },
     },
     blog: {
         title: "Blogi",
@@ -105,5 +117,10 @@ export const translations: Translations = {
         socialTwitterAria: "Seuraa minua X:ssä (aiemmin Twitter)",
         socialInstagramAria: "Seuraa minua Instagramissa",
         socialLinkedinAria: "Yhdistä kanssani LinkedInissä",
+    },
+    modal: {
+        titleConnected: "Yhdistetty",
+        titleConnect: "Yhdistä lompakko",
+        titleNft: "Luo ilmainen NFT",
     },
 }

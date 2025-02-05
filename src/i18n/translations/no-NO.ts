@@ -71,6 +71,18 @@ export const translations: Translations = {
         installText2: "lommeboken din, installer nettleserutvidelsen.",
         installBtn: "Installer utvidelsen",
         disconnect: "Koble fra",
+        loading: "Laster...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "MINT NFT",
+            button2: "MINT GRATIS",
+            left: "Tilbake",
+            switch: "Bytt til Arbitrum",
+            textSuccess: "Mintet",
+            contractAddress: "Kontraktadresse",
+            buttonWaiting: "Venter på lommebok",
+            buttonConfirming: "Bekrefter",
+        },
     },
     blog: {
         title: "Blogg",
@@ -105,5 +117,10 @@ export const translations: Translations = {
         socialTwitterAria: "Følg meg på X (tidligere Twitter)",
         socialInstagramAria: "Følg meg på Instagram",
         socialLinkedinAria: "Koble til med meg på LinkedIn",
+    },
+    modal: {
+        titleConnected: "Tilkoblet",
+        titleConnect: "Koble til lommebok",
+        titleNft: "Mint gratis NFT",
     },
 }

@@ -71,6 +71,18 @@ export const translations: Translations = {
         installText2: "wallet te verbinden, installeer de browser-extensie.",
         installBtn: "Extensie installeren",
         disconnect: "Verbinding verbreken",
+        loading: "Bezig met laden...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "MINT NFT",
+            button2: "MINT GRATUS",
+            left: "Overgebleven",
+            switch: "Schakel over naar Arbitrum",
+            textSuccess: "Gemint",
+            contractAddress: "Contractadres",
+            buttonWaiting: "Wachten op wallet",
+            buttonConfirming: "Bevestigen",
+        },
     },
     blog: {
         title: "Blog",
@@ -105,5 +117,10 @@ export const translations: Translations = {
         socialTwitterAria: "Volg me op X (voorheen Twitter)",
         socialInstagramAria: "Volg me op Instagram",
         socialLinkedinAria: "Verbind met me op LinkedIn",
+    },
+    modal: {
+        titleConnected: "Verbonden",
+        titleConnect: "Verbind Wallet",
+        titleNft: "Mint gratis NFT",
     },
 }

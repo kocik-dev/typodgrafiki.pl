@@ -72,6 +72,18 @@ export const translations: Translations = {
             "Wallet zu verbinden, installieren Sie die Browser-Erweiterung.",
         installBtn: "Erweiterung installieren",
         disconnect: "Verbindung trennen",
+        loading: "Lädt...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "NFT Prägen",
+            button2: "Kostenlos Prägen",
+            left: "Verbleibend",
+            switch: "Zu Arbitrum wechseln",
+            textSuccess: "Geprägt",
+            contractAddress: "Vertragsadresse",
+            buttonWaiting: "Warten auf Wallet",
+            buttonConfirming: "Bestätigung läuft",
+        },
     },
     blog: {
         title: "Blog",
@@ -107,5 +119,10 @@ export const translations: Translations = {
         socialTwitterAria: "Folge mir auf X (ehemals Twitter)",
         socialInstagramAria: "Folge mir auf Instagram",
         socialLinkedinAria: "Vernetze dich mit mir auf LinkedIn",
+    },
+    modal: {
+        titleConnected: "Verbunden",
+        titleConnect: "Wallet verbinden",
+        titleNft: "Kostenloses NFT prägen",
     },
 }

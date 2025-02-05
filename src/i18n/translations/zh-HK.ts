@@ -69,6 +69,18 @@ export const translations: Translations = {
         installText2: "錢包，請安裝瀏覽器擴充程式。",
         installBtn: "安裝擴充程式",
         disconnect: "斷開連接",
+        loading: "加載中...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "鑄造 NFT",
+            button2: "免費鑄造",
+            left: "剩餘",
+            switch: "切換至 Arbitrum",
+            textSuccess: "已鑄造",
+            contractAddress: "合約地址",
+            buttonWaiting: "等待錢包",
+            buttonConfirming: "確認中",
+        },
     },
     blog: {
         title: "網誌",
@@ -103,5 +115,10 @@ export const translations: Translations = {
         socialTwitterAria: "在X（前稱Twitter）上追蹤我",
         socialInstagramAria: "在Instagram上追蹤我",
         socialLinkedinAria: "在LinkedIn上與我連接",
+    },
+    modal: {
+        titleConnected: "已連接",
+        titleConnect: "連接錢包",
+        titleNft: "免費鑄造 NFT",
     },
 }

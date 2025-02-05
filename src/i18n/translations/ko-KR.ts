@@ -71,6 +71,18 @@ export const translations: Translations = {
         installText2: "브라우저 확장 프로그램을 설치하세요.",
         installBtn: "확장 프로그램 설치",
         disconnect: "연결 해제",
+        loading: "로딩 중...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "NFT 민팅",
+            button2: "무료 민팅",
+            left: "남은 수량",
+            switch: "Arbitrum으로 전환",
+            textSuccess: "민팅 완료",
+            contractAddress: "계약 주소",
+            buttonWaiting: "지갑 대기 중",
+            buttonConfirming: "확인 중",
+        },
     },
     blog: {
         title: "블로그",
@@ -105,5 +117,10 @@ export const translations: Translations = {
         socialTwitterAria: "X(이전 Twitter)에서 저를 팔로우하세요",
         socialInstagramAria: "Instagram에서 저를 팔로우하세요",
         socialLinkedinAria: "LinkedIn에서 저와 연결하세요",
+    },
+    modal: {
+        titleConnected: "연결됨",
+        titleConnect: "지갑 연결",
+        titleNft: "무료 NFT 민팅",
     },
 }

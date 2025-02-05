@@ -75,6 +75,10 @@ p {
     display: flex;
 }
 
+.flex-grow {
+    flex-grow: 1;
+}
+
 button {
     cursor: pointer;
     background-color: transparent;

@@ -19,6 +19,7 @@
     padding: 0;
     width: 90%;
     max-width: 390px;
+    color: var(--text);
 }
 
 .modal-header {
@@ -45,10 +46,27 @@
     font-size: 19px;
 }
 
+.nft-image-wallet,
 .empty-image-wallet {
-    width: 90px;
-    height: 90px;
+    background-color: #333036;
     border-radius: 50%;
-    background: linear-gradient(120deg, #d53369 0%, #daae51 100%);
     margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+}
+
+.empty-image-wallet {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(120deg, #d53369 0%, #daae51 100%);
+}
+
+.nft-success-text strong {
+    color: var(--dark);
+}
+
+.nft-success-text svg {
+    font-size: 1.2rem;
+    margin-top: -2px;
+    margin-right: 3px;
 }

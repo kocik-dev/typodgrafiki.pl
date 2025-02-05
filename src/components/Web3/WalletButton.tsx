@@ -66,7 +66,12 @@ const WalletButton = () => {
         open(address ? "success" : "connect")
     }
 
-    return <Button address={address} handleClick={handleClick} />
+    return (
+        <Button
+            address={address}
+            handleClick={handleClick}
+        />
+    )
 }
 
 export const Button = ({
@@ -76,13 +81,25 @@ export const Button = ({
     address: addressType
     handleClick: () => void
 }) => {
+    const { open } = useWeb3Modal()
     const t = useTranslationsSection("web3")
 
     return (
-        <div className="menu-web3 relative">
-            <button className="btn btn-default" onClick={handleClick}>
+        <div className="menu-web3 relative flex">
+            <button
+                className="btn btn-default"
+                onClick={handleClick}
+            >
                 {address ? formatWalletAddress(address) : t.btnConnectWeb3}
             </button>
+            {address && (
+                <button
+                    className="btn btn-yellow"
+                    onClick={() => open("mint")}
+                >
+                    MINT
+                </button>
+            )}
         </div>
     )
 }

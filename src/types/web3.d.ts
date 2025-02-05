@@ -9,6 +9,6 @@ export interface Web3ModalContextType {
     errorMessage: string | null
 }
 
-export type ModalView = "connect" | "install" | "success" | "error"
+export type ModalView = "connect" | "install" | "success" | "error" | "mint"
 
 export type addressType = `0x${string}` | undefined

@@ -66,6 +66,7 @@ import { LiaAngleLeftSolid, LiaTimesSolid } from "react-icons/lia"
 import InstallView from "./components/InstallView"
 import ErrorView from "./components/ErrorView"
 import "@/styles/modal.css"
+import MintView from "./components/MintNFT"
 
 const WalletModal = () => {
     const { isOpen, view, close, title, navigateTo, canGoBack } = useWeb3Modal()
@@ -78,17 +79,30 @@ const WalletModal = () => {
                 return <InstallView />
             case "success":
                 return <SuccessView />
+            case "mint":
+                return <MintView />
             case "error":
                 return <ErrorView />
         }
     }
 
+    const goBack = () => {
+        if (view === "mint") {
+            navigateTo("success")
+        } else {
+            navigateTo("connect")
+        }
+    }
+
     return (
         <>
-            <dialog className="modal" open={isOpen}>
+            <dialog
+                className="modal"
+                open={isOpen}
+            >
                 <header className="flex modal-header justify-between align-center vertical-center">
                     <button
-                        onClick={() => navigateTo("connect")}
+                        onClick={goBack}
                         disabled={!canGoBack}
                         style={{ opacity: canGoBack ? "1" : "0" }}
                     >
@@ -102,7 +116,10 @@ const WalletModal = () => {
                 <div className="modal-content">{renderContent()}</div>
             </dialog>
             {isOpen ? (
-                <div className="modal-shadow" onClick={close}></div>
+                <div
+                    className="modal-shadow"
+                    onClick={close}
+                ></div>
             ) : null}
         </>
     )

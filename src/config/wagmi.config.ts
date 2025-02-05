@@ -1,22 +1,15 @@
-// import { createPublicClient, createWalletClient, http, custom } from "viem"
-// import { mainnet } from "viem/chains"
-
-// export const CHAIN_ID = 1 // Mainnet
-// // export const CONTRACT_ADDRESS = '0x...'; // Your contract address
-// // export const CONTRACT_ABI = [...]; // Your contract ABI
-
-// export const publicClient = createPublicClient({
-//     chain: mainnet,
-//     transport: http(),
-// })
-
 import { http, createConfig } from "wagmi"
-import { mainnet, sepolia } from "wagmi/chains"
+import { mainnet, arbitrum } from "wagmi/chains"
 
 export const config = createConfig({
-    chains: [mainnet, sepolia],
+    chains: [mainnet, arbitrum],
     transports: {
         [mainnet.id]: http(),
-        [sepolia.id]: http(),
+        [arbitrum.id]: http(),
     },
 })
+
+export const contractAdress = "0xb66c26e69a13880cb4bff30509455591d2c8d058"
+
+export const nftImage =
+    "https://olive-negative-wildcat-303.mypinata.cloud/ipfs/bafkreihi7axbr33hluqkdkqdur5zsropzc4ojgjf3adkx75x3fajlvglwa"

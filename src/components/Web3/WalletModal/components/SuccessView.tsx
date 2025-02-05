@@ -50,7 +50,12 @@ import { useAccount, useDisconnect, useBalance } from "wagmi"
 import { formatWalletAddress } from "@/lib/web3"
 import { useTranslationsSection } from "@/hooks/useTranslations"
 import { useState } from "react"
-import { IoExitOutline, IoCopyOutline, IoCheckmarkSharp } from "react-icons/io5"
+import {
+    IoExitOutline,
+    IoCopyOutline,
+    IoCheckmarkSharp,
+    IoHammerOutline,
+} from "react-icons/io5"
 import { useWeb3Modal } from "@/contexts/Web3ModalContext"
 import { addressType } from "@/types/web3"
 
@@ -81,10 +86,14 @@ export const SuccessView = () => {
         }
     }
 
+    const handleNavMint = () => {
+        navigateTo("mint")
+    }
+
     return (
         <div className="flex flex-column vertical-center">
             <div className="empty-image-wallet"></div>
-            <p className="flex gap-1 vertical-center">
+            <div className="flex vertical-center">
                 {formatWalletAddress(address)}
                 <button onClick={handleCopy}>
                     {isCopied ? (
@@ -93,17 +102,25 @@ export const SuccessView = () => {
                         <IoCopyOutline />
                     )}
                 </button>
-            </p>
+            </div>
             <Balance address={address} />
-            <button
-                onClick={handleDisconnect}
-                className="btn btn-transparent btn-bubble-bottom"
-            >
-                <span>
-                    <IoExitOutline />
-                    {t.disconnect}
-                </span>
-            </button>
+            <div className="flex gap-1">
+                <button
+                    onClick={handleNavMint}
+                    className="btn btn-default justify-center"
+                >
+                    Go to MINT
+                </button>
+                <button
+                    onClick={handleDisconnect}
+                    className="btn btn-transparent btn-bubble-bottom"
+                >
+                    <span>
+                        <IoExitOutline />
+                        {t.disconnect}
+                    </span>
+                </button>
+            </div>
         </div>
     )
 }
@@ -123,7 +140,7 @@ const Balance = ({ address }: { address: addressType }) => {
 
     return (
         <p>
-            Saldo: {balance.formatted} {balance.symbol}
+            {parseFloat(balance.formatted).toFixed(2)} {balance.symbol}
         </p>
     )
 }

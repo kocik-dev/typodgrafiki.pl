@@ -16,7 +16,7 @@ export const Web3ModalProvider = ({
     const [view, setView] = useState<ModalView>("connect")
     const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
-    const canGoBack = view === "install" || view === "error"
+    const canGoBack = view === "install" || view === "error" || view === "mint"
 
     const open = useCallback((initialView: ModalView = "connect") => {
         setView(initialView)
@@ -46,6 +46,8 @@ export const Web3ModalProvider = ({
                 return "Metamask"
             case "success":
                 return "Connected"
+            case "mint":
+                return "Mint free NFT"
             case "error":
                 return "Metamask"
         }

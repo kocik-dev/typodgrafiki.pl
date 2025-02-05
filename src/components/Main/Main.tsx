@@ -36,7 +36,6 @@ const Main = async () => {
                                 {t.h2}
                             </p>
                         </section>
-
                         <section
                             className="keywords-section"
                             aria-label={t.keywordsSection}

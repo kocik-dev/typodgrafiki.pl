@@ -66,12 +66,7 @@ const WalletButton = () => {
         open(address ? "success" : "connect")
     }
 
-    return (
-        <Button
-            address={address}
-            handleClick={handleClick}
-        />
-    )
+    return <Button address={address} handleClick={handleClick} />
 }
 
 export const Button = ({
@@ -86,18 +81,12 @@ export const Button = ({
 
     return (
         <div className="menu-web3 relative flex">
-            <button
-                className="btn btn-default"
-                onClick={handleClick}
-            >
+            <button className="btn btn-default" onClick={handleClick}>
                 {address ? formatWalletAddress(address) : t.btnConnectWeb3}
             </button>
             {address && (
-                <button
-                    className="btn btn-yellow"
-                    onClick={() => open("mint")}
-                >
-                    MINT
+                <button className="btn btn-yellow" onClick={() => open("mint")}>
+                    {t.mint.buttonTop}
                 </button>
             )}
         </div>

@@ -70,6 +70,18 @@ export const translations: Translations = {
         installText2: "محفظتك، قم بتثبيت إضافة المتصفح.",
         installBtn: "تثبيت الإضافة",
         disconnect: "قطع الاتصال",
+        loading: "جارٍ التحميل...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "سك عملة NFT",
+            button2: "سك مجانًا",
+            left: "المتبقي",
+            switch: "التبديل إلى Arbitrum",
+            textSuccess: "تم السك",
+            contractAddress: "عنوان العقد",
+            buttonWaiting: "بانتظار المحفظة",
+            buttonConfirming: "جارٍ التأكيد",
+        },
     },
     blog: {
         title: "المدونة",
@@ -104,5 +116,10 @@ export const translations: Translations = {
         socialTwitterAria: "تابعني على X (المعروف سابقًا باسم تويتر)",
         socialInstagramAria: "تابعني على إنستغرام",
         socialLinkedinAria: "تواصل معي على لينكدإن",
+    },
+    modal: {
+        titleConnected: "متصل",
+        titleConnect: "اتصل بالمحفظة",
+        titleNft: "سك NFT مجاني",
     },
 }

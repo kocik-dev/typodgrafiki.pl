@@ -109,7 +109,7 @@ export const SuccessView = () => {
                     onClick={handleNavMint}
                     className="btn btn-default justify-center"
                 >
-                    Go to MINT
+                    {t.mint.button1}
                 </button>
                 <button
                     onClick={handleDisconnect}
@@ -134,7 +134,9 @@ const Balance = ({ address }: { address: addressType }) => {
         address,
     })
 
-    if (isLoading) return <p>Ładowanie...</p>
+    const t = useTranslationsSection("web3")
+
+    if (isLoading) return <p>{t.loading}</p>
 
     if (!balance || isError) return null
 

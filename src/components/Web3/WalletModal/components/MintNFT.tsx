@@ -1,5 +1,6 @@
 "use client"
 import { contractAdress, nftImage } from "@/config/wagmi.config"
+import { useTranslationsSection } from "@/hooks/useTranslations"
 import Image from "next/image"
 import { useState } from "react"
 import {
@@ -53,6 +54,8 @@ export default function MintView() {
     const chainId = useChainId()
     const { switchChain } = useSwitchChain()
 
+    const t = useTranslationsSection("web3")
+
     const baseChain = arbitrum.id
     const isWrongNetwork = chainId !== baseChain
 
@@ -102,7 +105,7 @@ export default function MintView() {
                             className="btn btn-default justify-center"
                         >
                             <IoRefreshOutline />
-                            Switch to Arbitrum
+                            {t.mint.switch}
                         </button>
                     ) : (
                         !isSuccess && <CheckAvailible />
@@ -123,10 +126,10 @@ export default function MintView() {
                         >
                             <IoHammerOutline />
                             {isLoading
-                                ? "Waiting for wallet..."
+                                ? t.mint.buttonWaiting + "..."
                                 : isConfirming
-                                ? "Confirming..."
-                                : "MINT FOR FREE"}
+                                ? t.mint.buttonConfirming + "..."
+                                : t.mint.button2}
                         </button>
                     )}
                 </div>
@@ -136,6 +139,8 @@ export default function MintView() {
 }
 
 const CheckAvailible = () => {
+    const t = useTranslationsSection("web3")
+
     const { data: totalMinted } = useReadContract({
         ...contractConfig,
         functionName: "totalMinted",
@@ -150,7 +155,7 @@ const CheckAvailible = () => {
 
     return (
         <div className="flex wide-width gap-1">
-            <span className="flex-grow">Pozostało:</span>
+            <span className="flex-grow">{t.mint.left}:</span>
             <span>
                 {remainingNFTs} / {maxSupply}
             </span>
@@ -159,13 +164,14 @@ const CheckAvailible = () => {
 }
 
 const SuccessInfo = () => {
+    const t = useTranslationsSection("web3")
     return (
         <div className="nft-success-text flex flex-column gap-1 vertical-center text-center">
             <div className="flex">
                 <IoCheckmarkCircleOutline color="#02bb4c" />
-                <strong>Minted!</strong>
+                <strong>{t.mint.textSuccess}!</strong>
             </div>
-            <div style={{ marginTop: "10px" }}>Contract adress:</div>
+            <div style={{ marginTop: "10px" }}>{t.mint.contractAddress}:</div>
             <div>{contractAdress}</div>
         </div>
     )

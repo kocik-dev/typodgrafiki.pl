@@ -71,6 +71,18 @@ export const translations: Translations = {
         installText2: "portefeuille, installez l'extension du navigateur.",
         installBtn: "Installer l'extension",
         disconnect: "Déconnecter",
+        loading: "Chargement...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "MINTER NFT",
+            button2: "MINTER GRATUITEMENT",
+            left: "Restant",
+            switch: "Passer à Arbitrum",
+            textSuccess: "Minté",
+            contractAddress: "Adresse du contrat",
+            buttonWaiting: "En attente du portefeuille",
+            buttonConfirming: "Confirmation en cours",
+        },
     },
     blog: {
         title: "Blog",
@@ -105,5 +117,10 @@ export const translations: Translations = {
         socialTwitterAria: "Suivez-moi sur X (anciennement Twitter)",
         socialInstagramAria: "Suivez-moi sur Instagram",
         socialLinkedinAria: "Connectez-vous avec moi sur LinkedIn",
+    },
+    modal: {
+        titleConnected: "Connecté",
+        titleConnect: "Connecter le portefeuille",
+        titleNft: "Minter un NFT gratuit",
     },
 }

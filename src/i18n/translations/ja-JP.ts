@@ -71,6 +71,18 @@ export const translations: Translations = {
         installText2: "ブラウザ拡張機能をインストールしてください。",
         installBtn: "拡張機能をインストール",
         disconnect: "接続を解除",
+        loading: "読み込み中...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "NFTをミント",
+            button2: "無料でミント",
+            left: "残り",
+            switch: "Arbitrumに切り替え",
+            textSuccess: "ミント完了",
+            contractAddress: "契約アドレス",
+            buttonWaiting: "ウォレット待機中",
+            buttonConfirming: "確認中",
+        },
     },
     blog: {
         title: "ブログ",
@@ -105,5 +117,10 @@ export const translations: Translations = {
         socialTwitterAria: "X（以前のTwitter）でフォローしてください",
         socialInstagramAria: "Instagramでフォローしてください",
         socialLinkedinAria: "LinkedInでつながりましょう",
+    },
+    modal: {
+        titleConnected: "接続済み",
+        titleConnect: "ウォレットを接続",
+        titleNft: "無料NFTをミント",
     },
 }

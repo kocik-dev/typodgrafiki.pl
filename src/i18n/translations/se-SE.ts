@@ -71,6 +71,18 @@ export const translations: Translations = {
         installText2: "plånbok, installera webbläsartillägget.",
         installBtn: "Installera tillägget",
         disconnect: "Koppla från",
+        loading: "Laddar...",
+        mint: {
+            buttonTop: "NFT",
+            button1: "MINTA NFT",
+            button2: "MINTA GRATIS",
+            left: "Kvar",
+            switch: "Byt till Arbitrum",
+            textSuccess: "Mintad",
+            contractAddress: "Kontraktsadress",
+            buttonWaiting: "Väntar på plånbok",
+            buttonConfirming: "Bekräftar",
+        },
     },
     blog: {
         title: "Blogg",
@@ -106,5 +118,10 @@ export const translations: Translations = {
         socialTwitterAria: "Följ mig på X (tidigare Twitter)",
         socialInstagramAria: "Följ mig på Instagram",
         socialLinkedinAria: "Koppla upp med mig på LinkedIn",
+    },
+    modal: {
+        titleConnected: "Ansluten",
+        titleConnect: "Anslut plånbok",
+        titleNft: "Minta gratis NFT",
     },
 }

@@ -36,8 +36,7 @@ const Main = async () => {
                                 {t.h2}
                             </p>
                         </section>
-
-                        {/* <section
+                        <section
                             className="keywords-section"
                             aria-label={t.keywordsSection}
                         >
@@ -47,7 +46,7 @@ const Main = async () => {
                             >
                                 <span data-text={t.seoText}>{t.seoText}</span>
                             </div>
-                        </section> */}
+                        </section>
                     </main>
                 </div>
             </div>

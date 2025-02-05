@@ -22,3 +22,6 @@ export const config = createConfig({
 })
 
 export const contractAdress = "0xEb9ea800431966d550526B669766Fe6Ac6021C5A"
+
+export const nftImage =
+    "https://olive-negative-wildcat-303.mypinata.cloud/ipfs/bafkreihi7axbr33hluqkdkqdur5zsropzc4ojgjf3adkx75x3fajlvglwa"

@@ -113,6 +113,16 @@
     #bottom-menu .logo-small {
         padding: 18px 23px 12px 27px;
     }
+
+    .menu-web3 .btn-yellow {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .menu-web3:has(.btn-yellow) .btn-default {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 }
 
 @media screen and (max-width: 767px) {

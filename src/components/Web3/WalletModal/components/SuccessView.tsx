@@ -58,8 +58,6 @@ import {
 } from "react-icons/io5"
 import { useWeb3Modal } from "@/contexts/Web3ModalContext"
 import { addressType } from "@/types/web3"
-import Image from "next/image"
-import MintButton from "./MintNFT"
 
 export const SuccessView = () => {
     const { navigateTo } = useWeb3Modal()
@@ -88,17 +86,14 @@ export const SuccessView = () => {
         }
     }
 
+    const handleNavMint = () => {
+        navigateTo("mint")
+    }
+
     return (
         <div className="flex flex-column vertical-center">
-            <div className="empty-image-wallet">
-                <Image
-                    src="https://olive-negative-wildcat-303.mypinata.cloud/ipfs/bafkreihi7axbr33hluqkdkqdur5zsropzc4ojgjf3adkx75x3fajlvglwa"
-                    alt="Blocky Brain #1"
-                    height={100}
-                    width={100}
-                />
-            </div>
-            {/* <div className="flex gap-1 vertical-center">
+            <div className="empty-image-wallet"></div>
+            <div className="flex vertical-center">
                 {formatWalletAddress(address)}
                 <button onClick={handleCopy}>
                     {isCopied ? (
@@ -108,45 +103,44 @@ export const SuccessView = () => {
                     )}
                 </button>
             </div>
-            <Balance address={address} /> */}
-            <div className="flex flex-column gap-1 wide-width">
-                <div className="flex wide-width gap-1">
-                    <span className="flex-grow">Pozostało:</span>
-                    <span>94 / 100</span>
-                </div>
-                <MintButton />
-                <div className="flex justify-center">
-                    <button
-                        onClick={handleDisconnect}
-                        className="btn btn-transparent btn-bubble-bottom"
-                    >
-                        <span>
-                            <IoExitOutline />
-                            {t.disconnect}
-                        </span>
-                    </button>
-                </div>
+            <Balance address={address} />
+            <div className="flex gap-1">
+                <button
+                    onClick={handleNavMint}
+                    className="btn btn-default justify-center"
+                >
+                    Go to MINT
+                </button>
+                <button
+                    onClick={handleDisconnect}
+                    className="btn btn-transparent btn-bubble-bottom"
+                >
+                    <span>
+                        <IoExitOutline />
+                        {t.disconnect}
+                    </span>
+                </button>
             </div>
         </div>
     )
 }
 
-// const Balance = ({ address }: { address: addressType }) => {
-//     const {
-//         data: balance,
-//         isError,
-//         isLoading,
-//     } = useBalance({
-//         address,
-//     })
+const Balance = ({ address }: { address: addressType }) => {
+    const {
+        data: balance,
+        isError,
+        isLoading,
+    } = useBalance({
+        address,
+    })
 
-//     if (isLoading) return <p>Ładowanie...</p>
+    if (isLoading) return <p>Ładowanie...</p>
 
-//     if (!balance || isError) return null
+    if (!balance || isError) return null
 
-//     return (
-//         <div>
-//             {parseFloat(balance.formatted).toFixed(2)} {balance.symbol}
-//         </div>
-//     )
-// }
+    return (
+        <p>
+            {parseFloat(balance.formatted).toFixed(2)} {balance.symbol}
+        </p>
+    )
+}

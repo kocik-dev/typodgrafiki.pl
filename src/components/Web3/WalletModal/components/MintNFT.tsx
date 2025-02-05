@@ -15,7 +15,7 @@ import {
     useWaitForTransactionReceipt,
     useReadContract,
 } from "wagmi"
-import { mainnet, sepolia } from "wagmi/chains"
+import { arbitrum } from "wagmi/chains"
 
 const abi = [
     {
@@ -53,7 +53,7 @@ export default function MintView() {
     const chainId = useChainId()
     const { switchChain } = useSwitchChain()
 
-    const baseChain = sepolia.id //mainnet.id
+    const baseChain = arbitrum.id
     const isWrongNetwork = chainId !== baseChain
 
     const { writeContractAsync } = useWriteContract()
@@ -102,7 +102,7 @@ export default function MintView() {
                             className="btn btn-default justify-center"
                         >
                             <IoRefreshOutline />
-                            Switch to Ethereum
+                            Switch to Arbitrum
                         </button>
                     ) : (
                         !isSuccess && <CheckAvailible />

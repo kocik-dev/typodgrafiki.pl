@@ -1,0 +1,80 @@
+---
+url: "budowanie-komponentow-dostepnych-dla-czytnikow-ekranu.mdx"
+title: "Budowanie komponentów dostępnych dla czytników ekranu"
+date: "2025-02-27"
+description: "Tworzenie dostępnych komponentów to nie tylko wymóg prawny, ale także sposób na poprawę UX dla wszystkich użytkowników. Sprawdź, jak projektować interfejsy przyjazne dla osób niewidomych."
+tags: ["a11y", "react", "next"]
+---
+
+# Budowanie komponentów dostępnych dla czytników ekranu
+
+Czy zastanawiałeś się kiedyś, jak osoby niewidome korzystają z Twojej aplikacji lub strony internetowej? Kluczową rolę odgrywają tutaj czytniki ekranu. Dobrze zaprojektowane komponenty dostępne dla tych narzędzi mogą znacząco poprawić doświadczenie użytkownika i sprawić, że Twoja aplikacja będzie bardziej inkluzywna.
+
+## Dlaczego dostępność jest ważna?
+
+Projektowanie dostępnych interfejsów to nie tylko kwestia etyki i prawa, ale także UX. Komponenty przyjazne dla czytników ekranu:
+
+-   Poprawiają doświadczenie użytkownika dla osób z niepełnosprawnościami.
+-   Ułatwiają nawigację i interakcję wszystkim użytkownikom, np. tym, którzy korzystają z klawiatury.
+-   Mogą pozytywnie wpłynąć na SEO, ponieważ wyszukiwarki doceniają semantyczny kod.
+
+## Jak tworzyć dostępne komponenty?
+
+### 1. Korzystaj z odpowiednich znaczników HTML
+
+Semantyczny HTML to podstawa dostępności. Zamiast `<div>` i `<span>` używaj natywnych elementów:
+
+-   `<button>` zamiast div udającego przycisk,
+-   `<label>` dla opisów pól formularzy,
+-   `<nav>` do oznaczania nawigacji.
+
+### 2. Dodawaj atrybuty ARIA tylko tam, gdzie to konieczne
+
+ARIA (Accessible Rich Internet Applications) może pomóc w poprawie dostępności, ale jej nadużywanie może przynieść odwrotny efekt. Kluczowe atrybuty:
+
+-   `aria-label` – dodaje opis dla elementu,
+-   `aria-hidden="true"` – ukrywa element przed czytnikiem ekranu,
+-   `role="alert"` – informuje o ważnych zmianach na stronie.
+
+### 3. Zapewnij logiczną strukturę i porządek nawigacji
+
+Czytniki ekranu korzystają z kolejności DOM, dlatego należy:
+
+-   Używać nagłówków (h1-h6) zgodnie z hierarchią,
+-   Zapewnić czytelną kolejność tabulacji (tabindex),
+-   Unikać ukrywania kluczowych informacji tylko wizualnie.
+
+### 4. Testuj z czytnikami ekranu
+
+Najlepszym sposobem na sprawdzenie dostępności jest testowanie. Popularne czytniki ekranu:
+
+-   NVDA (Windows, darmowy),
+-   JAWS (Windows, płatny),
+-   VoiceOver (macOS/iOS),
+-   TalkBack (Android).
+
+### 5. Przykładowy komponent React
+
+<CodeSnippet
+    language="jsx"
+    code={`import React from "react";
+
+const AccessibleButton = ({ onClick }) => {
+    return (
+        <button 
+            onClick={onClick}
+            ariaLabel="Rozwiń menu"
+        >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+        </button>
+    );
+};
+
+export default AccessibleButton`}
+/>
+
+## Podsumowanie
+
+Dostępność to nie dodatek, ale kluczowy element dobrego UX. Tworząc dostępne komponenty, sprawiasz, że Twoje produkty są bardziej użyteczne i inkluzywne. Pamiętaj o testowaniu, semantyce i właściwym wykorzystaniu ARIA.

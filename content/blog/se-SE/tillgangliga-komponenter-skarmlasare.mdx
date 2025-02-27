@@ -1,0 +1,79 @@
+---
+title: "Skapa tillgängliga komponenter för skärmläsare"
+date: "2025-02-27"
+description: "Att skapa tillgängliga komponenter är inte bara ett lagkrav utan också ett sätt att förbättra användarupplevelsen för alla. Lär dig hur du designar gränssnitt som är vänliga för synskadade användare."
+tags: ["a11y", "react", "next"]
+---
+
+# Skapa tillgängliga komponenter för skärmläsare
+
+Har du någonsin funderat på hur synskadade personer använder din applikation eller webbplats? Skärmläsare spelar en avgörande roll i denna process. Väl utformade komponenter som är tillgängliga för dessa verktyg kan avsevärt förbättra användarupplevelsen och göra din applikation mer inkluderande.
+
+## Varför är tillgänglighet viktigt?
+
+Att designa tillgängliga gränssnitt handlar inte bara om etik och lagstiftning, utan även om användarupplevelse. Komponenter som är skärmläsarvänliga:
+
+- Förbättrar användarupplevelsen för personer med funktionsnedsättningar.
+- Gör navigering och interaktion enklare för alla användare, inklusive de som använder tangentbord.
+- Kan ha en positiv inverkan på SEO eftersom sökmotorer värdesätter semantisk kod.
+
+## Hur skapar man tillgängliga komponenter?
+
+### 1. Använd rätt HTML-taggar
+
+Semantisk HTML är grunden för tillgänglighet. Istället för att använda `<div>` och `<span>`, använd inbyggda element:
+
+- `<button>` istället för `div` som imiterar en knapp,
+- `<label>` för att beskriva formulärfält,
+- `<nav>` för att ange navigeringssektioner.
+
+### 2. Använd ARIA-attribut endast vid behov
+
+ARIA (Accessible Rich Internet Applications) kan hjälpa till att förbättra tillgängligheten, men överanvändning kan ha negativa effekter. Viktiga attribut inkluderar:
+
+- `aria-label` – lägger till en beskrivning av ett element,
+- `aria-hidden="true"` – döljer ett element för skärmläsare,
+- `role="alert"` – meddelar viktiga ändringar på sidan.
+
+### 3. Säkerställ en logisk struktur och navigeringsordning
+
+Skärmläsare förlitar sig på DOM-strukturen, så se till att:
+
+- Använda rubriker (`h1`-`h6`) i en hierarkisk ordning,
+- Behålla en tydlig tab-ordning (`tabindex`),
+- Undvika att dölja viktig information enbart visuellt.
+
+### 4. Testa med skärmläsare
+
+Det bästa sättet att säkerställa tillgänglighet är att testa den praktiskt. Populära skärmläsare inkluderar:
+
+- **NVDA** (Windows, gratis),
+- **JAWS** (Windows, betald),
+- **VoiceOver** (macOS/iOS),
+- **TalkBack** (Android).
+
+### 5. Exempel på en React-komponent
+
+<CodeSnippet
+    language="jsx"
+    code={`import React from "react";
+
+const AccessibleButton = ({ onClick }) => {
+    return (
+        <button 
+            onClick={onClick}
+            aria-label="Expandera meny"
+        >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+        </button>
+    );
+};
+
+export default AccessibleButton;`}
+/>
+
+## Slutsats
+
+Tillgänglighet är inte en extra funktion, utan en grundläggande del av god UX-design. Genom att skapa tillgängliga komponenter gör du dina produkter mer användbara och inkluderande. Kom ihåg att testa, använda semantisk HTML och tillämpa ARIA-attribut på ett genomtänkt sätt.

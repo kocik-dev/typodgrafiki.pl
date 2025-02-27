@@ -1,0 +1,79 @@
+---
+title: "Oprettelse af tilgængelige komponenter til skærmlæsere"
+date: "2025-02-27"
+description: "At skabe tilgængelige komponenter er ikke kun et lovkrav, men også en måde at forbedre brugeroplevelsen for alle brugere. Lær, hvordan du designer grænseflader, der er venlige for synshandicappede brugere."
+tags: ["a11y", "react", "next"]
+---
+
+# Oprettelse af tilgængelige komponenter til skærmlæsere
+
+Har du nogensinde tænkt over, hvordan synshandicappede personer bruger din applikation eller hjemmeside? Skærmlæsere spiller en afgørende rolle i denne proces. Veldesignede komponenter, der er tilgængelige for disse værktøjer, kan markant forbedre brugeroplevelsen og gøre din applikation mere inkluderende.
+
+## Hvorfor er tilgængelighed vigtig?
+
+Design af tilgængelige grænseflader er ikke kun et etisk og lovmæssigt spørgsmål, men også en UX-overvejelse. Skærmlæser-venlige komponenter:
+
+- Forbedrer brugeroplevelsen for personer med handicap.
+- Gør navigation og interaktion lettere for alle brugere, f.eks. dem, der bruger et tastatur.
+- Kan have en positiv indvirkning på SEO, da søgemaskiner værdsætter semantisk kode.
+
+## Hvordan opretter man tilgængelige komponenter?
+
+### 1. Brug de korrekte HTML-tags
+
+Semantisk HTML er grundlaget for tilgængelighed. I stedet for `<div>` og `<span>` bør du bruge native elementer:
+
+- `<button>` i stedet for en `div`, der efterligner en knap,
+- `<label>` til at beskrive formularfelter,
+- `<nav>` til at markere navigationssektioner.
+
+### 2. Brug ARIA-attributter kun når det er nødvendigt
+
+ARIA (Accessible Rich Internet Applications) kan hjælpe med at forbedre tilgængeligheden, men overbrug kan have negative effekter. Vigtige attributter inkluderer:
+
+- `aria-label` – tilføjer en beskrivelse til et element,
+- `aria-hidden="true"` – skjuler et element for skærmlæsere,
+- `role="alert"` – annoncerer vigtige ændringer på siden.
+
+### 3. Sørg for en logisk struktur og navigationsrækkefølge
+
+Skærmlæsere bruger DOM-strukturen, så du bør:
+
+- Bruge overskrifter (`h1`-`h6`) hierarkisk,
+- Opretholde en klar tabulatorrækkefølge (`tabindex`),
+- Undgå at skjule vigtig information kun visuelt.
+
+### 4. Test med skærmlæsere
+
+Den bedste måde at tjekke tilgængelighed på er ved at teste. Populære skærmlæsere inkluderer:
+
+- **NVDA** (Windows, gratis),
+- **JAWS** (Windows, betalt),
+- **VoiceOver** (macOS/iOS),
+- **TalkBack** (Android).
+
+### 5. Eksempel på en React-komponent
+
+<CodeSnippet
+    language="jsx"
+    code={`import React from "react";
+
+const AccessibleButton = ({ onClick }) => {
+    return (
+        <button 
+            onClick={onClick}
+            aria-label="Udvid menu"
+        >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+        </button>
+    );
+};
+
+export default AccessibleButton;`}
+/>
+
+## Konklusion
+
+Tilgængelighed er ikke blot en ekstra funktion, men en grundlæggende del af god UX-design. Ved at skabe tilgængelige komponenter gør du dine produkter mere brugbare og inkluderende. Husk at teste, bruge semantisk HTML og anvende ARIA-attributter klogt.

@@ -1,0 +1,79 @@
+---
+title: "Créer des composants accessibles aux lecteurs d'écran"
+date: "2025-02-27"
+description: "Créer des composants accessibles n'est pas seulement une obligation légale, mais aussi un moyen d'améliorer l'expérience utilisateur pour tous. Découvrez comment concevoir des interfaces adaptées aux utilisateurs malvoyants."
+tags: ["a11y", "react", "next"]
+---
+
+# Créer des composants accessibles aux lecteurs d'écran
+
+Vous êtes-vous déjà demandé comment les personnes malvoyantes utilisent votre application ou site web ? Les lecteurs d'écran jouent un rôle clé dans ce processus. Des composants bien conçus et accessibles à ces outils peuvent considérablement améliorer l'expérience utilisateur et rendre votre application plus inclusive.
+
+## Pourquoi l'accessibilité est-elle importante ?
+
+Concevoir des interfaces accessibles n'est pas seulement une question d'éthique et de législation, mais aussi une question d'expérience utilisateur. Les composants compatibles avec les lecteurs d'écran :
+
+- Améliorent l'expérience utilisateur des personnes en situation de handicap.
+- Facilitent la navigation et l'interaction pour tous les utilisateurs, y compris ceux qui utilisent un clavier.
+- Peuvent avoir un impact positif sur le référencement (SEO), car les moteurs de recherche apprécient le code sémantique.
+
+## Comment créer des composants accessibles ?
+
+### 1. Utiliser les bonnes balises HTML
+
+Le HTML sémantique est la base de l'accessibilité. Au lieu d'utiliser `<div>` et `<span>`, utilisez des éléments natifs :
+
+- `<button>` au lieu d'un `div` imitant un bouton,
+- `<label>` pour décrire les champs de formulaire,
+- `<nav>` pour marquer les sections de navigation.
+
+### 2. Utiliser les attributs ARIA uniquement lorsque c'est nécessaire
+
+ARIA (Accessible Rich Internet Applications) peut améliorer l'accessibilité, mais une utilisation excessive peut avoir des effets négatifs. Les attributs clés incluent :
+
+- `aria-label` – ajoute une description à un élément,
+- `aria-hidden="true"` – masque un élément aux lecteurs d'écran,
+- `role="alert"` – signale les changements importants sur la page.
+
+### 3. Assurer une structure logique et un ordre de navigation clair
+
+Les lecteurs d'écran suivent l'ordre du DOM, il est donc essentiel de :
+
+- Utiliser les titres (`h1`-`h6`) de manière hiérarchique,
+- Maintenir un ordre de tabulation clair (`tabindex`),
+- Éviter de masquer des informations essentielles uniquement visuellement.
+
+### 4. Tester avec des lecteurs d'écran
+
+Le meilleur moyen de vérifier l'accessibilité est de tester. Les lecteurs d'écran populaires incluent :
+
+- **NVDA** (Windows, gratuit),
+- **JAWS** (Windows, payant),
+- **VoiceOver** (macOS/iOS),
+- **TalkBack** (Android).
+
+### 5. Exemple de composant React
+
+<CodeSnippet
+    language="jsx"
+    code={`import React from "react";
+
+const AccessibleButton = ({ onClick }) => {
+    return (
+        <button 
+            onClick={onClick}
+            aria-label="Développer le menu"
+        >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+        </button>
+    );
+};
+
+export default AccessibleButton;`}
+/>
+
+## Conclusion
+
+L'accessibilité n'est pas un simple ajout, mais un élément fondamental du bon design UX. En créant des composants accessibles, vous rendez vos produits plus utilisables et inclusifs. N'oubliez pas de tester, d'utiliser un HTML sémantique et d'appliquer les attributs ARIA avec discernement.

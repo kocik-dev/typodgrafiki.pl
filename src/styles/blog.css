@@ -73,6 +73,14 @@
     will-change: transform, color;
 }
 
+.blog-post code {
+    background-color: #d5dade;
+    color: #000000;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 95%;
+}
+
 @keyframes upBounce {
     0% {
         transform: translateY(0);

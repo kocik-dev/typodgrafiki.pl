@@ -1,0 +1,79 @@
+---
+title: "Building Accessible Components for Screen Readers"
+date: "2025-02-27"
+description: "Creating accessible components is not just a legal requirement but also a way to improve UX for all users. Learn how to design interfaces that are friendly to visually impaired users."
+tags: ["a11y", "react", "next"]
+---
+
+# Building Accessible Components for Screen Readers
+
+Have you ever wondered how visually impaired people use your application or website? Screen readers play a key role in this process. Well-designed components that are accessible to these tools can significantly improve user experience and make your application more inclusive.
+
+## Why is Accessibility Important?
+
+Designing accessible interfaces is not just an ethical and legal issue but also a UX consideration. Screen reader-friendly components:
+
+- Improve user experience for people with disabilities.
+- Facilitate navigation and interaction for all users, such as those using a keyboard.
+- Can positively impact SEO since search engines appreciate semantic code.
+
+## How to Create Accessible Components?
+
+### 1. Use Proper HTML Tags
+
+Semantic HTML is the foundation of accessibility. Instead of `<div>` and `<span>`, use native elements:
+
+- `<button>` instead of a div mimicking a button,
+- `<label>` for form field descriptions,
+- `<nav>` to indicate navigation sections.
+
+### 2. Use ARIA Attributes Only When Necessary
+
+ARIA (Accessible Rich Internet Applications) can help improve accessibility, but overuse can have negative effects. Key attributes include:
+
+- `aria-label` – adds a description for an element,
+- `aria-hidden="true"` – hides an element from screen readers,
+- `role="alert"` – announces important changes on the page.
+
+### 3. Ensure Logical Structure and Navigation Order
+
+Screen readers rely on the DOM order, so you should:
+
+- Use headings (`h1`-`h6`) in a hierarchical manner,
+- Maintain a clear tab order (`tabindex`),
+- Avoid hiding essential information visually.
+
+### 4. Test with Screen Readers
+
+The best way to check accessibility is by testing. Popular screen readers include:
+
+- **NVDA** (Windows, free),
+- **JAWS** (Windows, paid),
+- **VoiceOver** (macOS/iOS),
+- **TalkBack** (Android).
+
+### 5. Example React Component
+
+<CodeSnippet
+    language="jsx"
+    code={`import React from "react";
+
+const AccessibleButton = ({ onClick }) => {
+    return (
+        <button 
+            onClick={onClick}
+            aria-label="Expand menu"
+        >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+        </button>
+    );
+};
+
+export default AccessibleButton;`}
+/>
+
+## Conclusion
+
+Accessibility is not an add-on but a fundamental aspect of good UX. By creating accessible components, you make your products more useful and inclusive. Remember to test, use semantic HTML, and apply ARIA attributes wisely.

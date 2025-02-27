@@ -1,0 +1,79 @@
+---
+title: "Saavutettavien komponenttien luominen ruudunlukijoille"
+date: "2025-02-27"
+description: "Saavutettavien komponenttien luominen ei ole vain lakisääteinen vaatimus, vaan myös tapa parantaa kaikkien käyttäjien käyttökokemusta. Opi suunnittelemaan käyttöliittymiä, jotka ovat helppokäyttöisiä näkövammaisille käyttäjille."
+tags: ["a11y", "react", "next"]
+---
+
+# Saavutettavien komponenttien luominen ruudunlukijoille
+
+Oletko koskaan miettinyt, miten näkövammaiset ihmiset käyttävät sovellustasi tai verkkosivustoasi? Ruudunlukijat ovat tässä prosessissa keskeisessä roolissa. Hyvin suunnitellut komponentit, jotka ovat saavutettavia näille työkaluille, voivat parantaa merkittävästi käyttökokemusta ja tehdä sovelluksestasi osallistavamman.
+
+## Miksi saavutettavuus on tärkeää?
+
+Saavutettavien käyttöliittymien suunnittelu ei ole vain eettinen ja oikeudellinen kysymys, vaan myös käyttökokemuksen parantamista. Ruudunlukijaystävälliset komponentit:
+
+- Parantavat käyttäjäkokemusta vammaisille henkilöille.
+- Helpottavat navigointia ja vuorovaikutusta kaikille käyttäjille, esimerkiksi näppäimistön käyttäjille.
+- Voivat vaikuttaa myönteisesti hakukoneoptimointiin (SEO), koska hakukoneet arvostavat semanttista koodia.
+
+## Kuinka luoda saavutettavia komponentteja?
+
+### 1. Käytä oikeita HTML-tageja
+
+Semanttinen HTML on saavutettavuuden perusta. Sen sijaan, että käyttäisit `<div>` ja `<span>`, käytä natiiveja elementtejä:
+
+- `<button>` `div`:n sijaan, joka jäljittelee painiketta,
+- `<label>` lomakekenttien kuvauksille,
+- `<nav>` navigointiosioiden merkitsemiseen.
+
+### 2. Käytä ARIA-attribuutteja vain tarvittaessa
+
+ARIA (Accessible Rich Internet Applications) voi parantaa saavutettavuutta, mutta liiallinen käyttö voi vaikuttaa negatiivisesti. Keskeiset attribuutit:
+
+- `aria-label` – lisää elementille kuvauksen,
+- `aria-hidden="true"` – piilottaa elementin ruudunlukijoilta,
+- `role="alert"` – ilmoittaa tärkeistä muutoksista sivulla.
+
+### 3. Varmista looginen rakenne ja navigointijärjestys
+
+Ruudunlukijat käyttävät DOM-rakennetta, joten sinun tulisi:
+
+- Käyttää otsikoita (`h1`-`h6`) hierarkkisesti,
+- Säilyttää selkeä välilehtijärjestys (`tabindex`),
+- Välttää tärkeiden tietojen piilottamista vain visuaalisesti.
+
+### 4. Testaa ruudunlukijoilla
+
+Paras tapa tarkistaa saavutettavuus on testata se käytännössä. Suosittuja ruudunlukijoita ovat:
+
+- **NVDA** (Windows, ilmainen),
+- **JAWS** (Windows, maksullinen),
+- **VoiceOver** (macOS/iOS),
+- **TalkBack** (Android).
+
+### 5. Esimerkki React-komponentista
+
+<CodeSnippet
+    language="jsx"
+    code={`import React from "react";
+
+const AccessibleButton = ({ onClick }) => {
+    return (
+        <button 
+            onClick={onClick}
+            aria-label="Laajenna valikko"
+        >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+        </button>
+    );
+};
+
+export default AccessibleButton;`}
+/>
+
+## Yhteenveto
+
+Saavutettavuus ei ole lisäominaisuus, vaan olennainen osa hyvää käyttökokemussuunnittelua. Luomalla saavutettavia komponentteja teet tuotteistasi käytettävämpiä ja osallistavampia. Muista testata, käyttää semanttista HTML:ää ja soveltaa ARIA-attribuutteja harkiten.

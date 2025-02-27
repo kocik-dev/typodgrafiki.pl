@@ -1,0 +1,79 @@
+---
+title: "Barrierefreie Komponenten für Screenreader erstellen"
+date: "2025-02-27"
+description: "Das Erstellen barrierefreier Komponenten ist nicht nur eine gesetzliche Anforderung, sondern auch eine Möglichkeit, die Benutzererfahrung für alle Nutzer zu verbessern. Erfahre, wie du Oberflächen entwirfst, die für sehbehinderte Menschen zugänglich sind."
+tags: ["a11y", "react", "next"]
+---
+
+# Barrierefreie Komponenten für Screenreader erstellen
+
+Hast du dich jemals gefragt, wie sehbehinderte Menschen deine Anwendung oder Website nutzen? Screenreader spielen dabei eine entscheidende Rolle. Gut gestaltete Komponenten, die für diese Werkzeuge zugänglich sind, können die Benutzererfahrung erheblich verbessern und deine Anwendung inklusiver machen.
+
+## Warum ist Barrierefreiheit wichtig?
+
+Das Design barrierefreier Oberflächen ist nicht nur eine ethische und gesetzliche Frage, sondern auch ein wichtiger UX-Faktor. Screenreader-freundliche Komponenten:
+
+- Verbessern die Benutzererfahrung für Menschen mit Behinderungen.
+- Erleichtern die Navigation und Interaktion für alle Benutzer, z. B. für Tastaturbenutzer.
+- Können sich positiv auf SEO auswirken, da Suchmaschinen semantischen Code bevorzugen.
+
+## Wie erstellt man barrierefreie Komponenten?
+
+### 1. Verwende richtige HTML-Tags
+
+Semantisches HTML ist die Grundlage der Barrierefreiheit. Anstelle von `<div>` und `<span>` solltest du native Elemente verwenden:
+
+- `<button>` anstelle eines `div`, das eine Schaltfläche nachahmt,
+- `<label>` für Formularfeldbeschreibungen,
+- `<nav>` zur Kennzeichnung von Navigationsbereichen.
+
+### 2. Verwende ARIA-Attribute nur, wenn nötig
+
+ARIA (Accessible Rich Internet Applications) kann die Barrierefreiheit verbessern, aber übermäßiger Gebrauch kann negative Auswirkungen haben. Wichtige Attribute sind:
+
+- `aria-label` – fügt eine Beschreibung für ein Element hinzu,
+- `aria-hidden="true"` – versteckt ein Element vor dem Screenreader,
+- `role="alert"` – kündigt wichtige Änderungen auf der Seite an.
+
+### 3. Sicherstellen einer logischen Struktur und Navigationsreihenfolge
+
+Screenreader verlassen sich auf die DOM-Reihenfolge. Daher sollte man:
+
+- Überschriften (`h1`-`h6`) hierarchisch verwenden,
+- Eine klare Tabulatorreihenfolge (`tabindex`) einhalten,
+- Wichtige Informationen nicht nur visuell verstecken.
+
+### 4. Testen mit Screenreadern
+
+Die beste Möglichkeit zur Überprüfung der Barrierefreiheit ist das Testen. Beliebte Screenreader sind:
+
+- **NVDA** (Windows, kostenlos),
+- **JAWS** (Windows, kostenpflichtig),
+- **VoiceOver** (macOS/iOS),
+- **TalkBack** (Android).
+
+### 5. Beispiel eines React-Komponenten
+
+<CodeSnippet
+    language="jsx"
+    code={`import React from "react";
+
+const AccessibleButton = ({ onClick }) => {
+    return (
+        <button 
+            onClick={onClick}
+            aria-label="Menü erweitern"
+        >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+        </button>
+    );
+};
+
+export default AccessibleButton;`}
+/>
+
+## Fazit
+
+Barrierefreiheit ist kein Zusatz, sondern ein grundlegender Bestandteil eines guten UX-Designs. Indem du barrierefreie Komponenten erstellst, machst du deine Produkte nützlicher und inklusiver. Denke daran, zu testen, semantisches HTML zu verwenden und ARIA-Attribute sinnvoll einzusetzen.

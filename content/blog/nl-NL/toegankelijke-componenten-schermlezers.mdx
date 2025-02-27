@@ -1,0 +1,79 @@
+---
+title: "Toegankelijke componenten maken voor schermlezers"
+date: "2025-02-27"
+description: "Het maken van toegankelijke componenten is niet alleen een wettelijke vereiste, maar ook een manier om de gebruikerservaring voor iedereen te verbeteren. Leer hoe je interfaces ontwerpt die vriendelijk zijn voor slechtziende gebruikers."
+tags: ["a11y", "react", "next"]
+---
+
+# Toegankelijke componenten maken voor schermlezers
+
+Heb je je ooit afgevraagd hoe slechtziende mensen je applicatie of website gebruiken? Schermlezers spelen hierin een cruciale rol. Goed ontworpen componenten die toegankelijk zijn voor deze tools kunnen de gebruikerservaring aanzienlijk verbeteren en je applicatie inclusiever maken.
+
+## Waarom is toegankelijkheid belangrijk?
+
+Het ontwerpen van toegankelijke interfaces is niet alleen een ethische en wettelijke kwestie, maar ook een UX-overweging. Schermlezer-vriendelijke componenten:
+
+- Verbeteren de gebruikerservaring voor mensen met een beperking.
+- Maken navigatie en interactie gemakkelijker voor alle gebruikers, inclusief diegenen die een toetsenbord gebruiken.
+- Kunnen een positieve invloed hebben op SEO, omdat zoekmachines semantische code waarderen.
+
+## Hoe maak je toegankelijke componenten?
+
+### 1. Gebruik de juiste HTML-tags
+
+Semantische HTML is de basis van toegankelijkheid. In plaats van `<div>` en `<span>` te gebruiken, kies je voor native elementen:
+
+- `<button>` in plaats van een `div` die een knop nabootst,
+- `<label>` om formulier velden te beschrijven,
+- `<nav>` om navigatiesecties aan te duiden.
+
+### 2. Gebruik ARIA-attributen alleen indien nodig
+
+ARIA (Accessible Rich Internet Applications) kan helpen bij het verbeteren van toegankelijkheid, maar overmatig gebruik kan negatieve effecten hebben. Belangrijke attributen zijn:
+
+- `aria-label` – voegt een beschrijving toe aan een element,
+- `aria-hidden="true"` – verbergt een element voor schermlezers,
+- `role="alert"` – kondigt belangrijke wijzigingen op de pagina aan.
+
+### 3. Zorg voor een logische structuur en navigatievolgorde
+
+Schermlezers vertrouwen op de volgorde van de DOM, dus zorg ervoor dat je:
+
+- Koppen (`h1`-`h6`) hiërarchisch gebruikt,
+- Een duidelijke tabvolgorde (`tabindex`) behoudt,
+- Belangrijke informatie niet alleen visueel verbergt.
+
+### 4. Test met schermlezers
+
+De beste manier om toegankelijkheid te testen is door daadwerkelijk te testen. Populaire schermlezers zijn onder andere:
+
+- **NVDA** (Windows, gratis),
+- **JAWS** (Windows, betaald),
+- **VoiceOver** (macOS/iOS),
+- **TalkBack** (Android).
+
+### 5. Voorbeeld van een React-component
+
+<CodeSnippet
+    language="jsx"
+    code={`import React from "react";
+
+const AccessibleButton = ({ onClick }) => {
+    return (
+        <button 
+            onClick={onClick}
+            aria-label="Menu uitbreiden"
+        >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+        </button>
+    );
+};
+
+export default AccessibleButton;`}
+/>
+
+## Conclusie
+
+Toegankelijkheid is geen extra functie, maar een fundamenteel onderdeel van goed UX-ontwerp. Door toegankelijke componenten te maken, maak je je producten bruikbaarder en inclusiever. Vergeet niet te testen, semantische HTML te gebruiken en ARIA-attributen verstandig toe te passen.

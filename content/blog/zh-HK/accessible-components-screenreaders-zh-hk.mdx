@@ -1,0 +1,79 @@
+---
+title: "為屏幕閱讀器建立可訪問的組件"
+date: "2025-02-27"
+description: "建立可訪問的組件不僅是法律要求，也是改善所有用戶體驗的方法。了解如何設計對視障用戶友善的界面。"
+tags: ["a11y", "react", "next"]
+---
+
+# 為屏幕閱讀器建立可訪問的組件
+
+你是否曾經想過，視障人士如何使用你的應用程式或網站？屏幕閱讀器在這個過程中發揮著關鍵作用。設計良好且可供這些工具訪問的組件可以顯著提升用戶體驗，使你的應用程式更具包容性。
+
+## 為何可訪問性很重要？
+
+設計可訪問的界面不僅是一個道德和法律問題，也是一個 UX 的重要考量。適用於屏幕閱讀器的組件能夠：
+
+- 改善殘疾人士的使用體驗。
+- 讓所有用戶（包括鍵盤使用者）更輕鬆地進行導航和互動。
+- 有助於 SEO，因為搜索引擎更青睞語義化的代碼。
+
+## 如何創建可訪問的組件？
+
+### 1. 使用正確的 HTML 標籤
+
+語義化 HTML 是可訪問性的基礎。應避免使用 `<div>` 和 `<span>`，而應使用適當的原生元素：
+
+- 用 `<button>` 取代 `div` 模擬的按鈕，
+- 使用 `<label>` 來描述表單字段，
+- 使用 `<nav>` 來標記導航部分。
+
+### 2. 僅在必要時使用 ARIA 屬性
+
+ARIA（Accessible Rich Internet Applications）可以幫助提升可訪問性，但過度使用可能會適得其反。重要屬性包括：
+
+- `aria-label` – 為元素添加描述，
+- `aria-hidden="true"` – 讓屏幕閱讀器忽略該元素，
+- `role="alert"` – 用於通知頁面上的重要變化。
+
+### 3. 確保邏輯結構和導航順序
+
+屏幕閱讀器依賴於 DOM 的結構，因此應該：
+
+- 使用標題 (`h1`-`h6`) 來建立層級結構，
+- 保持明確的標籤順序 (`tabindex`)，
+- 避免僅以視覺方式隱藏關鍵信息。
+
+### 4. 使用屏幕閱讀器進行測試
+
+檢查可訪問性的最佳方式是實際測試。常見的屏幕閱讀器包括：
+
+- **NVDA**（Windows，免費）
+- **JAWS**（Windows，付費）
+- **VoiceOver**（macOS/iOS）
+- **TalkBack**（Android）
+
+### 5. React 組件示例
+
+<CodeSnippet
+    language="jsx"
+    code={`import React from "react";
+
+const AccessibleButton = ({ onClick }) => {
+    return (
+        <button 
+            onClick={onClick}
+            aria-label="展開選單"
+        >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+        </button>
+    );
+};
+
+export default AccessibleButton;`}
+/>
+
+## 總結
+
+可訪問性不是額外的功能，而是優秀 UX 設計的基本部分。通過創建可訪問的組件，你可以使產品更易用且更具包容性。請記住進行測試，使用語義化 HTML，並合理應用 ARIA 屬性。
